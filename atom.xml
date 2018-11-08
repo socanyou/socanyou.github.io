@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-08T14:14:50.484Z</updated>
+  <updated>2017-10-28T00:39:58.000Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="https://codinglife.site/2018/11/08/testpage/"/>
-    <id>https://codinglife.site/2018/11/08/testpage/</id>
-    <published>2018-11-08T14:04:05.810Z</published>
-    <updated>2018-11-08T14:14:50.484Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;title: typora-vue-theme主题介绍&lt;br&gt;date: 2018-09-07 09:25:00&lt;br&gt;author: 赵奇&lt;br&gt;img: /source/images/xxx.jpg # 或者:&lt;a
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
@@ -57,6 +35,34 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>typora-vue-theme主题介绍</title>
+    <link href="https://codinglife.site/2018/09/07/testpage/"/>
+    <id>https://codinglife.site/2018/09/07/testpage/</id>
+    <published>2018-09-07T01:25:00.000Z</published>
+    <updated>2018-11-08T14:15:57.795Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;I like
+        
+      
+    
+    </summary>
+    
+      <category term="Markdown" scheme="https://codinglife.site/categories/Markdown/"/>
+    
+    
+      <category term="Typora" scheme="https://codinglife.site/tags/Typora/"/>
+    
+      <category term="Markdown" scheme="https://codinglife.site/tags/Markdown/"/>
     
   </entry>
   
