@@ -3,11 +3,11 @@
   
     
     <entry>
-      <title>testpage</title>
+      <title></title>
       <link href="/2018/11/08/testpage/"/>
       <url>/2018/11/08/testpage/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>title: typora-vue-theme主题介绍<br>date: 2018-09-07 09:25:00<br>author: 赵奇<br>img: /source/images/xxx.jpg # 或者:<a href="http://xxx.com/xxx.jpg" target="_blank" rel="noopener">http://xxx.com/xxx.jpg</a><br>top: true # 如果top值为true，则会是首页推荐文章<br>categories: Markdown<br>tags:</p><ul><li>Typora</li><li>Markdown</li></ul>]]></content>
       
       
       
