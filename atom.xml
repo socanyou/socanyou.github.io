@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-10T17:33:00.151Z</updated>
+  <updated>2018-11-10T18:29:04.216Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>长链接和短链接</title>
+    <title>Python多任务-线程</title>
     <link href="https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
     <id>https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/</id>
     <published>2018-11-10T09:54:03.000Z</published>
-    <updated>2018-11-10T17:33:00.151Z</updated>
+    <updated>2018-11-10T18:29:04.216Z</updated>
     
     <summary type="html">
     
@@ -29,64 +29,23 @@
       
         
         
-          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot;
+          &lt;pre&gt;&lt;code&gt;__author__ = &amp;#39;Chen&amp;#39;
+__date__ = &amp;#39;2018/11/4 13:34&amp;#39;
+
+import time
+import threading  # 多任务模块
+
+
+#
         
       
     
     </summary>
     
-    
-      <category term="HTTP" scheme="https://codinglife.site/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://codinglife.site/2018/11/08/hello-world/"/>
-    <id>https://codinglife.site/2018/11/08/hello-world/</id>
-    <published>2018-11-08T08:19:51.505Z</published>
-    <updated>2017-10-28T00:39:58.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
+      <category term="多任务" scheme="https://codinglife.site/categories/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
     
     
-  </entry>
-  
-  <entry>
-    <title>爱情买卖</title>
-    <link href="https://codinglife.site/2018/09/07/testpage/"/>
-    <id>https://codinglife.site/2018/09/07/testpage/</id>
-    <published>2018-09-07T01:25:00.000Z</published>
-    <updated>2018-11-08T14:29:28.234Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;I like
-        
-      
-    
-    </summary>
-    
-      <category term="Markdown" scheme="https://codinglife.site/categories/Markdown/"/>
-    
-    
-      <category term="Typora" scheme="https://codinglife.site/tags/Typora/"/>
-    
-      <category term="Markdown" scheme="https://codinglife.site/tags/Markdown/"/>
+      <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
     
   </entry>
   

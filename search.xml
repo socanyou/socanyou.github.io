@@ -3,53 +3,23 @@
   
     
     <entry>
-      <title>长链接和短链接</title>
+      <title>Python多任务-线程</title>
       <link href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
       <url>/2018/11/10/chang-lian-jie-he-duan-lian-jie/</url>
       
-        <content type="html"><![CDATA[<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>Http1.0</strong>版本中使用的是短链接<br><strong>Http1.1</strong>版本中使用的是长链接</p><p><strong>长连接</strong>:通过一个套接字获取多个数据<br><strong>短链接</strong>:为了获取多个数据而重新创建套接字</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> HTTP </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2018/11/08/hello-world/"/>
-      <url>/2018/11/08/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    <entry>
-      <title>爱情买卖</title>
-      <link href="/2018/09/07/testpage/"/>
-      <url>/2018/09/07/testpage/</url>
-      
-        <content type="html"><![CDATA[<p>I like Pyton1<br>啊实打实到底算阿瑟东阿三阿三</p><p>啊实打实到底算阿瑟东阿三阿三啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三啊实打实到底算阿瑟东阿三阿三啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三<br>啊实打实到底算阿瑟东阿三阿三</p><pre><code>from socket import *def get_file_content(file_name):    &quot;&quot;&quot;获取文件的内容&quot;&quot;&quot;    try:        with open(file_name, &quot;rb&quot;) as f:            content = f.read()        return content    except:        print(&quot;没有下载的文件:%s&quot; % file_name)def main():    port = int(4567)    # 创建socket    tcp_server_socket = socket(AF_INET, SOCK_STREAM)    # 本地信息    address = (&#39;&#39;, port)    # 绑定本地信息    tcp_server_socket.bind(address)    # 将主动套接字变为被动套接字    tcp_server_socket.listen(128)    while True:        # 等待客户端的链接，即为这个客户端发送文件        client_socket, clientAddr = tcp_server_socket.accept()        # 接收对方发送过来的数据        recv_data = client_socket.recv(1024)  # 接收1024个字节        file_name = recv_data.decode(&quot;utf-8&quot;)        print(&quot;对方请求下载的文件名为:%s&quot; % file_name)        file_content = get_file_content(file_name)        # 发送文件的数据给客户端        # 因为获取打开文件时是以rb方式打开，所以file_content中的数据已经是二进制的格式，因此不需要encode编码        if file_content:            client_socket.send(file_content)        # 关闭这个套接字        client_socket.close()    # 关闭监听套接字    tcp_server_socket.close()if __name__ == &quot;__main__&quot;:    main()</code></pre>]]></content>
+        <content type="html"><![CDATA[<pre><code>__author__ = &#39;Chen&#39;__date__ = &#39;2018/11/4 13:34&#39;import timeimport threading  # 多任务模块# 使用多任务让程序完成变长秋天不回来边跳脱衣舞def sing():    &#39;&#39;&#39;唱歌5秒钟&#39;&#39;&#39;    print(&#39;---正在唱秋天不回来&#39;)    time.sleep(1)def dance():    &#39;&#39;&#39;跳舞5秒钟&#39;&#39;&#39;    print(&#39;---正在跳脱衣舞&#39;)    time.sleep(1)def main():    t1 = threading.Thread(target=sing)  # 创建一个线程对象,指向sing函数,这里的sing不是调用而是指向    t2 = threading.Thread(target=dance)    t1.start()    t2.start()if __name__ == &#39;__main__&#39;:    main()&quot;&quot;&quot;执行流程:1:if__name__ == &#39;__main__&#39;2:调用main3:t1-&gt;创建一个实例对象,t2-&gt;创建一个实例对象4:t1.start()创建一个子线程,子线程执行sing函数.    t2.start()又创建了一个子线程,执行dance函数5:main()方法为主线程,如果先主线程执行完毕(t2之后已经没有任何代码),那么主线程等待子线程结束t1 = threading.Thread(target=sing)t2 = threading.Thread(target=dance)这两行代码仅仅是创建了一个普通的对象,并没有创建子线程start()方法才是创建子线程,并执行&quot;&quot;&quot;</code></pre>]]></content>
       
       
       <categories>
           
-          <category> Markdown </category>
+          <category> 多任务 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Typora </tag>
-            
-            <tag> Markdown </tag>
+            <tag> Python </tag>
             
         </tags>
       
