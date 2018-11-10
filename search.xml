@@ -7,7 +7,7 @@
       <link href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
       <url>/2018/11/10/chang-lian-jie-he-duan-lian-jie/</url>
       
-        <content type="html"><![CDATA[<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>Http1.0</strong>版本中使用的是短链接<br><strong>Http1.1</strong>版本中使用的是长链接</p><p><strong>长连接</strong>:通过一个套接字获取多个数据<br><strong>短链接</strong>:为了获取多个数据而重新创建套接字<br><img src="http://blog.bkt.qiniudn.com/static/images/test.jpg"></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="HTTP协议"><a href="#HTTP协议" class="headerlink" title="HTTP协议"></a>HTTP协议</h1><p><strong>Http1.0</strong>版本中使用的是短链接<br><strong>Http1.1</strong>版本中使用的是长链接</p><p><strong>长连接</strong>:通过一个套接字获取多个数据<br><strong>短链接</strong>:为了获取多个数据而重新创建套接字</p>]]></content>
       
       
       
