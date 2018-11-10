@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-10T18:44:40.273Z</updated>
+  <updated>2018-11-10T18:55:35.725Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>多任务的概念</title>
+    <link href="https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/"/>
+    <id>https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/</id>
+    <published>2018-11-10T18:49:21.000Z</published>
+    <updated>2018-11-10T18:55:35.725Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png&quot; alt=&quot;多任务&quot;&gt;&lt;/p&gt;
+&lt;p&gt;有很多的场景中的事情是同时进行的，比如开车的时候
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Thread" scheme="https://codinglife.site/tags/Thread/"/>
+    
+      <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
+    
+      <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Python多任务-线程</title>
     <link href="https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
     <id>https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/</id>
     <published>2018-11-10T09:54:03.000Z</published>
-    <updated>2018-11-10T18:44:40.273Z</updated>
+    <updated>2018-11-10T18:50:53.977Z</updated>
     
     <summary type="html">
     
@@ -45,9 +76,11 @@ import threading  # 多任务模块
       <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
     
     
+      <category term="Thread" scheme="https://codinglife.site/tags/Thread/"/>
+    
       <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
     
-      <category term="Django" scheme="https://codinglife.site/tags/Django/"/>
+      <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
     
   </entry>
   
@@ -56,7 +89,7 @@ import threading  # 多任务模块
     <link href="https://codinglife.site/2018/11/10/python-duo-xian-cheng-2-1/"/>
     <id>https://codinglife.site/2018/11/10/python-duo-xian-cheng-2-1/</id>
     <published>2018-11-09T16:00:00.000Z</published>
-    <updated>2018-11-10T18:46:55.981Z</updated>
+    <updated>2018-11-10T18:49:26.330Z</updated>
     
     <summary type="html">
     

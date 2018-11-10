@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>多任务的概念</title>
+      <link href="/2018/11/11/duo-ren-wu-de-gai-nian/"/>
+      <url>/2018/11/11/duo-ren-wu-de-gai-nian/</url>
+      
+        <content type="html"><![CDATA[<p><img src="http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png" alt="多任务"></p><p>有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；</p><p>什么叫“<strong>多任务</strong>”呢？简单地说，就是<strong>操作系统</strong>可以<strong>同时</strong>运行多个任务。打个比方，<strong>你一边在用浏览器上网，一边在听MP3</strong>，一边在用Word赶作业，这就是多任务，至少同时有3个任务正在运行。还有很多任务悄悄地在后台同时运行着，只是桌面上没有显示而已。</p><p><strong>并发</strong>：指的是==任务数多余cpu核数==，通过操作系统的各种任务调度算法，实现用多个任务“一起”执行（实际上总有一些任务不在执行，因为切换任务的速度相当快，看上去一起执行而已）<br><strong>并行</strong>：指的是==任务数小于等于cpu核数==，即任务真的是一起执行的</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Thread </tag>
+            
+            <tag> Python </tag>
+            
+            <tag> 多任务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Python多任务-线程</title>
       <link href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
       <url>/2018/11/10/chang-lian-jie-he-duan-lian-jie/</url>
@@ -19,9 +46,11 @@
       
         <tags>
             
+            <tag> Thread </tag>
+            
             <tag> Python </tag>
             
-            <tag> Django </tag>
+            <tag> 多任务 </tag>
             
         </tags>
       
