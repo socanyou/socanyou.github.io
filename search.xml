@@ -3,17 +3,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/2018/11/11/python-duo-xian-cheng-2-1/"/>
-      <url>/2018/11/11/python-duo-xian-cheng-2-1/</url>
-      
-        <content type="html"><![CDATA[<hr><p>title: Python多任务-线程2<br>date: 2018-11-10<br>author: Chen<br>img: <a href="http://phmes812n.bkt.clouddn.com/python.jpg" target="_blank" rel="noopener">http://phmes812n.bkt.clouddn.com/python.jpg</a><br>top: true<br>categories: Python<br>tags:</p><ul><li>多任务</li><li>Thread</li></ul><hr><pre><code>import timeimport threading__author__ = &#39;Chen&#39;__date__ = &#39;2018/11/4 14:51&#39;class MyThread(threading.Thread):    &#39;&#39;&#39;    继承Thread类,重写run方法,在调用start()方法的时候,    线程会自动执行run方法里面的代码.    &#39;&#39;&#39;    def run(self):        for i in range(3):            time.sleep(1)            msg = &quot;当前线程的名字为:&quot; + self.name + &quot;@&quot; + str(i)  # name属性中保存的是当前线程的名字            print(msg)if __name__ == &#39;__main__&#39;:    t = MyThread()    # 创建了一个实例对象,只有一个线程    t.start()</code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    <entry>
       <title>Python多任务-线程</title>
       <link href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
       <url>/2018/11/10/chang-lian-jie-he-duan-lian-jie/</url>
@@ -33,6 +22,31 @@
             <tag> Python </tag>
             
             <tag> Django </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Python多任务-线程2</title>
+      <link href="/2018/11/10/python-duo-xian-cheng-2-1/"/>
+      <url>/2018/11/10/python-duo-xian-cheng-2-1/</url>
+      
+        <content type="html"><![CDATA[<pre><code>import timeimport threading__author__ = &#39;Chen&#39;__date__ = &#39;2018/11/4 14:51&#39;class MyThread(threading.Thread):    &#39;&#39;&#39;    继承Thread类,重写run方法,在调用start()方法的时候,    线程会自动执行run方法里面的代码.    &#39;&#39;&#39;    def run(self):        for i in range(3):            time.sleep(1)            msg = &quot;当前线程的名字为:&quot; + self.name + &quot;@&quot; + str(i)  # name属性中保存的是当前线程的名字            print(msg)if __name__ == &#39;__main__&#39;:    t = MyThread()    # 创建了一个实例对象,只有一个线程    t.start()</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Thread </tag>
+            
+            <tag> Gevent </tag>
             
         </tags>
       

@@ -5,15 +5,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Python多任务-线程, 程序员小黑">
-    <meta name="description" content="__author__ = &amp;#39;Chen&amp;#39;
-__date__ = &amp;#39;2018/11/4 13:34&amp;#39;
+    <meta name="keywords" content="Python多任务-线程2, 程序员小黑">
+    <meta name="description" content="import time
+import threading
 
-import time
-import threading  # 多任务模块
+__author__ = &amp;#39;Chen&amp;#39;
+__date__ = &amp;#39;2018/11/4 14:51&amp;#39;
 
 
-# 使用多任务让程序完成变长">
+class MyThread(threadin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@ import threading  # 多任务模块
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Python多任务-线程 | 程序员小黑</title>
+    <title>Python多任务-线程2 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,7 +262,7 @@ import threading  # 多任务模块
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Python多任务-线程
+                        Python多任务-线程2
                     </div>
                 </div>
             </div>
@@ -282,12 +282,12 @@ import threading  # 多任务模块
             
             <div class="article-tag">
                 
-                <a href="/tags/Python/" target="_blank">
-                    <span class="chip bg-color">Python</span>
+                <a href="/tags/Thread/" target="_blank">
+                    <span class="chip bg-color">Thread</span>
                 </a>
                 
-                <a href="/tags/Django/" target="_blank">
-                    <span class="chip bg-color">Django</span>
+                <a href="/tags/Gevent/" target="_blank">
+                    <span class="chip bg-color">Gevent</span>
                 </a>
                 
             </div>
@@ -312,54 +312,30 @@ import threading  # 多任务模块
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre><code>__author__ = &#39;Chen&#39;
-__date__ = &#39;2018/11/4 13:34&#39;
+                <pre><code>import time
+import threading
 
-import time
-import threading  # 多任务模块
-
-
-# 使用多任务让程序完成变长秋天不回来边跳脱衣舞
-
-def sing():
-    &#39;&#39;&#39;唱歌5秒钟&#39;&#39;&#39;
-    print(&#39;---正在唱秋天不回来&#39;)
-    time.sleep(1)
+__author__ = &#39;Chen&#39;
+__date__ = &#39;2018/11/4 14:51&#39;
 
 
+class MyThread(threading.Thread):
+    &#39;&#39;&#39;
+    继承Thread类,重写run方法,在调用start()方法的时候,
+    线程会自动执行run方法里面的代码.
+    &#39;&#39;&#39;
 
-def dance():
-    &#39;&#39;&#39;跳舞5秒钟&#39;&#39;&#39;
-    print(&#39;---正在跳脱衣舞&#39;)
-    time.sleep(1)
-
-
-
-def main():
-    t1 = threading.Thread(target=sing)  # 创建一个线程对象,指向sing函数,这里的sing不是调用而是指向
-    t2 = threading.Thread(target=dance)
-    t1.start()
-    t2.start()
-
+    def run(self):
+        for i in range(3):
+            time.sleep(1)
+            msg = &quot;当前线程的名字为:&quot; + self.name + &quot;@&quot; + str(i)  # name属性中保存的是当前线程的名字
+            print(msg)
 
 
 if __name__ == &#39;__main__&#39;:
-    main()
-
-&quot;&quot;&quot;
-执行流程:
-1:if__name__ == &#39;__main__&#39;
-2:调用main
-3:t1-&gt;创建一个实例对象,t2-&gt;创建一个实例对象
-4:t1.start()创建一个子线程,子线程执行sing函数.    t2.start()又创建了一个子线程,执行dance函数
-5:main()方法为主线程,如果先主线程执行完毕(t2之后已经没有任何代码),那么主线程等待子线程结束
-
-
-t1 = threading.Thread(target=sing)
-t2 = threading.Thread(target=dance)
-这两行代码仅仅是创建了一个普通的对象,并没有创建子线程
-start()方法才是创建子线程,并执行
-&quot;&quot;&quot;
+    t = MyThread()
+    # 创建了一个实例对象,只有一个线程
+    t.start()
 
 </code></pre>
             </div>
@@ -382,7 +358,7 @@ start()方法才是创建子线程,并执行
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/" class="b-link-green">Python多任务-线程</a>
+                    <a href="/2018/11/10/python-duo-xian-cheng-2-1/" class="b-link-green">Python多任务-线程2</a>
                 </p>
             </div>
         </div>
@@ -424,7 +400,7 @@ start()方法才是创建子线程,并执行
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
                 <a href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/">
                     <div class="card-image">
@@ -444,9 +420,9 @@ import threading  # 多任务模块
 
 # 使用多任务让程序完成变长</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-10
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-10
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -459,7 +435,6 @@ import threading  # 多任务模块
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -478,7 +453,7 @@ import threading  # 多任务模块
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="article-badge right-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/11/10/python-duo-xian-cheng-2-1/">
                     <div class="card-image">
@@ -513,6 +488,7 @@ class MyThread(threadin</div>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
