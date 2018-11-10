@@ -56,7 +56,7 @@ import threading  # 多任务模块
     <link href="https://codinglife.site/2018/11/10/python-duo-xian-cheng-2-1/"/>
     <id>https://codinglife.site/2018/11/10/python-duo-xian-cheng-2-1/</id>
     <published>2018-11-09T16:00:00.000Z</published>
-    <updated>2018-11-10T18:40:47.542Z</updated>
+    <updated>2018-11-10T18:43:08.422Z</updated>
     
     <summary type="html">
     
@@ -80,9 +80,9 @@ class
       <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
     
     
-      <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
+      <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
     
-      <category term="Django" scheme="https://codinglife.site/tags/Django/"/>
+      <category term="Thread" scheme="https://codinglife.site/tags/Thread/"/>
     
   </entry>
   
