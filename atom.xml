@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-10T18:33:51.054Z</updated>
+  <updated>2018-11-10T18:34:58.228Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
     <id>https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/</id>
     <published>2018-11-10T09:54:03.000Z</published>
-    <updated>2018-11-10T18:33:51.054Z</updated>
+    <updated>2018-11-10T18:34:58.228Z</updated>
     
     <summary type="html">
     
@@ -42,7 +42,7 @@ import threading  # 多任务模块
     
     </summary>
     
-      <category term="多任务" scheme="https://codinglife.site/categories/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
     
     
       <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
