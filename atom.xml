@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2017-10-28T00:39:58.000Z</updated>
+  <updated>2018-11-10T17:08:18.526Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>长链接和短链接</title>
+    <link href="https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
+    <id>https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/</id>
+    <published>2018-11-10T09:54:03.000Z</published>
+    <updated>2018-11-10T17:08:18.526Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HTTP协议&quot;&gt;&lt;a href=&quot;#HTTP协议&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="HTTP" scheme="https://codinglife.site/tags/HTTP/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
