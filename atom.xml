@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-10T18:39:49.338Z</updated>
+  <updated>2018-11-10T18:44:52.456Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://codinglife.site/2018/11/11/python-duo-xian-cheng-2-1/"/>
+    <id>https://codinglife.site/2018/11/11/python-duo-xian-cheng-2-1/</id>
+    <published>2018-11-10T18:38:24.337Z</published>
+    <updated>2018-11-10T18:44:52.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;hr&gt;
+&lt;p&gt;title: Python多任务-线程2&lt;br&gt;date: 2018-11-10&lt;br&gt;author: Chen&lt;br&gt;img: &lt;a href=&quot;http://phmes812n.bkt.clouddn.com/python.jpg&quot;
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Python多任务-线程</title>
     <link href="https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/"/>
     <id>https://codinglife.site/2018/11/10/chang-lian-jie-he-duan-lian-jie/</id>
     <published>2018-11-10T09:54:03.000Z</published>
-    <updated>2018-11-10T18:39:49.338Z</updated>
+    <updated>2018-11-10T18:44:40.273Z</updated>
     
     <summary type="html">
     
@@ -48,41 +71,6 @@ import threading  # 多任务模块
       <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
     
       <category term="Django" scheme="https://codinglife.site/tags/Django/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python多任务-线程2</title>
-    <link href="https://codinglife.site/2018/11/10/python-duo-xian-cheng-2-1/"/>
-    <id>https://codinglife.site/2018/11/10/python-duo-xian-cheng-2-1/</id>
-    <published>2018-11-09T16:00:00.000Z</published>
-    <updated>2018-11-10T18:43:08.422Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;pre&gt;&lt;code&gt;import time
-import threading
-
-__author__ = &amp;#39;Chen&amp;#39;
-__date__ = &amp;#39;2018/11/4 14:51&amp;#39;
-
-
-class
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
-    
-      <category term="Thread" scheme="https://codinglife.site/tags/Thread/"/>
     
   </entry>
   
