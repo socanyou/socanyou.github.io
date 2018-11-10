@@ -5,8 +5,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: Python, 程序员小黑">
-    <meta name="description" content="标签: Python | 程序员小黑">
+    <meta name="keywords" content="Python多任务-线程2, 程序员小黑">
+    <meta name="description" content="import time
+import threading
+
+__author__ = &amp;#39;Chen&amp;#39;
+__date__ = &amp;#39;2018/11/4 14:51&amp;#39;
+
+
+class MyThread(threadin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签: Python | 程序员小黑</title>
+    <title>Python多任务-线程2 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -247,138 +254,263 @@
     </nav>
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+
+
+<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/python.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+            <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="title center-align">
-                    
-                        CodingLife
-                    
-                    </div>
-
-                    <div class="description center-align">
-                    
-                        有趣的灵魂-_-
-                    
+                    <div class="description center-align post-title">
+                        Python多任务-线程2
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 
-<script>
-// Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
 
-<main class="content">
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Python/" target="_blank">
+                    <span class="chip bg-color">Python</span>
+                </a>
+                
+                <a href="/tags/Django/" target="_blank">
+                    <span class="chip bg-color">Django</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/Python/" class="post-category" target="_blank">
+                        Python
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-10
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre><code>import time
+import threading
+
+__author__ = &#39;Chen&#39;
+__date__ = &#39;2018/11/4 14:51&#39;
+
+
+class MyThread(threading.Thread):
+    &#39;&#39;&#39;
+    继承Thread类,重写run方法,在调用start()方法的时候,
+    线程会自动执行run方法里面的代码.
+    &#39;&#39;&#39;
+
+    def run(self):
+        for i in range(3):
+            time.sleep(1)
+            msg = &quot;当前线程的名字为:&quot; + self.name + &quot;@&quot; + str(i)  # name属性中保存的是当前线程的名字
+            print(msg)
+
+
+if __name__ == &#39;__main__&#39;:
+    t = MyThread()
+    # 创建了一个实例对象,只有一个线程
+    t.start()
+
+</code></pre>
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/11/10/python-duo-xian-cheng-2/" class="b-link-green">Python多任务-线程2</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
     
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">文章标签</div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/Python/" title="Python: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active " data-tagname="Python" style="background-color: #F9EBEA;">Python
-                        <span class="tag-length">2</span>
-                    </span>
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80MDk0NC8xNzQ2OQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
+    </div>
+    <!-- City版安装代码已完成 -->
+</div>
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/">
+                    <div class="card-image">
+                        
+                        <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="Python多任务-线程">
+                        
+                        <span class="card-title">Python多任务-线程</span>
+                    </div>
                 </a>
+                <div class="card-content article-content">
+                    <div class="summary">__author__ = &#39;Chen&#39;
+__date__ = &#39;2018/11/4 13:34&#39;
+
+import time
+import threading  # 多任务模块
+
+
+# 使用多任务让程序完成变长</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-10
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
-                
-                <a href="/tags/Django/" title="Django: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Django" style="background-color: #F5EEF8;">Django
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
-    </div>
-</div>
-
-    <div class="container">
         
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/2018/11/10/python-duo-xian-cheng-2/">
+                    <div class="card-image">
+                        
+                        <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="Python多任务-线程2">
+                        
+                        <span class="card-title">Python多任务-线程2</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">import time
+import threading
 
-        <article>
-            <div class="row tags-posts">
-                
-                
-                <div class="article tag-post col s12 m6 l4" data-tags="Python, Django" data-aos="fade-up">
-                    <div class="card">
-                        <a href="/2018/11/10/python-duo-xian-cheng-2/">
-                            <div class="card-image tag-image">
-                                
-                                <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="Python多任务-线程2">
-                                
-                                <span class="card-title">Python多任务-线程2</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-10
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Python/" class="post-category" target="_blank">
+__author__ = &#39;Chen&#39;
+__date__ = &#39;2018/11/4 14:51&#39;
+
+
+class MyThread(threadin</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
                                     Python
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
+                                </a>
+                            
+                            
+                        </span>
                     </div>
                 </div>
+
                 
-                
-                <div class="article tag-post col s12 m6 l4" data-tags="Python, Django" data-aos="fade-up">
-                    <div class="card">
-                        <a href="/2018/11/10/chang-lian-jie-he-duan-lian-jie/">
-                            <div class="card-image tag-image">
-                                
-                                <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="Python多任务-线程">
-                                
-                                <span class="card-title">Python多任务-线程</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-10
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
+                    <a href="/tags/Django/" target="_blank">
+                        <span class="chip bg-color">Django</span>
+                    </a>
+                    
                 </div>
                 
             </div>
-        </article>
+        </div>
+        
     </div>
-</main>
+</article>
+</div>
+    
 
+</main>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">

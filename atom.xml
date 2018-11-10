@@ -51,4 +51,39 @@ import threading  # 多任务模块
     
   </entry>
   
+  <entry>
+    <title>Python多任务-线程2</title>
+    <link href="https://codinglife.site/2018/11/10/python-duo-xian-cheng-2/"/>
+    <id>https://codinglife.site/2018/11/10/python-duo-xian-cheng-2/</id>
+    <published>2018-11-10T09:54:03.000Z</published>
+    <updated>2018-11-10T18:37:17.574Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;import time
+import threading
+
+__author__ = &amp;#39;Chen&amp;#39;
+__date__ = &amp;#39;2018/11/4 14:51&amp;#39;
+
+
+class
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
+    
+      <category term="Django" scheme="https://codinglife.site/tags/Django/"/>
+    
+  </entry>
+  
 </feed>
