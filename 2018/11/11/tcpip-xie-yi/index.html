@@ -5,10 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="多任务的概念, 程序员小黑">
-    <meta name="description" content="
-有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；
-什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏览器上网，一边在听MP3，一边在用Word赶作业">
+    <meta name="keywords" content="TCPIP协议, 程序员小黑">
+    <meta name="description" content="什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个规定,这个规定就叫协议.
+计算机之间如何沟通就像说">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>多任务的概念 | 程序员小黑</title>
+    <title>TCPIP协议 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +250,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/python.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/TCPIP.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        多任务的概念
+                        TCPIP协议
                     </div>
                 </div>
             </div>
@@ -277,12 +276,12 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Thread/" target="_blank">
-                    <span class="chip bg-color">Thread</span>
+                <a href="/tags/TCP/" target="_blank">
+                    <span class="chip bg-color">TCP</span>
                 </a>
                 
-                <a href="/tags/多任务/" target="_blank">
-                    <span class="chip bg-color">多任务</span>
+                <a href="/tags/IP/" target="_blank">
+                    <span class="chip bg-color">IP</span>
                 </a>
                 
             </div>
@@ -292,8 +291,8 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Python/" class="post-category" target="_blank">
-                        Python
+                    <a href="/categories/网络通信/" class="post-category" target="_blank">
+                        网络通信
                     </a>
                     
                 </span>
@@ -307,11 +306,54 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png" alt="多任务"></p>
-<p>有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；</p>
-<p>什么叫“<strong>多任务</strong>”呢？简单地说，就是<strong>操作系统</strong>可以<strong>同时</strong>运行多个任务。打个比方，<strong>你一边在用浏览器上网，一边在听MP3</strong>，一边在用Word赶作业，这就是多任务，至少同时有3个任务正在运行。还有很多任务悄悄地在后台同时运行着，只是桌面上没有显示而已。</p>
-<p><strong>并发</strong>：指的是<strong>任务数多余cpu核数</strong>，通过操作系统的各种任务调度算法，实现用多个任务“一起”执行（实际上总有一些任务不在执行，因为切换任务的速度相当快，看上去一起执行而已）</p>
-<p><strong>并行</strong>：指的是<strong>任务数小于等于cpu核数</strong>，即任务真的是一起执行的</p>
+                <h2 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议"></a>什么是协议</h2><p>就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个<strong>规定</strong>,这个<strong>规定就叫协议</strong>.</p>
+<h2 id="计算机之间如何沟通"><a href="#计算机之间如何沟通" class="headerlink" title="计算机之间如何沟通"></a>计算机之间如何沟通</h2><p>就像说不同语言的人沟通一样，只要有一种大家都认可都遵守的协议即可，那么这个计算机都遵守的网络通信协议叫做TCP/IP协议</p>
+<h2 id="TCP-IP协议-族"><a href="#TCP-IP协议-族" class="headerlink" title="TCP/IP协议(族)"></a>TCP/IP协议(族)</h2><p>为了把全世界的所有不同类型的计算机都连接起来，就必须规定一套全球通用的协议，为了实现互联网这个目标，互联网协议族（Internet Protocol Suite）就是通用协议标准。</p>
+<p>因为互联网协议包含了上百种协议标准，但是最重要的两个协议是TCP和IP协议，所以，大家把<strong>互联网的协议</strong>简称<strong>TCP/IP协议(族)</strong></p>
+<p><strong>TCP/IP协议(族)</strong>是互联网协议套件中的两个主要协议,提供特定功能。</p>
+<blockquote>
+<p><strong>TCP定义了应用程序如何在网络上创建通信通道</strong>。它还<strong>管理消息</strong>如何组合成较小的数据包，然后通过<strong>互联网传输并在目的地址以正确的顺序重新组装</strong>。</p>
+</blockquote>
+<blockquote>
+<p>IP定义了如何<strong>寻址和路由每个数据包以确保它到达正确的目的地</strong>。网络上的每台网关计算机都会检查此IP地址，以确定转发邮件的位置。</p>
+</blockquote>
+<h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP / IP模型"></a>TCP / IP模型</h2><p>TCP / IP功能分为四层，每层包括特定协议。</p>
+<ul>
+<li>应用层为应用程序提供标准化数据交换。其协议包括超文本传输​​协议（HTTP），文件传输协议（FTP），邮局协议3（POP3），简单邮件传输协议（SMTP）和简单网络管理协议（SNMP）。</li>
+</ul>
+<ul>
+<li>传输层负责维护整个网络的端到端通信。TCP处理主机之间的通信，并提供流量控制，多路复用和可靠性。传输协议包括TCP和用户数据报协议（UDP），有时为了特殊目的而使用TCP而不是TCP。</li>
+</ul>
+<ul>
+<li>网络层（也称为互联网层）处理分组并连接独立网络以跨网络边界传输分组。网络层协议是IP和Internet控制消息协议（ICMP），用于错误报告。</li>
+</ul>
+<ul>
+<li>物理层由仅在链路上运行的协议组成 - 链路是连接网络中节点或主机的网络组件。该层中的协议包括用于局域网（LAN）的以太网和地址解析协议（ARP）。</li>
+</ul>
+<p><img src="http://phmes812n.bkt.clouddn.com/TCPIP%E6%A0%87%E5%87%86.png" alt="协议标准"></p>
+<p>OSI七层模型只是理论,在现实过程当中用的最多的还是4层模型</p>
+<p>常用的网络协议关系图</p>
+<blockquote>
+<p>TCP</p>
+</blockquote>
+<blockquote>
+<p>UDP</p>
+</blockquote>
+<blockquote>
+<p>ICMP</p>
+</blockquote>
+<blockquote>
+<p>IGMP</p>
+</blockquote>
+<blockquote>
+<p>ARP</p>
+</blockquote>
+<blockquote>
+<p>RARP</p>
+</blockquote>
+<p><img src="http://phmes812n.bkt.clouddn.com/%E5%90%84%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="常用的网络协议"></p>
+<h2 id="如何传输"><a href="#如何传输" class="headerlink" title="如何传输"></a>如何传输</h2><p><img src="http://phmes812n.bkt.clouddn.com/%E4%BC%A0%E8%BE%93.png" alt="TCP/ip如何传输"></p>
+<h2 id="TCP-IP的优点"><a href="#TCP-IP的优点" class="headerlink" title="TCP / IP的优点"></a>TCP / IP的优点</h2><p>TCP / IP具有高度可扩展性，并且作为可路由协议，可以确定通过网络的最有效路径</p>
 
             </div>
             <hr>
@@ -333,7 +375,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/11/duo-ren-wu-de-gai-nian/" class="b-link-green">多任务的概念</a>
+                    <a href="/2018/11/11/tcpip-xie-yi/" class="b-link-green">TCPIP协议</a>
                 </p>
             </div>
         </div>
@@ -375,7 +417,7 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/11/11/tcpip-xie-yi/">
                     <div class="card-image">
@@ -389,9 +431,9 @@
                     <div class="summary">什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个规定,这个规定就叫协议.
 计算机之间如何沟通就像说</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -404,6 +446,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -422,7 +465,7 @@
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">本篇</div>
+            <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
                 <a href="/2018/11/11/duo-ren-wu-de-gai-nian/">
                     <div class="card-image">
@@ -452,7 +495,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
