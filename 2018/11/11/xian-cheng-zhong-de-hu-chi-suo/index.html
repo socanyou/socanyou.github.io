@@ -5,9 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="程序员小黑">
-    <meta name="description" content="
-title: 线程中的互斥锁date: 2018-11-11 23:03:35author: Chenimg: http://phmes812n.bkt.clouddn.com/python.jpgcategories: Pythonta">
+    <meta name="keywords" content="线程中的互斥锁, 程序员小黑">
+    <meta name="description" content="多线程开发可能遇到的问题假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。
+但是由于是多线程同时操作，有可能出现下面情况：
+
+在g_num=0时，t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +17,7 @@ title: 线程中的互斥锁date: 2018-11-11 23:03:35author: Chenimg: http://phm
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>程序员小黑</title>
+    <title>线程中的互斥锁 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -250,13 +252,13 @@ title: 线程中的互斥锁date: 2018-11-11 23:03:35author: Chenimg: http://phm
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/python.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        
+                        线程中的互斥锁
                     </div>
                 </div>
             </div>
@@ -274,7 +276,24 @@ title: 线程中的互斥锁date: 2018-11-11 23:03:35author: Chenimg: http://phm
     <div class="card">
         <div class="card-content article-info">
             
+            <div class="article-tag">
+                
+                <a href="/tags/多任务/" target="_blank">
+                    <span class="chip bg-color">多任务</span>
+                </a>
+                
+            </div>
+            
             <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/Python/" class="post-category" target="_blank">
+                        Python
+                    </a>
+                    
+                </span>
                 
 
                 <span class="post-date">
@@ -285,13 +304,7 @@ title: 线程中的互斥锁date: 2018-11-11 23:03:35author: Chenimg: http://phm
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>title: 线程中的互斥锁<br>date: 2018-11-11 23:03:35<br>author: Chen<br>img: <a href="http://phmes812n.bkt.clouddn.com/python.jpg" target="_blank" rel="noopener">http://phmes812n.bkt.clouddn.com/python.jpg</a><br>categories: Python<br>tags:</p>
-<ul>
-<li>多任务</li>
-</ul>
-<hr>
-<h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p>
+                <h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p>
 <p>但是由于是多线程同时操作，有可能出现下面情况：</p>
 <ol>
 <li><p>在g_num=0时，t1取得g_num=0。此时系统把t1调度为”sleeping”状态，把t2转换为”running”状态，t2也获得g_num=0</p>
@@ -340,11 +353,7 @@ def main():
 
 if __name__ == &#39;__main__&#39;:
     main()
-</code></pre><h2 id="如何解决多线程同时修改全局变量而造成的竞争问题"><a href="#如何解决多线程同时修改全局变量而造成的竞争问题" class="headerlink" title="如何解决多线程同时修改全局变量而造成的竞争问题"></a>如何解决多线程同时修改全局变量而造成的竞争问题</h2><p>那么就应该使用同步</p>
-<p>同步就是<strong>协同步调</strong>，按<strong>预定的先后次序进行运行</strong>。如:你说完，我再说。</p>
-<p><strong>“同”</strong>字从字面上容易理解为一起动作</p>
-<p>其实不是，<strong>“同”字应是指协同、协助、互相配合。</strong></p>
-<p>如进程、线程同步，可理解为进程或线程A和B一块配合，A执行到一定程度时要依靠B的某个结果，于是停下来，示意B运行;B执行，再将结果给A;A再继续操作。</p>
+</code></pre><h2 id="如何解决多线程同时修改全局变量而造成的竞争问题"><a href="#如何解决多线程同时修改全局变量而造成的竞争问题" class="headerlink" title="如何解决多线程同时修改全局变量而造成的竞争问题"></a>如何解决多线程同时修改全局变量而造成的竞争问题</h2><p>那么就应该使用同步<br>同步就是<strong>协同步调</strong>，按<strong>预定的先后次序进行运行</strong>。如:你说完，我再说。<br><strong>“同”</strong>字从字面上容易理解为一起动作<br>其实不是，<strong>“同”字应是指协同、协助、互相配合。</strong><br>如进程、线程同步，可理解为进程或线程A和B一块配合，A执行到一定程度时要依靠B的某个结果，于是停下来，示意B运行;B执行，再将结果给A;A再继续操作。</p>
 <h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>当多个线程几乎同时修改某一个共享数据的时候，需要进行<strong>同步控制</strong></p>
 <p>线程同步能够保证多个线程安全访问竞争资源，最简单的同步机制是引入<strong>互斥锁。</strong></p>
 <p>互斥锁为资源引入一个状态：<strong>锁定/非锁定</strong></p>
@@ -392,11 +401,20 @@ def main():
 
 if __name__ == &#39;__main__&#39;:
     main()
+
 </code></pre><p><strong>上锁解锁过程</strong></p>
 <blockquote>
 <ol>
 <li>当一个线程调用锁的acquire()方法获得锁时，锁就进入“locked”状态。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
 <li>每次只有一个线程可以获得锁。如果此时另一个线程试图获得这个锁，该线程就会变为“blocked”状态，称为“阻塞”，直到拥有锁的线程调用锁的release()方法释放锁之后，锁进入“unlocked”状态。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
 <li>线程调度程序从处于同步阻塞状态的线程中选择一个来获得锁，并使得该线程进入运行（running）状态。</li>
 </ol>
 </blockquote>
@@ -430,7 +448,7 @@ if __name__ == &#39;__main__&#39;:
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/11/duo-ren-wu-zhong-tong-bu-de-gai-nian/" class="b-link-green"></a>
+                    <a href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/" class="b-link-green">线程中的互斥锁</a>
                 </p>
             </div>
         </div>
@@ -474,31 +492,44 @@ if __name__ == &#39;__main__&#39;:
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/2018/11/11/duo-ren-wu-zhong-tong-bu-de-gai-nian/">
+                <a href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/">
                     <div class="card-image">
                         
+                        <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="线程中的互斥锁">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
+                        <span class="card-title">线程中的互斥锁</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-title: 线程中的互斥锁date: 2018-11-11 23:03:35author: Chenimg: http://phmes812n.bkt.clouddn.com/python.jpgcategories: Pythonta</div>
+                    <div class="summary">多线程开发可能遇到的问题假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。
+但是由于是多线程同时操作，有可能出现下面情况：
+
+在g_num=0时，t</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Chen
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/多任务/" target="_blank">
+                        <span class="chip bg-color">多任务</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
