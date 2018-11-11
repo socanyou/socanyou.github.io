@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-11T07:45:49.304Z</updated>
+  <updated>2018-11-11T12:36:41.420Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,39 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>TCPIP协议</title>
+    <title></title>
     <link href="https://codinglife.site/2018/11/11/tcpip-xie-yi/"/>
     <id>https://codinglife.site/2018/11/11/tcpip-xie-yi/</id>
-    <published>2018-11-11T07:44:17.000Z</published>
-    <updated>2018-11-11T07:45:49.304Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;什么是协议&quot;&gt;&lt;a href=&quot;#什么是协议&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="网络通信" scheme="https://codinglife.site/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
-    
-    
-      <category term="TCP" scheme="https://codinglife.site/tags/TCP/"/>
-    
-      <category term="IP" scheme="https://codinglife.site/tags/IP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/"/>
-    <id>https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/</id>
-    <published>2018-11-10T18:49:21.233Z</published>
-    <updated>2018-11-11T12:34:07.197Z</updated>
+    <published>2018-11-11T07:44:17.494Z</published>
+    <updated>2018-11-11T12:36:41.420Z</updated>
     
     <summary type="html">
     
@@ -58,12 +30,41 @@
         
         
           &lt;hr&gt;
-&lt;p&gt;title: 多任务的概念&lt;br&gt;date: 2018-11-11 02:49:21&lt;br&gt;author: Chen&lt;br&gt;img: &lt;a href=&quot;http://phmes812n.bkt.clouddn.com/python.jpg&quot;
+&lt;p&gt;title: TCPIP协议&lt;br&gt;date: 2018-11-11 15:44:17&lt;br&gt;author: Chen&lt;br&gt;img: &lt;a href=&quot;http://phmes812n.bkt.clouddn.com/TCPIP.jpg&quot;
         
       
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>多任务的概念</title>
+    <link href="https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/"/>
+    <id>https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/</id>
+    <published>2018-11-10T18:49:21.000Z</published>
+    <updated>2018-11-11T12:36:33.123Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png&quot; alt=&quot;多任务&quot;&gt;&lt;/p&gt;
+&lt;p&gt;有很多的场景中的事情是同时进行的，比如开车的时候
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Thread" scheme="https://codinglife.site/tags/Thread/"/>
+    
+      <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
     
   </entry>
   
