@@ -12,7 +12,9 @@
       
       <categories>
           
-          <category> Python,GIL </category>
+          <category> Python </category>
+          
+          <category> GIL </category>
           
       </categories>
       
