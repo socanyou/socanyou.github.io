@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>Python中的GIL问题</title>
+      <link href="/2018/11/12/python-zhong-de-gil-wen-ti/"/>
+      <url>/2018/11/12/python-zhong-de-gil-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是GIL"><a href="#什么是GIL" class="headerlink" title="什么是GIL"></a>什么是GIL</h1><p>简单来说，Python全局解释器锁或GIL是一个互斥锁，它只允许一个线程来控制Python解释器<br>这意味着在任何时间点只有一个线程可以处于执行状态。执行单线程程序的开发人员看不到GIL的影响，但它可能是CPU绑定和<strong>多线程代码中的性能瓶颈</strong><br>由于即使在具有多个CPU核心的多线程体系结构中，GIL一次只允许一个线程执行，因此GIL已经赢得了Python的“臭名昭着”特性的声誉。<br>Python官网对GIL的解释:</p><blockquote><p>在CPython中，全局解释器锁（GIL）是一个互斥锁，用于保护对Python对象的访问，<strong>防止多个线程同时执行Python字节码</strong>。这种锁是必要的，主要是因为CPython的<strong>内存管理不是线程安全</strong>的。（但是，由于GIL存在，其他功能已经增长，取决于它强制执行的保证。</p></blockquote><h1 id="GIL为Python解决了什么问题？"><a href="#GIL为Python解决了什么问题？" class="headerlink" title="GIL为Python解决了什么问题？"></a>GIL为Python解决了什么问题？</h1><pre><code>import sysa = []        # 创建一个列表对象b = a        # 将列表对象的引用指向bsys.getrefcount(a)        # 查看a的引用计数</code></pre><p>回到GIL的问题:<br>问题是这个引用计数变量需要保护竞争条件，其中两个线程同时增加或减少其值。如果发生这种情况，它可能会导致从未释放的泄漏内存，或者更糟糕的是，在对该对象的引用仍然存在时错误地释放内存。这可能会导致Python程序中出现崩溃或其他“怪异”错误<br>问题是，这个引用计数变量需要防止两个线程同时增加或减少对其值的资源竞争。如果发生这种情况，它可能导致永远不会释放的泄漏内存，或者更糟糕的是，在仍然存在对该对象的引用时错误地释放内存。这可能会导致Python程序崩溃或其他“奇怪”的错误。<br>通过向跨线程共享的所有数据结构添加锁，可以保持此引用计数变量的安全，从而不会对它们进行不一致的修改。<br>但是为每个对象或对象组添加一个锁意味着会存在多个锁，这可能会导致另一个问题-<strong>死锁</strong>（死锁只有在有多个锁的情况下才会发生）。另一个副作用是由于重复获取和释放锁而导致性能下降。<br>GIL是解释器本身的单个锁，它增加了一条规则，即执行任何Python字节码都需要获取解释器锁。这可以防止死锁（因为只有一个锁）并且不会引入太多的性能开销。但它有效地使任何受CPU限制的Python程序都是单线程的。<br>GIL虽然被解释器用于其他语言（如Ruby），但并不是解决此问题的唯一方法。有些语言通过使用除引用计数之外的方法（例如垃圾收集）来避免GIL对线程安全内存管理的要求。<br>另一方面，这意味着这些语言通常需要通过添加其他性能提升功能（如JIT编译器）来弥补GIL单线程性能优势的损失。</p><h1 id="为什么选择GIL作为解决方案？"><a href="#为什么选择GIL作为解决方案？" class="headerlink" title="为什么选择GIL作为解决方案？"></a>为什么选择GIL作为解决方案？</h1><p>自从操作系统没有线程概念以来，Python就已存在。Python的设计易于使用，以便更快地开发，越来越多的开发人员开始使用它。<br>GIL易于实现，很容易添加到Python中。它为单线程程序提供了性能提升，因为只需要管理一个锁。</p><h1 id="对多线程Python程序的影响"><a href="#对多线程Python程序的影响" class="headerlink" title="对多线程Python程序的影响"></a>对多线程Python程序的影响</h1><p>当您查看典型的Python程序或任何计算机程序时，它们在性能上受CPU限制的程序与受I / O限制的程序之间存在差异。<br>CPU绑定程序是那些将CPU推向极限的程序。这包括进行数学计算的程序，如矩阵乘法，搜索，图像处理等。<br>I/O绑定程序是花费时间等待输入/输出的程序，可以来自用户，文件，数据库，网络等.I / O绑定程序有时需要等待大量时间，直到它们由于源可能需要在输入/输出准备好之前进行自己的处理，例如，用户考虑输入到输入提示中的内容或在其中运行的数据库查询，因此从源获取他们需要的内容自己的过程。</p><p>下面是一个简单的使用CPU执行倒计时的程序</p><pre><code># single_threaded.pyimport timefrom threading import ThreadCOUNT = 50000000def countdown(n):    while n&gt;0:        n -= 1start = time.time()countdown(COUNT)end = time.time()print(&#39;Time taken in seconds -&#39;, end - start)</code></pre><p>它的运行时间:</p><blockquote><p>Time taken in seconds - 2.4703943729400635</p></blockquote><p>修改上面的代码,使用多线程执行</p><pre><code>import timefrom threading import ThreadCOUNT = 50000000def countdown(n):    while n&gt;0:        n -= 1t1 = Thread(target=countdown, args=(COUNT//2,))t2 = Thread(target=countdown, args=(COUNT//2,))start = time.time()t1.start()t2.start()t1.join()t2.join()end = time.time()print(&#39;Time taken in seconds -&#39;, end - start)</code></pre><p>执行时间:</p><blockquote><p>Time taken in seconds - 2.581101655960083</p></blockquote><p>两个版本的完成时间几乎相同。在多线程版本中，GIL<strong>阻止</strong>了CPU绑定<strong>线程并行执行</strong>。<br>GIL对I/O绑定多线程程序的性能影响不大，因为线程在等待I/O操作时共享锁。<br>但是线程完全受CPU限制的程序，例如，使用线程处理部分图像的程序，不仅会因锁而变成单线程，而且还会看到执行时间的增加，如上例所示，与编写为完全单线程的场景相比。这种增加是由锁添加的获取和释放开销的结果。</p><h1 id="如何解决Python的GIL问题"><a href="#如何解决Python的GIL问题" class="headerlink" title="如何解决Python的GIL问题"></a>如何解决Python的GIL问题</h1><p>###1: 使用多进程<br>您可以使用多个进程而不是线程。每个Python进程都有自己的Python解释器和内存空间，因此GIL不会成为问题。Python有一个multiprocessing模块，可以让我们像这样轻松地创建进程.<br>下面的代码使用多进程完成倒计时</p><pre><code>from multiprocessing import Poolimport timeCOUNT = 50000000def countdown(n):    while n&gt;0:        n -= 1if __name__ == &#39;__main__&#39;:    pool = Pool(processes=2)    start = time.time()    r1 = pool.apply_async(countdown, [COUNT//2])    r2 = pool.apply_async(countdown, [COUNT//2])    pool.close()    pool.join()    end = time.time()    print(&#39;Time taken in seconds -&#39;, end - start)</code></pre><p>运行时间:</p><blockquote><p>Time taken in seconds - 1.7246742248535156<br>是不是快了很多.</p></blockquote><h3 id="2-使用其他Python解释器"><a href="#2-使用其他Python解释器" class="headerlink" title="2:使用其他Python解释器"></a>2:使用其他Python解释器</h3><p>Python有多个解释器实现。分别用C，Java，C＃和Python编写的CPython，Jython，IronPython和PyPy是最受欢迎的。<strong>GIL仅存在于CPython的原始Python实现中</strong>。如果您的程序及其库可用于其他实现之一，那么您也可以尝试它们。</p><h3 id="3-将多线程处理的业务用其他语言实现"><a href="#3-将多线程处理的业务用其他语言实现" class="headerlink" title="3:将多线程处理的业务用其他语言实现"></a>3:将多线程处理的业务用其他语言实现</h3><p>在业务中使用多线程的模块使用其他语言进行实现,然后使用Python调用,这也就是Python被称为<strong>胶水语言</strong>的原因.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python,GIL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> GIL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>线程中的互斥锁</title>
       <link href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/"/>
       <url>/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/</url>

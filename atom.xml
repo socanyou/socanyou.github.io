@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-11T15:31:42.158Z</updated>
+  <updated>2018-11-12T15:34:07.218Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python中的GIL问题</title>
+    <link href="https://codinglife.site/2018/11/12/python-zhong-de-gil-wen-ti/"/>
+    <id>https://codinglife.site/2018/11/12/python-zhong-de-gil-wen-ti/</id>
+    <published>2018-11-12T14:42:11.000Z</published>
+    <updated>2018-11-12T15:34:07.218Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是GIL&quot;&gt;&lt;a href=&quot;#什么是GIL&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python,GIL" scheme="https://codinglife.site/categories/Python-GIL/"/>
+    
+    
+      <category term="GIL" scheme="https://codinglife.site/tags/GIL/"/>
+    
+  </entry>
   
   <entry>
     <title>线程中的互斥锁</title>
