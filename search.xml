@@ -45,24 +45,50 @@
     </entry>
     
     <entry>
-      <title></title>
+      <title>线程中的互斥锁</title>
       <link href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/"/>
       <url>/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/</url>
       
-        <content type="html"><![CDATA[<hr><p>title: 线程中的互斥锁<br>date: 2018-11-11 23:03:35<br>author: Chen<br>img: <a href="http://phmes812n.bkt.clouddn.com/python.jpg" target="_blank" rel="noopener">http://phmes812n.bkt.clouddn.com/python.jpg</a><br>categories: Python<br>tags:</p><ul><li>多任务</li></ul><hr><h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p><p>但是由于是多线程同时操作，有可能出现下面情况：</p><ol><li><p>在g_num=0时，t1取得g_num=0。此时系统把t1调度为”sleeping”状态，把t2转换为”running”状态，t2也获得g_num=0</p></li><li><p>然后t2对得到的值进行加1并赋给g_num，使得g_num=1</p></li><li><p>然后系统又把t2调度为”sleeping”，把t1转为”running”。线程t1又把它之前得到的0加1后赋值给g_num。</p></li><li><p>这样导致虽然t1和t2都对g_num加1，但结果仍然是g_num=1</p></li></ol><pre><code>from threading import Threadfrom time import sleep__author__ = &#39;Chen&#39;__date__ = &#39;2018/11/4 15:58&#39;# 多线程在使用全局变量的时候会引发资源竞争问题g_num = 0       # 全局变量def test1(num):    global g_num    for i in range(num):        g_num += 1    print(&#39;test1方法中全局变量的值为:%d&#39;%g_num)def test2(num):    global g_num    for i in range(num):        g_num += 1    print(&quot;test2方法中全局变量的值为:%d&quot;%g_num)def main():    t1 = Thread(target=test1,args=(1000000,))    t2 = Thread(target=test2,args=(1000000,))    t1.start()    t2.start()    sleep(5)    print(&quot;main方法内全局变量的值为:%d&quot;%g_num)if __name__ == &#39;__main__&#39;:    main()</code></pre><h2 id="如何解决多线程同时修改全局变量而造成的竞争问题"><a href="#如何解决多线程同时修改全局变量而造成的竞争问题" class="headerlink" title="如何解决多线程同时修改全局变量而造成的竞争问题"></a>如何解决多线程同时修改全局变量而造成的竞争问题</h2><p>那么就应该使用同步<br>同步就是<strong>协同步调</strong>，按<strong>预定的先后次序进行运行</strong>。如:你说完，我再说。<br><strong>“同”</strong>字从字面上容易理解为一起动作<br>其实不是，<strong>“同”字应是指协同、协助、互相配合。</strong><br>如进程、线程同步，可理解为进程或线程A和B一块配合，A执行到一定程度时要依靠B的某个结果，于是停下来，示意B运行;B执行，再将结果给A;A再继续操作。</p><h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>当多个线程几乎同时修改某一个共享数据的时候，需要进行<strong>同步控制</strong></p><p>线程同步能够保证多个线程安全访问竞争资源，最简单的同步机制是引入<strong>互斥锁。</strong></p><p>互斥锁为资源引入一个状态：<strong>锁定/非锁定</strong></p><p><strong>某个线程要更改共享数据时，先将其锁定，此时资源的状态为“锁定”，其他线程不能更改；直到该线程释放资源，将资源的状态变成“非锁定”，其他的线程才能再次锁定该资源。互斥锁保证了每次只有一个线程进行写入操作，从而保证了多线程情况下数据的正确性。</strong></p><p><strong>使用互斥锁解决上面代码中全局变量的资源竞争问题</strong></p><pre><code>from threading import Lock, Threadfrom time import sleep__author__ = &#39;Chen&#39;__date__ = &#39;2018/11/4 16:27&#39;# 上锁的原则:上锁的代码越少越好g_num = 0  # 定义一个全局变量mutex = Lock()  # 创建一个互斥锁,默认是没有上锁的def test1(num):    global g_num    for i in range(num):        mutex.acquire()  # 上锁        g_num += 1        mutex.release()  # 解锁    print(&#39;在test2()方法中全局变量的值%d&#39; % g_num)def test2(num):    global g_num    for i in range(num):        mutex.acquire()  # 上锁        g_num += 1        mutex.release()  # 解锁    print(&#39;在test2()方法中全局变量的值%d&#39; % g_num)def main():    # 创建线程对象(并没有创建线程哦)    t1 = Thread(target=test1, args=(100000,))    t2 = Thread(target=test2, args=(100000,))    t1.start()    t2.start()    sleep(2)    print(&#39;main方法中全局变量的值为:%d&#39; % g_num)if __name__ == &#39;__main__&#39;:    main()</code></pre><p><strong>上锁解锁过程</strong></p><blockquote><ol><li>当一个线程调用锁的acquire()方法获得锁时，锁就进入“locked”状态。</li></ol></blockquote><blockquote><ol start="2"><li>每次只有一个线程可以获得锁。如果此时另一个线程试图获得这个锁，该线程就会变为“blocked”状态，称为“阻塞”，直到拥有锁的线程调用锁的release()方法释放锁之后，锁进入“unlocked”状态。</li></ol></blockquote><blockquote><ol start="3"><li>线程调度程序从处于同步阻塞状态的线程中选择一个来获得锁，并使得该线程进入运行（running）状态。</li></ol></blockquote><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>锁的好处: </p><ul><li>确保了某段关键代码只能由一个线程从头到尾完整地执行</li></ul><p>锁的坏处:</p><ul><li>阻止了多线程并发执行，包含锁的某段代码实际上只能以单线程模式执行，效率就大大地下降了</li><li>由于可以存在多个锁，不同的线程持有不同的锁，并试图获取对方持有的锁时，可能会造成死锁</li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p><p>但是由于是多线程同时操作，有可能出现下面情况：</p><ol><li><p>在g_num=0时，t1取得g_num=0。此时系统把t1调度为”sleeping”状态，把t2转换为”running”状态，t2也获得g_num=0</p></li><li><p>然后t2对得到的值进行加1并赋给g_num，使得g_num=1</p></li><li><p>然后系统又把t2调度为”sleeping”，把t1转为”running”。线程t1又把它之前得到的0加1后赋值给g_num。</p></li><li><p>这样导致虽然t1和t2都对g_num加1，但结果仍然是g_num=1</p></li></ol><pre><code>from threading import Threadfrom time import sleep__author__ = &#39;Chen&#39;__date__ = &#39;2018/11/4 15:58&#39;# 多线程在使用全局变量的时候会引发资源竞争问题g_num = 0       # 全局变量def test1(num):    global g_num    for i in range(num):        g_num += 1    print(&#39;test1方法中全局变量的值为:%d&#39;%g_num)def test2(num):    global g_num    for i in range(num):        g_num += 1    print(&quot;test2方法中全局变量的值为:%d&quot;%g_num)def main():    t1 = Thread(target=test1,args=(1000000,))    t2 = Thread(target=test2,args=(1000000,))    t1.start()    t2.start()    sleep(5)    print(&quot;main方法内全局变量的值为:%d&quot;%g_num)if __name__ == &#39;__main__&#39;:    main()</code></pre><h2 id="如何解决多线程同时修改全局变量而造成的竞争问题"><a href="#如何解决多线程同时修改全局变量而造成的竞争问题" class="headerlink" title="如何解决多线程同时修改全局变量而造成的竞争问题"></a>如何解决多线程同时修改全局变量而造成的竞争问题</h2><p>那么就应该使用同步<br>同步就是<strong>协同步调</strong>，按<strong>预定的先后次序进行运行</strong>。如:你说完，我再说。<br><strong>“同”</strong>字从字面上容易理解为一起动作<br>其实不是，<strong>“同”字应是指协同、协助、互相配合。</strong><br>如进程、线程同步，可理解为进程或线程A和B一块配合，A执行到一定程度时要依靠B的某个结果，于是停下来，示意B运行;B执行，再将结果给A;A再继续操作。</p><h3 id="互斥锁"><a href="#互斥锁" class="headerlink" title="互斥锁"></a>互斥锁</h3><p>当多个线程几乎同时修改某一个共享数据的时候，需要进行<strong>同步控制</strong><br>线程同步能够保证多个线程安全访问竞争资源，最简单的同步机制是引入<strong>互斥锁。</strong><br>互斥锁为资源引入一个状态：<strong>锁定/非锁定</strong><br><strong>某个线程要更改共享数据时，先将其锁定，此时资源的状态为“锁定”，其他线程不能更改；直到该线程释放资源，将资源的状态变成“非锁定”，其他的线程才能再次锁定该资源。互斥锁保证了每次只有一个线程进行写入操作，从而保证了多线程情况下数据的正确性。</strong><br><strong>使用互斥锁解决上面代码中全局变量的资源竞争问题</strong></p><pre><code>from threading import Lock, Threadfrom time import sleep__author__ = &#39;Chen&#39;__date__ = &#39;2018/11/4 16:27&#39;# 上锁的原则:上锁的代码越少越好g_num = 0  # 定义一个全局变量mutex = Lock()  # 创建一个互斥锁,默认是没有上锁的def test1(num):    global g_num    for i in range(num):        mutex.acquire()  # 上锁        g_num += 1        mutex.release()  # 解锁    print(&#39;在test2()方法中全局变量的值%d&#39; % g_num)def test2(num):    global g_num    for i in range(num):        mutex.acquire()  # 上锁        g_num += 1        mutex.release()  # 解锁    print(&#39;在test2()方法中全局变量的值%d&#39; % g_num)def main():    # 创建线程对象(并没有创建线程哦)    t1 = Thread(target=test1, args=(100000,))    t2 = Thread(target=test2, args=(100000,))    t1.start()    t2.start()    sleep(2)    print(&#39;main方法中全局变量的值为:%d&#39; % g_num)if __name__ == &#39;__main__&#39;:    main()</code></pre><p><strong>上锁解锁过程</strong></p><blockquote><ol><li>当一个线程调用锁的acquire()方法获得锁时，锁就进入“locked”状态。</li></ol></blockquote><blockquote><ol start="2"><li>每次只有一个线程可以获得锁。如果此时另一个线程试图获得这个锁，该线程就会变为“blocked”状态，称为“阻塞”，直到拥有锁的线程调用锁的release()方法释放锁之后，锁进入“unlocked”状态。</li></ol></blockquote><blockquote><ol start="3"><li>线程调度程序从处于同步阻塞状态的线程中选择一个来获得锁，并使得该线程进入运行（running）状态。</li></ol></blockquote><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>锁的好处: </p><ul><li>确保了某段关键代码只能由一个线程从头到尾完整地执行</li><li><p>锁的坏处:</p></li><li><p>阻止了多线程并发执行，包含锁的某段代码实际上只能以单线程模式执行，效率就大大地下降了</p></li><li>由于可以存在多个锁，不同的线程持有不同的锁，并试图获取对方持有的锁时，可能会造成死锁</li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 多任务 </tag>
+            
+        </tags>
       
     </entry>
     
     <entry>
-      <title></title>
+      <title>TCPIP协议</title>
       <link href="/2018/11/11/tcpip-xie-yi/"/>
       <url>/2018/11/11/tcpip-xie-yi/</url>
       
-        <content type="html"><![CDATA[<hr><p>title: TCPIP协议<br>date: 2018-11-11 15:44:17<br>author: Chen<br>img: <a href="http://phmes812n.bkt.clouddn.com/TCPIP.jpg" target="_blank" rel="noopener">http://phmes812n.bkt.clouddn.com/TCPIP.jpg</a><br>top: true<br>categories: 网络通信<br>tags:</p><ul><li>TCP</li><li>IP</li></ul><hr><h2 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议"></a>什么是协议</h2><p>就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个<strong>规定</strong>,这个<strong>规定就叫协议</strong>.</p><h2 id="计算机之间如何沟通"><a href="#计算机之间如何沟通" class="headerlink" title="计算机之间如何沟通"></a>计算机之间如何沟通</h2><p>就像说不同语言的人沟通一样，只要有一种大家都认可都遵守的协议即可，那么这个计算机都遵守的网络通信协议叫做TCP/IP协议</p><h2 id="TCP-IP协议-族"><a href="#TCP-IP协议-族" class="headerlink" title="TCP/IP协议(族)"></a>TCP/IP协议(族)</h2><p>为了把全世界的所有不同类型的计算机都连接起来，就必须规定一套全球通用的协议，为了实现互联网这个目标，互联网协议族（Internet Protocol Suite）就是通用协议标准。</p><p>因为互联网协议包含了上百种协议标准，但是最重要的两个协议是TCP和IP协议，所以，大家把<strong>互联网的协议</strong>简称<strong>TCP/IP协议(族)</strong></p><p><strong>TCP/IP协议(族)</strong>是互联网协议套件中的两个主要协议,提供特定功能。</p><blockquote><p><strong>TCP定义了应用程序如何在网络上创建通信通道</strong>。它还<strong>管理消息</strong>如何组合成较小的数据包，然后通过<strong>互联网传输并在目的地址以正确的顺序重新组装</strong>。</p></blockquote><blockquote><p>IP定义了如何<strong>寻址和路由每个数据包以确保它到达正确的目的地</strong>。网络上的每台网关计算机都会检查此IP地址，以确定转发邮件的位置。</p></blockquote><h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP / IP模型"></a>TCP / IP模型</h2><p>TCP / IP功能分为四层，每层包括特定协议。</p><ul><li>应用层为应用程序提供标准化数据交换。其协议包括超文本传输​​协议（HTTP），文件传输协议（FTP），邮局协议3（POP3），简单邮件传输协议（SMTP）和简单网络管理协议（SNMP）。</li></ul><ul><li>传输层负责维护整个网络的端到端通信。TCP处理主机之间的通信，并提供流量控制，多路复用和可靠性。传输协议包括TCP和用户数据报协议（UDP），有时为了特殊目的而使用TCP而不是TCP。</li></ul><ul><li>网络层（也称为互联网层）处理分组并连接独立网络以跨网络边界传输分组。网络层协议是IP和Internet控制消息协议（ICMP），用于错误报告。</li></ul><ul><li>物理层由仅在链路上运行的协议组成 - 链路是连接网络中节点或主机的网络组件。该层中的协议包括用于局域网（LAN）的以太网和地址解析协议（ARP）。</li></ul><p><img src="http://phmes812n.bkt.clouddn.com/TCPIP%E6%A0%87%E5%87%86.png" alt="协议标准"></p><p>OSI七层模型只是理论,在现实过程当中用的最多的还是4层模型</p><p>常用的网络协议以及关系图<br>常用的网络协议包括:</p><blockquote><p>TCP,UDP,ICMP,IGMP,ARP,RARP</p></blockquote><p><img src="http://phmes812n.bkt.clouddn.com/%E5%90%84%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="常用的网络协议"></p><h2 id="如何传输"><a href="#如何传输" class="headerlink" title="如何传输"></a>如何传输</h2><p><img src="http://phmes812n.bkt.clouddn.com/%E4%BC%A0%E8%BE%93.png" alt="TCP/ip如何传输"></p><h2 id="TCP-IP的优点"><a href="#TCP-IP的优点" class="headerlink" title="TCP / IP的优点"></a>TCP / IP的优点</h2><p>TCP / IP具有高度可扩展性，并且作为可路由协议，可以确定通过网络的最有效路径</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议"></a>什么是协议</h2><p>就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个<strong>规定</strong>,这个<strong>规定就叫协议</strong>.</p><h2 id="计算机之间如何沟通"><a href="#计算机之间如何沟通" class="headerlink" title="计算机之间如何沟通"></a>计算机之间如何沟通</h2><p>就像说不同语言的人沟通一样，只要有一种大家都认可都遵守的协议即可，那么这个计算机都遵守的网络通信协议叫做TCP/IP协议</p><h2 id="TCP-IP协议-族"><a href="#TCP-IP协议-族" class="headerlink" title="TCP/IP协议(族)"></a>TCP/IP协议(族)</h2><p>为了把全世界的所有不同类型的计算机都连接起来，就必须规定一套全球通用的协议，为了实现互联网这个目标，互联网协议族（Internet Protocol Suite）就是通用协议标准。</p><p>因为互联网协议包含了上百种协议标准，但是最重要的两个协议是TCP和IP协议，所以，大家把<strong>互联网的协议</strong>简称<strong>TCP/IP协议(族)</strong></p><p><strong>TCP/IP协议(族)</strong>是互联网协议套件中的两个主要协议,提供特定功能。</p><blockquote><p><strong>TCP定义了应用程序如何在网络上创建通信通道</strong>。它还<strong>管理消息</strong>如何组合成较小的数据包，然后通过<strong>互联网传输并在目的地址以正确的顺序重新组装</strong>。</p></blockquote><blockquote><p>IP定义了如何<strong>寻址和路由每个数据包以确保它到达正确的目的地</strong>。网络上的每台网关计算机都会检查此IP地址，以确定转发邮件的位置。</p></blockquote><h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP / IP模型"></a>TCP / IP模型</h2><p>TCP / IP功能分为四层，每层包括特定协议。</p><ul><li>应用层为应用程序提供标准化数据交换。其协议包括超文本传输​​协议（HTTP），文件传输协议（FTP），邮局协议3（POP3），简单邮件传输协议（SMTP）和简单网络管理协议（SNMP）。</li><li>传输层负责维护整个网络的端到端通信。TCP处理主机之间的通信，并提供流量控制，多路复用和可靠性。传输协议包括TCP和用户数据报协议（UDP），有时为了特殊目的而使用TCP而不是TCP。</li><li>网络层（也称为互联网层）处理分组并连接独立网络以跨网络边界传输分组。网络层协议是IP和Internet控制消息协议（ICMP），用于错误报告。</li><li>物理层由仅在链路上运行的协议组成 - 链路是连接网络中节点或主机的网络组件。该层中的协议包括用于局域网（LAN）的以太网和地址解析协议（ARP）。</li></ul><p><img src="http://phmes812n.bkt.clouddn.com/TCPIP%E6%A0%87%E5%87%86.png" alt="协议标准"></p><p>OSI七层模型只是理论,在现实过程当中用的最多的还是4层模型<br>常用的网络协议以及关系图<br>常用的网络协议包括:</p><blockquote><p>TCP,UDP,ICMP,IGMP,ARP,RARP</p></blockquote><p><img src="http://phmes812n.bkt.clouddn.com/%E5%90%84%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="常用的网络协议"></p><h2 id="如何传输"><a href="#如何传输" class="headerlink" title="如何传输"></a>如何传输</h2><p><img src="http://phmes812n.bkt.clouddn.com/%E4%BC%A0%E8%BE%93.png" alt="TCP/ip如何传输"></p><h2 id="TCP-IP的优点"><a href="#TCP-IP的优点" class="headerlink" title="TCP / IP的优点"></a>TCP / IP的优点</h2><p>TCP / IP具有高度可扩展性，并且作为可路由协议，可以确定通过网络的最有效路径</p>]]></content>
       
       
+      <categories>
+          
+          <category> 网络通信 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> TCP </tag>
+            
+            <tag> IP </tag>
+            
+        </tags>
       
     </entry>
     
@@ -83,9 +109,9 @@
       
         <tags>
             
-            <tag> Thread </tag>
-            
             <tag> 多任务 </tag>
+            
+            <tag> Thread </tag>
             
         </tags>
       

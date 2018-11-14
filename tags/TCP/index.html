@@ -5,10 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="多任务的概念, 程序员小黑">
-    <meta name="description" content="
-有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；
-什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏览器上网，一边在听MP3，一边在用Word赶作业">
+    <meta name="keywords" content="标签: TCP, 程序员小黑">
+    <meta name="description" content="标签: TCP | 程序员小黑">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>多任务的概念 | 程序员小黑</title>
+    <title>标签: TCP | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -249,232 +247,131 @@
     </nav>
 </header>
 
-
-
-<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/python.jpg')">
+<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col s12 m12 l12">
+            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
                 <div class="brand">
-                    <div class="description center-align post-title">
-                        多任务的概念
+                    <div class="title center-align">
+                    
+                        CodingLife
+                    
+                    </div>
+
+                    <div class="description center-align">
+                    
+                        有趣的灵魂-_-
+                    
                     </div>
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
 
+<script>
+// Dynamically switch banner pictures every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
 
-
-<main class="container content">
+<main class="content">
 
     
-    <!-- 文章内容详情 -->
-<div id="artDetail">
+
+<div id="tags" class="container chip-container">
     <div class="card">
-        <div class="card-content article-info">
-            
-            <div class="article-tag">
+        <div class="card-content">
+            <div class="tag-title center-align">文章标签</div>
+            <div class="tag-chips">
                 
-                <a href="/tags/多任务/" target="_blank">
-                    <span class="chip bg-color">多任务</span>
+                
+                <a href="/tags/TCP/" title="TCP: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-active " data-tagname="TCP" style="background-color: #F9EBEA;">TCP
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
                 
-                <a href="/tags/Thread/" target="_blank">
-                    <span class="chip bg-color">Thread</span>
+                
+                <a href="/tags/IP/" title="IP: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="IP" style="background-color: #F5EEF8;">IP
+                        <span class="tag-length">1</span>
+                    </span>
                 </a>
                 
-            </div>
-            
-            <div class="post-info">
                 
-                <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/Python/" class="post-category" target="_blank">
-                        Python
-                    </a>
-                    
-                </span>
+                <a href="/tags/多任务/" title="多任务: 2">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="多任务" style="background-color: #D5F5E3;">多任务
+                        <span class="tag-length">2</span>
+                    </span>
+                </a>
                 
-
-                <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-11
-                </span>
-            </div>
-        </div>
-        <hr>
-        <div class="card-content article-card-content">
-            <div id="articleContent">
-                <p><img src="http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png" alt="多任务"></p>
-<p>有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；</p>
-<p>什么叫“<strong>多任务</strong>”呢？简单地说，就是<strong>操作系统</strong>可以<strong>同时</strong>运行多个任务。打个比方，<strong>你一边在用浏览器上网，一边在听MP3</strong>，一边在用Word赶作业，这就是多任务，至少同时有3个任务正在运行。还有很多任务悄悄地在后台同时运行着，只是桌面上没有显示而已。</p>
-<p><strong>并发</strong>：指的是<strong>任务数多余cpu核数</strong>，通过操作系统的各种任务调度算法，实现用多个任务“一起”执行（实际上总有一些任务不在执行，因为切换任务的速度相当快，看上去一起执行而已）</p>
-<p><strong>并行</strong>：指的是<strong>任务数小于等于cpu核数</strong>，即任务真的是一起执行的</p>
-
-            </div>
-            <hr>
-
-            
-
-            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
-
-<div id="article-share">
-    
-    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
-    
-</div>
-
-<script src="/libs/share/js/social-share.min.js"></script>
-
-            <div class="reprint">
-                <p>
-                    <span class="reprint-tip">转载请注明: </span>
-                    <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
-                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/11/duo-ren-wu-de-gai-nian/" class="b-link-green">多任务的概念</a>
-                </p>
+                
+                <a href="/tags/GIL/" title="GIL: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="GIL" style="background-color: #E8F8F5;">GIL
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Thread/" title="Thread: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default " data-tagname="Thread" style="background-color: #FEF9E7;">Thread
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
-
-    
-
-    
-
-    
-
-    
-    <div class="livere-card card" data-aos="fade-up">
-    <!-- 来必力City版安装代码 -->
-    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80MDk0NC8xNzQ2OQ==">
-        <script type="text/javascript">
-            (function (d, s) {
-                let j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') {
-                    return;
-                }
-
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
-    </div>
-    <!-- City版安装代码已完成 -->
 </div>
-    
 
-    
-
-<article id="prenext-posts" class="prev-next articles">
-    <div class="row article-row">
+    <div class="container">
         
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
-            <div class="card">
-                <a href="/2018/11/11/tcpip-xie-yi/">
-                    <div class="card-image">
-                        
-                        <img src="http://phmes812n.bkt.clouddn.com/TCPIP.jpg" class="responsive-img" alt="TCPIP协议">
-                        
-                        <span class="card-title">TCPIP协议</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个规定,这个规定就叫协议.
-计算机之间如何沟通就像说</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/网络通信/" class="post-category" target="_blank">
+
+        <article>
+            <div class="row tags-posts">
+                
+                
+                <div class="article tag-post col s12 m6 l4" data-tags="TCP, IP" data-aos="fade-up">
+                    <div class="card">
+                        <a href="/2018/11/11/tcpip-xie-yi/">
+                            <div class="card-image tag-image">
+                                
+                                <img src="http://phmes812n.bkt.clouddn.com/TCPIP.jpg" class="responsive-img" alt="TCPIP协议">
+                                
+                                <span class="card-title">TCPIP协议</span>
+                            </div>
+                        </a>
+                        <div class="card-content article-content">
+                            <div class="publish-info">
+                                <span class="publish-date">
+                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
+                                </span>
+                                <span class="publish-author">
+                                    
+                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/网络通信/" class="post-category" target="_blank">
                                     网络通信
-                                </a>
-                            
-                            
-                        </span>
+                                    </a>
+                                    
+                                    
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TCP/" target="_blank">
-                        <span class="chip bg-color">TCP</span>
-                    </a>
-                    
-                    <a href="/tags/IP/" target="_blank">
-                        <span class="chip bg-color">IP</span>
-                    </a>
-                    
                 </div>
                 
             </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">本篇</div>
-            <div class="card">
-                <a href="/2018/11/11/duo-ren-wu-de-gai-nian/">
-                    <div class="card-image">
-                        
-                        <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="多任务的概念">
-                        
-                        <span class="card-title">多任务的概念</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">
-有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；
-什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏览器上网，一边在听MP3，一边在用Word赶作业</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/多任务/" target="_blank">
-                        <span class="chip bg-color">多任务</span>
-                    </a>
-                    
-                    <a href="/tags/Thread/" target="_blank">
-                        <span class="chip bg-color">Thread</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
+        </article>
     </div>
-</article>
-</div>
-    
-
 </main>
+
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
