@@ -305,7 +305,7 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="什么是GIL"><a href="#什么是GIL" class="headerlink" title="什么是GIL"></a>什么是GIL</h1><p>简单来说，Python全局解释器锁或GIL是一个互斥锁，它只允许一个线程来控制Python解释器<br>这意味着在任何时间点只有一个线程可以处于执行状态。执行单线程程序的开发人员看不到GIL的影响，但它可能是CPU绑定和<strong>多线程代码中的性能瓶颈</strong><br>由于即使在具有多个CPU核心的多线程体系结构中，GIL一次只允许一个线程执行，因此GIL已经赢得了Python的“臭名昭着”特性的声誉。<br>Python官网对GIL的解释:</p>
+                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="什么是GIL"><a href="#什么是GIL" class="headerlink" title="什么是GIL"></a>什么是GIL</h1><p>简单来说，Python全局解释器锁或GIL是一个互斥锁，它只允许一个线程来控制Python解释器<br>这意味着在任何时间点只有一个线程可以处于执行状态。执行单线程程序的开发人员看不到GIL的影响，但它可能是CPU绑定和<strong>多线程代码中的性能瓶颈</strong><br>由于即使在具有多个CPU核心的多线程体系结构中，GIL一次只允许一个线程执行，因此GIL已经赢得了Python的“臭名昭着”特性的声誉。<br>Python官网对GIL的解释:</p>
 <blockquote>
 <p>在CPython中，全局解释器锁（GIL）是一个互斥锁，用于保护对Python对象的访问，<strong>防止多个线程同时执行Python字节码</strong>。这种锁是必要的，主要是因为CPython的<strong>内存管理不是线程安全</strong>的。（但是，由于GIL存在，其他功能已经增长，取决于它强制执行的保证。</p>
 </blockquote>
