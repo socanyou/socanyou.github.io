@@ -5,11 +5,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="线程中的互斥锁, 程序员小黑">
-    <meta name="description" content="多线程开发可能遇到的问题假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。
-但是由于是多线程同时操作，有可能出现下面情况：
-
-在g_num=0时，t">
+    <meta name="keywords" content="程序员小黑">
+    <meta name="description" content="
+title: 线程中的互斥锁date: 2018-11-11 23:03:35author: Chenimg: http://phmes812n.bkt.clouddn.com/python.jpgcategories: Pythonta">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>线程中的互斥锁 | 程序员小黑</title>
+    <title>程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -252,13 +250,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/python.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        线程中的互斥锁
+                        
                     </div>
                 </div>
             </div>
@@ -276,24 +274,7 @@
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/多任务/" target="_blank">
-                    <span class="chip bg-color">多任务</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
-                
-                <span class="post-cate">
-                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                    
-                    <a href="/categories/Python/" class="post-category" target="_blank">
-                        Python
-                    </a>
-                    
-                </span>
                 
 
                 <span class="post-date">
@@ -304,7 +285,13 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p>
+                <hr>
+<p>title: 线程中的互斥锁<br>date: 2018-11-11 23:03:35<br>author: Chen<br>img: <a href="http://phmes812n.bkt.clouddn.com/python.jpg" target="_blank" rel="noopener">http://phmes812n.bkt.clouddn.com/python.jpg</a><br>categories: Python<br>tags:</p>
+<ul>
+<li>多任务</li>
+</ul>
+<hr>
+<h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p>
 <p>但是由于是多线程同时操作，有可能出现下面情况：</p>
 <ol>
 <li><p>在g_num=0时，t1取得g_num=0。此时系统把t1调度为”sleeping”状态，把t2转换为”running”状态，t2也获得g_num=0</p>
@@ -448,7 +435,7 @@ if __name__ == &#39;__main__&#39;:
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/" class="b-link-green">线程中的互斥锁</a>
+                    <a href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/" class="b-link-green"></a>
                 </p>
             </div>
         </div>
@@ -541,41 +528,26 @@ if __name__ == &#39;__main__&#39;:
                 <a href="/2018/11/11/tcpip-xie-yi/">
                     <div class="card-image">
                         
-                        <img src="http://phmes812n.bkt.clouddn.com/TCPIP.jpg" class="responsive-img" alt="TCPIP协议">
                         
-                        <span class="card-title">TCPIP协议</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个规定,这个规定就叫协议.
-计算机之间如何沟通就像说</div>
+                    <div class="summary">
+title: TCPIP协议date: 2018-11-11 15:44:17author: Chenimg: http://phmes812n.bkt.clouddn.com/TCPIP.jpgtop: truecategories: </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/网络通信/" class="post-category" target="_blank">
-                                    网络通信
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Chen
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TCP/" target="_blank">
-                        <span class="chip bg-color">TCP</span>
-                    </a>
-                    
-                    <a href="/tags/IP/" target="_blank">
-                        <span class="chip bg-color">IP</span>
-                    </a>
-                    
                 </div>
                 
             </div>
