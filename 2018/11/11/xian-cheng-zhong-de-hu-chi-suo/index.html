@@ -304,7 +304,7 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p>
+                <h2 id="多线程开发可能遇到的问题"><a href="#多线程开发可能遇到的问题" class="headerlink" title="多线程开发可能遇到的问题"></a>多线程开发可能遇到的问题</h2><p>假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。</p>
 <p>但是由于是多线程同时操作，有可能出现下面情况：</p>
 <ol>
 <li><p>在g_num=0时，t1取得g_num=0。此时系统把t1调度为”sleeping”状态，把t2转换为”running”状态，t2也获得g_num=0</p>

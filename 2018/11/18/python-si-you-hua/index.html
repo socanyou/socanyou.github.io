@@ -5,8 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="分类, 程序员小黑">
-    <meta name="description" content="分类 | 程序员小黑">
+    <meta name="keywords" content="Python私有化, 程序员小黑">
+    <meta name="description" content="基本概念
+variable: 公有变量
+_variable: 单前置下划线,私有化属性或方法，from somemodule import *禁止导入,类对象和子类可以访问
+__variable：双前置下划线,避免与子类中的属性命名冲突，无">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>分类 | 程序员小黑</title>
+    <title>Python私有化 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -247,131 +250,265 @@
     </nav>
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+
+
+<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/python.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+            <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="title center-align">
-                    
-                        CodingLife
-                    
-                    </div>
-
-                    <div class="description center-align">
-                    
-                        有趣的灵魂-_-
-                    
+                    <div class="description center-align post-title">
+                        Python私有化
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 
-<script>
-// Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
 
-<main class="content">
+
+<main class="container content">
 
     
-
-<div id="category-cloud" class="container chip-container">
+    <!-- 文章内容详情 -->
+<div id="artDetail">
     <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">文章分类</div>
-            <div class="tag-chips">
+        <div class="card-content article-info">
+            
+            <div class="post-info">
                 
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/Python/" class="post-category" target="_blank">
+                        Python
+                    </a>
+                    
+                </span>
                 
-                
-                <a href="/categories/Python/" title="Python: 5">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #F9EBEA;">Python
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/Python/GIL/" title="GIL: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #F5EEF8;">GIL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/网络通信/" title="网络通信: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " style="background-color: #D5F5E3;">网络通信
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-18
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><ul>
+<li>variable: 公有变量</li>
+<li>_variable: 单前置下划线,私有化属性或方法，from somemodule import *禁止导入,类对象和子类可以访问</li>
+<li>__variable：双前置下划线,避免与子类中的属性命名冲突，无法在外部直接访问(名字重整所以访问不到)</li>
+<li><strong>variable</strong>:双前后下划线,用户<strong>名字空间的魔法对象或属性</strong>。例如:<strong>init</strong> , __ <strong>不要自己发明这样的名字</strong></li>
+<li>xx_:单后置下划线,<strong>用于避免与Python关键词的冲突</strong></li>
+</ul>
+<h1 id="实例引入"><a href="#实例引入" class="headerlink" title="实例引入"></a>实例引入</h1><pre><code>__author__ = &#39;Chen&#39;
+__date__ = &#39;2018/11/13 22:37&#39;
+
+
+class Person(object):
+    def __init__(self, name, age, teste):
+        self.name = name  # 公有变量
+        self._age = age  # 私有变量，函数，方法和类,from somemodule import * 禁止导入,类对象和子类可以访问
+        self.__teste = teste  # 避免与子类中的属性命名冲突,无法直接在外部访问
+
+    def showPeron(self):
+        print(self.name)
+        print(self._age)
+        print(self.__teste)
+
+    def _work(self):
+        # 私有方法
+        print(&quot;私有方法&quot;)
+
+    def __away(self):
+        # 避免与子类中的方法命名冲突,无法在外部访问
+        print(&quot;away&quot;)
+
+    def doWork(self):
+        self._work()
+        self.__away()
+
+
+class Student(Person):
+    # 继承Peron
+    def construction(self, name, age, teste):
+        # 构造方法
+        self.name = name
+        self._age = age
+        self.__teste = teste
+
+    def showStudent(self):
+        print(self.name)
+        print(self._age)
+        print(self.__teste)
+
+    @staticmethod  # 静态方法无权访问cls或self。它们像常规函数一样工作，但属于类的命名空间。
+    def testbug():
+        _Bug.showbug()
+
+
+class _Bug(object):
+    @staticmethod
+    def showbug():
+        print(&quot;showBug&quot;)
+
+
+if __name__ == &#39;__main__&#39;:
+    s1 = Student(&quot;Chen&quot;, 25, &quot;Like&quot;)  # 实例化对象
+    s1.showPeron()  # 调用方法
+
+    # s1.showStudent()    # __teste:双重前导下划线应该仅用于避免与设计为子类的类中的属性发生名称冲突。
+    s1.construction(&quot;曹操&quot;, 88, &quot;Test&quot;)
+    s1.showStudent()
+
+    Student.testbug()  # Student类的中的testbug()方法调用私有类_Bug中的showbug()方法
+</code></pre><p><strong>总结</strong>:</p>
+<ul>
+<li>父类中属性以<strong>__(双下划线)</strong>开头的变量名,<strong>子类不能继承,也不能访问</strong></li>
+<li>如果在子类中向__(双下划线)开头的变量名赋值,那么会在子类中定义的一个与父类相同名字的属性.</li>
+<li>_(单下划线)的变量,函数,类在使用from xxx import * 时不会被导入</li>
+</ul>
+
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/11/18/python-si-you-hua/" class="b-link-green">Python私有化</a>
+                </p>
             </div>
         </div>
     </div>
-</div>
 
     
-    <style type="text/css">
-    #category-radar {
-        width: 100%;
-        height: 360px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="category-radar" class="card-content"></div>
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80MDk0NC8xNzQ2OQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
     </div>
+    <!-- City版安装代码已完成 -->
 </div>
-
-<script type="text/javascript" src="/libs/echarts/echarts.min.js"></script>
-<script type="text/javascript">
-    let radarChart = echarts.init(document.getElementById('category-radar'));
+    
 
     
 
-    let option = {
-        title: {
-            left: 'center',
-            text: '文章分类雷达图',
-            textStyle: {
-                fontWeight: 500,
-                fontSize: 22
-            }
-        },
-        tooltip: {},
-        radar: {
-            name: {
-                textStyle: {
-                    color: '#3C4858'
-                }
-            },
-            indicator: [{"name":"Python","max":6},{"name":"GIL","max":6},{"name":"网络通信","max":6}],
-            nameGap: 5,
-            center: ['50%','55%'],
-            radius: '66%'
-        },
-        series: [{
-            type: 'radar',
-            color: ['#3ecf8e'],
-            itemStyle: {normal: {areaStyle: {type: 'default'}}},
-            data : [
-                {
-                    value : [5,1,1],
-                    name : '文章分类数量'
-                }
-            ]
-        }]
-    };
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/2018/11/18/python-si-you-hua/">
+                    <div class="card-image">
+                        
+                        <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="Python私有化">
+                        
+                        <span class="card-title">Python私有化</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">基本概念
+variable: 公有变量
+_variable: 单前置下划线,私有化属性或方法，from somemodule import *禁止导入,类对象和子类可以访问
+__variable：双前置下划线,避免与子类中的属性命名冲突，无</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
 
-    radarChart.setOption(option);
-</script>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/15/property-shu-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Property属性">
+                        
+                        <span class="card-title">Property属性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">In [1]: class Goods:
+   ...:     @property
+   ...:     def size(self):
+   ...:         return 100
+   ...:
+
+In [2]: g = G</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Chen
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
     
 
 </main>

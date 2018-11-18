@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-14T14:05:50.172Z</updated>
+  <updated>2018-11-18T06:56:34.044Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python私有化</title>
+    <link href="https://codinglife.site/2018/11/18/python-si-you-hua/"/>
+    <id>https://codinglife.site/2018/11/18/python-si-you-hua/</id>
+    <published>2018-11-18T06:48:39.000Z</published>
+    <updated>2018-11-18T06:56:34.044Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;variable: 公有变量&lt;/li&gt;
+&lt;li&gt;_variable: 单前置下划线,私有化属性或方法，from
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Property属性</title>
+    <link href="https://codinglife.site/2018/11/15/property-shu-xing/"/>
+    <id>https://codinglife.site/2018/11/15/property-shu-xing/</id>
+    <published>2018-11-15T13:59:35.000Z</published>
+    <updated>2018-11-15T13:59:52.708Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre&gt;&lt;code&gt;In [1]: class Goods:
+   ...:     @property
+   ...:     def size(self):
+   ...:         return 100
+   ...:
+
+In [2]: g =
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Python中的深拷贝和浅拷贝</title>
@@ -29,7 +83,7 @@
       
         
         
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+          &lt;h1 id=&quot;面试题-深拷贝和浅拷贝的区别是什么？&quot;&gt;&lt;a href=&quot;#面试题-深拷贝和浅拷贝的区别是什么？&quot; class=&quot;headerlink&quot;
         
       
     
@@ -53,7 +107,7 @@
       
         
         
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+          &lt;h1 id=&quot;什么是GIL&quot;&gt;&lt;a href=&quot;#什么是GIL&quot; class=&quot;headerlink&quot;
         
       
     
@@ -81,7 +135,7 @@
       
         
         
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+          &lt;h2 id=&quot;多线程开发可能遇到的问题&quot;&gt;&lt;a href=&quot;#多线程开发可能遇到的问题&quot; class=&quot;headerlink&quot;
         
       
     
@@ -135,7 +189,8 @@
       
         
         
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;
+          &lt;p&gt;&lt;img src=&quot;http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png&quot; alt=&quot;多任务&quot;&gt;&lt;/p&gt;
+&lt;p&gt;有很多的场景中的事情是同时进行的，比如开车的时候
         
       
     
