@@ -43,11 +43,11 @@
   </entry>
   
   <entry>
-    <title>Property属性</title>
+    <title>PythonProperty属性</title>
     <link href="https://codinglife.site/2018/11/15/property-shu-xing/"/>
     <id>https://codinglife.site/2018/11/15/property-shu-xing/</id>
     <published>2018-11-15T13:59:35.000Z</published>
-    <updated>2018-11-15T13:59:52.708Z</updated>
+    <updated>2018-11-18T08:14:03.443Z</updated>
     
     <summary type="html">
     
@@ -55,17 +55,13 @@
       
         
         
-          &lt;pre&gt;&lt;code&gt;In [1]: class Goods:
-   ...:     @property
-   ...:     def size(self):
-   ...:         return 100
-   ...:
-
-In [2]: g =
+          &lt;h1 id=&quot;什么是property属性&quot;&gt;&lt;a href=&quot;#什么是property属性&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
     
     
   </entry>
