@@ -1020,7 +1020,7 @@ mysql&gt; select * from students;
 | 10 | 大乔   |   21 | 女     |      1 | 1999-07-09 |           |
 +----+--------+------+--------+--------+------------+-----------+
 5 rows in set (0.00 sec)
-</code></pre><h1 id="Mysql数据库的备份"><a href="#Mysql数据库的备份" class="headerlink" title="Mysql数据库的备份"></a>Mysql数据库的备份</h1><p>##备份数据库<br>mysqldump -u root 数据库名 &gt; test.sql;</p>
+</code></pre><h1 id="Mysql数据库的备份"><a href="#Mysql数据库的备份" class="headerlink" title="Mysql数据库的备份"></a>Mysql数据库的备份</h1><h2 id="备份数据库"><a href="#备份数据库" class="headerlink" title="备份数据库"></a>备份数据库</h2><p>mysqldump -u root 数据库名 &gt; test.sql;</p>
 <pre><code>[chen@bogon ~]$ mysqldump -u root -p  School &gt; test.sql;
 Enter password:
 [chen@bogon ~]$ ls
@@ -1068,8 +1068,7 @@ mysql&gt; show databases;
 
 mysql&gt; exit
 Bye
-</code></pre><p>##恢复备份</p>
-<ol>
+</code></pre><h2 id="恢复备份"><a href="#恢复备份" class="headerlink" title="恢复备份"></a>恢复备份</h2><ol>
 <li>连接mysql，创建新的数据库</li>
 <li>退出连接执行下列命令</li>
 </ol>
