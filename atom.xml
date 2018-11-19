@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-11-18T06:56:34.044Z</updated>
+  <updated>2018-11-19T16:20:42.607Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mysql基础</title>
+    <link href="https://codinglife.site/2018/11/20/mysql-ji-chu/"/>
+    <id>https://codinglife.site/2018/11/20/mysql-ji-chu/</id>
+    <published>2018-11-19T16:05:26.000Z</published>
+    <updated>2018-11-19T16:20:42.607Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;基本命令&quot;&gt;&lt;a href=&quot;#基本命令&quot; class=&quot;headerlink&quot; title=&quot;基本命令&quot;&gt;&lt;/a&gt;基本命令&lt;/h1&gt;&lt;p&gt;链接Mysql数据库&lt;/p&gt;
+&lt;p&gt;mysql -u root
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://codinglife.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="Mysql" scheme="https://codinglife.site/tags/Mysql/"/>
+    
+  </entry>
   
   <entry>
     <title>Python私有化</title>
@@ -149,7 +176,7 @@
     <link href="https://codinglife.site/2018/11/11/tcpip-xie-yi/"/>
     <id>https://codinglife.site/2018/11/11/tcpip-xie-yi/</id>
     <published>2018-11-11T07:44:17.000Z</published>
-    <updated>2018-11-14T16:00:04.680Z</updated>
+    <updated>2018-11-19T16:21:01.617Z</updated>
     
     <summary type="html">
     
