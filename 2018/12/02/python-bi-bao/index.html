@@ -5,9 +5,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="TCPIP协议, 程序员小黑">
-    <meta name="description" content="什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个规定,这个规定就叫协议.
-计算机之间如何沟通就像说">
+    <meta name="keywords" content="Python闭包, 程序员小黑">
+    <meta name="description" content="什么是闭包百度百科:
+
+闭包就是能够读取其他函数内部变量的函数。
+
+Wiki百科:
+
+在编程语言中，闭包（也是词法闭包或函数闭包）是一种在具有第一类函数的语言中实现词法范围的 名称绑定的技术。在操作上，闭包是将函数与环境一起存储的记录。环境">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>TCPIP协议 | 程序员小黑</title>
+    <title>Python闭包 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -250,13 +255,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/TCPIP.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('http://phmes812n.bkt.clouddn.com/PythonBackGround.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        TCPIP协议
+                        Python闭包
                     </div>
                 </div>
             </div>
@@ -274,65 +279,144 @@
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/TCP/" target="_blank">
-                    <span class="chip bg-color">TCP</span>
-                </a>
-                
-                <a href="/tags/IP/" target="_blank">
-                    <span class="chip bg-color">IP</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
                 
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/网络通信/" class="post-category" target="_blank">
-                        网络通信
+                    <a href="/categories/Python/" class="post-category" target="_blank">
+                        Python
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-11
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-02
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是协议"><a href="#什么是协议" class="headerlink" title="什么是协议"></a>什么是协议</h2><p>就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个<strong>规定</strong>,这个<strong>规定就叫协议</strong>.</p>
-<h2 id="计算机之间如何沟通"><a href="#计算机之间如何沟通" class="headerlink" title="计算机之间如何沟通"></a>计算机之间如何沟通</h2><p>就像说不同语言的人沟通一样，只要有一种大家都认可都遵守的协议即可，那么这个计算机都遵守的网络通信协议叫做TCP/IP协议</p>
-<h2 id="TCP-IP协议-族"><a href="#TCP-IP协议-族" class="headerlink" title="TCP/IP协议(族)"></a>TCP/IP协议(族)</h2><p>为了把全世界的所有不同类型的计算机都连接起来，就必须规定一套全球通用的协议，为了实现互联网这个目标，互联网协议族（Internet Protocol Suite）就是通用协议标准。</p>
-<p>因为互联网协议包含了上百种协议标准，但是最重要的两个协议是TCP和IP协议，所以，大家把<strong>互联网的协议</strong>简称<strong>TCP/IP协议(族)</strong></p>
-<p><strong>TCP/IP协议(族)</strong>是互联网协议套件中的两个主要协议,提供特定功能。</p>
+                <h1 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h1><p>百度百科:</p>
 <blockquote>
-<p><strong>TCP定义了应用程序如何在网络上创建通信通道</strong>。它还<strong>管理消息</strong>如何组合成较小的数据包，然后通过<strong>互联网传输并在目的地址以正确的顺序重新组装</strong>。</p>
+<p>闭包就是能够读取其他函数内部变量的函数。</p>
 </blockquote>
+<p>Wiki百科:</p>
 <blockquote>
-<p>IP定义了如何<strong>寻址和路由每个数据包以确保它到达正确的目的地</strong>。网络上的每台网关计算机都会检查此IP地址，以确定转发邮件的位置。</p>
+<p>在编程语言中，闭包（也是词法闭包或函数闭包）是一种在具有第一类函数的语言中实现词法范围的 名称绑定的技术。在操作上，闭包是将函数与环境一起存储的记录。环境是一个映射，它将函数的每个自由变量（本地使用的变量，但在封闭范围中定义）与值或引用相关联。创建闭包时绑定名称的名称。闭包 - 与普通函数不同 - 允许函数通过闭包的值或引用的副本访问那些捕获的变量，即使函数在其作用域之外调用也是如此。</p>
 </blockquote>
-<h2 id="TCP-IP模型"><a href="#TCP-IP模型" class="headerlink" title="TCP / IP模型"></a>TCP / IP模型</h2><p>TCP / IP功能分为四层，每层包括特定协议。</p>
-<ul>
-<li>应用层为应用程序提供标准化数据交换。其协议包括超文本传输​​协议（HTTP），文件传输协议（FTP），邮局协议3（POP3），简单邮件传输协议（SMTP）和简单网络管理协议（SNMP）。</li>
-<li>传输层负责维护整个网络的端到端通信。TCP处理主机之间的通信，并提供流量控制，多路复用和可靠性。传输协议包括TCP和用户数据报协议（UDP），有时为了特殊目的而使用TCP而不是TCP。</li>
-<li>网络层（也称为互联网层）处理分组并连接独立网络以跨网络边界传输分组。网络层协议是IP和Internet控制消息协议（ICMP），用于错误报告。</li>
-<li>物理层由仅在链路上运行的协议组成 - 链路是连接网络中节点或主机的网络组件。该层中的协议包括用于局域网（LAN）的以太网和地址解析协议（ARP）。</li>
-</ul>
-<p><img src="http://phmes812n.bkt.clouddn.com/TCPIP%E6%A0%87%E5%87%86.png" alt="协议标准"></p>
-<p>OSI七层模型只是理论,在现实过程当中用的最多的还是4层模型<br>常用的网络协议以及关系图<br>常用的网络协议包括:</p>
-<blockquote>
-<p>TCP,UDP,ICMP,IGMP,ARP,RARP</p>
-</blockquote>
-<p><img src="http://phmes812n.bkt.clouddn.com/%E5%90%84%E5%8D%8F%E8%AE%AE%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB.png" alt="常用的网络协议"></p>
-<h2 id="如何传输"><a href="#如何传输" class="headerlink" title="如何传输"></a>如何传输</h2><p><img src="http://phmes812n.bkt.clouddn.com/%E4%BC%A0%E8%BE%93.png" alt="TCP/ip如何传输"></p>
-<h2 id="TCP-IP的优点"><a href="#TCP-IP的优点" class="headerlink" title="TCP / IP的优点"></a>TCP / IP的优点</h2><p>TCP / IP具有高度可扩展性，并且作为可路由协议，可以确定通过网络的最有效路径</p>
+<p>在了解Python闭包之前我们需要知道Python中的<strong>嵌套函数</strong>和<strong>非局部变量</strong></p>
+<h1 id="嵌套函数"><a href="#嵌套函数" class="headerlink" title="嵌套函数"></a>嵌套函数</h1><p>在一个函数内定义的另一个函数,这样的函数被称为嵌套函数,<strong>嵌套函数可以访问封闭范围的变量,但是在Pyton中封闭范围的变量只是Readonly(只读)的,只能使用nonlocal关键字来修改它们.</strong></p>
+<p>下面的例子中<strong>innerFunction()</strong>就是一个<strong>嵌套函数</strong></p>
+<pre><code>&quot;&quot;&quot;
+   File Name:嵌套函数
+   Date：2018/12/2
+   Change Activity:2018/12/2
+   Description:
+&quot;&quot;&quot;
 
+
+def outerFunction(msg):
+    # 外部函数
+    msg = msg
+
+    def innerFunction():
+        # 内部函数
+        print(msg)      # 这里的msg使用的是外部函数中的msg变量
+    innerFunction()     # 调用内部函数
+
+if __name__ == &#39;__main__&#39;:
+    outerFunction(&quot;Python&quot;)
+</code></pre><h1 id="非局部变量"><a href="#非局部变量" class="headerlink" title="非局部变量"></a>非局部变量</h1><p><strong>非局部变量</strong>:Python3引入和一个新的<strong>关键字</strong>nonlocal,这个关键字的作用是允许使用在外部<strong>而不是全局范围内的变量</strong>.</p>
+<p>在下面这个函数中msg是在外部函数中进行声明和赋值的,但是在内部函数中我们又给他进行了赋值,但是当我们在外部函数中调用内部函数时,msg的值为inside,但是当我们print外部函数的msg的值是他的值还是旧值outside.</p>
+<pre><code>def outside():
+        msg = &quot;Outside!&quot;
+        def inside():
+            msg = &quot;Inside!&quot;
+            print(msg)
+        inside()
+        print(msg)
+
+outside()
+</code></pre><p>OutPut:</p>
+<pre><code>Inside!
+Outside!
+</code></pre><p>为什么会造成这种情况呢?因为Python实际上没有分配给现有的msg变量,而是在内部函数中创建了一个新的变量msg,该变量隐藏了外部作用域中变量的名称.这里我们可以使用id()方法来验证.</p>
+<pre><code>def outside():
+        msg = &quot;Outside!&quot;
+        print(id(msg))
+        def inside():
+            msg = &quot;Inside!&quot;
+            print(msg)
+            print(id(msg))
+        inside()
+        print(msg)
+
+outside()
+</code></pre><p>OutPut:</p>
+<pre><code>1804225423408
+Inside!
+1804226238592
+Outside!
+</code></pre><p>那么我们如何在嵌套函数修改外部变量中的值呢?</p>
+<p>答案是:nonlocal关键字</p>
+<pre><code>def outside():
+    msg = &quot;Outside!&quot;
+
+    def inside():
+        nonlocal msg
+        msg = &quot;Inside!&quot;
+        print(msg)
+
+    inside()
+    print(msg)
+
+outside()
+</code></pre><p>OutPut:</p>
+<pre><code>Inside!
+Inside!
+</code></pre><h1 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h1><p>在<strong>函数内部再定义一个函数</strong>，并且这<strong>个函数用到了外边函数的变量</strong>，那么将<strong>这个函数以及用到的一些变量称之为闭包</strong></p>
+<pre><code>def outerFunction(number):
+    &#39;&#39;&#39;外部函数&#39;&#39;&#39;
+    def innerFunction(number_in):
+        &#39;&#39;&#39;嵌套函数&#39;&#39;&#39;
+        print(f&#39;外部函数中参数number的值:{number}&#39;)
+        print(f&#39;嵌套函数中参数number_in的值:{number_in}&#39;)
+        return number + number_in
+    return innerFunction    # 这里返回的是内部函数的引用,而不是内部函数的值,带括号代表引用,不带括号表示执行
+
+if __name__ == &#39;__main__&#39;:
+    inner = outerFunction(100)      # 给外部函数赋值,这里外部函数返回的是嵌套函数的引用(innerFunction)
+    print(inner)
+    inner(200)      # 这里才是调用的嵌套函数
+    print(inner(200))       # print出嵌套函数的返回值 number+number_in
+</code></pre><p>OutPut:</p>
+<pre><code>&lt;function outerFunction.&lt;locals&gt;.innerFunction at 0x0000017C8B987620&gt;
+外部函数中参数number的值:100
+嵌套函数中参数number_in的值:200
+外部函数中参数number的值:100
+嵌套函数中参数number_in的值:200
+300
+</code></pre><p>在上面的代码中我们可以看出,通过使用闭包,我们<strong>可以调用其范围之外的函数.</strong></p>
+<p><strong>注意</strong>:<br>由于<strong>闭包引用了外部函数的局部变量</strong>，则<strong>外部函数的局部变量没有及时释放，消耗内存</strong></p>
+<p><strong>什么时候使用闭包</strong><br><strong>闭包可以避免使用全局变量并提供某种形式的数据隐藏</strong>。（例如，当类中的方法很少时，使用闭包）。</p>
+<p>Python中的<strong>装饰器</strong>广泛使用闭包。</p>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p>创建一个python闭包，使函数可以使用闭包获得多个乘法函数。</p>
+<pre><code>def multiplier_of(n):
+    def multiplier(number):
+        return number * n
+
+    return multiplier
+
+
+multiplier = multiplier_of(5)  # return multiplier
+result = multiplier(10)  # multiplier(10)
+print(result)  # return number * n
+</code></pre><p>OutPut:</p>
+<pre><code>50
+</code></pre>
             </div>
             <hr>
 
@@ -353,7 +437,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/11/tcpip-xie-yi/" class="b-link-green">TCPIP协议</a>
+                    <a href="/2018/12/02/python-bi-bao/" class="b-link-green">Python闭包</a>
                 </p>
             </div>
         </div>
@@ -395,68 +479,27 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/">
+                <a href="/2018/12/02/python-bi-bao/">
                     <div class="card-image">
                         
-                        <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="线程中的互斥锁">
+                        <img src="http://phmes812n.bkt.clouddn.com/PythonBackGround.jpg" class="responsive-img" alt="Python闭包">
                         
-                        <span class="card-title">线程中的互斥锁</span>
+                        <span class="card-title">Python闭包</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">多线程开发可能遇到的问题假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。
-但是由于是多线程同时操作，有可能出现下面情况：
+                    <div class="summary">什么是闭包百度百科:
 
-在g_num=0时，t</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/多任务/" target="_blank">
-                        <span class="chip bg-color">多任务</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2018/11/11/duo-ren-wu-de-gai-nian/">
-                    <div class="card-image">
-                        
-                        <img src="http://phmes812n.bkt.clouddn.com/python.jpg" class="responsive-img" alt="多任务的概念">
-                        
-                        <span class="card-title">多任务的概念</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">
-有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；
-什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏览器上网，一边在听MP3，一边在用Word赶作业</div>
+闭包就是能够读取其他函数内部变量的函数。
+
+Wiki百科:
+
+在编程语言中，闭包（也是词法闭包或函数闭包）是一种在具有第一类函数的语言中实现词法范围的 名称绑定的技术。在操作上，闭包是将函数与环境一起存储的记录。环境</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-02
                             </span>
                         <span class="publish-author">
                             
@@ -470,15 +513,48 @@
                         </span>
                     </div>
                 </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/20/mysql-ji-chu/">
+                    <div class="card-image">
+                        
+                        <img src="http://phmes812n.bkt.clouddn.com/database.jpg" class="responsive-img" alt="Mysql基础">
+                        
+                        <span class="card-title">Mysql基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">MySQL 简介MySQL是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，后来被Sun公司收购，Sun公司后来又被Oracle公司收购，目前属于Oracle旗下产品
+特点
+使用C和C++编写，并使用了多种编译器进行测试，保证源代</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/数据库/" class="post-category" target="_blank">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Thread/" target="_blank">
-                        <span class="chip bg-color">Thread</span>
-                    </a>
-                    
-                    <a href="/tags/多任务/" target="_blank">
-                        <span class="chip bg-color">多任务</span>
+                    <a href="/tags/Mysql/" target="_blank">
+                        <span class="chip bg-color">Mysql</span>
                     </a>
                     
                 </div>
