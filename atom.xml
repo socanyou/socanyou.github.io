@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-02T13:59:55.684Z</updated>
+  <updated>2018-12-04T16:16:39.536Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python装饰器</title>
+    <link href="https://codinglife.site/2018/12/04/python-zhuang-shi-qi/"/>
+    <id>https://codinglife.site/2018/12/04/python-zhuang-shi-qi/</id>
+    <published>2018-12-04T03:11:42.000Z</published>
+    <updated>2018-12-04T16:16:39.536Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;理解Python装饰器的前提&quot;&gt;&lt;a href=&quot;#理解Python装饰器的前提&quot; class=&quot;headerlink&quot; title=&quot;理解Python装饰器的前提&quot;&gt;&lt;/a&gt;理解Python装饰器的前提&lt;/h1&gt;&lt;h2 id=&quot;装饰器是什么&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Python闭包</title>
