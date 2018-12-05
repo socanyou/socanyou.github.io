@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-04T16:16:39.536Z</updated>
+  <updated>2018-12-05T13:52:22.537Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PythonWeb编程WSGI</title>
+    <link href="https://codinglife.site/2018/12/05/pythonweb-bian-cheng-wsgi/"/>
+    <id>https://codinglife.site/2018/12/05/pythonweb-bian-cheng-wsgi/</id>
+    <published>2018-12-05T11:59:21.000Z</published>
+    <updated>2018-12-05T13:52:22.537Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;动态网站和静态网站的区别&quot;&gt;&lt;a href=&quot;#动态网站和静态网站的区别&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="WSGI" scheme="https://codinglife.site/tags/WSGI/"/>
+    
+  </entry>
   
   <entry>
     <title>Python装饰器</title>
