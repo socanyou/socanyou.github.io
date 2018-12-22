@@ -393,6 +393,19 @@ Interceptor：拦截器，拦截是客户端对Action的访问。更细粒度化
     --&gt;
 &lt;/struts&gt;
 </code></pre><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p><img src="&quot;http://m.qpic.cn/psb?/V10Lajvl1FgUNv/DG4E1cExTeiQHbFKtx*S.gDdF1WG7UY6dEbfIRaFE8o!/b/dL8AAAAAAAAA&amp;bo=iAMUAgAAAAADF68!&amp;rf=viewer_4&quot;" alt="自定义拦截器输出"></p>
+<h1 id="拦截器中的特殊标签Param"><a href="#拦截器中的特殊标签Param" class="headerlink" title="拦截器中的特殊标签Param"></a>拦截器中的特殊标签Param</h1><p>先上案例</p>
+<pre><code>&lt;action name=&quot;user_*&quot; class=&quot;action.UserAction&quot; method=&quot;{1}&quot;&gt;
+            &lt;result name=&quot;success&quot;&gt;demo/Manage.jsp&lt;/result&gt;
+            &lt;!-- 引入拦截器 --&gt;
+            &lt;interceptor-ref name=&quot;userInterceptor&quot;&gt;
+                &lt;param name=&quot;excludeMethods&quot;&gt;selectUser&lt;/param&gt;        &lt;!-- 排除拦截如果有多个方法不拦截,用逗号隔开即可
+                这里的方法指的是UserAction中的方法Fuck
+                 --&gt;
+            &lt;/interceptor-ref&gt;
+            &lt;!-- 引入默认拦截器,必须的. --&gt;
+            &lt;interceptor-ref name=&quot;defaultStack&quot;&gt;&lt;/interceptor-ref&gt;
+&lt;/action&gt;
+</code></pre><p><strong><interceptor-ref></interceptor-ref></strong>标签有个嵌套标签<strong><param></strong>,<strong><param></strong>标签中有个<strong>特殊属性excludeMethod</strong>,这个属性的作用是对某个方法不进行拦截,这里的方法指的是Action中的方法.因为在这里我的UserAction类中的有个selectUser方法,所以这时候当Action执行selectUser方法的时候,拦截器不会对其进行拦截.</p>
 
             </div>
             <hr>
