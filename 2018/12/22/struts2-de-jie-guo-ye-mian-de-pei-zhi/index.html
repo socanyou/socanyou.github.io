@@ -5,8 +5,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="标签: Thread, 程序员小黑">
-    <meta name="description" content="标签: Thread | 程序员小黑">
+    <meta name="keywords" content="Struts2的结果页面的配置, 程序员小黑">
+    <meta name="description" content="全局结果页面全局结果页面指的是，在包中配置一次，其他的在这个包中的所有的action只要返回了这个值，都可以跳转到这个页面。
+针对这个包下的所有的action的配置都有效
+&amp;lt;struts&amp;gt;
+    &amp;lt;package nam">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签: Thread | 程序员小黑</title>
+    <title>Struts2的结果页面的配置 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -247,163 +250,262 @@
     </nav>
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+
+
+<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&bo=gAcABAAAAAARB7M!&rf=viewer_4')">
     <div class="container">
         <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+            <div class="col s12 m12 l12">
                 <div class="brand">
-                    <div class="title center-align">
-                    
-                        CodingLife
-                    
-                    </div>
-
-                    <div class="description center-align">
-                    
-                        有趣的灵魂-_-
-                    
+                    <div class="description center-align post-title">
+                        Struts2的结果页面的配置
                     </div>
                 </div>
             </div>
         </div>
-        
     </div>
 </div>
 
-<script>
-// Dynamically switch banner pictures every day.
-$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
-</script>
 
-<main class="content">
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/Java/" target="_blank">
+                    <span class="chip bg-color">Java</span>
+                </a>
+                
+                <a href="/tags/Struts2/" target="_blank">
+                    <span class="chip bg-color">Struts2</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/Struts2/" class="post-category" target="_blank">
+                        Struts2
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-22
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="全局结果页面"><a href="#全局结果页面" class="headerlink" title="全局结果页面"></a>全局结果页面</h1><p>全局结果页面指的是，在包中配置一次，其他的在<strong>这个包中的所有的action只要返回了这个值</strong>，<strong>都可以跳转到这个页面。</strong></p>
+<p><strong>针对这个包下的所有的action的配置都有效</strong></p>
+<pre><code>&lt;struts&gt;
+    &lt;package name=&quot;demo1&quot; namespace=&quot;/&quot; extends=&quot;struts-default&quot;&gt;
+        &lt;!-- 全局结果页面的配置 --&gt;
+        &lt;global-results&gt;
+            &lt;result name=&quot;success&quot;&gt;/demo1/demo2.jsp&lt;/result&gt;
+        &lt;/global-results&gt;
+
+        &lt;action name=&quot;requestDemo1&quot; class=&quot;demo1.RequestDemo1&quot;&gt;
+            &lt;!-- 这里配置的result结果页面是局部的 --&gt;
+            &lt;!-- &lt;result name=&quot;success&quot;&gt;/demo1/demo2.jsp&lt;/result&gt; --&gt;
+        &lt;/action&gt;
+        &lt;action name=&quot;requestDemo2&quot; class=&quot;demo1.RequestDemo2&quot;&gt;
+        &lt;/action&gt;
+
+        &lt;action name=&quot;requestDemo3&quot; class=&quot;demo1.RequestDemo3&quot;&gt;
+        &lt;/action&gt;
+    &lt;/package&gt;
+&lt;/struts&gt;
+</code></pre><h1 id="局部结果页面"><a href="#局部结果页面" class="headerlink" title="局部结果页面"></a>局部结果页面</h1><p>局部结果页面指的是，<strong>只能在当前的action中的配置有效。</strong></p>
+<p><strong>针对当前的action有效。</strong></p>
+<h1 id="Result标签的配置"><a href="#Result标签的配置" class="headerlink" title="Result标签的配置"></a>Result标签的配置</h1><p>result标签的作用:配置页面的跳转</p>
+<p>属性:</p>
+<ul>
+<li>name属性:<strong>逻辑视图的名称。默认值：success</strong></li>
+<li>type属性:页面跳转类型<ul>
+<li><strong>dispatcher：默认值，请求转发。（Action转发JSP）</strong></li>
+<li><strong>redirect：重定向。（Action重定向JSP）</strong></li>
+<li>chain：转发.（Action转发Action）</li>
+<li>redirectAction：重定向.（Action重定向Action</li>
+<li>stream：Struts2中提供文件下载的功能.</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr>
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/12/22/struts2-de-jie-guo-ye-mian-de-pei-zhi/" class="b-link-green">Struts2的结果页面的配置</a>
+                </p>
+            </div>
+        </div>
+    </div>
 
     
 
-<div id="tags" class="container chip-container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">文章标签</div>
-            <div class="tag-chips">
-                
-                
-                <a href="/tags/Mysql/" title="Mysql: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Mysql" style="background-color: #F9EBEA;">Mysql
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/WSGI/" title="WSGI: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="WSGI" style="background-color: #F5EEF8;">WSGI
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/GIL/" title="GIL: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="GIL" style="background-color: #D5F5E3;">GIL
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Java/" title="Java: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Java" style="background-color: #E8F8F5;">Java
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Struts2/" title="Struts2: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="Struts2" style="background-color: #FEF9E7;">Struts2
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/TCP/" title="TCP: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="TCP" style="background-color: #F8F9F9;">TCP
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/IP/" title="IP: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="IP" style="background-color: #82E0AA;">IP
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Thread/" title="Thread: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-active " data-tagname="Thread" style="background-color: #D7BDE2;">Thread
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/多任务/" title="多任务: 2">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default " data-tagname="多任务" style="background-color: #A3E4D7;">多任务
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-            </div>
-        </div>
+    
+
+    
+
+    
+    <div class="livere-card card" data-aos="fade-up">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" class="card-content" data-id="city" data-uid="MTAyMC80MDk0NC8xNzQ2OQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                let j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') {
+                    return;
+                }
+
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript。</noscript>
     </div>
+    <!-- City版安装代码已完成 -->
 </div>
+    
 
-    <div class="container">
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
         
-
-        <article>
-            <div class="row tags-posts">
-                
-                
-                <div class="article tag-post col s12 m6 l4" data-tags="Thread, 多任务" data-aos="fade-up">
-                    <div class="card">
-                        <a href="/2018/11/11/duo-ren-wu-de-gai-nian/">
-                            <div class="card-image tag-image">
-                                
-                                <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/vBJHooQKYRtMaQJff5EpPw6mDDEjn5iySxbqzUsRCcw!/b/dDcBAAAAAAAA&amp;bo=BgRDAgAAAAARB3M!&amp;rf=viewer_4" class="responsive-img" alt="多任务的概念">
-                                
-                                <span class="card-title">多任务的概念</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="publish-info">
-                                <span class="publish-date">
-                                    <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
-                                </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
-                                    </a>
-                                    
-                                    
-                                </span>
-                            </div>
-                        </div>
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/12/22/struts2servlet-de-fang-wen/">
+                    <div class="card-image">
+                        
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&amp;bo=gAcABAAAAAARB7M!&amp;rf=viewer_4" class="responsive-img" alt="Struts2Servlet的访问">
+                        
+                        <span class="card-title">Struts2Servlet的访问</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">完全解耦合的方式JSP
+&lt;h3 align=&quot;center&quot;&gt;方式一:完全解耦和&lt;/h3&gt;
+    &lt;form action=&quot;requestDemo1.action&quot; </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Struts2/" class="post-category" target="_blank">
+                                    Struts2
+                                </a>
+                            
+                            
+                        </span>
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Struts2/" target="_blank">
+                        <span class="chip bg-color">Struts2</span>
+                    </a>
+                    
+                </div>
+                
             </div>
-        </article>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/12/22/struts2-de-shu-ju-feng-zhuang/">
+                    <div class="card-image">
+                        
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&amp;bo=gAcABAAAAAARB7M!&amp;rf=viewer_4" class="responsive-img" alt="Struts2的数据封装">
+                        
+                        <span class="card-title">Struts2的数据封装</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">属性驱动:必须提供属性的set方法(不常用)jsp页面
+&lt;h3&gt;方式一:属性驱动-提供set方法的方式&lt;/h3&gt;
+    &lt;form action=&quot;userAction1.action&quot; </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Struts2/" class="post-category" target="_blank">
+                                    Struts2
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Struts2/" target="_blank">
+                        <span class="chip bg-color">Struts2</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
     </div>
-</main>
+</article>
+</div>
+    
 
+</main>
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
