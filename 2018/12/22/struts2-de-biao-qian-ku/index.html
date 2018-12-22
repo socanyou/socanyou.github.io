@@ -6,7 +6,10 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Struts2的标签库, 程序员小黑">
-    <meta name="description" content="Struts2的标签库 | 程序员小黑">
+    <meta name="description" content="Struts2的标签库在Struts2的安装文件-&amp;gt;docs-&amp;gt;tag-reference.html文件中查看Struts2的通用标签库
+
+UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML标签更加漂亮.
+&amp;lt;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -249,7 +252,7 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&bo=gAcABAAAAAARB7M!&rf=viewer_4')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -273,7 +276,28 @@
     <div class="card">
         <div class="card-content article-info">
             
+            <div class="article-tag">
+                
+                <a href="/tags/Java/" target="_blank">
+                    <span class="chip bg-color">Java</span>
+                </a>
+                
+                <a href="/tags/Struts2/" target="_blank">
+                    <span class="chip bg-color">Struts2</span>
+                </a>
+                
+            </div>
+            
             <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/Struts2/" class="post-category" target="_blank">
+                        Struts2
+                    </a>
+                    
+                </span>
                 
 
                 <span class="post-date">
@@ -284,7 +308,118 @@
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="Struts2的标签库"><a href="#Struts2的标签库" class="headerlink" title="Struts2的标签库"></a>Struts2的标签库</h1><p>在Struts2的安装文件-&gt;docs-&gt;tag-reference.html文件中查看Struts2的通用标签库</p>
+<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/CjEgWhu08Q9KjewXPg*v0n3*i9eWleVAhsL*tskPU0E!/b/dLYAAAAAAAAA&amp;bo=nAQ4BAAAAAADJ6Y!&amp;rf=viewer_4" alt="Struts2的通用标签库"></p>
+<h2 id="UI标签库"><a href="#UI标签库" class="headerlink" title="UI标签库"></a>UI标签库</h2><p>UI标签库一大特点是方便数据回显,而且相比传统HTML标签更加漂亮.</p>
+<pre><code>&lt;h2&gt;普通表单&lt;/h2&gt;
+        &lt;form action=&quot;${ pageContext.request.contextPath}/uiAction.action&quot; method=&quot;post&quot;&gt;
+        &lt;!-- 隐藏字段 --&gt;
+            &lt;input type=&quot;hidden&quot; name=&quot;userId&quot;&gt;
+            用户名:&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;br&gt;
+            密码:&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;
+            年龄:&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;br&gt;
+            性别:&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;男&quot;&gt;男
+            &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot;&gt;女&lt;br&gt; 
+            籍贯&lt;select name=&quot;city&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;---请选择---&lt;/option&gt;
+                &lt;option value=&quot;北京&quot;&gt;北京&lt;/option&gt;
+                &lt;option value=&quot;广州&quot;&gt;广州&lt;/option&gt;
+                &lt;option value=&quot;郑州&quot;&gt;郑州&lt;/option&gt;
+            &lt;/select&gt;&lt;br&gt; 
+
+            爱好:&lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;篮球&quot;&gt;篮球
+            &lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;足球&quot;&gt;足球
+            &lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;电脑&quot;&gt;电脑
+            &lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;编程&quot;&gt;编程&lt;br&gt;
+            介绍:&lt;textarea rows=&quot;2&quot; cols=&quot;10&quot; name=&quot;info&quot;&gt;I like Java&lt;/textarea&gt;
+            &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+        &lt;/form&gt;
+        &lt;s:debug&gt;&lt;/s:debug&gt;
+        &lt;h2&gt;UI表单&lt;/h2&gt;
+        &lt;s:form action=&quot;uiAction&quot; namespace=&quot;/&quot; method=&quot;post&quot;&gt;
+            &lt;s:hidden name=&quot;userId&quot;&gt;&lt;/s:hidden&gt;
+            &lt;s:textfield name=&quot;name&quot; label=&quot;用户名&quot;&gt;&lt;/s:textfield&gt;
+            &lt;s:password name=&quot;password&quot; label=&quot;密码&quot; showPassword=&quot;true&quot;&gt;&lt;/s:password&gt;    &lt;!-- 密码默认不回显需要加上 showPassword=&quot;true&quot;--&gt;
+            &lt;s:textfield name=&quot;age&quot; label=&quot;年龄&quot;&gt;&lt;/s:textfield&gt;
+            &lt;s:radio list=&quot;{&#39;男&#39;,&#39;女&#39;}&quot; name=&quot;sex&quot; label=&quot;性别&quot;&gt;&lt;/s:radio&gt;
+            &lt;s:select list=&quot;{&#39;北京&#39;,&#39;广州&#39;,&#39;郑州&#39;}&quot; name=&quot;city&quot; label=&quot;籍贯&quot; headerKey=&quot;&quot; headerValue=&quot;---请选择---&quot;&gt;&lt;/s:select&gt;
+            &lt;s:checkboxlist list=&quot;#{&#39;篮球&#39;:&#39;篮球&#39;,&#39;足球&#39;:&#39;足球&#39;,&#39;电脑&#39;:&#39;电脑&#39;,&#39;编程&#39;:&#39;编程&#39;}&quot; name=&quot;bobby&quot; label=&quot;爱好&quot;&gt;&lt;/s:checkboxlist&gt;
+            &lt;s:textarea name=&quot;info&quot; cols=&quot;10&quot; rows=&quot;2&quot; label=&quot;介绍&quot; value=&quot;IlikeJava&quot;&gt;&lt;/s:textarea&gt;
+            &lt;s:submit value=&quot;提交&quot;&gt;&lt;/s:submit&gt;
+        &lt;/s:form&gt;
+
+    &lt;/center&gt;
+</code></pre><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/XsO361zx3Bphd*RZobHoETK8OFFLV*8P9oz4RL2m.6A!/b/dFQBAAAAAAAA&amp;bo=OAQFBQAAAAADBx4!&amp;rf=viewer_4" alt="普通标签和UI标签的对比"></p>
+<p>来看看对比:</p>
+<ol>
+<li>普通表单美观度没有<strong>Struts2UI表单美观度好</strong></li>
+<li>普通HTML标签代码量比Struts2要多很多,<strong>Struts2标签写起来简单</strong>.</li>
+<li>普通Html标签没有回显功能,<strong>Struts2的UI标签自带回显功能</strong></li>
+</ol>
+<p><strong>Struts2的回显的数据是从ValueStack中获取的.</strong></p>
+<h2 id="通用标签库"><a href="#通用标签库" class="headerlink" title="通用标签库"></a>通用标签库</h2><ul>
+<li>判断标签<ol>
+<li>&lt;s:if&gt;</li>
+<li>&lt;s:elseif&gt;</li>
+<li>&lt;s:else&gt;</li>
+</ol>
+</li>
+<li>迭代标签<ol>
+<li>&lt;s:iterator&gt;</li>
+</ol>
+</li>
+<li>属性标签<ol>
+<li>&lt;s:property&gt;</li>
+</ol>
+</li>
+<li>调试标签<ol>
+<li>&lt;s:debug&gt;</li>
+</ol>
+</li>
+<li>日期标签<ol>
+<li>&lt;s:date&gt;</li>
+</ol>
+</li>
+</ul>
+<p>Iterator标签使用案例</p>
+<pre><code>&lt;center&gt;
+             &lt;s:iterator var=&quot;i&quot; value=&quot;{&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;}&quot;&gt;
+                 &lt;s:property value=&quot;#i&quot;/&gt;
+             &lt;/s:iterator&gt;
+             &lt;hr&gt;
+             &lt;!-- 遍历map --&gt;
+             &lt;s:iterator var=&quot;m&quot; value=&quot;#{&#39;name&#39;:&#39;张三&#39;,&#39;age&#39;:27,&#39;hobby&#39;:&#39;Programme&#39;}&quot;&gt;
+                 &lt;s:property value=&quot;#m.key&quot;/&gt; -------------&gt;&lt;s:property value=&quot;#m.value&quot;/&gt;&lt;br&gt;
+             &lt;/s:iterator&gt;
+             &lt;hr&gt;
+             &lt;!-- 循环 --&gt;
+             &lt;s:iterator var=&quot;i&quot; begin=&quot;1&quot; end=&quot;20&quot; step=&quot;1&quot;&gt;
+                 &lt;s:property value=&quot;#i&quot; /&gt;&lt;br&gt;
+             &lt;/s:iterator&gt;
+             &lt;hr&gt;
+             &lt;!-- iterator中status的应用,Status用来记录循环的状态 --&gt;
+             &lt;s:iterator var=&quot;i&quot; begin=&quot;1&quot; end=&quot;20&quot; step=&quot;2&quot; status=&quot;status&quot;&gt;
+                 &lt;s:if test=&quot;#status.count % 3 == 0&quot;&gt;
+                     &lt;font color=&quot;blue&quot;&gt;&lt;s:property value=&quot;#i&quot;/&gt;&lt;/font&gt;
+                 &lt;/s:if&gt;
+                 &lt;s:else&gt;
+                     &lt;font color=&quot;green&quot;&gt;&lt;s:property value=&quot;#i&quot;/&gt;&lt;/font&gt;
+                 &lt;/s:else&gt;
+             &lt;/s:iterator&gt;
+&lt;/center&gt;
+</code></pre><p>判断标签的使用案例</p>
+<pre><code>&lt;s:set var=&quot;i&quot; value=&quot;3&quot; scope=&quot;request&quot;&gt;
+&lt;/s:set&gt;
+&lt;s:if test=&quot;#request.i&gt;3&quot;&gt;
+    i大于3
+&lt;/s:if&gt;
+&lt;s:elseif test=&quot;#request.i&lt;3&quot;&gt;
+    i小于3
+&lt;/s:elseif&gt;
+&lt;s:else&gt;
+    i等于3 
+&lt;/s:else&gt;
+</code></pre>
             </div>
             <hr>
 
@@ -352,27 +487,45 @@
                 <a href="/2018/12/22/struts2-de-biao-qian-ku/">
                     <div class="card-image">
                         
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Struts2的标签库">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&amp;bo=gAcABAAAAAARB7M!&amp;rf=viewer_4" class="responsive-img" alt="Struts2的标签库">
                         
                         <span class="card-title">Struts2的标签库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary"></div>
+                    <div class="summary">Struts2的标签库在Struts2的安装文件-&gt;docs-&gt;tag-reference.html文件中查看Struts2的通用标签库
+
+UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML标签更加漂亮.
+&lt;</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Chen
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Struts2/" class="post-category" target="_blank">
+                                    Struts2
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Struts2/" target="_blank">
+                        <span class="chip bg-color">Struts2</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
