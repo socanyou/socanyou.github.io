@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-14T00:28:27.482Z</updated>
+  <updated>2018-12-22T03:21:20.027Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Struts2常见配置</title>
+    <link href="https://codinglife.site/2018/12/22/struts2-chang-jian-pei-zhi/"/>
+    <id>https://codinglife.site/2018/12/22/struts2-chang-jian-pei-zhi/</id>
+    <published>2018-12-22T03:11:42.000Z</published>
+    <updated>2018-12-22T03:21:20.027Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;配置XML提示&quot;&gt;&lt;a href=&quot;#配置XML提示&quot; class=&quot;headerlink&quot; title=&quot;配置XML提示&quot;&gt;&lt;/a&gt;配置XML提示&lt;/h1&gt;&lt;h1 id=&quot;Action的配置&quot;&gt;&lt;a href=&quot;#Action的配置&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Struts2" scheme="https://codinglife.site/categories/Struts2/"/>
+    
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
+    
+      <category term="Struts2" scheme="https://codinglife.site/tags/Struts2/"/>
+    
+  </entry>
   
   <entry>
     <title>PythonWeb编程WSGI</title>

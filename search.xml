@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Struts2常见配置</title>
+      <link href="/2018/12/22/struts2-chang-jian-pei-zhi/"/>
+      <url>/2018/12/22/struts2-chang-jian-pei-zhi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="配置XML提示"><a href="#配置XML提示" class="headerlink" title="配置XML提示"></a>配置XML提示</h1><h1 id="Action的配置"><a href="#Action的配置" class="headerlink" title="Action的配置"></a>Action的配置</h1><h2 id="package标签配置"><a href="#package标签配置" class="headerlink" title="package标签配置"></a>package标签配置</h2><p>package标签是包,他的作用是为了更好的管理Action.</p><p>package标签的常用属性</p><ul><li>name:包的名称,在一个Struts2项目中可以随便定义,只要<strong>不重名即可</strong></li><li>extends:继承的包,一般<strong>继承struts-default</strong></li><li>namespace:名称空间,<strong>与action标签中的name属性共同决定了访问路径</strong><ul><li>名称空间的三种不同的写法<ul><li>带名称的名称空间:namespace=”/test”</li><li><strong>根名称空间:namespace=”/“</strong></li><li>默认名称空间:namespace=””</li></ul></li></ul></li><li>abstract:声明包是抽象包</li></ul><h2 id="Action标签的配置"><a href="#Action标签的配置" class="headerlink" title="Action标签的配置"></a>Action标签的配置</h2><p>Action标签将标识符映射到处理程序类。当请求与操作名称匹配时，框架使用映射来确定如何处理请求。</p><p>action标签的常用属性</p><ul><li><strong>name:与namespace共同决定浏览器访问路径</strong><ul><li>假如请求<a href="http://www.planetstruts.org/struts2-mailreader/**Welcome.action将映射到Welcome类去操作*" target="_blank" rel="noopener">http://www.planetstruts.org/struts2-mailreader/**Welcome.action将映射到Welcome类去操作*</a>*</li></ul></li><li>class:<strong>Action类的全路径</strong></li><li>method:<strong>用于确定执行Action类中的某个方法,默认执行的是Action类中的execute方法</strong></li><li>converter:Struts2框架中的类型转换</li></ul><h1 id="常量配置"><a href="#常量配置" class="headerlink" title="常量配置"></a>常量配置</h1><h2 id="Struts常量配置"><a href="#Struts常量配置" class="headerlink" title="Struts常量配置"></a>Struts常量配置</h2><p>查看Struts常量</p><p><strong>/org/apache/struts2/default.properties</strong></p><p><img src="" alt="常见配置"></p><ul><li>struts.i18n.encoding=UTF-8:<strong>Struts2框架默认编码格式是UTF-8</strong></li><li>struts.action.extension=action:Struts2请求的<strong>默认扩展名</strong></li></ul><p>修改常量的值的方法</p><ul><li>在struts.xml中修改常量<strong>(常用方法)</strong><ul><li><img src="" alt="修改常量"></li></ul></li><li>直接修改default.properties</li><li>通过web.xml修改常量</li></ul><h2 id="多个Struts-xml配置文件的配置"><a href="#多个Struts-xml配置文件的配置" class="headerlink" title="多个Struts.xml配置文件的配置"></a>多个Struts.xml配置文件的配置</h2><p>当我们有多个包的时候,不能将所有的struts配置都写在一个struts.xml文件中,这样的做法会给我们后期维护带来阻碍.对于大型应用程序，最好使用多个配置文件，以便管理应用程序</p><p>可以创建许多配置文件，但需要在struts.xml文件中定义它。<strong>struts的include子元素用于定义支持的配置文件。</strong></p><p><img src="" alt="多配置文件"></p><h1 id="Action的写法"><a href="#Action的写法" class="headerlink" title="Action的写法"></a>Action的写法</h1><h2 id="Action类是一个POJO"><a href="#Action类是一个POJO" class="headerlink" title="Action类是一个POJO"></a>Action类是一个POJO</h2><p><img src="" alt="POJO"><br>维基百科对POJO的描述:</p><blockquote><p>在软件工程中，普通旧Java对象（POJO）是一个普通的Java 对象，不受任何特殊限制的约束，也不需要任何类路径。该术语由Martin Fowler，Rebecca Parsons和Josh MacKenzie于2000年9月创造：[1]</p></blockquote><blockquote><p>“我们想知道为什么人们如此反对在他们的系统中使用常规物体，并得出结论认为这是因为简单的物体缺乏一个奇特的名字。所以我们给了他们一个，它很好地被捕获了。” [1]</p></blockquote><blockquote><p>术语“POJO”最初表示Java对象，它不遵循任何主要的Java对象模型，约定或框架; 现在，“POJO”也可以用作“Plain Old JavaScript Object” 的首字母缩写词，在这种情况下，该术语表示类似谱系的JavaScript对象。[2]</p></blockquote><blockquote><p>术语继续旧的条款对于不使用花哨的新功能，如POTS（技术型普通老式电话服务的）电话波德（普通旧文档中）的Perl。与.NET框架上的POJO相当的是Plain Old CLR Object（POCO）。[3]对于PHP，它是Plain Old PHP Object（POPO）。[4] [5]</p></blockquote><blockquote><p>POJO现象最有可能获得广泛接受，因为需要一个与复杂对象框架形成对比的通用且易于理解的术语</p></blockquote><h2 id="Action类实现Action接口"><a href="#Action类实现Action接口" class="headerlink" title="Action类实现Action接口"></a>Action类实现Action接口</h2><p><img src="" alt="实现接口"></p><h1 id="访问Action的不同方式"><a href="#访问Action的不同方式" class="headerlink" title="访问Action的不同方式"></a>访问Action的不同方式</h1><h2 id="通过action标签的method属性访问"><a href="#通过action标签的method属性访问" class="headerlink" title="通过action标签的method属性访问"></a>通过action标签的method属性访问</h2><p><img src="" alt="actionmethod"><br><strong>Action类中有四个不同的方法,当我们访问某个方法的时候执行某个action</strong><br><strong>在struts.xml中的使用action标签的method属性访问action</strong></p><h2 id="通过通配符的方式进行action的访问"><a href="#通过通配符的方式进行action的访问" class="headerlink" title="通过通配符的方式进行action的访问"></a>通过通配符的方式进行action的访问</h2><p><img src="" alt="通配符的访问"></p><h2 id="动态访问"><a href="#动态访问" class="headerlink" title="动态访问"></a>动态访问</h2><p><strong>通过使用struts.xml的方法修改Struts配置开启动态方法访问</strong></p><pre><code>&lt;constant name=&quot;struts.enable.DynamicMethodInvocation&quot; value=&quot;true&quot;&gt;&lt;/constant&gt;</code></pre><p>书写action标签</p><pre><code>&lt;action name=&quot;customer&quot; class=&quot;test.demo3.CustomerAction&quot;&gt;&lt;/action&gt;</code></pre><p><strong>然后再JSP页面配置访问路径</strong></p><pre><code>    &lt;!--前面写上Actionname的名称中间写个!,后面是方法的名称 --&gt;    &lt;a href=&quot;${ pageContext.request.contextPath }/customer!find.action&quot;&gt;查询客户&lt;/a&gt;    &lt;br /&gt;    &lt;a href=&quot;${ pageContext.request.contextPath }/customer!update.action&quot;&gt;修改客户&lt;/a&gt;    &lt;br /&gt;    &lt;a href=&quot;${ pageContext.request.contextPath }/customer!delete.action&quot;&gt;删除客户&lt;/a&gt;    &lt;br /&gt;    &lt;a href=&quot;${ pageContext.request.contextPath }/customer!save.action&quot;&gt;保存客户&lt;/a&gt;</code></pre><p><strong>JSP页面书写方法:前面写上Actionname的名称中间写个!,后面是方法的名称</strong></p><p><img src="" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Struts2 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Struts2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>PythonWeb编程WSGI</title>
       <link href="/2018/12/05/pythonweb-bian-cheng-wsgi/"/>
       <url>/2018/12/05/pythonweb-bian-cheng-wsgi/</url>
