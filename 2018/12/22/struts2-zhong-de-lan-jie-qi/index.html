@@ -5,10 +5,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="多任务的概念, 程序员小黑">
-    <meta name="description" content="
-有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；
-什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏览器上网，一边在听MP3，一边在用Word赶作业">
+    <meta name="keywords" content="Struts2中的拦截器, 程序员小黑">
+    <meta name="description" content="什么是拦截器
+Interceptor：拦截器，起到拦截Action的作用。
+Interceptor：拦截器，拦截是客户端对Action的访问。更细粒度化的拦截。（拦截Action中的具体的方法）。Struts2框架核心的功能都是依赖拦截器实">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>多任务的概念 | 程序员小黑</title>
+    <title>Struts2中的拦截器 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -251,13 +251,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/vBJHooQKYRtMaQJff5EpPw6mDDEjn5iySxbqzUsRCcw!/b/dDcBAAAAAAAA&bo=BgRDAgAAAAARB3M!&rf=viewer_4')">
+<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&bo=gAcABAAAAAARB7M!&rf=viewer_4')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        多任务的概念
+                        Struts2中的拦截器
                     </div>
                 </div>
             </div>
@@ -277,12 +277,12 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/Thread/" target="_blank">
-                    <span class="chip bg-color">Thread</span>
+                <a href="/tags/Java/" target="_blank">
+                    <span class="chip bg-color">Java</span>
                 </a>
                 
-                <a href="/tags/多任务/" target="_blank">
-                    <span class="chip bg-color">多任务</span>
+                <a href="/tags/Struts2/" target="_blank">
+                    <span class="chip bg-color">Struts2</span>
                 </a>
                 
             </div>
@@ -292,26 +292,107 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Python/" class="post-category" target="_blank">
-                        Python
+                    <a href="/categories/Struts2/" class="post-category" target="_blank">
+                        Struts2
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-11-11
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-22
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><img src="http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png" alt="多任务"></p>
-<p>有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；</p>
-<p>什么叫“<strong>多任务</strong>”呢？简单地说，就是<strong>操作系统</strong>可以<strong>同时</strong>运行多个任务。打个比方，<strong>你一边在用浏览器上网，一边在听MP3</strong>，一边在用Word赶作业，这就是多任务，至少同时有3个任务正在运行。还有很多任务悄悄地在后台同时运行着，只是桌面上没有显示而已。</p>
-<p><strong>并发</strong>：指的是<strong>任务数多余cpu核数</strong>，通过操作系统的各种任务调度算法，实现用多个任务“一起”执行（实际上总有一些任务不在执行，因为切换任务的速度相当快，看上去一起执行而已）</p>
-<p><strong>并行</strong>：指的是<strong>任务数小于等于cpu核数</strong>，即任务真的是一起执行的</p>
+                <h1 id="什么是拦截器"><a href="#什么是拦截器" class="headerlink" title="什么是拦截器"></a>什么是拦截器</h1><ul>
+<li>Interceptor：拦截器，起到拦截Action的作用。<ul>
+<li>Interceptor：拦截器，拦截是客户端对Action的访问。更细粒度化的拦截。（拦截Action中的具体的方法）。<br>Struts2框架核心的功能都是依赖拦截器实现。</li>
+</ul>
+</li>
+<li>Filter：过滤器，过滤从客户端向服务器发送的请求。</li>
+</ul>
+<h1 id="Struts2的执行流程"><a href="#Struts2的执行流程" class="headerlink" title="Struts2的执行流程"></a>Struts2的执行流程</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/5sIReyNv*kZeGD6FsWrCZTWCHOmtQmpKAPDrTdmJkZI!/b/dDcBAAAAAAAA&amp;bo=JAI6AgAAAAARBy4!&amp;rf=viewer_4" alt="Struts2执行流程图"></p>
+<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/8rjImMd3RHjD*iHhf4Ba96Xz5EAIUiULhmSfp6sIHmg!/b/dL8AAAAAAAAA&amp;bo=PwU4BAAAAAARFyY!&amp;rf=viewer_4" alt=""></p>
+<p>客户端向服务器发送一个Action的请求，执行<strong>核心过滤器</strong>（doFilter）方法。在这个方法中，<strong>调用executeAction()方法</strong>，在这个方法内部调用dispatcher.serviceAction();在这个方法内部创建一个Action代理，最终执行的是Action代理中的execute(),在代理中执行的execute方法中调用ActionInvocation的invoke方法。在这个方法内部递归执行一组拦截器（完成部分功能），<strong>如果没有下一个拦截器，就会执行目标Action，根据Action的返回的结果进行页面跳转。</strong></p>
+<h1 id="拦截器入门"><a href="#拦截器入门" class="headerlink" title="拦截器入门"></a>拦截器入门</h1><h2 id="拦截器类"><a href="#拦截器类" class="headerlink" title="拦截器类"></a>拦截器类</h2><p>InterceptorDemo1</p>
+<pre><code>public class InterceptorDemo1 extends AbstractInterceptor {
+    // 继承AbstractInterceptor
+    @Override
+
+    // 实现intercept方法
+    public String intercept(ActionInvocation invocation) throws Exception {
+        System.out.println(&quot;InterceptorDemo1执行了---------------------&quot;);
+        String obj = invocation.invoke();    // 如果有下一个拦截器执行下一个拦截器,没有的话执行Action
+        System.out.println(&quot;InterceptorDemo1执行结束---------------------&quot;);
+        return obj; 
+    }
+}
+</code></pre><p>InterceptorDemo2</p>
+<pre><code>public class InterceptorDemo2 extends AbstractInterceptor {
+    // 继承AbstractInterceptor
+    @Override
+
+    // 实现intercept方法
+    public String intercept(ActionInvocation invocation) throws Exception {
+        System.out.println(&quot;InterceptorDemo2执行了---------------------&quot;);
+        String obj = invocation.invoke();    // 如果有下一个拦截器执行下一个拦截器,没有的话执行Action
+        System.out.println(&quot;InterceptorDemo2执行结束---------------------&quot;);
+        return obj; 
+    }
+}
+</code></pre><h2 id="在Struts2的配置文件中配置拦截器"><a href="#在Struts2的配置文件中配置拦截器" class="headerlink" title="在Struts2的配置文件中配置拦截器"></a>在Struts2的配置文件中配置拦截器</h2><pre><code>&lt;struts&gt;
+    &lt;!-- 开启Struts2的静态方法访问 --&gt;
+    &lt;constant name=&quot;struts.ognl.allowStaticMethodAccess&quot; value=&quot;true&quot;&gt;&lt;/constant&gt;
+    &lt;package name=&quot;demo1&quot; extends=&quot;struts-default&quot; namespace=&quot;/&quot;&gt;
+        &lt;!-- 定义拦截器 --&gt;
+        &lt;interceptors&gt;
+            &lt;interceptor name=&quot;interceptorDemo1&quot; class=&quot;web.interceptor.InterceptorDemo1&quot;&gt;&lt;/interceptor&gt;
+            &lt;interceptor name=&quot;interceptorDemo2&quot; class=&quot;web.interceptor.InterceptorDemo2&quot;&gt;&lt;/interceptor&gt;
+        &lt;/interceptors&gt;
+
+
+
+
+        &lt;!-- 在Action中引入自定义拦截器 --&gt;
+        &lt;action name=&quot;actionDemo1&quot; class=&quot;web.action.ActionDemo1&quot;&gt;
+            &lt;result&gt;/demo1/demo1.jsp&lt;/result&gt;
+            &lt;!-- 一旦引入了自定义拦截器,默认的拦截器栈就不执行了  --&gt;
+            &lt;interceptor-ref name=&quot;defaultStack&quot;&gt;&lt;/interceptor-ref&gt;        &lt;!-- 默认栈的拦截器 --&gt;
+            &lt;interceptor-ref name=&quot;interceptorDemo1&quot;&gt;&lt;/interceptor-ref&gt;
+            &lt;interceptor-ref name=&quot;interceptorDemo2&quot;&gt;&lt;/interceptor-ref&gt;
+        &lt;/action&gt;
+
+        &lt;!-- ui表单demo --&gt;
+        &lt;action name=&quot;uiAction&quot; class=&quot;web.action.UiActionDemo&quot;&gt;
+            &lt;result name=&quot;input&quot;&gt;/demo2/demo3.jsp&lt;/result&gt;
+        &lt;/action&gt;
+    &lt;/package&gt;
+
+    &lt;!-- 
+     配置拦截器的第二种方式:定义拦截器栈
+        &lt;interceptors&gt;
+            &lt;interceptor name=&quot;interceptorDemo1&quot; class=&quot;web.interceptor.InterceptorDemo1&quot;&gt;&lt;/interceptor&gt;
+            &lt;interceptor name=&quot;interceptorDemo2&quot; class=&quot;web.interceptor.InterceptorDemo2&quot;&gt;&lt;/interceptor&gt;
+            &lt;interceptor-stack name=&quot;myStack&quot;&gt;
+                &lt;interceptor-ref name=&quot;defaultStack&quot;&gt;&lt;/interceptor-ref&gt;
+                &lt;interceptor-ref name=&quot;interceptorDemo1&quot;&gt;&lt;/interceptor-ref&gt;
+                &lt;interceptor-ref name=&quot;interceptorDemo2&quot;&gt;&lt;/interceptor-ref&gt;
+            &lt;/interceptor-stack&gt;
+        &lt;/interceptors&gt;
+    --&gt;
+
+    &lt;!-- 在Action中引入拦截器栈
+        &lt;action name=&quot;actionDemo1&quot; class=&quot;web.action.ActionDemo1&quot;&gt;
+            &lt;result&gt;/demo1/demo1.jsp&lt;/result&gt;
+            &lt;interceptor-ref name=&quot;myStack&quot;&gt;&lt;/interceptor-ref&gt;
+        &lt;/action&gt;
+
+    --&gt;
+&lt;/struts&gt;
+</code></pre><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p><img src="&quot;http://m.qpic.cn/psb?/V10Lajvl1FgUNv/DG4E1cExTeiQHbFKtx*S.gDdF1WG7UY6dEbfIRaFE8o!/b/dL8AAAAAAAAA&amp;bo=iAMUAgAAAAADF68!&amp;rf=viewer_4&quot;" alt="自定义拦截器输出"></p>
 
             </div>
             <hr>
@@ -333,7 +414,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/11/11/duo-ren-wu-de-gai-nian/" class="b-link-green">多任务的概念</a>
+                    <a href="/2018/12/22/struts2-zhong-de-lan-jie-qi/" class="b-link-green">Struts2中的拦截器</a>
                 </p>
             </div>
         </div>
@@ -377,44 +458,28 @@
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/11/11/tcpip-xie-yi/">
+                <a href="/2018/12/22/struts2-de-biao-qian-ku/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/yqKIn8tJuxBjWtcKXiboj*dXGE*J6Gf3gEMF6zQxx.c!/b/dDYBAAAAAAAA&amp;bo=gAKqAQAAAAAKBwI!&amp;rf=viewer_4" class="responsive-img" alt="TCPIP协议">
                         
-                        <span class="card-title">TCPIP协议</span>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Struts2的标签库">
+                        
+                        <span class="card-title">Struts2的标签库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个规定,这个规定就叫协议.
-计算机之间如何沟通就像说</div>
+                    <div class="summary"></div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/网络通信/" class="post-category" target="_blank">
-                                    网络通信
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Chen
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/TCP/" target="_blank">
-                        <span class="chip bg-color">TCP</span>
-                    </a>
-                    
-                    <a href="/tags/IP/" target="_blank">
-                        <span class="chip bg-color">IP</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -422,46 +487,46 @@
         
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">本篇</div>
+            <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/11/11/duo-ren-wu-de-gai-nian/">
+                <a href="/2018/12/22/struts2-zhong-de-zhi-zhan/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/vBJHooQKYRtMaQJff5EpPw6mDDEjn5iySxbqzUsRCcw!/b/dDcBAAAAAAAA&amp;bo=BgRDAgAAAAARB3M!&amp;rf=viewer_4" class="responsive-img" alt="多任务的概念">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&amp;bo=gAcABAAAAAARB7M!&amp;rf=viewer_4" class="responsive-img" alt="Struts2中的值栈">
                         
-                        <span class="card-title">多任务的概念</span>
+                        <span class="card-title">Struts2中的值栈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；
-什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏览器上网，一边在听MP3，一边在用Word赶作业</div>
+                    <div class="summary">Struts2值栈什么是值栈
+ValueStack类似于一个数据中转站Struts2框架中的数据都保存到了ValueStack中
+ValueStack是一个接口,OgnlValueStack是一个ValueStack接口的实现类
+Value</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/Struts2/" class="post-category" target="_blank">
+                                    Struts2
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Thread/" target="_blank">
-                        <span class="chip bg-color">Thread</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/多任务/" target="_blank">
-                        <span class="chip bg-color">多任务</span>
+                    <a href="/tags/Struts2/" target="_blank">
+                        <span class="chip bg-color">Struts2</span>
                     </a>
                     
                 </div>
