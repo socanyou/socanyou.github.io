@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Struts2Input逻辑视图</title>
+      <link href="/2018/12/22/struts2input-luo-ji-shi-tu/"/>
+      <url>/2018/12/22/struts2input-luo-ji-shi-tu/</url>
+      
+        <content type="html"><![CDATA[<p>Action接口中提供了五个逻辑视图的名称：</p><ol><li>success</li><li>input</li><li>none</li><li>login</li><li><p>error</p><pre><code> public static final String SUCCESS = &quot;success&quot;; public static final String NONE = &quot;none&quot;; public static final String ERROR = &quot;error&quot;; public static final String INPUT = &quot;input&quot;; public static final String LOGIN = &quot;login&quot;;</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Struts2 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Struts2 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Struts2的标签库</title>
       <link href="/2018/12/22/struts2-de-biao-qian-ku/"/>
       <url>/2018/12/22/struts2-de-biao-qian-ku/</url>

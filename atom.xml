@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-22T05:25:40.892Z</updated>
+  <updated>2018-12-22T05:35:55.975Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Struts2Input逻辑视图</title>
+    <link href="https://codinglife.site/2018/12/22/struts2input-luo-ji-shi-tu/"/>
+    <id>https://codinglife.site/2018/12/22/struts2input-luo-ji-shi-tu/</id>
+    <published>2018-12-22T05:29:59.000Z</published>
+    <updated>2018-12-22T05:35:55.975Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Action接口中提供了五个逻辑视图的名称：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;success&lt;/li&gt;
+&lt;li&gt;input&lt;/li&gt;
+&lt;li&gt;none&lt;/li&gt;
+&lt;li&gt;login&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;error&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; public static
+        
+      
+    
+    </summary>
+    
+      <category term="Struts2" scheme="https://codinglife.site/categories/Struts2/"/>
+    
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
+    
+      <category term="Struts2" scheme="https://codinglife.site/tags/Struts2/"/>
+    
+  </entry>
   
   <entry>
     <title>Struts2的标签库</title>
