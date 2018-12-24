@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-22T05:35:55.975Z</updated>
+  <updated>2018-12-24T04:05:06.054Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript批量删除说说</title>
+    <link href="https://codinglife.site/2018/12/24/javascript-pi-liang-shan-chu-shuo-shuo/"/>
+    <id>https://codinglife.site/2018/12/24/javascript-pi-liang-shan-chu-shuo-shuo/</id>
+    <published>2018-12-24T04:00:46.000Z</published>
+    <updated>2018-12-24T04:05:06.054Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;使用浏览器打开QQ空间-&amp;gt;说说-&amp;gt;F12打开浏览器的开发者模式输入下面的Js代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var delay = 1000;        //变量
+
+function del() {
+    //删除方法
+   
+        
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="https://codinglife.site/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="https://codinglife.site/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Struts2Input逻辑视图</title>
@@ -529,35 +560,6 @@
       <category term="TCP" scheme="https://codinglife.site/tags/TCP/"/>
     
       <category term="IP" scheme="https://codinglife.site/tags/IP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>多任务的概念</title>
-    <link href="https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/"/>
-    <id>https://codinglife.site/2018/11/11/duo-ren-wu-de-gai-nian/</id>
-    <published>2018-11-10T18:49:21.000Z</published>
-    <updated>2018-12-14T00:36:39.169Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;img src=&quot;http://phmes812n.bkt.clouddn.com/%E5%A4%9A%E4%BB%BB%E5%8A%A1.png&quot; alt=&quot;多任务&quot;&gt;&lt;/p&gt;
-&lt;p&gt;有很多的场景中的事情是同时进行的，比如开车的时候
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="Thread" scheme="https://codinglife.site/tags/Thread/"/>
-    
-      <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
     
   </entry>
   

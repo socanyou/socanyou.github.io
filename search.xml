@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>JavaScript批量删除说说</title>
+      <link href="/2018/12/24/javascript-pi-liang-shan-chu-shuo-shuo/"/>
+      <url>/2018/12/24/javascript-pi-liang-shan-chu-shuo-shuo/</url>
+      
+        <content type="html"><![CDATA[<p>使用浏览器打开QQ空间-&gt;说说-&gt;F12打开浏览器的开发者模式输入下面的Js代码</p><pre><code>var delay = 1000;        //变量function del() {    //删除方法    document.querySelector(&#39;.app_canvas_frame&#39;).contentDocument.querySelector(&#39;.del_btn&#39;).click();    setTimeout(&quot;yes()&quot;, delay);}function yes() {    //点击确认删除的方法    document.querySelector(&#39;.qz_dialog_layer_btn&#39;).click();    setTimeout(&quot;del()&quot;, delay);}del();</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Struts2Input逻辑视图</title>
       <link href="/2018/12/22/struts2input-luo-ji-shi-tu/"/>
       <url>/2018/12/22/struts2input-luo-ji-shi-tu/</url>
