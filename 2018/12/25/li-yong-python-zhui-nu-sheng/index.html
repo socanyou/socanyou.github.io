@@ -432,6 +432,14 @@
     low = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;low&#39;]  # 低温
     type = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;type&#39;]  # 天气类型
     notice = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;notice&#39;]  # 问候语
+</code></pre><p>提取结果然后进行格式化处理</p>
+<pre><code>许昌市今天❤多云❤:
+湿度💧45%
+高温 6.0℃
+低温 -2.0℃
+日出时间☀07:27
+空气污染程度🌚严重污染
+😜阴晴之间，谨防紫外线侵扰😜
 </code></pre><h2 id="3-利用wxpy模块发送处理过后的数据"><a href="#3-利用wxpy模块发送处理过后的数据" class="headerlink" title="3:利用wxpy模块发送处理过后的数据"></a>3:利用wxpy模块发送处理过后的数据</h2><pre><code>content = get_weather()
         # 你朋友的微信名称，不是备注，也不是微信帐号。
         my_friend = bot.friends().search(u&#39;未来&#39;)[0]
