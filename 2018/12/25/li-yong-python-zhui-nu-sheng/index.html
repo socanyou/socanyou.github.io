@@ -5,13 +5,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript批量删除说说, 程序员小黑">
-    <meta name="description" content="使用浏览器打开QQ空间-&amp;gt;说说-&amp;gt;F12打开浏览器的开发者模式输入下面的Js代码
-var delay = 1000;        //变量
+    <meta name="keywords" content="利用Python追求女生, 程序员小黑">
+    <meta name="description" content="前段时间在图书馆遇到一个女生,可能是一见钟情吧,晚上聊了聊才知道她是我的学姐.
+虽然不在一个系,但是在一个学校,她快毕业了.
+想用微信每天早上定时给她发送当天的天气信息和一些问候.
+先来看看运行效果
 
-function del() {
-    //删除方法
-    document.q">
+接下来带大家进行实现
+具体实现1:天气">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@ function del() {
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>JavaScript批量删除说说 | 程序员小黑</title>
+    <title>利用Python追求女生 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -254,13 +255,13 @@ function del() {
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/u9rr7gEDFLrxplMAUwCONf97nKgiJNifOrWW4BgkA*8!/b/dL4AAAAAAAAA&bo=VAY4BAAAAAARB14!&rf=viewer_4')">
+<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/0R1LN*VObvwhEuXmOVepJZJGB**pyEUTLTkFiyL1rUo!/b/dL4AAAAAAAAA&bo=VAY4BAAAAAARB14!&rf=viewer_4')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        JavaScript批量删除说说
+                        利用Python追求女生
                     </div>
                 </div>
             </div>
@@ -280,8 +281,8 @@ function del() {
             
             <div class="article-tag">
                 
-                <a href="/tags/JavaScript/" target="_blank">
-                    <span class="chip bg-color">JavaScript</span>
+                <a href="/tags/Python/" target="_blank">
+                    <span class="chip bg-color">Python</span>
                 </a>
                 
             </div>
@@ -291,36 +292,264 @@ function del() {
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/JavaScript/" class="post-category" target="_blank">
-                        JavaScript
+                    <a href="/categories/PythonApplication/" class="post-category" target="_blank">
+                        PythonApplication
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-24
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-25
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>使用浏览器打开QQ空间-&gt;说说-&gt;F12打开浏览器的开发者模式输入下面的Js代码</p>
-<pre><code>var delay = 1000;        //变量
+                <p>前段时间在图书馆遇到一个女生,可能是一见钟情吧,晚上聊了聊才知道她是我的学姐.</p>
+<p>虽然不在一个系,但是在一个学校,她快毕业了.</p>
+<p>想用微信每天早上定时给她发送当天的天气信息和一些问候.</p>
+<p><strong>先来看看运行效果</strong></p>
+<p><img src="" alt=""></p>
+<p>接下来带大家进行实现</p>
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><h2 id="1-天气接口"><a href="#1-天气接口" class="headerlink" title="1:天气接口"></a>1:天气接口</h2><pre><code>http://t.weather.sojson.com/api/weather/city/101180401
+</code></pre><p>该接口返回的是Json数据,使用Python的Request库进行请求然后使用json()函数解析JSON,最后返回一个字典.</p>
+<p>需要注意的是上面这段URL最后的<strong>101180401</strong>是城市代码.这里我使用的是许昌市.</p>
+<p>文末有所有城市对应的code.</p>
+<pre><code>{
+&quot;time&quot;:&quot;2018-12-25 13:00:48&quot;,
+&quot;cityInfo&quot;:{
+    &quot;city&quot;:&quot;许昌市&quot;,
+    &quot;cityId&quot;:&quot;101180401&quot;,
+    &quot;parent&quot;:&quot;河南&quot;,
+    &quot;updateTime&quot;:&quot;12:51&quot;
+},
+&quot;date&quot;:&quot;20181225&quot;,
+&quot;message&quot;:&quot;Success !&quot;,
+&quot;status&quot;:200,
+&quot;data&quot;:{
+    &quot;shidu&quot;:&quot;48%&quot;,
+    &quot;pm25&quot;:374,
+    &quot;pm10&quot;:0,
+    &quot;quality&quot;:&quot;严重污染&quot;,
+    &quot;wendu&quot;:&quot;6&quot;,
+    &quot;ganmao&quot;:&quot;老年人病人应留在室内，停止体力消耗，一般人群避免户外活动&quot;,
+    &quot;yesterday&quot;:{
+        &quot;date&quot;:&quot;24&quot;,
+        &quot;sunrise&quot;:&quot;07:27&quot;,
+        &quot;high&quot;:&quot;高温 6.0℃&quot;,
+        &quot;low&quot;:&quot;低温 -2.0℃&quot;,
+        &quot;sunset&quot;:&quot;17:20&quot;,
+        &quot;aqi&quot;:74,
+        &quot;ymd&quot;:&quot;2018-12-24&quot;,
+        &quot;week&quot;:&quot;星期一&quot;,
+        &quot;fx&quot;:&quot;东南风&quot;,
+        &quot;fl&quot;:&quot;&lt;3级&quot;,
+        &quot;type&quot;:&quot;多云&quot;,
+        &quot;notice&quot;:&quot;阴晴之间，谨防紫外线侵扰&quot;
+    },
+    &quot;forecast&quot;:[
+        {
+            &quot;date&quot;:&quot;25&quot;,
+            &quot;sunrise&quot;:&quot;07:27&quot;,
+            &quot;high&quot;:&quot;高温 7.0℃&quot;,
+            &quot;low&quot;:&quot;低温 -1.0℃&quot;,
+            &quot;sunset&quot;:&quot;17:21&quot;,
+            &quot;aqi&quot;:209,
+            &quot;ymd&quot;:&quot;2018-12-25&quot;,
+            &quot;week&quot;:&quot;星期二&quot;,
+            &quot;fx&quot;:&quot;东北风&quot;,
+            &quot;fl&quot;:&quot;3-4级&quot;,
+            &quot;type&quot;:&quot;多云&quot;,
+            &quot;notice&quot;:&quot;阴晴之间，谨防紫外线侵扰&quot;
+        },
+        {
+            &quot;date&quot;:&quot;26&quot;,
+            &quot;sunrise&quot;:&quot;07:28&quot;,
+            &quot;high&quot;:&quot;高温 2.0℃&quot;,
+            &quot;low&quot;:&quot;低温 -3.0℃&quot;,
+            &quot;sunset&quot;:&quot;17:21&quot;,
+            &quot;aqi&quot;:133,
+            &quot;ymd&quot;:&quot;2018-12-26&quot;,
+            &quot;week&quot;:&quot;星期三&quot;,
+            &quot;fx&quot;:&quot;东北风&quot;,
+            &quot;fl&quot;:&quot;3-4级&quot;,
+            &quot;type&quot;:&quot;阴&quot;,
+            &quot;notice&quot;:&quot;不要被阴云遮挡住好心情&quot;
+        },
+        {
+            &quot;date&quot;:&quot;27&quot;,
+            &quot;sunrise&quot;:&quot;07:28&quot;,
+            &quot;high&quot;:&quot;高温 1.0℃&quot;,
+            &quot;low&quot;:&quot;低温 -5.0℃&quot;,
+            &quot;sunset&quot;:&quot;17:22&quot;,
+            &quot;aqi&quot;:84,
+            &quot;ymd&quot;:&quot;2018-12-27&quot;,
+            &quot;week&quot;:&quot;星期四&quot;,
+            &quot;fx&quot;:&quot;东北风&quot;,
+            &quot;fl&quot;:&quot;3-4级&quot;,
+            &quot;type&quot;:&quot;多云&quot;,
+            &quot;notice&quot;:&quot;阴晴之间，谨防紫外线侵扰&quot;
+        },
+        {
+            &quot;date&quot;:&quot;28&quot;,
+            &quot;sunrise&quot;:&quot;07:29&quot;,
+            &quot;high&quot;:&quot;高温 0.0℃&quot;,
+            &quot;low&quot;:&quot;低温 -6.0℃&quot;,
+            &quot;sunset&quot;:&quot;17:23&quot;,
+            &quot;aqi&quot;:69,
+            &quot;ymd&quot;:&quot;2018-12-28&quot;,
+            &quot;week&quot;:&quot;星期五&quot;,
+            &quot;fx&quot;:&quot;东北风&quot;,
+            &quot;fl&quot;:&quot;3-4级&quot;,
+            &quot;type&quot;:&quot;多云&quot;,
+            &quot;notice&quot;:&quot;阴晴之间，谨防紫外线侵扰&quot;
+        },
+        {
+            &quot;date&quot;:&quot;29&quot;,
+            &quot;sunrise&quot;:&quot;07:29&quot;,
+            &quot;high&quot;:&quot;高温 0.0℃&quot;,
+            &quot;low&quot;:&quot;低温 -5.0℃&quot;,
+            &quot;sunset&quot;:&quot;17:23&quot;,
+            &quot;aqi&quot;:68,
+            &quot;ymd&quot;:&quot;2018-12-29&quot;,
+            &quot;week&quot;:&quot;星期六&quot;,
+            &quot;fx&quot;:&quot;东北风&quot;,
+            &quot;fl&quot;:&quot;&lt;3级&quot;,
+            &quot;type&quot;:&quot;多云&quot;,
+            &quot;notice&quot;:&quot;阴晴之间，谨防紫外线侵扰&quot;
+        }
+    ]
+}
+</code></pre><p>}</p>
+<h2 id="2-对接口返回过来的数据进行处理"><a href="#2-对接口返回过来的数据进行处理" class="headerlink" title="2:对接口返回过来的数据进行处理"></a>2:对接口返回过来的数据进行处理</h2><p>提取出想要的数据</p>
+<pre><code>city = data[&#39;cityInfo&#39;][&#39;city&#39;]  # 城市
+    shidu = data[&#39;data&#39;][&quot;shidu&quot;]  # 空气湿度
+    quality = data[&#39;data&#39;][&#39;quality&#39;]  # 污染程度
+    sunrise = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;sunrise&#39;]  # 日出时间
+    high = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;high&#39;]  # 高温
+    low = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;low&#39;]  # 低温
+    type = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;type&#39;]  # 天气类型
+    notice = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;notice&#39;]  # 问候语
+</code></pre><h2 id="3-利用wxpy模块发送处理过后的数据"><a href="#3-利用wxpy模块发送处理过后的数据" class="headerlink" title="3:利用wxpy模块发送处理过后的数据"></a>3:利用wxpy模块发送处理过后的数据</h2><pre><code>content = get_weather()
+        # 你朋友的微信名称，不是备注，也不是微信帐号。
+        my_friend = bot.friends().search(u&#39;未来&#39;)[0]
+        my_friend.send(u&quot;早安❤&quot;)
+        my_friend.send(content)
+        # 每86400秒（1天），发送1次
+        t = Timer(86400, send_news)
+        t.start()
+    except:
 
-function del() {
-    //删除方法
-    document.querySelector(&#39;.app_canvas_frame&#39;).contentDocument.querySelector(&#39;.del_btn&#39;).click();
-    setTimeout(&quot;yes()&quot;, delay);
+        # 你的微信名称，不是微信帐号。
+        my_friend = bot.friends().search(&#39;Coder&#39;)[0]
+        my_friend.send(u&quot;今天消息发送失败了&quot;)
+</code></pre><h2 id="部署到Server"><a href="#部署到Server" class="headerlink" title="部署到Server"></a>部署到Server</h2><p>环境</p>
+<ul>
+<li>阿里云CentOS</li>
+<li>Python3</li>
+</ul>
+<p>使用nohup让Python脚本后台执行</p>
+<pre><code>nohup python3 WeChatGirl.py &amp;
+</code></pre><p>运行上面的命令之后会在当前目录下生成一个nohup.out文件,打开nouhp.out文件扫码登陆微信即可.</p>
+<p>后来发现一个问题,当我将代码运行的时间间隔调整成1分钟的时候,会报错.<br>原因是运行代码之后会生成一个<strong>botoo.pkl文件</strong>,解决方法是使用crontab定时<strong>删除botoo.pkl</strong>文件即可.</p>
+<p>编辑crontab</p>
+<pre><code>SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+
+
+# 每一分钟执行一次删除
+*/1 * * * * root rm -rf botoo.pkl
+</code></pre><p>修改完之后重启crontab这样就达到了每分钟执行一次文件删除就不会报错.</p>
+<pre><code>sudo service crond restart
+</code></pre><p>查看Crontab的运行日志检查Crontab是否执行</p>
+<pre><code>cat /var/log/cron
+</code></pre><p><strong>可以看到每分钟都删除一次botoo.pkl文件</strong></p>
+<pre><code>Dec 25 15:11:33 iz2ze8yfs65r3ciel5lbucz crontab[13873]: (root) LIST (root)
+Dec 25 15:12:01 iz2ze8yfs65r3ciel5lbucz CROND[13890]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:13:01 iz2ze8yfs65r3ciel5lbucz CROND[13911]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:14:01 iz2ze8yfs65r3ciel5lbucz CROND[13938]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:15:01 iz2ze8yfs65r3ciel5lbucz CROND[13965]: (root) CMD ( /home/staragent/bin/sa_recovery.sh)
+Dec 25 15:15:01 iz2ze8yfs65r3ciel5lbucz CROND[13966]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:16:01 iz2ze8yfs65r3ciel5lbucz CROND[14035]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:17:01 iz2ze8yfs65r3ciel5lbucz CROND[14062]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:18:01 iz2ze8yfs65r3ciel5lbucz CROND[14115]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:19:01 iz2ze8yfs65r3ciel5lbucz CROND[14179]: (root) CMD (rm -rf botoo.pkl)
+Dec 25 15:19:57 iz2ze8yfs65r3ciel5lbucz crontab[14215]: (root) LIST (root)
+Dec 25 15:20:01 iz2ze8yfs65r3ciel5lbucz CROND[14219]: (root) CMD (/usr/lib64/sa/sa1 1 1)
+Dec 25 15:20:01 iz2ze8yfs65r3ciel5lbucz CROND[14220]: (root) CMD ( /home/staragent/bin/sa_recovery.sh)
+Dec 25 15:20:01 iz2ze8yfs65r3ciel5lbucz CROND[14221]: (root) CMD (rm -rf botoo.pkl)
+</code></pre><h1 id="完整Python代码"><a href="#完整Python代码" class="headerlink" title="完整Python代码"></a>完整Python代码</h1><pre><code>from __future__ import unicode_literals
+from threading import Timer
+from wxpy import *
+import requests
+
+# bot = Bot()
+# city_code = 101180401
+# url = http://t.weather.sojson.com/api/weather/city/101180401
+# linux执行登陆请调用下面的这句
+bot = Bot(console_qr=2, cache_path=&quot;botoo.pkl&quot;)
+
+headers = {
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;,
+    &quot;Accept&quot;: &quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&quot;,
+    &quot;Host&quot;: &quot;t.weather.sojson.com&quot;,
+    &quot;Proxy-Connection&quot;: &quot;keep-alive&quot;,
+    &quot;Accept-Language&quot;: &quot;zh-CN,zh;q=0.9,en;q=0.8&quot;
 }
 
-function yes() {
-    //点击确认删除的方法
-    document.querySelector(&#39;.qz_dialog_layer_btn&#39;).click();
-    setTimeout(&quot;del()&quot;, delay);
-}
-del();
+content = &quot;&quot;&quot;{city}今天❤{type}❤:\n湿度💧{shidu}\n{high}\n{low}\n日出时间☀{sunrise}\n空气污染程度🌚{quality}\n😜{notice}😜
+&quot;&quot;&quot;
+
+
+def get_weather():
+    data = requests.get(&quot;http://t.weather.sojson.com/api/weather/city/101180401&quot;, headers=headers).json()
+    city = data[&#39;cityInfo&#39;][&#39;city&#39;]  # 城市
+    shidu = data[&#39;data&#39;][&quot;shidu&quot;]  # 空气湿度
+    quality = data[&#39;data&#39;][&#39;quality&#39;]  # 污染程度
+    sunrise = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;sunrise&#39;]  # 日出时间
+    high = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;high&#39;]  # 高温
+    low = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;low&#39;]  # 低温
+    type = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;type&#39;]  # 天气类型
+    notice = data[&#39;data&#39;][&#39;forecast&#39;][0][&#39;notice&#39;]  # 问候语
+
+    return content.format(city=city, type=type, shidu=shidu, high=high, low=low, sunrise=sunrise, quality=quality,
+                          notice=notice)
+
+
+def send_news():
+    try:
+        content = get_weather()
+        # 你朋友的微信名称，不是备注，也不是微信帐号。
+        my_friend = bot.friends().search(u&#39;未来&#39;)[0]
+        my_friend.send(u&quot;早安❤&quot;)
+        my_friend.send(content)
+        # 每86400秒（1天），发送1次
+        t = Timer(86400, send_news)
+        t.start()
+    except:
+
+        # 你的微信名称，不是微信帐号。
+        my_friend = bot.friends().search(&#39;Coder&#39;)[0]
+        my_friend.send(u&quot;今天消息发送失败了&quot;)
+
+
+if __name__ == &quot;__main__&quot;:
+    send_news()
+</code></pre><h1 id="城市code"><a href="#城市code" class="headerlink" title="城市code"></a>城市code</h1><pre><code>http://cdn.sojson.com/_city.json
 </code></pre>
             </div>
             <hr>
@@ -342,7 +571,7 @@ del();
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/24/javascript-pi-liang-shan-chu-shuo-shuo/" class="b-link-green">JavaScript批量删除说说</a>
+                    <a href="/2018/12/25/li-yong-python-zhui-nu-sheng/" class="b-link-green">利用Python追求女生</a>
                 </p>
             </div>
         </div>
@@ -384,7 +613,7 @@ del();
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2018/12/25/li-yong-python-zhui-nu-sheng/">
                     <div class="card-image">
@@ -403,9 +632,9 @@ del();
 接下来带大家进行实现
 具体实现1:天气</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -418,6 +647,7 @@ del();
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -434,34 +664,31 @@ del();
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/12/22/struts2input-luo-ji-shi-tu/">
+                <a href="/2018/12/24/javascript-pi-liang-shan-chu-shuo-shuo/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&amp;bo=gAcABAAAAAARB7M!&amp;rf=viewer_4" class="responsive-img" alt="Struts2Input逻辑视图">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/u9rr7gEDFLrxplMAUwCONf97nKgiJNifOrWW4BgkA*8!/b/dL4AAAAAAAAA&amp;bo=VAY4BAAAAAARB14!&amp;rf=viewer_4" class="responsive-img" alt="JavaScript批量删除说说">
                         
-                        <span class="card-title">Struts2Input逻辑视图</span>
+                        <span class="card-title">JavaScript批量删除说说</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">Action接口中提供了五个逻辑视图的名称：
+                    <div class="summary">使用浏览器打开QQ空间-&gt;说说-&gt;F12打开浏览器的开发者模式输入下面的Js代码
+var delay = 1000;        //变量
 
-success
-input
-none
-login
-error
- public static final String SUCCESS = &quot;success&quot;;
- publi</div>
+function del() {
+    //删除方法
+    document.q</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Struts2/" class="post-category" target="_blank">
-                                    Struts2
+                            <a href="/categories/JavaScript/" class="post-category" target="_blank">
+                                    JavaScript
                                 </a>
                             
                             
@@ -471,12 +698,8 @@ error
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Struts2/" target="_blank">
-                        <span class="chip bg-color">Struts2</span>
+                    <a href="/tags/JavaScript/" target="_blank">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>

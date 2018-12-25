@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-24T04:13:28.289Z</updated>
+  <updated>2018-12-25T07:23:45.610Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用Python追求女生</title>
+    <link href="https://codinglife.site/2018/12/25/li-yong-python-zhui-nu-sheng/"/>
+    <id>https://codinglife.site/2018/12/25/li-yong-python-zhui-nu-sheng/</id>
+    <published>2018-12-25T05:37:39.000Z</published>
+    <updated>2018-12-25T07:23:45.610Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;前段时间在图书馆遇到一个女生,可能是一见钟情吧,晚上聊了聊才知道她是我的学姐.&lt;/p&gt;
+&lt;p&gt;虽然不在一个系,但是在一个学校,她快毕业了.&lt;/p&gt;
+&lt;p&gt;想用微信每天早上定时给她发送当天的天气信息和一些问候.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;先来看看运行效果&lt;/strong&gt;
+        
+      
+    
+    </summary>
+    
+      <category term="PythonApplication" scheme="https://codinglife.site/categories/PythonApplication/"/>
+    
+    
+      <category term="Python" scheme="https://codinglife.site/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript批量删除说说</title>
@@ -486,7 +515,7 @@ function del() {
     <link href="https://codinglife.site/2018/11/12/python-zhong-de-gil-wen-ti/"/>
     <id>https://codinglife.site/2018/11/12/python-zhong-de-gil-wen-ti/</id>
     <published>2018-11-12T14:42:11.000Z</published>
-    <updated>2018-12-14T00:31:09.595Z</updated>
+    <updated>2018-12-25T06:14:56.199Z</updated>
     
     <summary type="html">
     
@@ -501,8 +530,6 @@ function del() {
     </summary>
     
       <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-      <category term="GIL" scheme="https://codinglife.site/categories/Python/GIL/"/>
     
     
       <category term="GIL" scheme="https://codinglife.site/tags/GIL/"/>
@@ -532,34 +559,6 @@ function del() {
     
     
       <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TCPIP协议</title>
-    <link href="https://codinglife.site/2018/11/11/tcpip-xie-yi/"/>
-    <id>https://codinglife.site/2018/11/11/tcpip-xie-yi/</id>
-    <published>2018-11-11T07:44:17.000Z</published>
-    <updated>2018-12-14T00:16:42.503Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;什么是协议&quot;&gt;&lt;a href=&quot;#什么是协议&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="网络通信" scheme="https://codinglife.site/categories/%E7%BD%91%E7%BB%9C%E9%80%9A%E4%BF%A1/"/>
-    
-    
-      <category term="TCP" scheme="https://codinglife.site/tags/TCP/"/>
-    
-      <category term="IP" scheme="https://codinglife.site/tags/IP/"/>
     
   </entry>
   
