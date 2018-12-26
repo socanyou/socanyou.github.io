@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-25T10:16:14.687Z</updated>
+  <updated>2018-12-26T05:46:51.044Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>银行是如何进行赚钱的</title>
+    <link href="https://codinglife.site/2018/12/26/yin-xing-shi-ru-he-jin-xing-zhuan-qian-de/"/>
+    <id>https://codinglife.site/2018/12/26/yin-xing-shi-ru-he-jin-xing-zhuan-qian-de/</id>
+    <published>2018-12-26T05:37:10.000Z</published>
+    <updated>2018-12-26T05:46:51.044Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;银行是如何进行赚钱的。&quot;&gt;&lt;a href=&quot;#银行是如何进行赚钱的。&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="金融" scheme="https://codinglife.site/categories/%E9%87%91%E8%9E%8D/"/>
+    
+    
+      <category term="银行" scheme="https://codinglife.site/tags/%E9%93%B6%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>存在银行的钱安全吗?</title>
+    <link href="https://codinglife.site/2018/12/26/cun-zai-yin-xing-de-qian-an-quan-ma/"/>
+    <id>https://codinglife.site/2018/12/26/cun-zai-yin-xing-de-qian-an-quan-ma/</id>
+    <published>2018-12-26T05:36:15.000Z</published>
+    <updated>2018-12-26T05:50:45.411Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;从2015年开始， 即使银行破产， 50万以下的银行存款也能够得到全额的赔付—银行存款保险制度。&lt;/p&gt;
+&lt;p&gt;上千人到银行去取现金的现象， 在金融学里面就叫做“银行挤兑”， 也叫“Bank Run”， 它是金融恐慌的一种。&lt;br&gt;金融市场是关于信心和未来预期的，
+        
+      
+    
+    </summary>
+    
+      <category term="金融" scheme="https://codinglife.site/categories/%E9%87%91%E8%9E%8D/"/>
+    
+    
+      <category term="银行" scheme="https://codinglife.site/tags/%E9%93%B6%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>中国银行的血统和阶级</title>
+    <link href="https://codinglife.site/2018/12/26/zhong-guo-yin-xing-de-xie-tong-he-jie-ji/"/>
+    <id>https://codinglife.site/2018/12/26/zhong-guo-yin-xing-de-xie-tong-he-jie-ji/</id>
+    <published>2018-12-26T05:35:32.000Z</published>
+    <updated>2018-12-26T05:47:52.787Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;国家担保五大行，贵族血统底气旺； 股份银行靠差异， 信用微贷有形象； 地方特色城商行， 夹缝生存激进跑。 作为同时体验过三个梯队的用户来说， 最大的感受有几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;第一梯队特别像富二代， 我对你爱答不理， 那是因为你对我高攀不起；
+        
+      
+    
+    </summary>
+    
+      <category term="金融" scheme="https://codinglife.site/categories/%E9%87%91%E8%9E%8D/"/>
+    
+    
+      <category term="银行" scheme="https://codinglife.site/tags/%E9%93%B6%E8%A1%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>利用Python追求女生</title>
@@ -483,82 +564,6 @@ function del() {
     
       <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Python中的深拷贝和浅拷贝</title>
-    <link href="https://codinglife.site/2018/11/14/python-zhong-de-shen-kao-bei-he-qian-kao-bei/"/>
-    <id>https://codinglife.site/2018/11/14/python-zhong-de-shen-kao-bei-he-qian-kao-bei/</id>
-    <published>2018-11-14T13:42:32.000Z</published>
-    <updated>2018-12-14T00:31:01.941Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;面试题-深拷贝和浅拷贝的区别是什么？&quot;&gt;&lt;a href=&quot;#面试题-深拷贝和浅拷贝的区别是什么？&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Python中的GIL问题</title>
-    <link href="https://codinglife.site/2018/11/12/python-zhong-de-gil-wen-ti/"/>
-    <id>https://codinglife.site/2018/11/12/python-zhong-de-gil-wen-ti/</id>
-    <published>2018-11-12T14:42:11.000Z</published>
-    <updated>2018-12-25T07:26:14.032Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;什么是GIL&quot;&gt;&lt;a href=&quot;#什么是GIL&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="GIL" scheme="https://codinglife.site/tags/GIL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线程中的互斥锁</title>
-    <link href="https://codinglife.site/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/"/>
-    <id>https://codinglife.site/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/</id>
-    <published>2018-11-11T15:03:35.000Z</published>
-    <updated>2018-12-14T00:36:33.694Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;多线程开发可能遇到的问题&quot;&gt;&lt;a href=&quot;#多线程开发可能遇到的问题&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="多任务" scheme="https://codinglife.site/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1/"/>
     
   </entry>
   
