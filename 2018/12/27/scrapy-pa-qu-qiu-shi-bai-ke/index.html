@@ -331,7 +331,13 @@ scrapy startproject QiuShiBaiKe
     │  │  QiuShi.py        # 爬虫文件,运行scrapy genspider 命令自动生成的文件
     │  │  __init__.py
 </code></pre><h2 id="创建一个爬虫"><a href="#创建一个爬虫" class="headerlink" title="创建一个爬虫"></a>创建一个爬虫</h2><pre><code>scrapy genspider QiuShi &quot;qiushibaike.com&quot;
-</code></pre><h1 id="版本一-完成简单的爬取并将数据保存成JSON格式"><a href="#版本一-完成简单的爬取并将数据保存成JSON格式" class="headerlink" title="版本一:完成简单的爬取并将数据保存成JSON格式"></a>版本一:完成简单的爬取并将数据保存成JSON格式</h1><p>QiuShi.py</p>
+</code></pre><h2 id="运行Scrapy-使用Python脚本运行Scrapy项目"><a href="#运行Scrapy-使用Python脚本运行Scrapy项目" class="headerlink" title="运行Scrapy(使用Python脚本运行Scrapy项目)"></a>运行Scrapy(使用Python脚本运行Scrapy项目)</h2><p>运行Scrapy项目,需要在终端下进入项目的根目录,然后执行Scrapy crawl [爬虫名字],如果不想每次都在终端运行可以把这个命令写在一个Python脚本文件中,然后再Pycharm中运行脚本即可.</p>
+<p>新建一个Start.py的文件,然后写入以下代码.</p>
+<pre><code>from scrapy import cmdline
+
+cmdline.execute(&quot;scrapy crawl QiuShi&quot;.split())
+</code></pre><p>scrapy crawl <strong>QiuShi(这里是爬虫名字,而不是Scrapy项目的名字)</strong></p>
+<h1 id="版本一-完成简单的爬取并将数据保存成JSON格式"><a href="#版本一-完成简单的爬取并将数据保存成JSON格式" class="headerlink" title="版本一:完成简单的爬取并将数据保存成JSON格式"></a>版本一:完成简单的爬取并将数据保存成JSON格式</h1><p>QiuShi.py</p>
 <pre><code># -*- coding: utf-8 -*-
 import scrapy
 from QiuShiBaiKe.items import QiushibaikeItem
