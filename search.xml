@@ -3,6 +3,56 @@
   
     
     <entry>
+      <title>ScrapyCrawlSpider案例安居客二手房爬虫</title>
+      <link href="/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/"/>
+      <url>/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/EJP*NR5jwlyuxBzfO1jhTzw38z.Vo6n8wzYxlO2dwVM!/b/dFIBAAAAAAAA&amp;bo=bQZTAwAAAAADBxk!&amp;rf=viewer_4" alt="数据展示"></p><pre><code>{    &quot;小区名&quot;:&quot;学府名苑&quot;,    &quot;总价&quot;:&quot;75&quot;,    &quot;首付&quot;:&quot;22.50万&quot;,    &quot;单价&quot;:&quot;9036 元/m²&quot;,    &quot;面积&quot;:&quot;83平方米&quot;,    &quot;房屋类型&quot;:&quot;2室2厅1卫&quot;,    &quot;建造时间&quot;:&quot;2013年&quot;,    &quot;房屋类型&quot;:&quot;普通住宅&quot;,    &quot;建造年限&quot;:&quot;满五年&quot;}</code></pre><h1 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h1><p>项目目录结构</p><pre><code>│  scrapy.cfg│  start.py        # Scrapy启动文件│  XuChangHouse.json    # 数据存储│└─XuChangHouse    │  items.py    │  middlewares.py    │  pipelines.py    │  settings.py    │  __init__.py    │    ├─spiders    │  │  resold_Apartment.py    # 爬虫    │  │  __init__.py</code></pre><p>setting.py</p><pre><code>BOT_NAME = &#39;XuChangHouse&#39;SPIDER_MODULES = [&#39;XuChangHouse.spiders&#39;]NEWSPIDER_MODULE = &#39;XuChangHouse.spiders&#39;ROBOTSTXT_OBEY = FalseDOWNLOAD_DELAY = 1DEFAULT_REQUEST_HEADERS = {    &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,    &#39;Accept-Language&#39;: &#39;en&#39;,    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0&quot;,    &quot;TE&quot;:&quot;Trailers&quot;,}ITEM_PIPELINES = {   &#39;XuChangHouse.pipelines.XuchanghousePipeline&#39;: 300,}</code></pre><p>resold_Apartment.py</p><pre><code># -*- coding: utf-8 -*-import scrapyfrom scrapy.linkextractors import LinkExtractorfrom scrapy.spiders import CrawlSpider, Rulefrom XuChangHouse.items import XuchanghouseItemclass ResoldApartmentSpider(CrawlSpider):    name = &#39;resold_Apartment&#39;    allowed_domains = [&#39;xuchang.anjuke.com&#39;]    start_urls = [&#39;https://xuchang.anjuke.com/sale/p1-rd1/#filtersort&#39;]    rules = (        Rule(LinkExtractor(allow=r&#39;https://xuchang.anjuke.com/sale/.+/#filtersort&#39;), follow=True), # 匹配页数        Rule(LinkExtractor(allow=r&#39;.+[A-Z0-9]?from=.*&#39;,),callback=&quot;parse_item&quot;,follow=False),     # 详情页面    )    def parse_item(self, response):        estate = response.xpath(&quot;//div[@class=&#39;houseInfo-content&#39;]/a/text()&quot;).get()  # 所属小区        total = response.css(&#39;.light &gt; em:nth-child(1)::text&#39;).get()  # 总价        down_payment = response.xpath(&quot;//ul/li[6]/div[2]/text()&quot;).get().strip()  # 首付        unit_price = response.xpath(&quot;//ul/li[3]/div[2]/text()&quot;).get().strip()  # 房屋单价        area = response.xpath(&quot;//ul/li[5]/div[2]/text()&quot;).get().strip()  # 建筑面积        family_type = response.xpath(&quot;//ul/li[2]/div[2]/text()&quot;).get().replace(&#39;\t&#39;, &#39;&#39;)  # 户型        time = response.xpath(&quot;//ul/li[7]/div[2]/text()&quot;).get().strip() # 建造年代        house_types = response.xpath(&#39;//ul/li[10]/div[2]/text()&#39;).get().strip()       # 房屋类型        age_limit = response.xpath(&quot;//ul/li[13]/div[2]/text()&quot;).get().strip()       # 房本年限        # Monthly_payment = response.css(&quot;#reference_monthpay&quot;).get() # 月供,span标签在页面上显示但是scrapy提取之后没有内容        # print(f&quot;小区{estate}\n年代{time}\n类型{house_types}\n房本年限{age_limit}\n户型{family_type}面积{area}单价{unit_price}\n首付{down_payment}\n&quot;)        item = XuchanghouseItem(estate=estate,total=total,down_payment=down_payment,unit_price=unit_price,area=area,family_type=family_type,time=time,house_types=house_types,age_limit=age_limit)        yield item</code></pre><p>items.py</p><pre><code>import scrapyclass XuchanghouseItem(scrapy.Item):    estate = scrapy.Field()         # 小区    total = scrapy.Field()          # 总价    down_payment = scrapy.Field()    # 首付    unit_price = scrapy.Field()     # 单价    area = scrapy.Field()           # 地区    family_type = scrapy.Field()    # 户型    time = scrapy.Field()           # 建造时间    house_types = scrapy.Field()    # 类型    age_limit = scrapy.Field()      # 年代</code></pre><p>middlewares.py</p><p>默认不变</p><p>pipelines.py</p><pre><code># -*- coding: utf-8 -*-# Define your item pipelines here## Don&#39;t forget to add your pipeline to the ITEM_PIPELINES setting# See: https://doc.scrapy.org/en/latest/topics/item-pipeline.htmlfrom scrapy.exporters import JsonLinesItemExporterclass XuchanghousePipeline(object):    def __init__(self):        self.fileProject = open(&quot;XuChangHouse.json&quot;, &#39;wb&#39;)  # json文件对象        self.exporters = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)    def process_item(self, item, spider):        self.exporters.export_item(item)        return itemdef close_spider(self, spider):    self.fileProject.close()</code></pre><p>start.py</p><pre><code>from scrapy import cmdlinecmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python爬虫 </tag>
+            
+            <tag> Scrapy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>ScrapyCrawlSpider案例腾讯招聘爬虫</title>
+      <link href="/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/"/>
+      <url>/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/pC.BjHS61tcpui4wiUh*nyscELWojfOQhziAA6HNWl8!/b/dMMAAAAAAAAA&amp;bo=gQZFAwAAAAADB.M!&amp;rf=viewer_4" alt="结果展示"></p><pre><code>{    &quot;职位名字&quot;:&quot;27553-腾讯音乐测试开发工程师（深圳）&quot;,    &quot;要求&quot;:[        &quot;计算机相关专业本科及以上学历；&quot;,        &quot;3年以上系统测试工作经验，有白盒测试经验，有自动化测试框架开发经验者优先；&quot;,        &quot;具有Web、Android和IOS自动化测试经验，熟悉selenium 、Appium框架，熟练使用Jmeter进行性能测试；&quot;,        &quot;熟悉Linux系统，MySql数据库, 以及TCP/IP, HTTP等网络协议；&quot;,        &quot;熟悉java/C或C++，熟悉shell/python/PHP/perl等一种脚本语言；&quot;,        &quot;熟悉测试流程和规范，了解功能测试，性能测试，接口测试和单元测试等测试方法；&quot;,        &quot;学习能力和技术钻研能力强，良好的质量意识、沟通和团队合作能力；&quot;,        &quot;工作积极主动，执行力强，能够快速解决问题。&quot;    ],    &quot;工作地点&quot;:&quot;深圳&quot;,    &quot;招聘人数&quot;:&quot;1人&quot;}</code></pre><h1 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h1><pre><code>L:.│  scrapy.cfg│  start.py│  腾讯Python职位招聘信息.json│└─TecentSpider    │  items.py    │  middlewares.py    │  pipelines.py    │  settings.py    │  __init__.py    │    ├─spiders    │  │  TecentZhaoPin.py    │  │  __init__.py    │  │</code></pre><h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>TecentZhaoPin.py</p><pre><code>    # -*- coding: utf-8 -*-import scrapyfrom scrapy.linkextractors import LinkExtractorfrom scrapy.spiders import CrawlSpider, Rulefrom TecentSpider.items import TecentspiderItemclass TecentzhaopinSpider(CrawlSpider):    name = &#39;TecentZhaoPin&#39;    allowed_domains = [&#39;hr.tencent.com&#39;]    start_urls = [&#39;https://hr.tencent.com/position.php?keywords=python&#39;]    rules = (        Rule(LinkExtractor(allow=r&#39;.+&amp;start=\d&#39;), follow=True),       # 下一页的获取        Rule(LinkExtractor(allow=r&#39;.+\d&amp;keywords=python&amp;tid=0&amp;lid=0&#39;),callback=&#39;parse_item&#39;,follow=False), # 详情页面的URL获取    )    def parse_item(self, response):        job_title = response.xpath(&quot;//*[@id=&#39;sharetitle&#39;]/text()&quot;).get()     # 职位名        require = response.xpath(&quot;/html/body/div[3]/div/table/tr[4]/td/ul//text()&quot;).getall()      # 职位要求\        site = response.xpath(&quot;/html/body/div[3]/div/table/tr[@class=&#39;c bottomline&#39;]/td[1]/text()&quot;).get()   # 工作地点        people_num = response.xpath(&#39;/html/body/div[3]/div/table/tr[2]/td[3]/text()&#39;).get()     # 招聘人数        print(f&quot;职位名:{job_title}\n职位要求{require}\n工作地点{site}\n招聘人数{people_num}&quot;)        item = TecentspiderItem(job_title=job_title,require=require,site=site,people_num=people_num)        yield item</code></pre><p>items.py</p><pre><code>import scrapyclass TecentspiderItem(scrapy.Item):    job_title = scrapy.Field()      # 职位名    require = scrapy.Field()        # 职位要求    site = scrapy.Field()           # 工作地点    people_num = scrapy.Field()     # 招聘人数</code></pre><p>middlewares.py</p><p>默认不变</p><p>pipelines.py</p><pre><code>from scrapy.exporters import JsonLinesItemExporterclass TecentspiderPipeline(object):    def __init__(self):        self.fileProject = open(&quot;腾讯Python职位招聘信息.json&quot;, &#39;wb&#39;)  # json文件对象        self.exporters = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)    def process_item(self, item, spider):        self.exporters.export_item(item)        return item    def close_spider(self, spider):        self.fileProject.close()</code></pre><p>settings.py</p><pre><code>BOT_NAME = &#39;TecentSpider&#39;SPIDER_MODULES = [&#39;TecentSpider.spiders&#39;]NEWSPIDER_MODULE = &#39;TecentSpider.spiders&#39;ROBOTSTXT_OBEY = TrueDOWNLOAD_DELAY = 1ITEM_PIPELINES = {   &#39;TecentSpider.pipelines.TecentspiderPipeline&#39;: 300,}</code></pre><p>start.py</p><pre><code>from scrapy import cmdlinecmdline.execute(&quot;scrapy crawl TecentZhaoPin&quot;.split())</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python爬虫 </tag>
+            
+            <tag> Scrapy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>ScrapyCrawlSpider</title>
       <link href="/2018/12/29/scrapycrawlspider/"/>
       <url>/2018/12/29/scrapycrawlspider/</url>

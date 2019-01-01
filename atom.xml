@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2018-12-29T15:47:12.542Z</updated>
+  <updated>2019-01-01T09:34:07.756Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ScrapyCrawlSpider案例安居客二手房爬虫</title>
+    <link href="https://codinglife.site/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/"/>
+    <id>https://codinglife.site/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/</id>
+    <published>2018-12-31T02:57:52.000Z</published>
+    <updated>2019-01-01T09:34:07.756Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;数据展示&quot;&gt;&lt;a href=&quot;#数据展示&quot; class=&quot;headerlink&quot; title=&quot;数据展示&quot;&gt;&lt;/a&gt;数据展示&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ScrapyCrawlSpider案例腾讯招聘爬虫</title>
+    <link href="https://codinglife.site/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/"/>
+    <id>https://codinglife.site/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/</id>
+    <published>2018-12-31T02:57:24.000Z</published>
+    <updated>2019-01-01T09:51:21.500Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;结果展示&quot;&gt;&lt;a href=&quot;#结果展示&quot; class=&quot;headerlink&quot; title=&quot;结果展示&quot;&gt;&lt;/a&gt;结果展示&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
+    
+  </entry>
   
   <entry>
     <title>ScrapyCrawlSpider</title>
@@ -521,56 +577,6 @@ function del() {
     
       <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Python闭包</title>
-    <link href="https://codinglife.site/2018/12/02/python-bi-bao/"/>
-    <id>https://codinglife.site/2018/12/02/python-bi-bao/</id>
-    <published>2018-12-02T12:11:12.000Z</published>
-    <updated>2018-12-25T07:26:22.980Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;什么是闭包&quot;&gt;&lt;a href=&quot;#什么是闭包&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql基础</title>
-    <link href="https://codinglife.site/2018/11/20/mysql-ji-chu/"/>
-    <id>https://codinglife.site/2018/11/20/mysql-ji-chu/</id>
-    <published>2018-11-19T16:05:26.000Z</published>
-    <updated>2018-12-25T07:26:41.249Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;MySQL-简介&quot;&gt;&lt;a href=&quot;#MySQL-简介&quot; class=&quot;headerlink&quot; title=&quot;MySQL 简介&quot;&gt;&lt;/a&gt;MySQL 简介&lt;/h1&gt;&lt;p&gt;MySQL是一个关系型数据库管理系统，由瑞典MySQL
-        
-      
-    
-    </summary>
-    
-      <category term="数据库" scheme="https://codinglife.site/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-    
-      <category term="Mysql" scheme="https://codinglife.site/tags/Mysql/"/>
     
   </entry>
   

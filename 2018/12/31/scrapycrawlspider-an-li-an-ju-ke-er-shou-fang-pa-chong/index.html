@@ -5,9 +5,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ScrapyCrawlSpider, 程序员小黑">
-    <meta name="description" content="CrawlSpiderSpider类的设计原则是只爬取start_url列表中的网页，而CrawlSpider类定义了一些规则(rule)来提供跟进link的方便的机制，从爬取的网页中获取link并继续爬取的工作更适合。
-CrawlSpid">
+    <meta name="keywords" content="ScrapyCrawlSpider案例安居客二手房爬虫, 程序员小黑">
+    <meta name="description" content="数据展示
+{
+    &amp;quot;小区名&amp;quot;:&amp;quot;学府名苑&amp;quot;,
+    &amp;quot;总价&amp;quot;:&amp;quot;75&amp;quot;,
+    &amp;quot;首付&amp;quot;:&amp;quot;22.50万&amp;quot;,
+ ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +19,7 @@ CrawlSpid">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ScrapyCrawlSpider | 程序员小黑</title>
+    <title>ScrapyCrawlSpider案例安居客二手房爬虫 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -256,7 +260,7 @@ CrawlSpid">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ScrapyCrawlSpider
+                        ScrapyCrawlSpider案例安居客二手房爬虫
                     </div>
                 </div>
             </div>
@@ -299,175 +303,137 @@ CrawlSpid">
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-29
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-31
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="CrawlSpider"><a href="#CrawlSpider" class="headerlink" title="CrawlSpider"></a>CrawlSpider</h1><p>Spider类的设计原则是只爬取start_url列表中的网页，而CrawlSpider类定义了一些规则(rule)来提供跟进link的方便的机制，从爬取的网页中获取link并继续爬取的工作更适合。</p>
-<p>CrawlSpider继承于Spider类，除了继承过来的属性外（name、allow_domains），还提供了新的属性和方法</p>
-<p>CrawlSpider需要使用<strong>LinkExtractor对象和Rule对象</strong>来决定爬虫的具体访问规则</p>
-<h1 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h1><p>CrawlSpider使用rule来决定爬取的规则,并将匹配后的url交给引擎.所以不需要我们手动的返回请求.</p>
-<p>在Rules元组中包含了一个或多个Rule对象,每个Rule对象对爬取网站的动作定义了特定的操作,比如提取当前相应内容中的特定链接,是否最提取的链接进行跟进爬取(follw),对提交的请求设置回调函数等.</p>
-<p>如果多个rule匹配了相同的链接,则根据规则在元组中被定义的顺序,第一个会被调用.</p>
-<pre><code>class scrapy.spiders.Rule(
-        link_extractor,
-        callback = None,
-        cb_kwargs = None,
-        follow = None,
-        process_links = None,
-        process_request = None
-)
-</code></pre><p><strong>Rule参数解析:</strong></p>
-<ul>
-<li>link_extractor<ul>
-<li>一个link_extractor对象,用来<strong>定义需要提取的链接.</strong></li>
-</ul>
-</li>
-<li>callback<ul>
-<li>每次从link_extractor中获取到链接时,参数所指定的值为回调函数,该回调函数接收一个response为<strong>第一个参数</strong>.</li>
-<li>当编写爬虫规则时，<strong>避免使用parse作为回调函数。由于CrawlSpider使用parse方法来实现其逻辑，如果覆盖了 parse方法，crawl spider将会运行失败。</strong></li>
-</ul>
-</li>
-<li>follow:<ul>
-<li>是一个布尔值,<strong>指定了根据该规则从response提取的链接是否需要跟进,如果callback会None,Follow默认为True,否则默认为False,也就是说如果有回调函数的话,follow默认为True,如果没有回调函数的话,默认为False.</strong></li>
-</ul>
-</li>
-<li>process_links<ul>
-<li>指定该spider中哪个函数被调用,从link_extractor中获取到的链接列表时将会调用该函数.该方法主要用来过滤link_extractor.</li>
-</ul>
-</li>
-<li>process_request<ul>
-<li>指定该spider中哪个函数被调用,该规则提取到每个request时都会调用该函数.<strong>主要用来过滤request</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="LinkExtractor"><a href="#LinkExtractor" class="headerlink" title="LinkExtractor"></a>LinkExtractor</h1><p>Link Extractors对象的作用: 提取链接｡</p>
-<p>每个LinkExtractor的公共方法是 extract_links()，它接收一个 Response 对象，并返回一个scrapy.link.Link 对象。</p>
-<p>Link Extractors要实例化一次，并且 extract_links 方法会根据不同的 response 调用多次提取链接｡</p>
-<pre><code>class scrapy.linkextractors.LinkExtractor(
-    allow = (),
-    deny = (),
-    allow_domains = (),
-    deny_domains = (),
-    deny_extensions = None,
-    restrict_xpaths = (),
-    tags = (&#39;a&#39;,&#39;area&#39;),
-    attrs = (&#39;href&#39;),
-    canonicalize = True,
-    unique = True,
-    process_value = None
-)
-</code></pre><ul>
-<li>allow<ul>
-<li>满足括号中“正则表达式”的URL会被提取，如果为空，则全部匹配</li>
-</ul>
-</li>
-<li>deny<ul>
-<li>满足括号中“正则表达式”的URL一定不提取（优先级高于allow）。</li>
-</ul>
-</li>
-<li>allow_domains<ul>
-<li>会被提取的链接的domains。</li>
-</ul>
-</li>
-<li>deny_domains<ul>
-<li>一定不会被提取链接的domains。</li>
-</ul>
-</li>
-<li>restrict_xpaths<ul>
-<li>使用xpath表达式，和allow共同作用过滤链接。 </li>
-</ul>
-</li>
-</ul>
-<h1 id="实战爬取微信小程序社区"><a href="#实战爬取微信小程序社区" class="headerlink" title="实战爬取微信小程序社区"></a>实战爬取微信小程序社区</h1><p>spider.py</p>
+                <h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/EJP*NR5jwlyuxBzfO1jhTzw38z.Vo6n8wzYxlO2dwVM!/b/dFIBAAAAAAAA&amp;bo=bQZTAwAAAAADBxk!&amp;rf=viewer_4" alt="数据展示"></p>
+<pre><code>{
+    &quot;小区名&quot;:&quot;学府名苑&quot;,
+    &quot;总价&quot;:&quot;75&quot;,
+    &quot;首付&quot;:&quot;22.50万&quot;,
+    &quot;单价&quot;:&quot;9036 元/m²&quot;,
+    &quot;面积&quot;:&quot;83平方米&quot;,
+    &quot;房屋类型&quot;:&quot;
+2室
+2厅
+1卫
+&quot;,
+    &quot;建造时间&quot;:&quot;2013年&quot;,
+    &quot;房屋类型&quot;:&quot;普通住宅&quot;,
+    &quot;建造年限&quot;:&quot;满五年&quot;
+}
+</code></pre><h1 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h1><p>项目目录结构</p>
+<pre><code>│  scrapy.cfg
+│  start.py        # Scrapy启动文件
+│  XuChangHouse.json    # 数据存储
+│
+└─XuChangHouse
+    │  items.py
+    │  middlewares.py
+    │  pipelines.py
+    │  settings.py
+    │  __init__.py
+    │
+    ├─spiders
+    │  │  resold_Apartment.py    # 爬虫
+    │  │  __init__.py
+</code></pre><p>setting.py</p>
+<pre><code>BOT_NAME = &#39;XuChangHouse&#39;
+
+SPIDER_MODULES = [&#39;XuChangHouse.spiders&#39;]
+NEWSPIDER_MODULE = &#39;XuChangHouse.spiders&#39;
+ROBOTSTXT_OBEY = False
+DOWNLOAD_DELAY = 1
+DEFAULT_REQUEST_HEADERS = {
+    &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
+    &#39;Accept-Language&#39;: &#39;en&#39;,
+    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0&quot;,
+    &quot;TE&quot;:&quot;Trailers&quot;,
+}
+ITEM_PIPELINES = {
+   &#39;XuChangHouse.pipelines.XuchanghousePipeline&#39;: 300,
+}
+</code></pre><p>resold_Apartment.py</p>
 <pre><code># -*- coding: utf-8 -*-
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-from WeiXinSmall.items import WeixinsmallItem
+from XuChangHouse.items import XuchanghouseItem
 
-
-class WeixinappSpiderSpider(CrawlSpider):
-    name = &#39;WeiXinApp_Spider&#39;
-    allowed_domains = [&#39;wxapp-union.com&#39;]
-    start_urls = [&#39;http://www.wxapp-union.com/portal.php?mod=list&amp;catid=2&amp;page=1&#39;]
+class ResoldApartmentSpider(CrawlSpider):
+    name = &#39;resold_Apartment&#39;
+    allowed_domains = [&#39;xuchang.anjuke.com&#39;]
+    start_urls = [&#39;https://xuchang.anjuke.com/sale/p1-rd1/#filtersort&#39;]
 
     rules = (
-        Rule(LinkExtractor(allow=r&#39;.+mod=list&amp;catid=2&amp;page=\d&#39;), follow=True),  # 教程页面的url获取规则
-        Rule(LinkExtractor(allow=r&#39;.+article-.+\.html&#39;), callback=&quot;parse_detail&quot;, follow=False),  # 详情页面的URL规则
+        Rule(LinkExtractor(allow=r&#39;https://xuchang.anjuke.com/sale/.+/#filtersort&#39;), follow=True), # 匹配页数
+        Rule(LinkExtractor(allow=r&#39;.+[A-Z0-9]?from=.*&#39;,),callback=&quot;parse_item&quot;,follow=False),     # 详情页面
     )
 
-    # def parse_item(self, response):
-    #     i = {}
-    #     # i[&#39;domain_id&#39;] = response.xpath(&#39;//input[@id=&quot;sid&quot;]/@value&#39;).extract()
-    #     # i[&#39;name&#39;] = response.xpath(&#39;//div[@id=&quot;name&quot;]&#39;).extract()
-    #     # i[&#39;description&#39;] = response.xpath(&#39;//div[@id=&quot;description&quot;]&#39;).extract()
-    #     return i
+    def parse_item(self, response):
+        estate = response.xpath(&quot;//div[@class=&#39;houseInfo-content&#39;]/a/text()&quot;).get()  # 所属小区
+        total = response.css(&#39;.light &gt; em:nth-child(1)::text&#39;).get()  # 总价
+        down_payment = response.xpath(&quot;//ul/li[6]/div[2]/text()&quot;).get().strip()  # 首付
+        unit_price = response.xpath(&quot;//ul/li[3]/div[2]/text()&quot;).get().strip()  # 房屋单价
+        area = response.xpath(&quot;//ul/li[5]/div[2]/text()&quot;).get().strip()  # 建筑面积
+        family_type = response.xpath(&quot;//ul/li[2]/div[2]/text()&quot;).get().replace(&#39;\t&#39;, &#39;&#39;)  # 户型
+        time = response.xpath(&quot;//ul/li[7]/div[2]/text()&quot;).get().strip() # 建造年代
+        house_types = response.xpath(&#39;//ul/li[10]/div[2]/text()&#39;).get().strip()       # 房屋类型
+        age_limit = response.xpath(&quot;//ul/li[13]/div[2]/text()&quot;).get().strip()       # 房本年限
+        # Monthly_payment = response.css(&quot;#reference_monthpay&quot;).get() # 月供,span标签在页面上显示但是scrapy提取之后没有内容
 
-    def parse_detail(self, response):
-        &#39;&#39;&#39;详情页面的解析&#39;&#39;&#39;
-        title = response.xpath(&quot;//h1[@class=&#39;ph&#39;]/text()&quot;).get()
-        authors = response.xpath(&quot;//p[@class=&#39;authors&#39;]&quot;)
-        author = authors.xpath(&quot;.//a/text()&quot;).get()
-        time = authors.xpath(&quot;.//span[@class=&#39;time&#39;]/text()&quot;).get()
-        article_content = response.xpath(&quot;//*[@id=&#39;article_content&#39;]//text()&quot;).getall()
-        content = &quot;&quot;.join(article_content).strip()  # content,返回的列表中有很多空格和制表符,这里做处理
-        print(content)
-        print(f&quot;文章作者{author}\t\t发表时间{time}&quot;)
-        print(title)
-        item = WeixinsmallItem(title=title, author=author, time=time, content=content)
+        # print(f&quot;小区{estate}\n年代{time}\n类型{house_types}\n房本年限{age_limit}\n户型{family_type}面积{area}单价{unit_price}\n首付{down_payment}\n&quot;)
+        item = XuchanghouseItem(estate=estate,total=total,down_payment=down_payment,unit_price=unit_price,area=area,family_type=family_type,time=time,house_types=house_types,age_limit=age_limit)
         yield item
-</code></pre><p>Items.py</p>
+</code></pre><p>items.py</p>
 <pre><code>import scrapy
-class WeixinsmallItem(scrapy.Item):
-    title = scrapy.Field()      # 文章标题
-    author = scrapy.Field()     # 文章作者
-    time = scrapy.Field()       # 发表时间
-    content = scrapy.Field()    # 文章内容
+
+
+class XuchanghouseItem(scrapy.Item):
+
+    estate = scrapy.Field()         # 小区
+    total = scrapy.Field()          # 总价
+    down_payment = scrapy.Field()    # 首付
+    unit_price = scrapy.Field()     # 单价
+    area = scrapy.Field()           # 地区
+    family_type = scrapy.Field()    # 户型
+    time = scrapy.Field()           # 建造时间
+    house_types = scrapy.Field()    # 类型
+    age_limit = scrapy.Field()      # 年代
 </code></pre><p>middlewares.py</p>
-<p>默认无修改</p>
-<p>pipeline.py</p>
-<pre><code>from scrapy.exporters import JsonLinesItemExporter
+<p>默认不变</p>
+<p>pipelines.py</p>
+<pre><code># -*- coding: utf-8 -*-
+
+# Define your item pipelines here
+#
+# Don&#39;t forget to add your pipeline to the ITEM_PIPELINES setting
+# See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+
+from scrapy.exporters import JsonLinesItemExporter
 
 
-class WeixinsmallPipeline(object):
+class XuchanghousePipeline(object):
 
     def __init__(self):
-        self.fileProject = open(&#39;WXApp_Spider.json&#39;, &#39;wb&#39;)
-        self.exporter = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)
+        self.fileProject = open(&quot;XuChangHouse.json&quot;, &#39;wb&#39;)  # json文件对象
+        self.exporters = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)
 
     def process_item(self, item, spider):
-        self.exporter.export_item(item)
+        self.exporters.export_item(item)
         return item
 
-    def close_spider(self, spider):
-        self.fileProject.close()
-</code></pre><p>settings.py</p>
-<pre><code>ITEM_PIPELINES = {
-   &#39;WeiXinSmall.pipelines.WeixinsmallPipeline&#39;: 300,
-}
-
-DEFAULT_REQUEST_HEADERS = {
-    &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
-    &#39;Accept-Language&#39;: &#39;en&#39;,
-    &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&#39;,
-}
-
-DOWNLOAD_DELAY = 1      # 爬虫延迟一秒钟
-
-ROBOTSTXT_OBEY = False
-BOT_NAME = &#39;WeiXinSmall&#39;
-
-SPIDER_MODULES = [&#39;WeiXinSmall.spiders&#39;]
-NEWSPIDER_MODULE = &#39;WeiXinSmall.spiders&#39;
+def close_spider(self, spider):
+    self.fileProject.close()
 </code></pre><p>start.py</p>
 <pre><code>from scrapy import cmdline
 
-cmdline.execute(&quot;scrapy crawl WeiXinApp_Spider&quot;.split())
-</code></pre><h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1>
+cmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())
+</code></pre>
             </div>
             <hr>
 
@@ -488,7 +454,7 @@ cmdline.execute(&quot;scrapy crawl WeiXinApp_Spider&quot;.split())
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/29/scrapycrawlspider/" class="b-link-green">ScrapyCrawlSpider</a>
+                    <a href="/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/" class="b-link-green">ScrapyCrawlSpider案例安居客二手房爬虫</a>
                 </p>
             </div>
         </div>
@@ -530,26 +496,27 @@ cmdline.execute(&quot;scrapy crawl WeiXinApp_Spider&quot;.split())
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
-                <a href="/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/">
+                <a href="/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例腾讯招聘爬虫">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例安居客二手房爬虫">
                         
-                        <span class="card-title">ScrapyCrawlSpider案例腾讯招聘爬虫</span>
+                        <span class="card-title">ScrapyCrawlSpider案例安居客二手房爬虫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">结果展示
+                    <div class="summary">数据展示
 {
-    &quot;职位名字&quot;:&quot;27553-腾讯音乐测试开发工程师（深圳）&quot;,
-    &quot;要求&quot;:[
-        &quot;计算机相关专业本科及以上学历；&quot;,</div>
+    &quot;小区名&quot;:&quot;学府名苑&quot;,
+    &quot;总价&quot;:&quot;75&quot;,
+    &quot;首付&quot;:&quot;22.50万&quot;,
+ </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -562,6 +529,7 @@ cmdline.execute(&quot;scrapy crawl WeiXinApp_Spider&quot;.split())
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -582,19 +550,23 @@ cmdline.execute(&quot;scrapy crawl WeiXinApp_Spider&quot;.split())
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/12/27/scrapy-pa-qu-qiu-shi-bai-ke/">
+                <a href="/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="Scrapy爬取糗事百科">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例腾讯招聘爬虫">
                         
-                        <span class="card-title">Scrapy爬取糗事百科</span>
+                        <span class="card-title">ScrapyCrawlSpider案例腾讯招聘爬虫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">结果展示{&quot;author&quot;: &quot;毒男·i&quot;, &quot;content&quot;: &quot;\n\n\n在医院里，我和老婆抱着孩子去看病。老婆说：“你说女人要不要学一点防狼术。”我说：“需要啊</div>
+                    <div class="summary">结果展示
+{
+    &quot;职位名字&quot;:&quot;27553-腾讯音乐测试开发工程师（深圳）&quot;,
+    &quot;要求&quot;:[
+        &quot;计算机相关专业本科及以上学历；&quot;,</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31
                             </span>
                         <span class="publish-author">
                             
