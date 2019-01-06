@@ -5,13 +5,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ScrapyCrawlSpider案例安居客二手房爬虫, 程序员小黑">
-    <meta name="description" content="数据展示
-{
-    &amp;quot;小区名&amp;quot;:&amp;quot;学府名苑&amp;quot;,
-    &amp;quot;总价&amp;quot;:&amp;quot;75&amp;quot;,
-    &amp;quot;首付&amp;quot;:&amp;quot;22.50万&amp;quot;,
- ">
+    <meta name="keywords" content="罗胖2018年终演讲, 程序员小黑">
+    <meta name="description" content="开场
+岁月不饶人,你们确实没有饶过岁月
+你有你的计划,这个世界另有计划
+穿着体面有各种各样的计划.
+以前变化是生活的一部分,现在变化成了生活的本身
+熟悉的也许只能用来怀念,而依赖的我们必须放手
+2019年可能会是过去十年里最差的一年,但却是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ScrapyCrawlSpider案例安居客二手房爬虫 | 程序员小黑</title>
+    <title>罗胖2018年终演讲 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -254,13 +255,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&bo=CwU4BAAAAAARBwI!&rf=viewer_4')">
+<div class="bg-cover post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/JltH4Letnb1V*xdJr8Vaqx4scl.Y2.9*Ka2wG1.gxmk!/b/dLgAAAAAAAAA&bo=oAU4BAAAAAARB6k!&rf=viewer_4')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ScrapyCrawlSpider案例安居客二手房爬虫
+                        罗胖2018年终演讲
                     </div>
                 </div>
             </div>
@@ -278,162 +279,145 @@
     <div class="card">
         <div class="card-content article-info">
             
-            <div class="article-tag">
-                
-                <a href="/tags/Python爬虫/" target="_blank">
-                    <span class="chip bg-color">Python爬虫</span>
-                </a>
-                
-                <a href="/tags/Scrapy/" target="_blank">
-                    <span class="chip bg-color">Scrapy</span>
-                </a>
-                
-            </div>
-            
             <div class="post-info">
                 
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/Python/" class="post-category" target="_blank">
-                        Python
+                    <a href="/categories/杂七杂八/" class="post-category" target="_blank">
+                        杂七杂八
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2018-12-31
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-06
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/EJP*NR5jwlyuxBzfO1jhTzw38z.Vo6n8wzYxlO2dwVM!/b/dFIBAAAAAAAA&amp;bo=bQZTAwAAAAADBxk!&amp;rf=viewer_4" alt="数据展示"></p>
-<pre><code>{
-    &quot;小区名&quot;:&quot;学府名苑&quot;,
-    &quot;总价&quot;:&quot;75&quot;,
-    &quot;首付&quot;:&quot;22.50万&quot;,
-    &quot;单价&quot;:&quot;9036 元/m²&quot;,
-    &quot;面积&quot;:&quot;83平方米&quot;,
-    &quot;房屋类型&quot;:&quot;
-2室
-2厅
-1卫
-&quot;,
-    &quot;建造时间&quot;:&quot;2013年&quot;,
-    &quot;房屋类型&quot;:&quot;普通住宅&quot;,
-    &quot;建造年限&quot;:&quot;满五年&quot;
-}
-</code></pre><h1 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h1><p>项目目录结构</p>
-<pre><code>│  scrapy.cfg
-│  start.py        # Scrapy启动文件
-│  XuChangHouse.json    # 数据存储
-│
-└─XuChangHouse
-    │  items.py
-    │  middlewares.py
-    │  pipelines.py
-    │  settings.py
-    │  __init__.py
-    │
-    ├─spiders
-    │  │  resold_Apartment.py    # 爬虫
-    │  │  __init__.py
-</code></pre><p>setting.py</p>
-<pre><code>BOT_NAME = &#39;XuChangHouse&#39;
+                <h1 id="开场"><a href="#开场" class="headerlink" title="开场"></a>开场</h1><ol>
+<li>岁月不饶人,你们确实没有饶过岁月</li>
+<li>你有你的计划,这个世界另有计划</li>
+<li>穿着体面有各种各样的计划.</li>
+<li>以前变化是生活的一部分,现在变化成了生活的本身</li>
+<li>熟悉的也许只能用来怀念,而依赖的我们必须放手</li>
+<li>2019年可能会是过去十年里最差的一年,但却是未来十年里最好的一年<ul>
+<li>何必悲观</li>
+</ul>
+</li>
+<li>做事的人其实无所谓悲观还是乐观,因为他们只关心怎么把事做好,让自己的生命处于上升期<ol>
+<li>不做事的人的重要特点总会问一些抽象的问题:理想和现实怎么平衡,我和你妈掉水里你先救谁</li>
+</ol>
+</li>
+<li>抽象的两难,在具体情境中一点儿也不难</li>
+<li>我们要搞定的,无非是一张时间表</li>
+<li>宏观是我们必须接受的,微观才是我们可以有所作为的.</li>
+<li>我们是伞兵,伞兵天生就是被包围的</li>
+<li><strong>世界上只有一种英雄主义,就是认清了生活的真相还仍然热爱它</strong></li>
+<li>既然这个世界另有计划,那么我们就重新计划</li>
+<li>宁可被说成是猪,也一定要站在风口,哪怕看到千军万马,我也要过那个独木桥</li>
+</ol>
+<h1 id="小趋势"><a href="#小趋势" class="headerlink" title="小趋势"></a>小趋势</h1><ol>
+<li>4G已经是5年前的事情了,5G时代的到来,对你所处的行业会造成什么影响?</li>
+<li>曾今的世界是大河模型,顺之者昌,逆之者亡.现在的世界是多米诺骨牌模型.</li>
+<li>天猫为什么叫天猫呢?为什么不能叫天狗呢?因为猫砂的发明<ol>
+<li>猫砂绝对是人类科技的伟大发明</li>
+</ol>
+</li>
+<li><strong>小趋势是影响趋势的趋势,是带来改变的改变</strong></li>
+<li>美团背后的人工智能:<ol>
+<li>每天2千万单外卖</li>
+<li>60万个外卖小哥</li>
+<li>每个小时最高峰要做29亿次路线规划<ul>
+<li><strong>背后1万名程序员</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>天猫的千人千面<strong>(人工智能)</strong><ul>
+<li>鹿班系统</li>
+</ul>
+</li>
+<li>虽然大趋势不是我的游戏,但是他会改变我的游戏</li>
+<li>关于机会的两个看法<ol>
+<li>每一班车停靠的时间都特别短,短的自己很可能赶不上,而且每一班车看起来都像是末班车</li>
+<li>在小趋势的逻辑里,从来没有末班车<ol>
+<li>2012年微信公众号</li>
+<li>2013年淘宝扶持网红电商</li>
+<li>2014年OTO</li>
+<li>2015年社交电商</li>
+<li>2016年拼团</li>
+<li>2017年直播电商</li>
+<li>……从来都没有末班车,人生处处是机会.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>小趋势的逻辑里,没有直达车</li>
+<li><strong>凡 杀不死我的,都会让我更强大</strong><ol>
+<li><strong>凡我赶不上的,我就在未来等他.</strong></li>
+</ol>
+</li>
+</ol>
+<h1 id="一些自问"><a href="#一些自问" class="headerlink" title="一些自问"></a>一些自问</h1><ol>
+<li>你能看到事实吗?<ul>
+<li>真相,退的离我们越来越远</li>
+<li>真相未必神秘,但很隐秘</li>
+</ul>
+</li>
+<li>别把自己当做主流</li>
+<li>我们生活在一个庞大的,远超过自己感知力的共同体当中</li>
+<li>等号的意思?<ol>
+<li><strong>等号的意思是有些东西不重要</strong><ul>
+<li><strong>找到好工作等于稳定的收入,那么就是说收入才重要,自己喜不喜欢这个工作不重要</strong></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>不抽象就无法深入思考,不还原就看不到本来面目</li>
+<li>制造业是我们构建良好社会的压舱石</li>
+<li>你必须做一个理性乐观派</li>
+</ol>
+<h1 id="多元思维模型"><a href="#多元思维模型" class="headerlink" title="多元思维模型"></a>多元思维模型</h1><p>一个人能同时保有全然相反的两种观念,还能正常行事,是第一流智慧的标志.</p>
+<ul>
+<li>一个人也想好好生活</li>
+<li>有一类创新,叫往回走</li>
+</ul>
+<h1 id="小趋势决定个体命运"><a href="#小趋势决定个体命运" class="headerlink" title="小趋势决定个体命运"></a>小趋势决定个体命运</h1><ul>
+<li>知识多,人生短,追着学,就挂了.</li>
+<li>每个人都有一个计划,直到被一拳打到脸上</li>
+<li>过去婚姻是成年的第一件事,现在,婚姻是把自己整理好后才做的事.<br>我特别后悔60岁那年没有学小提琴,否则,我就有40年经验了.</li>
+</ul>
+<p>我们这代人60岁上个大学,70岁创个业,80岁学个手艺.我们这代人都是这样生活,不这样生活难道要等到100岁难道再后悔吗?</p>
+<ul>
+<li>种一棵树最好的时间是十年前,其实就是现在</li>
+</ul>
+<h1 id="如何面对挫折"><a href="#如何面对挫折" class="headerlink" title="如何面对挫折"></a>如何面对挫折</h1><ul>
+<li>丘吉尔:这不是结束,甚至不是结束的开始,只是开始的结束.</li>
+<li>所有能穿越时间的东西,就该坚守,所有会被时间过滤的,该翻篇就翻篇.</li>
+<li>这个时代不要在朋友圈里观天下,有机会翻翻他的收藏夹</li>
+<li>你在朋友圈里又佛又丧,你在收藏夹里积极向上.</li>
+<li>人的感知和判断,胜过千万条数据</li>
+<li>人的良知良能,是最好的感知和判断的工具</li>
+<li>用人的体验丈量世界</li>
+</ul>
+<h1 id="时间愿意和我做朋友吗"><a href="#时间愿意和我做朋友吗" class="headerlink" title="时间愿意和我做朋友吗?"></a>时间愿意和我做朋友吗?</h1><p>长期主义</p>
+<ul>
+<li>一旦中断,前功尽弃.</li>
+<li><strong>普通人的努力,在长期主义的复利下,会积累成奇迹</strong></li>
+<li>一千年有一千年的干法,一个月有一个月的干法.<ul>
+<li>撩妹送礼物不要一次送完,一个月每周都送一个小礼物会好很多.长期主义实战.</li>
+</ul>
+</li>
+<li><strong>成就=核心算法x大量重复动作2(平方)</strong></li>
+<li>所有的事到最后都会是好事,如果还不是那它就还没到最后</li>
+</ul>
+<p><strong>对未来最大的慷慨,是把一切献给现在</strong></p>
 
-SPIDER_MODULES = [&#39;XuChangHouse.spiders&#39;]
-NEWSPIDER_MODULE = &#39;XuChangHouse.spiders&#39;
-ROBOTSTXT_OBEY = False
-DOWNLOAD_DELAY = 1
-DEFAULT_REQUEST_HEADERS = {
-    &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
-    &#39;Accept-Language&#39;: &#39;en&#39;,
-    &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0&quot;,
-    &quot;TE&quot;:&quot;Trailers&quot;,
-}
-ITEM_PIPELINES = {
-   &#39;XuChangHouse.pipelines.XuchanghousePipeline&#39;: 300,
-}
-</code></pre><p>resold_Apartment.py</p>
-<pre><code># -*- coding: utf-8 -*-
-import scrapy
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
-from XuChangHouse.items import XuchanghouseItem
-
-class ResoldApartmentSpider(CrawlSpider):
-    name = &#39;resold_Apartment&#39;
-    allowed_domains = [&#39;xuchang.anjuke.com&#39;]
-    start_urls = [&#39;https://xuchang.anjuke.com/sale/p1-rd1/#filtersort&#39;]
-
-    rules = (
-        Rule(LinkExtractor(allow=r&#39;https://xuchang.anjuke.com/sale/.+/#filtersort&#39;), follow=True), # 匹配页数
-        Rule(LinkExtractor(allow=r&#39;.+[A-Z0-9]?from=.*&#39;,),callback=&quot;parse_item&quot;,follow=False),     # 详情页面
-    )
-
-    def parse_item(self, response):
-        estate = response.xpath(&quot;//div[@class=&#39;houseInfo-content&#39;]/a/text()&quot;).get()  # 所属小区
-        total = response.css(&#39;.light &gt; em:nth-child(1)::text&#39;).get()  # 总价
-        down_payment = response.xpath(&quot;//ul/li[6]/div[2]/text()&quot;).get().strip()  # 首付
-        unit_price = response.xpath(&quot;//ul/li[3]/div[2]/text()&quot;).get().strip()  # 房屋单价
-        area = response.xpath(&quot;//ul/li[5]/div[2]/text()&quot;).get().strip()  # 建筑面积
-        family_type = response.xpath(&quot;//ul/li[2]/div[2]/text()&quot;).get().replace(&#39;\t&#39;, &#39;&#39;)  # 户型
-        time = response.xpath(&quot;//ul/li[7]/div[2]/text()&quot;).get().strip() # 建造年代
-        house_types = response.xpath(&#39;//ul/li[10]/div[2]/text()&#39;).get().strip()       # 房屋类型
-        age_limit = response.xpath(&quot;//ul/li[13]/div[2]/text()&quot;).get().strip()       # 房本年限
-        # Monthly_payment = response.css(&quot;#reference_monthpay&quot;).get() # 月供,span标签在页面上显示但是scrapy提取之后没有内容
-
-        # print(f&quot;小区{estate}\n年代{time}\n类型{house_types}\n房本年限{age_limit}\n户型{family_type}面积{area}单价{unit_price}\n首付{down_payment}\n&quot;)
-        item = XuchanghouseItem(estate=estate,total=total,down_payment=down_payment,unit_price=unit_price,area=area,family_type=family_type,time=time,house_types=house_types,age_limit=age_limit)
-        yield item
-</code></pre><p>items.py</p>
-<pre><code>import scrapy
-
-
-class XuchanghouseItem(scrapy.Item):
-
-    estate = scrapy.Field()         # 小区
-    total = scrapy.Field()          # 总价
-    down_payment = scrapy.Field()    # 首付
-    unit_price = scrapy.Field()     # 单价
-    area = scrapy.Field()           # 地区
-    family_type = scrapy.Field()    # 户型
-    time = scrapy.Field()           # 建造时间
-    house_types = scrapy.Field()    # 类型
-    age_limit = scrapy.Field()      # 年代
-</code></pre><p>middlewares.py</p>
-<p>默认不变</p>
-<p>pipelines.py</p>
-<pre><code># -*- coding: utf-8 -*-
-
-# Define your item pipelines here
-#
-# Don&#39;t forget to add your pipeline to the ITEM_PIPELINES setting
-# See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-
-from scrapy.exporters import JsonLinesItemExporter
-
-
-class XuchanghousePipeline(object):
-
-    def __init__(self):
-        self.fileProject = open(&quot;XuChangHouse.json&quot;, &#39;wb&#39;)  # json文件对象
-        self.exporters = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)
-
-    def process_item(self, item, spider):
-        self.exporters.export_item(item)
-        return item
-
-def close_spider(self, spider):
-    self.fileProject.close()
-</code></pre><p>start.py</p>
-<pre><code>from scrapy import cmdline
-
-cmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())
-</code></pre>
             </div>
             <hr>
 
@@ -454,7 +438,7 @@ cmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/" class="b-link-green">ScrapyCrawlSpider案例安居客二手房爬虫</a>
+                    <a href="/2019/01/06/luo-pang-2018-nian-zhong-yan-jiang/" class="b-link-green">罗胖2018年终演讲</a>
                 </p>
             </div>
         </div>
@@ -496,7 +480,7 @@ cmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/01/06/luo-pang-2018-nian-zhong-yan-jiang/">
                     <div class="card-image">
@@ -515,9 +499,9 @@ cmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())
 熟悉的也许只能用来怀念,而依赖的我们必须放手
 2019年可能会是过去十年里最差的一年,但却是</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -530,6 +514,7 @@ cmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -538,20 +523,21 @@ cmdline.execute(&#39;scrapy crawl resold_Apartment&#39;.split())
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/">
+                <a href="/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例腾讯招聘爬虫">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例安居客二手房爬虫">
                         
-                        <span class="card-title">ScrapyCrawlSpider案例腾讯招聘爬虫</span>
+                        <span class="card-title">ScrapyCrawlSpider案例安居客二手房爬虫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">结果展示
+                    <div class="summary">数据展示
 {
-    &quot;职位名字&quot;:&quot;27553-腾讯音乐测试开发工程师（深圳）&quot;,
-    &quot;要求&quot;:[
-        &quot;计算机相关专业本科及以上学历；&quot;,</div>
+    &quot;小区名&quot;:&quot;学府名苑&quot;,
+    &quot;总价&quot;:&quot;75&quot;,
+    &quot;首付&quot;:&quot;22.50万&quot;,
+ </div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31

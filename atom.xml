@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-01-01T09:34:07.756Z</updated>
+  <updated>2019-01-06T10:49:47.885Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>罗胖2018年终演讲</title>
+    <link href="https://codinglife.site/2019/01/06/luo-pang-2018-nian-zhong-yan-jiang/"/>
+    <id>https://codinglife.site/2019/01/06/luo-pang-2018-nian-zhong-yan-jiang/</id>
+    <published>2019-01-06T10:03:22.000Z</published>
+    <updated>2019-01-06T10:49:47.885Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;开场&quot;&gt;&lt;a href=&quot;#开场&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="杂七杂八" scheme="https://codinglife.site/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ScrapyCrawlSpider案例安居客二手房爬虫</title>
@@ -553,30 +577,6 @@ function del() {
     
     
       <category term="WSGI" scheme="https://codinglife.site/tags/WSGI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python装饰器</title>
-    <link href="https://codinglife.site/2018/12/04/python-zhuang-shi-qi/"/>
-    <id>https://codinglife.site/2018/12/04/python-zhuang-shi-qi/</id>
-    <published>2018-12-04T03:11:42.000Z</published>
-    <updated>2018-12-25T07:26:10.066Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;理解Python装饰器的前提&quot;&gt;&lt;a href=&quot;#理解Python装饰器的前提&quot; class=&quot;headerlink&quot; title=&quot;理解Python装饰器的前提&quot;&gt;&lt;/a&gt;理解Python装饰器的前提&lt;/h1&gt;&lt;h2 id=&quot;装饰器是什么&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
     
   </entry>
   
