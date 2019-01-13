@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-01-06T10:49:47.885Z</updated>
+  <updated>2019-01-13T12:51:56.431Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ScrapyCrawlSpider案例80S电影链接爬虫</title>
+    <link href="https://codinglife.site/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/"/>
+    <id>https://codinglife.site/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/</id>
+    <published>2019-01-13T08:05:48.000Z</published>
+    <updated>2019-01-13T12:51:56.431Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目准备&quot;&gt;&lt;a href=&quot;#项目准备&quot; class=&quot;headerlink&quot; title=&quot;项目准备&quot;&gt;&lt;/a&gt;项目准备&lt;/h1&gt;&lt;h2 id=&quot;新建Scrapy项目&quot;&gt;&lt;a href=&quot;#新建Scrapy项目&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
+    
+  </entry>
   
   <entry>
     <title>罗胖2018年终演讲</title>
@@ -551,32 +579,6 @@ function del() {
       <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
     
       <category term="Struts2" scheme="https://codinglife.site/tags/Struts2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PythonWeb编程WSGI</title>
-    <link href="https://codinglife.site/2018/12/05/pythonweb-bian-cheng-wsgi/"/>
-    <id>https://codinglife.site/2018/12/05/pythonweb-bian-cheng-wsgi/</id>
-    <published>2018-12-05T11:59:21.000Z</published>
-    <updated>2018-12-25T07:26:32.675Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;动态网站和静态网站的区别&quot;&gt;&lt;a href=&quot;#动态网站和静态网站的区别&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="WSGI" scheme="https://codinglife.site/tags/WSGI/"/>
     
   </entry>
   
