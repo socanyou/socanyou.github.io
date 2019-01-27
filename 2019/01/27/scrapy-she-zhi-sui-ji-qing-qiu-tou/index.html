@@ -399,6 +399,7 @@ class UserAgentMiddleware(object):
 </ol>
 <p>优点:不用自己维护UserAgent</p>
 <p>缺点:可扩展性不高</p>
+<p>查看fake_userAgent的源码发现这个第三方库的接口来自于<a href="https://fake-useragent.herokuapp.com/browsers/0.1.4,**后面的版本号不一样获取的随机请求头的版本也就不一样**截至现在最新的版本是1.8" target="_blank" rel="noopener">https://fake-useragent.herokuapp.com/browsers/0.1.4,**后面的版本号不一样获取的随机请求头的版本也就不一样**截至现在最新的版本是1.8</a></p>
 <p>在settings中设置选择获取随机请求头的类型</p>
 <pre><code>RANDOM_UA_TYPE = &quot;random&quot;       # 设置userAgent的类型
 </code></pre><p>编写Middleware</p>
