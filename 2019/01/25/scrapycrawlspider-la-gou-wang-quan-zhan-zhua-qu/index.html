@@ -5,11 +5,16 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ScrapyCrawlSpider案例80S电影链接爬虫, 程序员小黑">
-    <meta name="description" content="项目准备新建Scrapy项目scrapy startproject Spider_80s
-新建CrawlSpider爬虫切换到项目目录下执行
-scrapy genspider -t crawl MovieSpider 80s.tw
-分析目标">
+    <meta name="keywords" content="ScrapyCrawlSpider拉勾网全站抓取, 程序员小黑">
+    <meta name="description" content="数据展示
+网站分析分析首页
+首页中有职位的分类,抓取所有的职位,点击进去看职位分类的url
+分析职位分类
+在职位分类的页面下有具体的详情页面
+分析公司页面
+分析职位的详情页面
+进入详情页面获取我们想要的数据
+我们的爬虫访问路径,先进入首页,">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +22,7 @@ scrapy genspider -t crawl MovieSpider 80s.tw
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ScrapyCrawlSpider案例80S电影链接爬虫 | 程序员小黑</title>
+    <title>ScrapyCrawlSpider拉勾网全站抓取 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -258,7 +263,7 @@ scrapy genspider -t crawl MovieSpider 80s.tw
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ScrapyCrawlSpider案例80S电影链接爬虫
+                        ScrapyCrawlSpider拉勾网全站抓取
                     </div>
                 </div>
             </div>
@@ -301,187 +306,233 @@ scrapy genspider -t crawl MovieSpider 80s.tw
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-13
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-25
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h1><h2 id="新建Scrapy项目"><a href="#新建Scrapy项目" class="headerlink" title="新建Scrapy项目"></a>新建Scrapy项目</h2><pre><code>scrapy startproject Spider_80s
-</code></pre><h1 id="新建CrawlSpider爬虫"><a href="#新建CrawlSpider爬虫" class="headerlink" title="新建CrawlSpider爬虫"></a>新建CrawlSpider爬虫</h1><p>切换到项目目录下执行</p>
-<pre><code>scrapy genspider -t crawl MovieSpider 80s.tw
-</code></pre><h1 id="分析目标网站"><a href="#分析目标网站" class="headerlink" title="分析目标网站"></a>分析目标网站</h1><h2 id="列表页分析"><a href="#列表页分析" class="headerlink" title="列表页分析"></a>列表页分析</h2><p>抓取目标网站所有最新电影.</p>
-<p>首页</p>
-<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/dsuvtnePPXDPTN*WQxHXyRsh8ZfUOxj6ldCXDUjIofU!/b/dFMBAAAAAAAA&amp;bo=5QV7AwAAAAADB7o!&amp;rf=viewer_4" alt="首页"></p>
-<p>最新电影页面</p>
-<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/w.cOqpts9wTi83sTCdU9MEbOvpW6zZRYopKLLXHup0Y!/b/dL4AAAAAAAAA&amp;bo=DgaAAwAAAAADN5k!&amp;rf=viewer_4" alt="最新电影"></p>
-<p>分页URL</p>
-<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/SpfqXyUus7Cep.49d1GuYPOcy8o5uDqyK6m7CJhG6mk!/b/dEgBAAAAAAAA&amp;bo=mwRQAwAAAAADR64!&amp;rf=viewer_4" alt="分页"></p>
-<p>从分页URL里面可以分析出来该网站分页URL的规律,后面url尾部的数字是每一页号码.</p>
-<p><a href="https://www.80s.tw/movie/list/-----p/**2*" target="_blank" rel="noopener">https://www.80s.tw/movie/list/-----p/**2*</a>*</p>
-<h2 id="详情页url提取"><a href="#详情页url提取" class="headerlink" title="详情页url提取"></a>详情页url提取</h2><p>在最新列表页面中可以找到电影详情页面的URL</p>
-<p>在列表页中每个影片的详情页url都是在a标签下的href属性中</p>
-<pre><code>href=&quot;/movie/23902&quot;
-</code></pre><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/6VgZ7gZFmlz2FKKE4nuqEfwfFFBLmU0EBqkSw3MyZkw!/b/dL8AAAAAAAAA&amp;bo=mgWsAgAAAAADNyM!&amp;rf=viewer_4" alt="详情页url"></p>
-<h2 id="详情页分析"><a href="#详情页分析" class="headerlink" title="详情页分析"></a>详情页分析</h2><p>拿刚刚的详情页url作为例子,分析下详情页中我们想要提取的数据</p>
-<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/z5MolR3DQ0NnKkGAUnX2s52Waq9g5fkHUynuraIlhnA!/b/dEkBAAAAAAAA&amp;bo=WgR9AwAAAAADJyI!&amp;rf=viewer_4" alt="详情页"></p>
-<h1 id="Scrapy代码编写"><a href="#Scrapy代码编写" class="headerlink" title="Scrapy代码编写"></a>Scrapy代码编写</h1><p>MovieSpider中填写开始URL,这里我们是从第一页开始爬取的所以就写电影列表中第一页的url</p>
-<pre><code>https://www.80s.tw/movie/list/-----p/1
-</code></pre><p>定义电影列表页url的提取规则和电影详情页url的提取规则</p>
-<pre><code>Rule(LinkExtractor(allow=r&#39;https://www.80s.tw/movie/list/-----p/\d&#39;), follow=True),     # 电影列表页url的提取
-Rule(LinkExtractor(allow=&quot;.*/movie/\d&quot;), callback=&quot;parse_item&quot;, follow=False),      # 电影详情页面url的提取
-</code></pre><p>Rule规则里面我们提取了详情页面之后,对详情页进行爬取提取里面我们想要的数据.所以这里的callback参数我们指定为<strong>parse_item</strong>方法,该方法用来提取详情页中的数据.</p>
-<pre><code>def parse_item(self, response):
-    title = response.xpath(&quot;//div[@class=&#39;info&#39;]/h1/text()&quot;).get()  # 影片名
-    info = response.xpath(&quot;//div[@class=&#39;info&#39;]/span[1]/text()&quot;).get()  # 影片简介
-    release_date = response.xpath(&quot;//div[@class=&#39;clearfix&#39;]/span[5]/text()&quot;).get()  # 上映日期
-    mins = response.xpath(&quot;//div[@class=&#39;clearfix&#39;]/span[6]/text()&quot;).get()  # 影片时长
-    grade = response.xpath(&quot;//div[@class=&#39;info&#39;]/div[2]/span[1]/text()&quot;).getall()[-1].strip()  # 豆瓣评分
-    size = response.xpath(&quot;//ul[@class=&#39;dllist1&#39;]/li[2]/span[1]/span/text()&quot;).getall()[-1].strip()  # 影片大小
-    download_link = response.xpath(&quot;//ul[@class=&#39;dllist1&#39;]/li[2]/span[1]/span/a/@href&quot;).get()  # 影片下载链接
-    items = Spider80SItem(title=title, info=info, release_date=release_date, mins=mins, grade=grade, size=size,
-                          download_link=download_link)
-    yield items
-</code></pre><p>在parse_item函数中我们处理爬虫的响应,并从响应中提取数据.</p>
-<p>这里我们主要提取</p>
-<ol>
-<li>电影名</li>
-<li>影片简介</li>
-<li>上映日期</li>
-<li>影片时长</li>
-<li>豆瓣评分</li>
-<li>影片大小</li>
-<li>影片下载链接</li>
-</ol>
-<h2 id="将数据保存为JSON格式"><a href="#将数据保存为JSON格式" class="headerlink" title="将数据保存为JSON格式"></a>将数据保存为JSON格式</h2><p>在爬虫项目中编辑Pipelines用来保存数据</p>
-<pre><code>class Spider80SPipeline(object):
-
-    def __init__(self):
-        self.fileProject = open(&quot;80sLink.json&quot;, &#39;wb&#39;)  # 文件对象
-        self.exporter = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)       # JSON输出对象
-
-    def process_item(self, item, spider):
-        self.exporter.export_item(item)     # 处理Item输出
-        return item
-
-    def close_spider(self, spider):
-        self.fileProject.close()        # 关闭文件对象
-</code></pre><h1 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h1><h1 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h1><pre><code>│  scrapy.cfg
-│  start.py        # 项目启动文件
-│
-└─Spider_80s
-    │  items.py    # Model
-    │  middlewares.py    # 中间件
-    │  pipelines.py        # 管道
-    │  settings.py        # 配置文件
-    │  __init__.py
-    │
-    ├─spiders
-    │  │  MovieSpider.py        # 爬虫
-</code></pre><p>MovieSpider.py</p>
-<pre><code># -*- coding: utf-8 -*-
-import scrapy
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
-from Spider_80s.items import Spider80SItem
-
-
-class MoviespiderSpider(CrawlSpider):
-    name = &#39;MovieSpider&#39;
-    allowed_domains = [&#39;80s.tw&#39;]
-    start_urls = [&#39;https://www.80s.tw/movie/list/-----p/1&#39;]
-
-    rules = (
-        Rule(LinkExtractor(allow=r&#39;https://www.80s.tw/movie/list/-----p/\d&#39;), follow=True),     # 电影列表页url的提取
-        Rule(LinkExtractor(allow=&quot;.*/movie/\d&quot;), callback=&quot;parse_item&quot;, follow=False),      # 电影详情页面url的提取
+                <h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/dJPWyOHbTHAkjjbqjRafuNpAoylQIyQKswTjeegFcH8!/b/dLYAAAAAAAAA&amp;bo=yAUWAwAAAAADB*o!&amp;rf=viewer_4" alt="数据展示"></p>
+<h1 id="网站分析"><a href="#网站分析" class="headerlink" title="网站分析"></a>网站分析</h1><h2 id="分析首页"><a href="#分析首页" class="headerlink" title="分析首页"></a>分析首页</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/S4KN..H..ModSavlRJ4jqX*wMb0sII20jcpAJEVV77A!/b/dDYBAAAAAAAA&amp;bo=YQd.AwAAAAADNwk!&amp;rf=viewer_4" alt="首页"></p>
+<p>首页中有职位的分类,抓取所有的职位,点击进去看职位分类的url</p>
+<h2 id="分析职位分类"><a href="#分析职位分类" class="headerlink" title="分析职位分类"></a>分析职位分类</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/RCszUk30b7oFdvndszLE0BIBj5IEI.tjiQoV*rR10qM!/b/dLYAAAAAAAAA&amp;bo=DAbQAwAAAAADJ9s!&amp;rf=viewer_4" alt="职位分类"></p>
+<p>在职位分类的页面下有具体的详情页面</p>
+<h2 id="分析公司页面"><a href="#分析公司页面" class="headerlink" title="分析公司页面"></a>分析公司页面</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/6FlT7RVC0lql6hlza9cbxdvcvFm65rFvvp*xxnPytRY!/b/dL8AAAAAAAAA&amp;bo=dwWJAwAAAAADF8o!&amp;rf=viewer_4" alt="公司"></p>
+<h2 id="分析职位的详情页面"><a href="#分析职位的详情页面" class="headerlink" title="分析职位的详情页面"></a>分析职位的详情页面</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/4PC4iH*mIsqMhVqTyg6IONJGBrdXlvWRVRf7oIKPNeg!/b/dDUBAAAAAAAA&amp;bo=ogaRAwAAAAADJzQ!&amp;rf=viewer_4" alt="详情页面"></p>
+<p>进入详情页面获取我们想要的数据</p>
+<p>我们的爬虫访问路径,先进入首页,然后匹配职位分类的url,公司的url,以及详情页的url,职位分类和公司的url匹配到之后接着对页面进行跟踪匹配,因为我们做的全站爬虫.</p>
+<h1 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h1><h2 id="定义Item"><a href="#定义Item" class="headerlink" title="定义Item"></a>定义Item</h2><p>根据想获取的数据定义Item</p>
+<pre><code>url# 职位url
+url_object_id职位url对应的id
+title职位名字
+salary薪资水平
+city工作城市
+years工作年限
+degree任职程度
+job_type工作类型
+publish_time发布时间
+tags标签
+job_advantage职位优势
+job_desc职位描述
+job_addr职位地址
+company_url公司官方网站地址
+company_name公司名字
+crawl_time抓取时间
+crawl_update_time抓取更新时间
+</code></pre><h2 id="定义根据网站的Url定义CrawlSpider的抓取Rule"><a href="#定义根据网站的Url定义CrawlSpider的抓取Rule" class="headerlink" title="定义根据网站的Url定义CrawlSpider的抓取Rule"></a>定义根据网站的Url定义CrawlSpider的抓取Rule</h2><pre><code>rules = (
+        Rule(LinkExtractor(allow=r&#39;zhaopin/.*&#39;, ), follow=True),  # 职位分类
+        Rule(LinkExtractor(allow=r&#39;gongsi/j\d+.html&#39;), follow=True),  # 匹配公司内的招聘职位
+        Rule(LinkExtractor(allow=r&#39;jobs/\d+.html&#39;), callback=&#39;parse_job&#39;, follow=True),  # 职位详情页面匹配
     )
+</code></pre><h2 id="设置随机请求头"><a href="#设置随机请求头" class="headerlink" title="设置随机请求头"></a>设置随机请求头</h2><pre><code>class UserAgentDownloadMiddleware(object):
+    # 请求头列表
+    USER_AGENT = [
+        &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36&quot;,
+        &quot;Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/44.0.2403.155 Safari/537.36&quot;,
+        &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14931&quot;,
+        &quot;Chrome (AppleWebKit/537.1; Chrome50.0; Windows NT 6.3) AppleWebKit/537.36 (KHTML like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393&quot;,
+        &quot;Mozilla/5.0 (X11; Linux i686; rv:64.0) Gecko/20100101 Firefox/64.0&quot;,
+        &quot;Mozilla/5.0 (X11; Linux i586; rv:63.0) Gecko/20100101 Firefox/63.0&quot;,
+        &quot;Mozilla/5.0 (Windows NT 6.2; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0&quot;,
+        &quot;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0&quot;,
+        &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A&quot;,
+        &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.13+ (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2&quot;,
+    ]
 
-    def parse_item(self, response):
-        title = response.xpath(&quot;//div[@class=&#39;info&#39;]/h1/text()&quot;).get()  # 影片名
-        info = response.xpath(&quot;//div[@class=&#39;info&#39;]/span[1]/text()&quot;).get()  # 影片简介
-        release_date = response.xpath(&quot;//div[@class=&#39;clearfix&#39;]/span[5]/text()&quot;).get()  # 上映日期
-        mins = response.xpath(&quot;//div[@class=&#39;clearfix&#39;]/span[6]/text()&quot;).get()  # 影片时长
-        grade = response.xpath(&quot;//div[@class=&#39;info&#39;]/div[2]/span[1]/text()&quot;).getall()[-1].strip()  # 豆瓣评分
-        size = response.xpath(&quot;//ul[@class=&#39;dllist1&#39;]/li[2]/span[1]/span/text()&quot;).getall()[-1].strip()  # 影片大小
-        download_link = response.xpath(&quot;//ul[@class=&#39;dllist1&#39;]/li[2]/span[1]/span/a/@href&quot;).get()  # 影片下载链接
-        items = Spider80SItem(title=title, info=info, release_date=release_date, mins=mins, grade=grade, size=size,
-                              download_link=download_link)
-        yield items
-</code></pre><p>items.py</p>
-<pre><code>import scrapy
+    def process_request(self, request, spider):
+        user_agent = random.choice(self.USER_AGENT)  # 随机选择请求头
+        request.headers[&quot;User-Agent&quot;] = user_agent  # 给request添加随机请求头
+</code></pre><h2 id="详情页的抓取规则"><a href="#详情页的抓取规则" class="headerlink" title="详情页的抓取规则"></a>详情页的抓取规则</h2><p>这里使用的Itemloaders填充的Item,使用add_xpath和add_value将值收集到itemloades中.</p>
+<pre><code>    def parse_job(self, response):
+        # 解析拉勾网的职位
+        item_loader = LagouItemLoader(item=LagoujobItem(), response=response)  # 创建ItemLoader的实例
+        item_loader.add_xpath(&quot;title&quot;, &quot;//div[@class=&#39;job-name&#39;]//span/text()&quot;)  # 职位名字
+        item_loader.add_value(&quot;url&quot;, response.url)  # 职位url
+        item_loader.add_value(&quot;url_object_id&quot;, get_md5(response.url))  # 职位url对应的id
+        item_loader.add_xpath(&quot;salary&quot;,
+                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[@class=&#39;salary&#39;]/text()&quot;)
+        item_loader.add_xpath(&quot;city&quot;,
+                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[2]/text()&quot;)  # 工作城市
+        item_loader.add_xpath(&quot;years&quot;,
+                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[3]/text()&quot;)  # 工作年限
+
+        item_loader.add_xpath(&quot;degree&quot;,
+                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[4]/text()&quot;)  # 任职程度
+        item_loader.add_xpath(&quot;job_type&quot;,
+                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[5]/text()&quot;)  # 工作类型
+        item_loader.add_xpath(&quot;tags&quot;, &quot;//ul[contains(@class,&#39;position-label&#39;)]/li/text()&quot;)  # 标签,注意有些招聘信息是单个的标签,而有些确实很多的
+
+        item_loader.add_xpath(&quot;publish_time&quot;, &quot;//p[@class=&#39;publish_time&#39;]/text()&quot;)  # 发布时间,需要进行处理
+        item_loader.add_xpath(&quot;job_advantage&quot;, &quot;//dd[@class=&#39;job-advantage&#39;]/p/text()&quot;)  # 职位优势
+
+        job_desc_list = response.xpath(
+            &quot;//dd[@class=&#39;job_bt&#39;]/div[@class=&#39;job-detail&#39;]/p/text()&quot;).getall()  # 职位描述  注意返回的是一个列表,需要进行处理
+        job_desc = &quot;,&quot;.join(job_desc_list)
+        item_loader.add_value(&quot;job_desc&quot;, job_desc)  # 职位描述  注意返回的是一个列表,需要进行处理
+
+        job_addr = response.xpath(&quot;//div[@class=&#39;work_addr&#39;]//text()&quot;).getall()  # 职位地址
+        job_addr = &quot;,&quot;.join(job_addr)  # 将列表拼接成字符串
+        job_addr = re.sub(&quot;-|\n|,| |查看地图&quot;, &quot;&quot;, job_addr)  # 使用正则做数据处理
+        item_loader.add_value(&quot;job_addr&quot;, job_addr)  # 职位地址
+
+        item_loader.add_xpath(&quot;company_name&quot;, &quot;//*[@id=&#39;job_company&#39;]/dt/a/img/@alt&quot;)  # 公司名字
+        item_loader.add_xpath(&quot;company_url&quot;, &quot;//*[@id=&#39;job_company&#39;]/dt/a/@href&quot;)  # 公司官方网站地址
+        item_loader.add_value(&quot;crawl_time&quot;, datetime.datetime.now())  # 抓取时间
+
+        job_item = item_loader.load_item()  # 加载Item
+        return job_item
+</code></pre><h2 id="使用ItemLoaders进行数据处理"><a href="#使用ItemLoaders进行数据处理" class="headerlink" title="使用ItemLoaders进行数据处理"></a>使用ItemLoaders进行数据处理</h2><pre><code>import scrapy
+from scrapy.loader import ItemLoader
+from scrapy.loader.processors import TakeFirst, MapCompose
+import re
+from w3lib.html import remove_tags  # 这个模块专门用来去除Html中的标签的
+class LagouItemLoader(ItemLoader):
+    default_output_processor = TakeFirst()
 
 
-class Spider80SItem(scrapy.Item):
-    title = scrapy.Field()
-    info = scrapy.Field()
-    release_date = scrapy.Field()
-    mins = scrapy.Field()
-    grade = scrapy.Field()
-    size = scrapy.Field()
-    download_link = scrapy.Field()
-</code></pre><p>pipelines.py</p>
-<pre><code>from scrapy.exporters import JsonLinesItemExporter
+def process_input_city_and_degree_years(value):
+    # 对输入的城市进行处理
+    value = re.sub(&quot;/&quot;, &quot;&quot;, value).strip()
+    return value
 
 
-class Spider80SPipeline(object):
+def process_input_salary(value):
+    # 对输入的薪水进行处理
+    result = re.sub(&quot;k&quot;, &quot;000&quot;, value).replace(&quot;-&quot;, &#39; &#39;).strip()
+    return result
 
-    def __init__(self):
-        self.fileProject = open(&quot;80sLink.json&quot;, &#39;wb&#39;)  # 文件对象
-        self.exporter = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)       # JSON输出对象
+
+def process_input_publish_time(value):
+    # 对输入的发布时间进行处理
+    result = re.sub(&quot;\xa0&quot;, &quot;&quot;, value).strip()
+    return result
+
+def process_input_desc(value):
+    # 职位详情的处理
+    if value == &quot;&quot;:
+        return &quot;无&quot;
+    else:
+        return value
+
+
+class LagoujobItem(scrapy.Item):
+    url = scrapy.Field()  # 职位url
+    url_object_id = scrapy.Field()  # 职位url对应的id
+    title = scrapy.Field()  # 职位名字
+    salary = scrapy.Field(
+        input_processor=MapCompose(process_input_salary)
+    )  # 薪资水平
+    city = scrapy.Field(
+        input_processor=MapCompose(process_input_city_and_degree_years),
+    )  # 工作城市
+    years = scrapy.Field(
+        input_processor=MapCompose(process_input_city_and_degree_years),
+    )  # 工作年限
+    degree = scrapy.Field(
+        input_processor=MapCompose(process_input_city_and_degree_years),
+    )  # 任职程度
+    job_type = scrapy.Field()  # 工作类型
+    publish_time = scrapy.Field(
+        input_processor=MapCompose(process_input_publish_time)
+    )  # 发布时间
+    tags = scrapy.Field(
+        input_processor=MapCompose(process_input_desc),
+    )  # 标签
+    job_advantage = scrapy.Field()  # 职位优势
+    job_desc = scrapy.Field(
+        input_processor=MapCompose(process_input_desc),
+    )  # 职位描述
+    job_addr = scrapy.Field()  # 职位地址
+    company_url = scrapy.Field()  # 公司官方网站地址
+    company_name = scrapy.Field()  # 公司名字
+    crawl_time = scrapy.Field()  # 抓取时间
+    crawl_update_time = scrapy.Field()  # 抓取更新时间
+</code></pre><h2 id="对url连接进行MD5"><a href="#对url连接进行MD5" class="headerlink" title="对url连接进行MD5"></a>对url连接进行MD5</h2><pre><code>import hashlib
+
+
+def get_md5(url):
+    &quot;&quot;&quot;
+    将url链接转换成md5
+    :param url:
+    :return:
+    &quot;&quot;&quot;
+    if isinstance(url, str):
+        url = url.encode(&quot;utf-8&quot;)       # 设置url的编码为utf-8
+    m = hashlib.md5()
+    m.update(url)
+    return m.hexdigest()
+</code></pre><h2 id="使用Twisted进行异步IO插入"><a href="#使用Twisted进行异步IO插入" class="headerlink" title="使用Twisted进行异步IO插入"></a>使用Twisted进行异步IO插入</h2><p>当我们处理大量的请求的时候,异步插入要比同步插入速度快很多</p>
+<pre><code>class MysqlTwistedPipeline(object):
+    &#39;&#39;&#39;
+    使用Twisted框架完成异步Mysql插入
+    &#39;&#39;&#39;
+
+    def __init__(self, dbpool):
+        self.dbpool = dbpool
+
+    @classmethod
+    def from_settings(cls, settings):
+        &quot;&quot;&quot;
+        读取Scrapy的Setting文件,Scrapy自动调用此方法
+        &quot;&quot;&quot;
+        # 该字典中的参数名称必须和MySQLdb.connections.Connection类中的参数名称要一致
+        dbparms = dict(
+            host=settings[&quot;MYSQL_HOST&quot;],
+            db=settings[&quot;MYSQL_DBNAME&quot;],
+            user=settings[&#39;MYSQL_USER&#39;],
+            password=settings[&#39;MYSQL_PASSWORD&#39;],
+            charset=&#39;utf8&#39;,
+            cursorclass=MySQLdb.cursors.DictCursor,
+            use_unicode=True,
+        )
+
+        dbpool = adbapi.ConnectionPool(&quot;MySQLdb&quot;, **dbparms)
+        return cls(dbpool)
 
     def process_item(self, item, spider):
-        self.exporter.export_item(item)     # 处理Item输出
-        return item
+        # 使用Twisted将Mysql插入变成异步执行
 
-    def close_spider(self, spider):
-        self.fileProject.close()        # 关闭文件对象
-</code></pre><p>settings.py</p>
-<pre><code># -*- coding: utf-8 -*-
+        query = self.dbpool.runInteraction(self.do_insert, item)
+        query.addErrback(self.handle_error, item, spider)  # 处理异常
 
-BOT_NAME = &#39;Spider_80s&#39;
+    def handle_error(self, failure, item, spider):
+        &quot;&quot;&quot;
+        该函数用来处理异步插入的异常
+        &quot;&quot;&quot;
+        print(failure)
 
-SPIDER_MODULES = [&#39;Spider_80s.spiders&#39;]
-NEWSPIDER_MODULE = &#39;Spider_80s.spiders&#39;
-ROBOTSTXT_OBEY = False
-DOWNLOAD_DELAY = 1
-DEFAULT_REQUEST_HEADERS = {
-    &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
-    &#39;Accept-Language&#39;: &#39;en&#39;,
-    &quot;user-agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&quot;,
-}
-
-ITEM_PIPELINES = {
-    &quot;Spider_80s.pipelines.Spider80SPipeline&quot;: 300,
-}
-</code></pre><h1 id="爬取结果展示"><a href="#爬取结果展示" class="headerlink" title="爬取结果展示"></a>爬取结果展示</h1><p>JSON格式数据</p>
-<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/Hm.390Qns5e8OkhLCnyJI*.M.oh32IOY.gRxS.4oYFc!/b/dDMBAAAAAAAA&amp;bo=gwYXAwAAAAADJ5M!&amp;rf=viewer_4" alt="JSON结果"></p>
-<p>CSV格式数据</p>
-<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/Jbwf2SVkg7kAKJp0*Ewc.pelbRcxeu.uhN.8UJTD.EE!/b/dDEBAAAAAAAA&amp;bo=gAcZAwAAAAADB78!&amp;rf=viewer_4" alt="CSV结果"></p>
-<h1 id="JSON格式文件转CSV格式"><a href="#JSON格式文件转CSV格式" class="headerlink" title="JSON格式文件转CSV格式"></a>JSON格式文件转CSV格式</h1><pre><code>import csv
-import json
-import sys
-import collections  # 有序字典
-
-
-def trans(path):
-    jsonData = open(path + &#39;.json&#39;,encoding=&#39;utf-8&#39;)
-    csvfile = open(path + &#39;.csv&#39;, &#39;w&#39;, newline=&#39;&#39;,encoding=&#39;utf-8&#39;)  # python3下
-    for line in jsonData:  # 获取属性列表
-        dic = json.loads(line[0:])
-        keys = dic.keys()
-        break
-    writer = csv.writer(csvfile)
-    writer.writerow(keys)  # 将属性列表写入csv中
-    for dic in jsonData:  # 读取json数据的每一行，将values数据一次一行的写入csv中
-        dic = json.loads(dic[0:])
-        writer.writerow(dic.values())
-    jsonData.close()
-    csvfile.close()
-
-
-trans(&quot;./80sLink&quot;)
-</code></pre><p>将JSON文件转换成CSV文件之后会出现乱码,解决方法是使用Notepad++打开CSV文件,然后<strong>将CSV文件的编码改成UTF-8BOM</strong></p>
+    def do_insert(self, cursor, item):
+        # 执行具体的插入
+        insert_sql = &quot;&quot;&quot;
+            insert into lagoujob(url,url_object_id,title,salary,city,years,degree,job_type,publish_time,tags,job_advantage,job_desc,job_addr,company_url,company_name,crawl_time)
+            values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                       &quot;&quot;&quot;
+        cursor.execute(insert_sql,
+                       (item[&#39;url&#39;], item[&#39;url_object_id&#39;], item[&#39;title&#39;], item[&#39;salary&#39;], item[&#39;city&#39;],
+                        item[&#39;years&#39;], item[&#39;degree&#39;], item[&#39;job_type&#39;], item[&#39;publish_time&#39;], item[&#39;tags&#39;],
+                        item[&#39;job_advantage&#39;],item[&#39;job_desc&#39;],item[&#39;job_addr&#39;],item[&#39;company_url&#39;],item[&#39;company_name&#39;],item[&#39;crawl_time&#39;]))
+</code></pre><h2 id="源码分享"><a href="#源码分享" class="headerlink" title="源码分享"></a>源码分享</h2><p><strong>欢迎Star </strong><a href="https://github.com/liu726301387/LaGouJobSpider" target="_blank" rel="noopener">https://github.com/liu726301387/LaGouJobSpider</a></p>
 
             </div>
             <hr>
@@ -503,7 +554,7 @@ trans(&quot;./80sLink&quot;)
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/" class="b-link-green">ScrapyCrawlSpider案例80S电影链接爬虫</a>
+                    <a href="/2019/01/25/scrapycrawlspider-la-gou-wang-quan-zhan-zhua-qu/" class="b-link-green">ScrapyCrawlSpider拉勾网全站抓取</a>
                 </p>
             </div>
         </div>
@@ -545,7 +596,7 @@ trans(&quot;./80sLink&quot;)
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/01/25/scrapycrawlspider-la-gou-wang-quan-zhan-zhua-qu/">
                     <div class="card-image">
@@ -566,9 +617,59 @@ trans(&quot;./80sLink&quot;)
 进入详情页面获取我们想要的数据
 我们的爬虫访问路径,先进入首页,</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-25
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python爬虫/" target="_blank">
+                        <span class="chip bg-color">Python爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/Scrapy/" target="_blank">
+                        <span class="chip bg-color">Scrapy</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/">
+                    <div class="card-image">
+                        
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例80S电影链接爬虫">
+                        
+                        <span class="card-title">ScrapyCrawlSpider案例80S电影链接爬虫</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">项目准备新建Scrapy项目scrapy startproject Spider_80s
+新建CrawlSpider爬虫切换到项目目录下执行
+scrapy genspider -t crawl MovieSpider 80s.tw
+分析目标</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -592,46 +693,6 @@ trans(&quot;./80sLink&quot;)
                         <span class="chip bg-color">Scrapy</span>
                     </a>
                     
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2019/01/06/luo-pang-2018-nian-zhong-yan-jiang/">
-                    <div class="card-image">
-                        
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/JltH4Letnb1V*xdJr8Vaqx4scl.Y2.9*Ka2wG1.gxmk!/b/dLgAAAAAAAAA&amp;bo=oAU4BAAAAAARB6k!&amp;rf=viewer_4" class="responsive-img" alt="罗胖2018年终演讲">
-                        
-                        <span class="card-title">罗胖2018年终演讲</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">开场
-岁月不饶人,你们确实没有饶过岁月
-你有你的计划,这个世界另有计划
-穿着体面有各种各样的计划.
-以前变化是生活的一部分,现在变化成了生活的本身
-熟悉的也许只能用来怀念,而依赖的我们必须放手
-2019年可能会是过去十年里最差的一年,但却是</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-06
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/杂七杂八/" class="post-category" target="_blank">
-                                    杂七杂八
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
                 </div>
                 
             </div>
