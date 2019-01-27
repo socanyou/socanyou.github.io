@@ -5,16 +5,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ScrapyCrawlSpider拉勾网全站抓取, 程序员小黑">
-    <meta name="description" content="数据展示
-网站分析分析首页
-首页中有职位的分类,抓取所有的职位,点击进去看职位分类的url
-分析职位分类
-在职位分类的页面下有具体的详情页面
-分析公司页面
-分析职位的详情页面
-进入详情页面获取我们想要的数据
-我们的爬虫访问路径,先进入首页,">
+    <meta name="keywords" content="Scrapy设置随机UserAgent, 程序员小黑">
+    <meta name="description" content="什么是UserAgent当我们在访问网页的时候,我们的浏览器在向服务器发送请求的时候会发送一个请求头和一个请求体,请求头中包含了很多重要的字段常见的字段有User-Agent,Accept等,具体的请求头的内容请参考&amp;lt;图解HTTP&amp;g">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -22,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ScrapyCrawlSpider拉勾网全站抓取 | 程序员小黑</title>
+    <title>Scrapy设置随机UserAgent | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,7 +255,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ScrapyCrawlSpider拉勾网全站抓取
+                        Scrapy设置随机UserAgent
                     </div>
                 </div>
             </div>
@@ -306,46 +298,131 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-25
+                    <i class="fa fa-clock-o fa-fw"></i>2019-01-27
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/dJPWyOHbTHAkjjbqjRafuNpAoylQIyQKswTjeegFcH8!/b/dLYAAAAAAAAA&amp;bo=yAUWAwAAAAADB*o!&amp;rf=viewer_4" alt="数据展示"></p>
-<h1 id="网站分析"><a href="#网站分析" class="headerlink" title="网站分析"></a>网站分析</h1><h2 id="分析首页"><a href="#分析首页" class="headerlink" title="分析首页"></a>分析首页</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/S4KN..H..ModSavlRJ4jqX*wMb0sII20jcpAJEVV77A!/b/dDYBAAAAAAAA&amp;bo=YQd.AwAAAAADNwk!&amp;rf=viewer_4" alt="首页"></p>
-<p>首页中有职位的分类,抓取所有的职位,点击进去看职位分类的url</p>
-<h2 id="分析职位分类"><a href="#分析职位分类" class="headerlink" title="分析职位分类"></a>分析职位分类</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/RCszUk30b7oFdvndszLE0BIBj5IEI.tjiQoV*rR10qM!/b/dLYAAAAAAAAA&amp;bo=DAbQAwAAAAADJ9s!&amp;rf=viewer_4" alt="职位分类"></p>
-<p>在职位分类的页面下有具体的详情页面</p>
-<h2 id="分析公司页面"><a href="#分析公司页面" class="headerlink" title="分析公司页面"></a>分析公司页面</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/6FlT7RVC0lql6hlza9cbxdvcvFm65rFvvp*xxnPytRY!/b/dL8AAAAAAAAA&amp;bo=dwWJAwAAAAADF8o!&amp;rf=viewer_4" alt="公司"></p>
-<h2 id="分析职位的详情页面"><a href="#分析职位的详情页面" class="headerlink" title="分析职位的详情页面"></a>分析职位的详情页面</h2><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/4PC4iH*mIsqMhVqTyg6IONJGBrdXlvWRVRf7oIKPNeg!/b/dDUBAAAAAAAA&amp;bo=ogaRAwAAAAADJzQ!&amp;rf=viewer_4" alt="详情页面"></p>
-<p>进入详情页面获取我们想要的数据</p>
-<p>我们的爬虫访问路径,先进入首页,然后匹配职位分类的url,公司的url,以及详情页的url,职位分类和公司的url匹配到之后接着对页面进行跟踪匹配,因为我们做的全站爬虫.</p>
-<h1 id="编写代码"><a href="#编写代码" class="headerlink" title="编写代码"></a>编写代码</h1><h2 id="定义Item"><a href="#定义Item" class="headerlink" title="定义Item"></a>定义Item</h2><p>根据想获取的数据定义Item</p>
-<pre><code>url# 职位url
-url_object_id职位url对应的id
-title职位名字
-salary薪资水平
-city工作城市
-years工作年限
-degree任职程度
-job_type工作类型
-publish_time发布时间
-tags标签
-job_advantage职位优势
-job_desc职位描述
-job_addr职位地址
-company_url公司官方网站地址
-company_name公司名字
-crawl_time抓取时间
-crawl_update_time抓取更新时间
-</code></pre><h2 id="定义根据网站的Url定义CrawlSpider的抓取Rule"><a href="#定义根据网站的Url定义CrawlSpider的抓取Rule" class="headerlink" title="定义根据网站的Url定义CrawlSpider的抓取Rule"></a>定义根据网站的Url定义CrawlSpider的抓取Rule</h2><pre><code>rules = (
-        Rule(LinkExtractor(allow=r&#39;zhaopin/.*&#39;, ), follow=True),  # 职位分类
-        Rule(LinkExtractor(allow=r&#39;gongsi/j\d+.html&#39;), follow=True),  # 匹配公司内的招聘职位
-        Rule(LinkExtractor(allow=r&#39;jobs/\d+.html&#39;), callback=&#39;parse_job&#39;, follow=True),  # 职位详情页面匹配
-    )
-</code></pre><h2 id="设置随机请求头"><a href="#设置随机请求头" class="headerlink" title="设置随机请求头"></a>设置随机请求头</h2><pre><code>class UserAgentDownloadMiddleware(object):
+                <h1 id="什么是UserAgent"><a href="#什么是UserAgent" class="headerlink" title="什么是UserAgent"></a>什么是UserAgent</h1><p>当我们在访问网页的时候,我们的浏览器在向服务器发送请求的时候会发送一个请求头和一个请求体,请求头中包含了很多重要的字段常见的字段有<strong>User-Agent,Accept</strong>等,具体的请求头的内容请参考&lt;图解HTTP&gt;.</p>
+<h2 id="UserAgent"><a href="#UserAgent" class="headerlink" title="UserAgent"></a>UserAgent</h2><p>UserAgent:<strong>用户代理</strong></p>
+<p>我们这里只对UserAgent做一个介绍,UserAgent会将创建请求的浏览器和用户代理名称等信息传给服务器.</p>
+<p>Chrome的RequestHeader</p>
+<pre><code>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9,en;q=0.8
+Cache-Control: max-age=0
+Connection: keep-alive
+Host: fake-useragent.herokuapp.com
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+</code></pre><p>Firefox的RequestHeader</p>
+<pre><code>Accept    
+text/html,application/xhtml+xm…plication/xml;q=0.9,*/*;q=0.8
+Accept-Encoding    
+gzip, deflate, br
+Accept-Language    
+zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Cache-Control    
+max-age=0
+Connection    
+keep-alive
+Host    
+fake-useragent.herokuapp.com
+Upgrade-Insecure-Requests    
+1
+User-Agent    
+Mozilla/5.0 (Windows NT 10.0; …) Gecko/20100101 Firefox/66.0
+</code></pre><p>这里是一个请求头,从上面的代码可以看出,我们的User-Agent的值为<strong>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36</strong>,这个值里面有很多信息,其中最重要的就是我们的浏览器版本信息.可以发现我们使用Firefox和Chrome共同访问一个网站的时候,他们的UserAgent是不一样的.</p>
+<h2 id="UserAgent和爬虫的关系"><a href="#UserAgent和爬虫的关系" class="headerlink" title="UserAgent和爬虫的关系"></a>UserAgent和爬虫的关系</h2><p>当我们使用Scrapy去对网站金进行抓取的时候,<strong>Scrapy默认有一个UserAgent就叫Scrapy</strong>,<strong>这样我们直接对网站进行抓取的时候很容易被网站管理员封杀掉.</strong></p>
+<p>我们可以查看Scrapy的源码</p>
+<pre><code>from scrapy import signals
+
+
+class UserAgentMiddleware(object):
+    &quot;&quot;&quot;This middleware allows spiders to override the user_agent&quot;&quot;&quot;
+
+    def __init__(self, user_agent=&#39;Scrapy&#39;):
+        self.user_agent = user_agent
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        o = cls(crawler.settings[&#39;USER_AGENT&#39;])
+        crawler.signals.connect(o.spider_opened, signal=signals.spider_opened)
+        return o
+
+    def spider_opened(self, spider):
+        self.user_agent = getattr(spider, &#39;user_agent&#39;, self.user_agent)
+
+    def process_request(self, request, spider):
+        if self.user_agent:
+            request.headers.setdefault(b&#39;User-Agent&#39;, self.user_agent)
+</code></pre><p>Scrapy默认的UserAgent:<strong>user_agent=’Scrapy’</strong></p>
+<h1 id="Scrapy架构"><a href="#Scrapy架构" class="headerlink" title="Scrapy架构"></a>Scrapy架构</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/1fF9t07Dc81TYlyEdQE0AzxhpTypecFxwoiZjxMq938!/b/dL4AAAAAAAAA&amp;bo=uQSBAwAAAAADBx0!&amp;rf=viewer_4" alt="Scrapy架构图"></p>
+<p>流程解析:</p>
+<ol>
+<li>引擎：Hi！Spider, 你要处理哪一个网站？</li>
+<li>Spider：老大要我处理xxxx.com。</li>
+<li>引擎：你把第一个需要处理的URL给我吧。</li>
+<li>Spider：给你，第一个URL是xxxxxxx.com。</li>
+<li>引擎：Hi！调度器，我这有request请求你帮我排序入队一下。</li>
+<li>调度器：好的，正在处理你等一下。</li>
+<li>引擎：Hi！调度器，把你处理好的request请求给我。</li>
+<li>调度器：给你，这是我处理好的request</li>
+<li>引擎：Hi！下载器，你按照老大的下载中间件的设置帮我下载一下这个request请求</li>
+<li>下载器：好的！给你，这是下载好的东西。（如果失败：sorry，这个request下载失败了。然后引擎告诉调度器，这个request下载失败了，你记录一下，我们待会儿再下载）</li>
+<li>引擎：Hi！Spider，这是下载好的东西，并且已经按照老大的下载中间件处理过了，你自己处理一下（注意！这儿responses默认是交给def parse()这个函数处理的） </li>
+<li>Spider：（处理完毕数据之后对于需要跟进的URL），Hi！引擎，我这里有两个结果，这个是我需要跟进的URL，还有这个是我获取到的Item数据。</li>
+<li>引擎：Hi ！管道 我这儿有个item你帮我处理一下！调度器！这是需要跟进URL你帮我处理下。然后从第四步开始循环，直到获取完老大需要全部信息。</li>
+<li>管道<code></code>调度器：好的，现在就做！</li>
+</ol>
+<p>在解析流程中我们可以发现,下载中间件是处于引擎(crawler.engine)和下载器(crawler.engine.download())之间的一层组件，可以有多个下载中间件被加载运行。</p>
+<ol>
+<li>当引擎传递请求给下载器的过程中，下载中间件可以对请求进行处理 （例如增加http header信息，增加proxy信息等）；</li>
+<li>在下载器完成http请求，传递响应给引擎的过程中， 下载中间件可以对响应进行处理（例如进行gzip的解压等）</li>
+</ol>
+<h1 id="设置下载中间件"><a href="#设置下载中间件" class="headerlink" title="设置下载中间件"></a>设置下载中间件</h1><h2 id="动态设置User-Agent的第一种方法"><a href="#动态设置User-Agent的第一种方法" class="headerlink" title="动态设置User-Agent的第一种方法"></a>动态设置User-Agent的第一种方法</h2><p>使用fake_useragent随机更换user-agent</p>
+<ol>
+<li>安装fake-useragent<ul>
+<li>pip install fake-useragent</li>
+</ul>
+</li>
+<li>导入fake_useragent<ul>
+<li>from fake_useragent import UserAgent </li>
+</ul>
+</li>
+<li>实例化UserAgent<ul>
+<li>self.ua = UserAgent()  # 实例化useragent</li>
+</ul>
+</li>
+</ol>
+<p>优点:不用自己维护UserAgent</p>
+<p>缺点:可扩展性不高</p>
+<p>在settings中设置选择获取随机请求头的类型</p>
+<pre><code>RANDOM_UA_TYPE = &quot;random&quot;       # 设置userAgent的类型
+</code></pre><p>编写Middleware</p>
+<pre><code>class RandomUserAgent(object):
+    # 使用fake_useragent随机更换user-agent
+
+    def __init__(self, crawler):
+        super(RandomUserAgent, self).__init__()  # 用父类的init方法来初始化
+        # self.USER_AGENT = crawler.settings.get(&quot;USER_AGENT&quot;, [])        # 获取settings当中的user_agent
+        self.ua = UserAgent()  # 实例化useragent
+        self.ua_type = crawler.settings.get(&quot;RANDOM_UA_TYPE&quot;, &quot;random&quot;)  # 导入Ua的获取类型,是ie还是谷歌等
+
+    @classmethod
+    def from_crawler(cls, crawler):
+        return cls(crawler)
+
+    def process_request(self, request, spider):
+        def get_ua():  # 利用闭包完成ua的可配置
+            return getattr(self.ua, self.ua_type)  # getattr:从对象中获取属性
+
+        request.headers.setdefault(b&#39;User-Agent&#39;, get_ua())  # 将随机useragent放到Request的Header中
+</code></pre><h2 id="动态设置User-Agent的第二种方法"><a href="#动态设置User-Agent的第二种方法" class="headerlink" title="动态设置User-Agent的第二种方法"></a>动态设置User-Agent的第二种方法</h2><p>使用Random随机选择自己定义好的UserAgent</p>
+<p>优点:可扩展性高<br>缺点:不容易维护</p>
+<pre><code>class UserAgentDownloadMiddleware(object):
     # 请求头列表
     USER_AGENT = [
         &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36&quot;,
@@ -357,183 +434,98 @@ crawl_update_time抓取更新时间
         &quot;Mozilla/5.0 (Windows NT 6.2; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0&quot;,
         &quot;Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0&quot;,
         &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A&quot;,
+        &quot;Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25&quot;,
         &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.13+ (KHTML, like Gecko) Version/5.1.7 Safari/534.57.2&quot;,
     ]
 
     def process_request(self, request, spider):
+        # 重写process_request方法给每个request添加不同的请求头
         user_agent = random.choice(self.USER_AGENT)  # 随机选择请求头
         request.headers[&quot;User-Agent&quot;] = user_agent  # 给request添加随机请求头
-</code></pre><h2 id="详情页的抓取规则"><a href="#详情页的抓取规则" class="headerlink" title="详情页的抓取规则"></a>详情页的抓取规则</h2><p>这里使用的Itemloaders填充的Item,使用add_xpath和add_value将值收集到itemloades中.</p>
-<pre><code>    def parse_job(self, response):
-        # 解析拉勾网的职位
-        item_loader = LagouItemLoader(item=LagoujobItem(), response=response)  # 创建ItemLoader的实例
-        item_loader.add_xpath(&quot;title&quot;, &quot;//div[@class=&#39;job-name&#39;]//span/text()&quot;)  # 职位名字
-        item_loader.add_value(&quot;url&quot;, response.url)  # 职位url
-        item_loader.add_value(&quot;url_object_id&quot;, get_md5(response.url))  # 职位url对应的id
-        item_loader.add_xpath(&quot;salary&quot;,
-                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[@class=&#39;salary&#39;]/text()&quot;)
-        item_loader.add_xpath(&quot;city&quot;,
-                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[2]/text()&quot;)  # 工作城市
-        item_loader.add_xpath(&quot;years&quot;,
-                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[3]/text()&quot;)  # 工作年限
+</code></pre><h2 id="在settings中开启DownloadMiddleware"><a href="#在settings中开启DownloadMiddleware" class="headerlink" title="在settings中开启DownloadMiddleware"></a>在settings中开启DownloadMiddleware</h2><pre><code>DOWNLOADER_MIDDLEWARES = {
+   # &#39;UserAgen_Demo.middlewares.UseragenDemoDownloaderMiddleware&#39;: 543,
+   #  &quot;UserAgen_Demo.middlewares.UserAgentDownloadMiddleware&quot;:543,        # 随机请求头
+    &quot;scrapy.downloadermiddlewares.useragent.UserAgentMiddleware&quot;:None,  # 将默认的userAgent设置为None
+    &quot;UserAgen_Demo.middlewares.RandomUserAgent&quot;:200,
+}
+</code></pre><p><strong>切记一定要将Scrapy的UserAgent设置为None</strong></p>
+<h1 id="利用Http-bin查看请求头"><a href="#利用Http-bin查看请求头" class="headerlink" title="利用Http.bin查看请求头"></a>利用Http.bin查看请求头</h1><p>Spider</p>
+<pre><code>class HttpbinSpider(scrapy.Spider):
+    name = &#39;HttpBin&#39;
+    allowed_domains = [&#39;httpbin.org&#39;]
+    start_urls = [&#39;https://httpbin.org/user-agent&#39;]
 
-        item_loader.add_xpath(&quot;degree&quot;,
-                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[4]/text()&quot;)  # 任职程度
-        item_loader.add_xpath(&quot;job_type&quot;,
-                              &quot;//div[@class=&#39;position-content-l&#39;]/dd[@class=&#39;job_request&#39;]/p/span[5]/text()&quot;)  # 工作类型
-        item_loader.add_xpath(&quot;tags&quot;, &quot;//ul[contains(@class,&#39;position-label&#39;)]/li/text()&quot;)  # 标签,注意有些招聘信息是单个的标签,而有些确实很多的
-
-        item_loader.add_xpath(&quot;publish_time&quot;, &quot;//p[@class=&#39;publish_time&#39;]/text()&quot;)  # 发布时间,需要进行处理
-        item_loader.add_xpath(&quot;job_advantage&quot;, &quot;//dd[@class=&#39;job-advantage&#39;]/p/text()&quot;)  # 职位优势
-
-        job_desc_list = response.xpath(
-            &quot;//dd[@class=&#39;job_bt&#39;]/div[@class=&#39;job-detail&#39;]/p/text()&quot;).getall()  # 职位描述  注意返回的是一个列表,需要进行处理
-        job_desc = &quot;,&quot;.join(job_desc_list)
-        item_loader.add_value(&quot;job_desc&quot;, job_desc)  # 职位描述  注意返回的是一个列表,需要进行处理
-
-        job_addr = response.xpath(&quot;//div[@class=&#39;work_addr&#39;]//text()&quot;).getall()  # 职位地址
-        job_addr = &quot;,&quot;.join(job_addr)  # 将列表拼接成字符串
-        job_addr = re.sub(&quot;-|\n|,| |查看地图&quot;, &quot;&quot;, job_addr)  # 使用正则做数据处理
-        item_loader.add_value(&quot;job_addr&quot;, job_addr)  # 职位地址
-
-        item_loader.add_xpath(&quot;company_name&quot;, &quot;//*[@id=&#39;job_company&#39;]/dt/a/img/@alt&quot;)  # 公司名字
-        item_loader.add_xpath(&quot;company_url&quot;, &quot;//*[@id=&#39;job_company&#39;]/dt/a/@href&quot;)  # 公司官方网站地址
-        item_loader.add_value(&quot;crawl_time&quot;, datetime.datetime.now())  # 抓取时间
-
-        job_item = item_loader.load_item()  # 加载Item
-        return job_item
-</code></pre><h2 id="使用ItemLoaders进行数据处理"><a href="#使用ItemLoaders进行数据处理" class="headerlink" title="使用ItemLoaders进行数据处理"></a>使用ItemLoaders进行数据处理</h2><pre><code>import scrapy
-from scrapy.loader import ItemLoader
-from scrapy.loader.processors import TakeFirst, MapCompose
-import re
-from w3lib.html import remove_tags  # 这个模块专门用来去除Html中的标签的
-class LagouItemLoader(ItemLoader):
-    default_output_processor = TakeFirst()
-
-
-def process_input_city_and_degree_years(value):
-    # 对输入的城市进行处理
-    value = re.sub(&quot;/&quot;, &quot;&quot;, value).strip()
-    return value
-
-
-def process_input_salary(value):
-    # 对输入的薪水进行处理
-    result = re.sub(&quot;k&quot;, &quot;000&quot;, value).replace(&quot;-&quot;, &#39; &#39;).strip()
-    return result
-
-
-def process_input_publish_time(value):
-    # 对输入的发布时间进行处理
-    result = re.sub(&quot;\xa0&quot;, &quot;&quot;, value).strip()
-    return result
-
-def process_input_desc(value):
-    # 职位详情的处理
-    if value == &quot;&quot;:
-        return &quot;无&quot;
-    else:
-        return value
-
-
-class LagoujobItem(scrapy.Item):
-    url = scrapy.Field()  # 职位url
-    url_object_id = scrapy.Field()  # 职位url对应的id
-    title = scrapy.Field()  # 职位名字
-    salary = scrapy.Field(
-        input_processor=MapCompose(process_input_salary)
-    )  # 薪资水平
-    city = scrapy.Field(
-        input_processor=MapCompose(process_input_city_and_degree_years),
-    )  # 工作城市
-    years = scrapy.Field(
-        input_processor=MapCompose(process_input_city_and_degree_years),
-    )  # 工作年限
-    degree = scrapy.Field(
-        input_processor=MapCompose(process_input_city_and_degree_years),
-    )  # 任职程度
-    job_type = scrapy.Field()  # 工作类型
-    publish_time = scrapy.Field(
-        input_processor=MapCompose(process_input_publish_time)
-    )  # 发布时间
-    tags = scrapy.Field(
-        input_processor=MapCompose(process_input_desc),
-    )  # 标签
-    job_advantage = scrapy.Field()  # 职位优势
-    job_desc = scrapy.Field(
-        input_processor=MapCompose(process_input_desc),
-    )  # 职位描述
-    job_addr = scrapy.Field()  # 职位地址
-    company_url = scrapy.Field()  # 公司官方网站地址
-    company_name = scrapy.Field()  # 公司名字
-    crawl_time = scrapy.Field()  # 抓取时间
-    crawl_update_time = scrapy.Field()  # 抓取更新时间
-</code></pre><h2 id="对url连接进行MD5"><a href="#对url连接进行MD5" class="headerlink" title="对url连接进行MD5"></a>对url连接进行MD5</h2><pre><code>import hashlib
-
-
-def get_md5(url):
-    &quot;&quot;&quot;
-    将url链接转换成md5
-    :param url:
-    :return:
-    &quot;&quot;&quot;
-    if isinstance(url, str):
-        url = url.encode(&quot;utf-8&quot;)       # 设置url的编码为utf-8
-    m = hashlib.md5()
-    m.update(url)
-    return m.hexdigest()
-</code></pre><h2 id="使用Twisted进行异步IO插入"><a href="#使用Twisted进行异步IO插入" class="headerlink" title="使用Twisted进行异步IO插入"></a>使用Twisted进行异步IO插入</h2><p>当我们处理大量的请求的时候,异步插入要比同步插入速度快很多</p>
-<pre><code>class MysqlTwistedPipeline(object):
-    &#39;&#39;&#39;
-    使用Twisted框架完成异步Mysql插入
-    &#39;&#39;&#39;
-
-    def __init__(self, dbpool):
-        self.dbpool = dbpool
-
-    @classmethod
-    def from_settings(cls, settings):
-        &quot;&quot;&quot;
-        读取Scrapy的Setting文件,Scrapy自动调用此方法
-        &quot;&quot;&quot;
-        # 该字典中的参数名称必须和MySQLdb.connections.Connection类中的参数名称要一致
-        dbparms = dict(
-            host=settings[&quot;MYSQL_HOST&quot;],
-            db=settings[&quot;MYSQL_DBNAME&quot;],
-            user=settings[&#39;MYSQL_USER&#39;],
-            password=settings[&#39;MYSQL_PASSWORD&#39;],
-            charset=&#39;utf8&#39;,
-            cursorclass=MySQLdb.cursors.DictCursor,
-            use_unicode=True,
-        )
-
-        dbpool = adbapi.ConnectionPool(&quot;MySQLdb&quot;, **dbparms)
-        return cls(dbpool)
-
-    def process_item(self, item, spider):
-        # 使用Twisted将Mysql插入变成异步执行
-
-        query = self.dbpool.runInteraction(self.do_insert, item)
-        query.addErrback(self.handle_error, item, spider)  # 处理异常
-
-    def handle_error(self, failure, item, spider):
-        &quot;&quot;&quot;
-        该函数用来处理异步插入的异常
-        &quot;&quot;&quot;
-        print(failure)
-
-    def do_insert(self, cursor, item):
-        # 执行具体的插入
-        insert_sql = &quot;&quot;&quot;
-            insert into lagoujob(url,url_object_id,title,salary,city,years,degree,job_type,publish_time,tags,job_advantage,job_desc,job_addr,company_url,company_name,crawl_time)
-            values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-                       &quot;&quot;&quot;
-        cursor.execute(insert_sql,
-                       (item[&#39;url&#39;], item[&#39;url_object_id&#39;], item[&#39;title&#39;], item[&#39;salary&#39;], item[&#39;city&#39;],
-                        item[&#39;years&#39;], item[&#39;degree&#39;], item[&#39;job_type&#39;], item[&#39;publish_time&#39;], item[&#39;tags&#39;],
-                        item[&#39;job_advantage&#39;],item[&#39;job_desc&#39;],item[&#39;job_addr&#39;],item[&#39;company_url&#39;],item[&#39;company_name&#39;],item[&#39;crawl_time&#39;]))
-</code></pre><h2 id="源码分享"><a href="#源码分享" class="headerlink" title="源码分享"></a>源码分享</h2><p><strong>欢迎Star </strong><a href="https://github.com/liu726301387/LaGouJobSpider" target="_blank" rel="noopener">https://github.com/liu726301387/LaGouJobSpider</a></p>
-
+    def parse(self, response):
+        user_agent = json.loads(response.text)[&quot;user-agent&quot;]
+        print(&#39;=&#39;*90)
+        print(user_agent)
+        print(&#39;=&#39; * 90)
+        yield scrapy.Request(self.start_urls[0], dont_filter=True)
+</code></pre><h1 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h1><p>fake_UserAgent</p>
+<pre><code>2019-01-27 14:17:57 [scrapy.core.engine] INFO: Spider opened
+2019-01-27 14:17:57 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-01-27 14:17:57 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2019-01-27 14:17:58 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: None)
+==========================================================================================
+Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:22.0) Gecko/20130328 Firefox/22.0
+==========================================================================================
+2019-01-27 14:17:59 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (X11; Linux i586; rv:63.0) Gecko/20100101 Firefox/63.0
+==========================================================================================
+2019-01-27 14:17:59 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (Windows NT 6.4; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2225.0 Safari/537.36
+==========================================================================================
+2019-01-27 14:18:01 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (X11; CrOS i686 4319.74.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36
+==========================================================================================
+2019-01-27 14:18:02 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2227.1 Safari/537.36
+==========================================================================================
+2019-01-27 14:18:03 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (X11; CrOS i686 4319.74.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36
+==========================================================================================
+2019-01-27 14:18:05 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (Windows; U; Windows NT 6.0; nb-NO) AppleWebKit/533.18.1 (KHTML, like Gecko) Version/5.0.2 Safari/533.18.5
+==========================================================================================
+2019-01-27 14:18:06 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (X11; NetBSD) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36
+==========================================================================================
+</code></pre><p>自定义User_Agent</p>
+<pre><code>2019-01-27 15:30:19 [scrapy.core.engine] INFO: Spider opened
+2019-01-27 15:30:19 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-01-27 15:30:19 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2019-01-27 15:30:20 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: None)
+==========================================================================================
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0
+==========================================================================================
+2019-01-27 15:30:21 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (Windows NT 6.2; WOW64; rv:63.0) Gecko/20100101 Firefox/63.0
+==========================================================================================
+2019-01-27 15:30:23 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0
+==========================================================================================
+2019-01-27 15:30:23 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A
+==========================================================================================
+2019-01-27 15:30:25 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25
+==========================================================================================
+2019-01-27 15:30:26 [scrapy.core.engine] DEBUG: Crawled (200) &lt;GET https://httpbin.org/user-agent&gt; (referer: https://httpbin.org/user-agent)
+==========================================================================================
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14931
+==========================================================================================
+</code></pre>
             </div>
             <hr>
 
@@ -554,7 +546,7 @@ def get_md5(url):
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/25/scrapycrawlspider-la-gou-wang-quan-zhan-zhua-qu/" class="b-link-green">ScrapyCrawlSpider拉勾网全站抓取</a>
+                    <a href="/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/" class="b-link-green">Scrapy设置随机UserAgent</a>
                 </p>
             </div>
         </div>
@@ -596,7 +588,7 @@ def get_md5(url):
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/">
                     <div class="card-image">
@@ -609,9 +601,9 @@ def get_md5(url):
                 <div class="card-content article-content">
                     <div class="summary">什么是UserAgent当我们在访问网页的时候,我们的浏览器在向服务器发送请求的时候会发送一个请求头和一个请求体,请求头中包含了很多重要的字段常见的字段有User-Agent,Accept等,具体的请求头的内容请参考&lt;图解HTTP&g</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -624,6 +616,7 @@ def get_md5(url):
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -644,22 +637,27 @@ def get_md5(url):
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/">
+                <a href="/2019/01/25/scrapycrawlspider-la-gou-wang-quan-zhan-zhua-qu/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例80S电影链接爬虫">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider拉勾网全站抓取">
                         
-                        <span class="card-title">ScrapyCrawlSpider案例80S电影链接爬虫</span>
+                        <span class="card-title">ScrapyCrawlSpider拉勾网全站抓取</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">项目准备新建Scrapy项目scrapy startproject Spider_80s
-新建CrawlSpider爬虫切换到项目目录下执行
-scrapy genspider -t crawl MovieSpider 80s.tw
-分析目标</div>
+                    <div class="summary">数据展示
+网站分析分析首页
+首页中有职位的分类,抓取所有的职位,点击进去看职位分类的url
+分析职位分类
+在职位分类的页面下有具体的详情页面
+分析公司页面
+分析职位的详情页面
+进入详情页面获取我们想要的数据
+我们的爬虫访问路径,先进入首页,</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-25
                             </span>
                         <span class="publish-author">
                             

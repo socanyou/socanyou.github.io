@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-01-27T06:09:33.558Z</updated>
+  <updated>2019-01-27T07:32:53.724Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scrapy设置随机UserAgent</title>
+    <link href="https://codinglife.site/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/"/>
+    <id>https://codinglife.site/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/</id>
+    <published>2019-01-27T06:19:23.000Z</published>
+    <updated>2019-01-27T07:32:53.724Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是UserAgent&quot;&gt;&lt;a href=&quot;#什么是UserAgent&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
+    
+  </entry>
   
   <entry>
     <title>ScrapyCrawlSpider拉勾网全站抓取</title>
@@ -538,34 +566,6 @@ function del() {
         
         
           &lt;h1 id=&quot;全局结果页面&quot;&gt;&lt;a href=&quot;#全局结果页面&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Struts2" scheme="https://codinglife.site/categories/Struts2/"/>
-    
-    
-      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
-    
-      <category term="Struts2" scheme="https://codinglife.site/tags/Struts2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Struts2的数据封装</title>
-    <link href="https://codinglife.site/2018/12/22/struts2-de-shu-ju-feng-zhuang/"/>
-    <id>https://codinglife.site/2018/12/22/struts2-de-shu-ju-feng-zhuang/</id>
-    <published>2018-12-22T03:27:48.000Z</published>
-    <updated>2018-12-25T07:25:43.586Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;属性驱动-必须提供属性的set方法-不常用&quot;&gt;&lt;a href=&quot;#属性驱动-必须提供属性的set方法-不常用&quot; class=&quot;headerlink&quot;
         
       
     
