@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-01-27T07:50:39.716Z</updated>
+  <updated>2019-02-20T02:46:53.451Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Scrapy爬取汽车之家精选高清大图</title>
+    <link href="https://codinglife.site/2019/02/19/scrapy-pa-qu-qi-che-zhi-jia-jing-xuan-gao-qing-da-tu/"/>
+    <id>https://codinglife.site/2019/02/19/scrapy-pa-qu-qi-che-zhi-jia-jing-xuan-gao-qing-da-tu/</id>
+    <published>2019-02-19T12:24:35.000Z</published>
+    <updated>2019-02-20T02:46:53.451Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;好久没写爬虫,今天算是复习下Scrapy,正所谓温故而知新.&lt;/p&gt;
+&lt;p&gt;这次爬取的目标网站是汽车之家的精选高清大图.&lt;/p&gt;
+&lt;p&gt;先看看运行结果吧&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
+    
+    
+      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
+    
+  </entry>
   
   <entry>
     <title>Scrapy设置随机UserAgent</title>
@@ -538,34 +569,6 @@ function del() {
         
           &lt;h1 id=&quot;完全解耦合的方式&quot;&gt;&lt;a href=&quot;#完全解耦合的方式&quot; class=&quot;headerlink&quot; title=&quot;完全解耦合的方式&quot;&gt;&lt;/a&gt;完全解耦合的方式&lt;/h1&gt;&lt;p&gt;JSP&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;&amp;lt;h3
-        
-      
-    
-    </summary>
-    
-      <category term="Struts2" scheme="https://codinglife.site/categories/Struts2/"/>
-    
-    
-      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
-    
-      <category term="Struts2" scheme="https://codinglife.site/tags/Struts2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Struts2的结果页面的配置</title>
-    <link href="https://codinglife.site/2018/12/22/struts2-de-jie-guo-ye-mian-de-pei-zhi/"/>
-    <id>https://codinglife.site/2018/12/22/struts2-de-jie-guo-ye-mian-de-pei-zhi/</id>
-    <published>2018-12-22T03:28:13.000Z</published>
-    <updated>2018-12-25T07:25:46.959Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;全局结果页面&quot;&gt;&lt;a href=&quot;#全局结果页面&quot; class=&quot;headerlink&quot;
         
       
     

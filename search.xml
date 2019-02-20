@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Scrapy爬取汽车之家精选高清大图</title>
+      <link href="/2019/02/19/scrapy-pa-qu-qi-che-zhi-jia-jing-xuan-gao-qing-da-tu/"/>
+      <url>/2019/02/19/scrapy-pa-qu-qi-che-zhi-jia-jing-xuan-gao-qing-da-tu/</url>
+      
+        <content type="html"><![CDATA[<p>好久没写爬虫,今天算是复习下Scrapy,正所谓温故而知新.</p><p>这次爬取的目标网站是汽车之家的精选高清大图.</p><p>先看看运行结果吧</p><p><img src="http://b290.photo.store.qq.com/psb?/V10Lajvl04D7qQ/VWZf9yEkhXVMGAb0GRYfh6ZSTBi1ssJ.1XCqqsEMzts!/b/dCIBAAAAAAAA&amp;bo=EgLGAhICxgIBACc!&amp;rf=viewer_311" alt=""></p><p><img src="http://a2.qpic.cn/psb?/V10Lajvl04D7qQ/SMq7ob3LXMn4bNABWRoVq9slSJAAjmtakpj9jp*WO90!/b/dCEAAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=2QKmA9kCpgMBACc!&amp;tl=1&amp;vuin=726301387&amp;tm=1550628000&amp;sce=50-1-1&amp;rf=viewer_311" alt=""></p><p><img src="http://a2.qpic.cn/psb?/V10Lajvl04D7qQ/u4oGnx1XvV9VA5H2YGNsXaeos2r86BdZImSXDwHNJWQ!/b/dC0AAAAAAAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=UwXuA1MF7gMBACc!&amp;tl=1&amp;vuin=726301387&amp;tm=1550628000&amp;sce=50-1-1&amp;rf=viewer_311" alt=""></p><h1 id="页面分析"><a href="#页面分析" class="headerlink" title="页面分析"></a>页面分析</h1><p>下面我们来分析一下图片精选页面</p><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/yhJteiFadlHCYQqOskFM.kLi0nGC9fpkdyOar5jeXjM!/b/dFQBAAAAAAAA&amp;bo=UAbdA1AG3QMDByI!&amp;rf=viewer_4" alt="1"></p><p>这个页面中全部都是套图,我们打开某一套图进行查看.</p><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/Zq4sxEk8g1LLNwycqoIhzG9bJyeVmILolNHr1O4Hm9g!/b/dLwAAAAAAAAA&amp;bo=aQdqA2kHagMDV3I!&amp;rf=viewer_4" alt="2"></p><p>一开始我想从这个页面获取高清大图,无奈这些高清大图在页面源码中没有😔.</p><p>最后右上角发现了一个<strong>列表模式</strong></p><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/SWjcrhLWxpHeILbZfa8fXXbgBHr1eSCzc9pCYapvc1Y!/b/dDUBAAAAAAAA&amp;bo=3gbMA94GzAMDZ0I!&amp;rf=viewer_4" alt="列表"></p><p>列表模式显示的都是一些缩略图,那么怎么把缩略图变成高清大图呢?</p><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/FI3Qyh2cBtgt1DbmEPc3E3L2TOm9fnwCVKQdqq6BsEA!/b/dL8AAAAAAAAA&amp;bo=agYpA2oGKQMDR2I!&amp;rf=viewer_4" alt=""></p><p>可以将缩略图URL里面的<strong>t_</strong>替换掉,就会发现缩略图就已经变成了高清大图</p><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/yq3h.sNU.emodpYFyMPh*HSRxrOwEUZK6WYqbRITvmA!/b/dL8AAAAAAAAA&amp;bo=jQXhA40F4QMDZ0I!&amp;rf=viewer_4" alt=""></p><h1 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h1><h2 id="爬虫编写"><a href="#爬虫编写" class="headerlink" title="爬虫编写"></a>爬虫编写</h2><p>提取精选图片页面中的套图链接</p><pre><code>detail_urls = response.xpath(&quot;//ul[@class=&#39;content&#39;]/li/a/@href&quot;).getall()</code></pre><p>精选图片页面中下一页的处理</p><pre><code>next_page = response.xpath(&quot;//div[@class=&#39;pageindex&#39;]/a[last()-1]/@href&quot;).get()        if next_page:            yield scrapy.Request(url=response.urljoin(next_page), callback=self.parse)</code></pre><p>从套图页面中提取<strong>列表模式</strong>的链接</p><pre><code>list_pattern = response.xpath(&quot;//*[@id=&#39;cMode&#39;]/div/div[@class=&#39;side&#39;]/script&quot;).get()  # 提取列表模式的URL        list_pattern = re.findall(&quot;/photolist/.*.html&quot;, list_pattern)[0]  # 匹配列表模式的url</code></pre><p>从列表模式中下载高清大图</p><pre><code>category = response.xpath(&quot;//div[@class=&#39;mini_left&#39;]/a[last()-1]/text()&quot;).get()image_urls = response.xpath(&quot;//ul[@id=&#39;imgList&#39;]/li/a/img/@src&quot;).getall()        image_urls = list(map(lambda x: x.replace(&quot;t_&quot;, &quot;&quot;), image_urls))  # 去除url中的&quot;t_&quot;得到高清大图        image_urls = list(map(lambda x: response.urljoin(x), image_urls))        yield CarhomehdItem(category=category, image_urls=image_urls)</code></pre><h2 id="编写ItemPipeline保存图片"><a href="#编写ItemPipeline保存图片" class="headerlink" title="编写ItemPipeline保存图片"></a>编写ItemPipeline保存图片</h2><pre><code>class ImagePipeline(ImagesPipeline):    def get_media_requests(self, item, info):        request_objs = super(ImagePipeline, self).get_media_requests(item, info)        for request_obj in request_objs:            request_obj.item = item        return request_objs    def file_path(self, request, response=None, info=None):        path = super(ImagePipeline, self).file_path(request, response, info)        category = request.item.get(&quot;category&quot;)        image_store = IMAGES_STORE        category_path = os.path.join(image_store, category)        if not os.path.exists(category_path):            os.mkdir(category_path)        image_name = path.replace(&quot;full/&quot;, &quot;&quot;)        image_path = os.path.join(category_path, image_name)        return image_path</code></pre><p>完整代码:</p><p><a href="https://github.com/liu726301387/CarHomeHD" target="_blank" rel="noopener">https://github.com/liu726301387/CarHomeHD</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python爬虫 </tag>
+            
+            <tag> Scrapy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Scrapy设置随机UserAgent</title>
       <link href="/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/"/>
       <url>/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/</url>
@@ -753,9 +778,9 @@
       
         <tags>
             
-            <tag> Thread </tag>
-            
             <tag> 多任务 </tag>
+            
+            <tag> Thread </tag>
             
         </tags>
       
