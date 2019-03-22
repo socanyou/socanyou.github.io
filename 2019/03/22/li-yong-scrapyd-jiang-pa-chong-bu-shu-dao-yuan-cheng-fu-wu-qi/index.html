@@ -347,7 +347,7 @@
 default = YangGuangGaoKao.settings
 
 [deploy:gaokao]
-url = http://39.105.5.201:6800/       # Spider Server Url
+url = http://0.0.0.0:6800/       # Spider Server Url
 project = YangGuangGaoKao
 </code></pre><p>切记scrapy.cfg文件中<strong>不能使用中文注释</strong></p>
 <p>否则会报<strong>UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xae in position 175</strong></p>
@@ -371,18 +371,18 @@ Unknown target: default
 <p><strong>YangGuangGaoKao</strong>:scrapy.cfg中的project=YangGuangGaoKao</p>
 <pre><code>L:\ScrapyProjectDemo\YangGuangGaoKao&gt;scrapyd-deploy gaokao -p YangGuangGaoKao
 Packing version 1553244314
-Deploying to project &quot;YangGuangGaoKao&quot; in http://39.105.5.201:6800/addversion.json
+Deploying to project &quot;YangGuangGaoKao&quot; in http://0.0.0.0:6800/addversion.json
 Server response (200):
 {&quot;node_name&quot;: &quot;iZ2ze8yfs65r3ciel5lbucZ&quot;, &quot;status&quot;: &quot;ok&quot;, &quot;project&quot;: &quot;YangGuangGaoKao&quot;, &quot;version&quot;: &quot;1553244314&quot;, &quot;spiders&quot;: 3}
 </code></pre><p>这样就表示部署成功</p>
 <p>这时候在服务器端会多两个文件夹<strong>dbs,eggs</strong>我的在home目录下不知道你们的在哪儿.</p>
 <pre><code>root@iZ2ze8yfs65r3ciel5lbucZ:/home# ls
 dbs  eggs   twistd.pid
-</code></pre><h2 id="开启服务端的爬虫"><a href="#开启服务端的爬虫" class="headerlink" title="开启服务端的爬虫"></a>开启服务端的爬虫</h2><pre><code>curl http://39.105.5.201:6800/schedule.json -d project=YangGuangGaoKao -d spider=IndexSpider
+</code></pre><h2 id="开启服务端的爬虫"><a href="#开启服务端的爬虫" class="headerlink" title="开启服务端的爬虫"></a>开启服务端的爬虫</h2><pre><code>curl http://0.0.0.0:6800/schedule.json -d project=YangGuangGaoKao -d spider=IndexSpider
 YangGuangGaoKao:scrapyd项目名字
 IndexSpider:爬虫名字
 </code></pre><p>如果开启成功则在<strong>终端会显示</strong></p>
-<pre><code>$ curl http://39.105.5.201:6800/schedule.json -d project=YangGuangGaoKao -d spider=IndexSpider    
+<pre><code>$ curl http://0.0.0.0:6800/schedule.json -d project=YangGuangGaoKao -d spider=IndexSpider    
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current Dload  Upload   Total Spent Left  Speed
 100   144  100   102  100    42     81     33  0:00:01  0:00:01 --:--:--    81{&quot;                             node_name&quot;: &quot;iZ2ze8yfs65r3ciel5lbucZ&quot;, &quot;status&quot;: &quot;ok&quot;, &quot;jobid&quot;: &quot;ba214a324c7f11e                             98c2700163e32604e&quot;}
 </code></pre><p>这时候我们访问我们服务端能够查看我们服务端部署的爬虫,以及运行日志</p>
