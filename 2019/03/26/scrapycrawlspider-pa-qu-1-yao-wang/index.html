@@ -5,12 +5,13 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="利用Scrapyd将爬虫部署到远程服务器, 程序员小黑">
-    <meta name="description" content="远程服务器配置安装Scrapyd1. 安装scrapyd
-    pip install scrapyd
-2. 服务器开启6800端口远程访问
-3. 修改scrapyd的Ip绑定
-    在default_scrapyd.conf文件中将b">
+    <meta name="keywords" content="ScrapyCrawlSpider爬取1药网, 程序员小黑">
+    <meta name="description" content="数据展示
+主要功能利用Scrapy-splash完成JavaScript渲染利用Scrapyd将scrapy项目部署到爬虫服务器
+网站分析
+网站首页中有各种药品分类,打开分类页面我们可以看到各种的药品分类信息,分析它的URL规则,
+
+htt">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>利用Scrapyd将爬虫部署到远程服务器 | 程序员小黑</title>
+    <title>ScrapyCrawlSpider爬取1药网 | 程序员小黑</title>
     <link rel="icon" type="image/png" href="/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -259,7 +260,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        利用Scrapyd将爬虫部署到远程服务器
+                        ScrapyCrawlSpider爬取1药网
                     </div>
                 </div>
             </div>
@@ -302,93 +303,208 @@
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-03-22
+                    <i class="fa fa-clock-o fa-fw"></i>2019-03-26
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="远程服务器配置"><a href="#远程服务器配置" class="headerlink" title="远程服务器配置"></a>远程服务器配置</h1><h2 id="安装Scrapyd"><a href="#安装Scrapyd" class="headerlink" title="安装Scrapyd"></a>安装Scrapyd</h2><pre><code>1. 安装scrapyd
-    pip install scrapyd
-2. 服务器开启6800端口远程访问
-3. 修改scrapyd的Ip绑定
-    在default_scrapyd.conf文件中将bind_address修改为0.0.0.0
-        bind_address=0.0.0.0默认为127.0.0.1
-4. 开启Scrapyd
-    shell下运行scrapyd
-</code></pre><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><pre><code>浏览器中输入服务器的Ip地址如果能够正常访问则表示scrapyd配置成功
-</code></pre><p><img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/kut.F*J631wX9NhxW5SEdQtstrApCVarvV.f8R9xaLY!/b/dD4BAAAAAAAA&amp;bo=zgMfAgAAAAADB*I!&amp;rf=viewer_4" alt=""></p>
-<h1 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h1><p>scrapyd-client:将本地scrapy项目打包发送到scrapyd的服务端</p>
-<h2 id="安装Scrapyd-client"><a href="#安装Scrapyd-client" class="headerlink" title="安装Scrapyd-client"></a>安装Scrapyd-client</h2><pre><code>pip install scrapyd-client
-</code></pre><h2 id="修改scrapy配置文件"><a href="#修改scrapy配置文件" class="headerlink" title="修改scrapy配置文件"></a>修改scrapy配置文件</h2><p>在Scrapy项目目录下有一个叫scrapy.cfg的Scrapy配置文件.</p>
-<pre><code>│  scrapy.cfg(Scrapy项目配置文件)
-│  setup.py
-│  start.py
-└─YangGuangGaoKao
-    │  items.py
-    │  middlewares.py
-    │  pipelines.py
-    │  settings.py(scrapy设置文件)
-    │  __init__.py
-    │
-    ├─spiders
-    │  │  IndexSpider.py(爬虫)
-    │  │  __init__.py
-    │
-    ├─utils
-    │      logger.py
-</code></pre><p>将scrapy.cfg文件修改成下面的这种格式</p>
-<pre><code>- url是scrapyd服务器的URL地址
+                <h1 id="数据展示"><a href="#数据展示" class="headerlink" title="数据展示"></a>数据展示</h1><p><img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/kgYVtRgZpwwkvBp40gj0UfBcmFZy4LVEbS3EAodSyBM!/b/dLgAAAAAAAAA&amp;bo=LAULAgAAAAADBwI!&amp;rf=viewer_4" alt=""></p>
+<h1 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h1><p>利用Scrapy-splash完成JavaScript渲染<br>利用Scrapyd将scrapy项目部署到爬虫服务器</p>
+<h1 id="网站分析"><a href="#网站分析" class="headerlink" title="网站分析"></a>网站分析</h1><p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/SO3BCR4P7DDm33fvJh.H05KbKBvTcK*opMDbVg0X2iE!/b/dLYAAAAAAAAA&amp;bo=KwYMAwAAAAADV1A!&amp;rf=viewer_4" alt=""></p>
+<p>网站首页中有各种药品分类,打开分类页面我们可以看到各种的药品分类信息,分析它的URL规则,</p>
+<p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/X7751LPjPh8RuyH3Vnk2C9RLuG5GViketEkyIMA8cHc!/b/dL8AAAAAAAAA&amp;bo=PgdlAwAAAAADJ10!&amp;rf=viewer_4" alt=""></p>
+<pre><code>https://www.111.com.cn/categories/953785-j1
+https://www.111.com.cn/categories/953787-j1
+https://www.111.com.cn/categories/956104-j1
+</code></pre><p>编写正则<br>    categories/\d{6}-j\d</p>
+<p>药品分类中有药品信息的URL</p>
+<p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/dHOaMY2smRCMgJHMVHr.GGC2K6CbLNZSQkkQq16J3fk!/b/dLYAAAAAAAAA&amp;bo=6AbnAwAAAAADNxg!&amp;rf=viewer_4" alt=""></p>
+<pre><code>https://www.111.com.cn/product/50787275.html
+https://www.111.com.cn/product/50096190.html
+https://www.111.com.cn/product/50071493.html
+https://www.111.com.cn/product/51059448.html
+</code></pre><p>编写正则<br>    product/\d+.html</p>
+<p>因为在药品详情页中药品价格是通过Js加载的,所以这里使用Scrapy-Splash进行JS渲染,然后再进行网页解析.</p>
+<p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/hu9n*YnOc4nVNSU7JnUd70cu9I0r4Gk9AfBoqPvGg3Q!/b/dL4AAAAAAAAA&amp;bo=hgW6AwAAAAADNyg!&amp;rf=viewer_4" alt=""></p>
+<p>最后药品个各个分类中还有下一页,获取下一页的URL并交给SplashRequest处理</p>
+<p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/yV113Rd39DWhniLP3.RWgYbgeZ94VczE5gKu1cKb4V4!/b/dDQBAAAAAAAA&amp;bo=twZhAgAAAAADJ9A!&amp;rf=viewer_4" alt=""></p>
+<pre><code> next_url = response.xpath(
+        &quot;//div[@id=&#39;search_table&#39;]/div[@class=&#39;turnPageBottom&#39;]/a[contains(@class,&#39;page_next&#39;)]/@href&quot;).extract_first()
 
-- project是scrapyd的项目名字
+    if next_url:
+        next_url = &quot;https://&quot; + next_url[2:]
+        yield SplashRequest(url=next_url, callback=self.parse_item, args=self.splash_args, endpoint=&quot;render.html&quot;)
+    else:
+        print(f&quot;{response.url}没有下一页&quot;)
+</code></pre><h1 id="代码编写"><a href="#代码编写" class="headerlink" title="代码编写"></a>代码编写</h1><h2 id="主要爬虫代码"><a href="#主要爬虫代码" class="headerlink" title="主要爬虫代码"></a>主要爬虫代码</h2><p>爬取规则</p>
+<pre><code># -*- coding: utf-8 -*-
+import scrapy
+from scrapy.linkextractors import LinkExtractor
+from scrapy.spiders import CrawlSpider, Rule
+from scrapy_splash import SplashRequest
+from YaoPinSpider.items import YaopinspiderItem
 
-[settings]
-default = YangGuangGaoKao.settings
 
-[deploy:gaokao]
+class YaopinSpider(CrawlSpider):
+    name = &#39;YaoPin&#39;  # 爬虫名字
+    allowed_domains = [&#39;111.com.cn&#39;]  # 爬取的域
+    start_urls = [&#39;https://www.111.com.cn/categories/&#39;]  # 开始爬取的URL
+
+    # 抓取规则
+    rules = (
+        Rule(LinkExtractor(allow=r&#39;categories/\d{6}-j\d&#39;), callback=&quot;parse_next&quot;, follow=True),  # 匹配药品分类
+        Rule(LinkExtractor(allow=r&#39;product/\d+.html&#39;), callback=&quot;parse_item&quot;, follow=True)  # 匹配药品详情页面
+    )
+
+    splash_args = {
+        &quot;wait&quot;: 0.5,  # Splash执行完成之后会等待一段时间后返回
+    }
+
+    def parse_next(self, response):
+        # 下一页的处理
+        next_url = response.xpath(
+            &quot;//div[@id=&#39;search_table&#39;]/div[@class=&#39;turnPageBottom&#39;]/a[contains(@class,&#39;page_next&#39;)]/@href&quot;).extract_first()
+
+        if next_url:
+            next_url = &quot;https://&quot; + next_url[2:]
+            yield SplashRequest(url=next_url, callback=self.parse_item, args=self.splash_args, endpoint=&quot;render.html&quot;)
+        else:
+            print(f&quot;{response.url}没有下一页&quot;)
+
+    def parse_item(self, response):
+        &quot;&quot;&quot;
+        将CrawlSpider匹配的url交给Splash处理
+        :param response:
+        :return:
+        &quot;&quot;&quot;
+        url = response.url
+        yield SplashRequest(url=url, callback=self.parse_detail, args=self.splash_args, endpoint=&quot;render.html&quot;)
+
+    def parse_detail(self, response):
+        &quot;&quot;&quot;
+        解析Splash渲染完成之后的页面
+        :param response:
+        :return:
+        &quot;&quot;&quot;
+        items = YaopinspiderItem()  # 实例化item类
+        tr_list = response.xpath(&quot;//div[@class=&#39;goods_intro&#39;]/table/tbody&quot;)
+        for tr in tr_list:
+            drug_name = tr.xpath(&quot;./tr[1]/td/text()&quot;).extract_first()  # 药品名
+            brand = tr.xpath(&quot;./tr[2]/td[1]/text()&quot;).extract_first()  # 品牌
+            spec = tr.xpath(&quot;./tr[2]/td[2]/text()&quot;).extract_first()  # 规格
+            weight = tr.xpath(&quot;./tr[3]/td[1]/text()&quot;).extract_first()  # 重量
+            manufacturer = tr.xpath(&quot;./tr[3]/td[2]/text()&quot;).extract_first()  # 生产厂商
+            approval_num = tr.xpath(&quot;./tr[4]/td/text()&quot;).extract_first().strip().strip(&quot;(&quot;)  # 批准文号
+            items[&#39;drug_name&#39;] = drug_name
+            items[&#39;brand&#39;] = brand
+            items[&#39;spec&#39;] = spec
+            items[&#39;weight&#39;] = weight
+            items[&#39;manufacturer&#39;] = manufacturer
+            items[&#39;approval_num&#39;] = approval_num
+            # print_format = f&quot;药品名字:{drug_name},品牌:{brand},规格:{spec},重量:{weight},生产厂商:{manufacturer},批准文号:{approval_num}&quot;
+            # print(print_format)
+
+        price = response.xpath(
+            &quot;//div[@class=&#39;shangpin_info&#39;]/dl[@class=&#39;clearfix&#39;]/dd/span[@class=&#39;good_price&#39;]/text()&quot;).extract_first()  # 药品价格
+        # print(price)
+        items[&#39;price&#39;] = price
+        items[&quot;detail_url&quot;] = response.url
+        yield items
+</code></pre><h2 id="Items"><a href="#Items" class="headerlink" title="Items"></a>Items</h2><p>爬取字段</p>
+<pre><code>import scrapy
+
+
+class YaopinspiderItem(scrapy.Item):
+    drug_name = scrapy.Field()  # 药品名
+    brand = scrapy.Field()  # 品牌
+    spec = scrapy.Field()  # 规格
+    weight = scrapy.Field()  # 重量
+    manufacturer = scrapy.Field()  # 生产厂商
+    approval_num = scrapy.Field()  # 批准文号
+    price = scrapy.Field()  # 价格
+    detail_url = scrapy.Field()  # 详情页面Url
+</code></pre><h2 id="Pipelines"><a href="#Pipelines" class="headerlink" title="Pipelines"></a>Pipelines</h2><p>数据存储</p>
+<pre><code>class MysqlPipeline(object):
+    &#39;&#39;&#39;
+    将数据保存到Mysql
+    这是同步的插入方式
+    这种方式当数据量过大的时候会引起阻塞
+    &#39;&#39;&#39;
+
+    def __init__(self):
+        self.conn = MySQLdb.connect(&#39;localhost&#39;, &#39;root&#39;, &#39;LiuChen0.&#39;, &#39;yaopindata&#39;, charset=&#39;utf8&#39;,
+                                    use_unicode=True)  # 数据库连接
+        self.cursor = self.conn.cursor()  # 获取游标
+
+    def process_item(self, item, spider):
+        insert_sql = &quot;&quot;&quot;
+                    insert into drug(drug_name,brand,spec,weight,manufacturer,approval_num,price,detail_url)
+                    values(%s,%s,%s,%s,%s,%s,%s,%s)
+                    &quot;&quot;&quot;
+        self.cursor.execute(insert_sql,
+                    (item[&#39;drug_name&#39;], item[&#39;brand&#39;], item[&#39;spec&#39;], item[&#39;weight&#39;], item[&#39;manufacturer&#39;],
+                        item[&#39;approval_num&#39;], item[&#39;price&#39;], item[&#39;detail_url&#39;]))
+        self.conn.commit()
+</code></pre><h2 id="settings"><a href="#settings" class="headerlink" title="settings"></a>settings</h2><pre><code>BOT_NAME = &#39;YaoPinSpider&#39;
+
+SPIDER_MODULES = [&#39;YaoPinSpider.spiders&#39;]
+NEWSPIDER_MODULE = &#39;YaoPinSpider.spiders&#39;
+
+USER_AGENT = &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0&#39;
+
+# Obey robots.txt rules
+ROBOTSTXT_OBEY = False
+
+DOWNLOAD_DELAY = 0.5
+# DEFAULT_REQUEST_HEADERS = {
+#   &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#39;,
+#   &#39;Accept-Language&#39;: &#39;en&#39;,
+# }
+
+SPIDER_MIDDLEWARES = {
+    # &#39;YaoPinSpider.middlewares.YaopinspiderSpiderMiddleware&#39;: 543,
+    &#39;scrapy_splash.SplashDeduplicateArgsMiddleware&#39;: 100,
+}
+
+DOWNLOADER_MIDDLEWARES = {
+    &#39;scrapy_splash.SplashCookiesMiddleware&#39;: 723,
+    &#39;scrapy_splash.SplashMiddleware&#39;: 725,
+    &#39;scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware&#39;: 810,
+    &quot;YaoPinSpider.middlewares.UserAgentDownloadMiddleware&quot;:400,
+
+}
+
+# EXTENSIONS = {
+#    &#39;scrapy.extensions.telnet.TelnetConsole&#39;: None,
+# }
+
+# See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
+ITEM_PIPELINES = {
+    &quot;YaoPinSpider.pipelines.MysqlPipeline&quot;:300,
+}
+
+
+# 配置splash
+SPLASH_URL = &#39;http://0.0.0.0:8050/&#39;     # 阿里云服务器上的Splash地址
+# 去重过滤器
+DUPEFILTER_CLASS = &#39;scrapy_splash.SplashAwareDupeFilter&#39;
+# 使用ScrapyHttp缓存服务
+HTTPCACHE_STORAGE = &#39;scrapy_splash.SplashAwareFSCacheStorage&#39;
+
+MYSQL_HOST = &quot;数据库地址&quot;
+MYSQL_DBNAME = &quot;数据库名字&quot;
+MYSQL_USER = &quot;数据库用户名&quot;
+MYSQL_PASSWORD = &quot;数据库密码&quot;
+</code></pre><h2 id="scrapy-cfg"><a href="#scrapy-cfg" class="headerlink" title="scrapy.cfg"></a>scrapy.cfg</h2><p>配置scrapy.cfg将爬虫项目部署到远端爬虫服务器</p>
+<pre><code>[settings]
+default = YaoPinSpider.settings
+
+[deploy:yaopin]
 url = http://0.0.0.0:6800/       # Spider Server Url
-project = YangGuangGaoKao
-</code></pre><p>切记scrapy.cfg文件中<strong>不能使用中文注释</strong></p>
-<p>否则会报<strong>UnicodeDecodeError: ‘gbk’ codec can’t decode byte 0xae in position 175</strong></p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>在scrapy.cfg的<strong>同级目录</strong>下运行<strong>scrapyd-deploy</strong>命令,如果在Windows下运行这个命令会报错找不到该命令.</p>
-<p>解决方法:</p>
-<pre><code>在自己的Python安装目录中找到Scripts目录这个目录中有个scrapyd-deploy文件,这个文件没有任何后缀,所以无法执行.
-在Scripts目录下新建一个scrapyd-deploy.bat文件
-</code></pre><p>写入下面的内容</p>
-<pre><code>@echo off
-
-&quot;D:\Python36\python.exe&quot; &quot;D:\Python36\Scripts\scrapyd-deploy&quot; %1 %2 %3 %4 %5 %6 %7 %8 %9
-</code></pre><p><strong>D:\Python36\python.exe:Python.exe的路径</strong></p>
-<p><strong>D:\Python36\Scripts\scrapyd-deploy:scrapy-deploy的路径</strong></p>
-<p>执行<strong>scrapyd-deploy</strong></p>
-<pre><code>L:\ScrapyProjectDemo\YangGuangGaoKao&gt;scrapyd-deploy
-Unknown target: default
-</code></pre><p>如果控制台有这样的输出则表示scrapyd-deploy能够正常执行</p>
-<p>将自己的爬虫项目部署到服务端</p>
-<pre><code>scrapyd-deploy gaokao -p YangGuangGaoKao
-</code></pre><p><strong>gaokao</strong>:scrapy.cfg中的”deploy:gaokao”</p>
-<p><strong>YangGuangGaoKao</strong>:scrapy.cfg中的project=YangGuangGaoKao</p>
-<pre><code>L:\ScrapyProjectDemo\YangGuangGaoKao&gt;scrapyd-deploy gaokao -p YangGuangGaoKao
-Packing version 1553244314
-Deploying to project &quot;YangGuangGaoKao&quot; in http://0.0.0.0:6800/addversion.json
-Server response (200):
-{&quot;node_name&quot;: &quot;iZ2ze8yfs65r3ciel5lbucZ&quot;, &quot;status&quot;: &quot;ok&quot;, &quot;project&quot;: &quot;YangGuangGaoKao&quot;, &quot;version&quot;: &quot;1553244314&quot;, &quot;spiders&quot;: 3}
-</code></pre><p>这样就表示部署成功</p>
-<p>这时候在服务器端会多两个文件夹<strong>dbs,eggs</strong>我的在home目录下不知道你们的在哪儿.</p>
-<pre><code>root@iZ2ze8yfs65r3ciel5lbucZ:/home# ls
-dbs  eggs   twistd.pid
-</code></pre><h2 id="开启服务端的爬虫"><a href="#开启服务端的爬虫" class="headerlink" title="开启服务端的爬虫"></a>开启服务端的爬虫</h2><pre><code>curl http://0.0.0.0:6800/schedule.json -d project=YangGuangGaoKao -d spider=IndexSpider
-YangGuangGaoKao:scrapyd项目名字
-IndexSpider:爬虫名字
-</code></pre><p>如果开启成功则在<strong>终端会显示</strong></p>
-<pre><code>$ curl http://0.0.0.0:6800/schedule.json -d project=YangGuangGaoKao -d spider=IndexSpider    
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current Dload  Upload   Total Spent Left  Speed
-100   144  100   102  100    42     81     33  0:00:01  0:00:01 --:--:--    81{&quot;                             node_name&quot;: &quot;iZ2ze8yfs65r3ciel5lbucZ&quot;, &quot;status&quot;: &quot;ok&quot;, &quot;jobid&quot;: &quot;ba214a324c7f11e                             98c2700163e32604e&quot;}
-</code></pre><p>这时候我们访问我们服务端能够查看我们服务端部署的爬虫,以及运行日志</p>
-<p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/s7rWY3MODx.zDQdxptp3X14.AQM0sWtBw4ITj*w0Fxs!/b/dL8AAAAAAAAA&amp;bo=NwV6AQAAAAADF3s!&amp;rf=viewer_4" alt=""></p>
-<p><a href="https://scrapyd.readthedocs.io/en/latest/" target="_blank" rel="noopener">官方文档</a></p>
-
+project = YaoPinSpider      # Sprider Project
+</code></pre>
             </div>
             <hr>
 
@@ -409,7 +525,7 @@ IndexSpider:爬虫名字
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/03/22/li-yong-scrapyd-jiang-pa-chong-bu-shu-dao-yuan-cheng-fu-wu-qi/" class="b-link-green">利用Scrapyd将爬虫部署到远程服务器</a>
+                    <a href="/2019/03/26/scrapycrawlspider-pa-qu-1-yao-wang/" class="b-link-green">ScrapyCrawlSpider爬取1药网</a>
                 </p>
             </div>
         </div>
@@ -451,7 +567,7 @@ IndexSpider:爬虫名字
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="article-badge left-badge text-color">本篇</div>
             <div class="card">
                 <a href="/2019/03/26/scrapycrawlspider-pa-qu-1-yao-wang/">
                     <div class="card-image">
@@ -469,9 +585,60 @@ IndexSpider:爬虫名字
 
 htt</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-26
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
+                                </a>
+                            
+                            
                         </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python爬虫/" target="_blank">
+                        <span class="chip bg-color">Python爬虫</span>
+                    </a>
+                    
+                    <a href="/tags/Scrapy/" target="_blank">
+                        <span class="chip bg-color">Scrapy</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2019/03/22/li-yong-scrapyd-jiang-pa-chong-bu-shu-dao-yuan-cheng-fu-wu-qi/">
+                    <div class="card-image">
+                        
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="利用Scrapyd将爬虫部署到远程服务器">
+                        
+                        <span class="card-title">利用Scrapyd将爬虫部署到远程服务器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">远程服务器配置安装Scrapyd1. 安装scrapyd
+    pip install scrapyd
+2. 服务器开启6800端口远程访问
+3. 修改scrapyd的Ip绑定
+    在default_scrapyd.conf文件中将b</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -493,56 +660,6 @@ htt</div>
                     
                     <a href="/tags/Scrapy/" target="_blank">
                         <span class="chip bg-color">Scrapy</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2019/03/20/sql-zhu-ru-sqlmap-de-ji-ben-shi-yong/">
-                    <div class="card-image">
-                        
-                        <img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/4UAzaW1xhWbT4PogM24Mj*jfGoSkIcNtHWMLjcTtJLU!/b/dFMBAAAAAAAA&amp;bo=gAc4BAAAAAARB4s!&amp;rf=viewer_4" class="responsive-img" alt="SQL注入SQLMap的基本使用">
-                        
-                        <span class="card-title">SQL注入SQLMap的基本使用</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">SQL注入SQL注入常用相关函数
-@@version 数据库版本
-@@basedir 数据库路径
-length() 字符串长度
-mid(arg1,arg2,arg3) 需要截取的字符串,arg1(需要截取的字符串),arg2(从第几位开始截</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-20
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/WEB安全/" class="post-category" target="_blank">
-                                    WEB安全
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/SQL注入/" target="_blank">
-                        <span class="chip bg-color">SQL注入</span>
-                    </a>
-                    
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
                     </a>
                     
                 </div>
