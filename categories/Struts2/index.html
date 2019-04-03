@@ -1,50 +1,52 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
-    
+
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="分类: Struts2, 程序员小黑">
     <meta name="description" content="分类: Struts2 | 程序员小黑">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>分类: Struts2 | 程序员小黑</title>
-    <link rel="icon" type="image/png" href="/ICO.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-</head>
 
 <body>
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">程序员小黑</span>
-                    </a>
-                </div>
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">程序员小黑</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right">
     
     <li class="hide-on-med-and-down">
@@ -88,19 +90,27 @@
             
             <i class="fa fa-user-circle-o"></i>
             
-            <span>关于我</span>
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
         </a>
     </li>
     
     <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
-
 </ul>
 
-<div class="side-nav" id="mobile-nav">
+<div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
@@ -113,6 +123,8 @@
             
         </div>
     </div>
+
+    
 
     <ul class="menu-list mobile-menu-list">
         
@@ -157,7 +169,16 @@
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
-                关于我
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
             </a>
         </li>
         
@@ -170,28 +191,12 @@
         </li>
         
     </ul>
-
-    <div class="social-link"><a href="https://github.com/liu726301387" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:this.liu@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 726301387" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
-
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
 </div>
 
-            </div>
         </div>
 
         
-        <style>
+            <style>
     .nav-transparent .github-corner {
         display: none !important;
     }
@@ -245,35 +250,34 @@
 </a>
         
     </nav>
+
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+<div class="bg-cover pd-header about-cover">
     <div class="container">
-        <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-                <div class="brand">
-                    <div class="title center-align">
-                    
-                        CodingLife
-                    
-                    </div>
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    CodingLife
+                
+            </div>
 
-                    <div class="description center-align">
-                    
-                        别人了解你有趣灵魂的前提是自己有一个好看的皮囊💪
-                    
-                    </div>
-                </div>
+            <div class="description center-align">
+                
+                    别人了解你有趣灵魂的前提是自己有一个好看的皮囊💪
+                
             </div>
         </div>
-        
     </div>
 </div>
-
 <script>
-// Dynamically switch banner pictures every day.
+// 每天切换 banner 图.  Switch banner image every day.
 $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
+    </div>
+</div>
 
 <main class="content">
 
@@ -282,7 +286,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <div id="category-cloud" class="container chip-container">
     <div class="card">
         <div class="card-content">
-            <div class="tag-title center-align">文章分类</div>
+            <div class="tag-title center-align">
+                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
             <div class="tag-chips">
                 
                 
@@ -369,7 +375,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <article id="articles" class="container articles">
         <div class="row tags-posts">
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2input-luo-ji-shi-tu/">
                         <div class="card-image tag-image">
@@ -380,14 +386,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">Action接口中提供了五个逻辑视图的名称：
+                        <div class="summary block-with-text">
+                            
+                                Action接口中提供了五个逻辑视图的名称：
 
 success
 input
 none
 login
 error
- public static </div>
+ public static final String SUCCESS = &quot;success&quot;;
+ publi
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -421,7 +432,7 @@ error
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2-de-biao-qian-ku/">
                         <div class="card-image tag-image">
@@ -432,7 +443,14 @@ error
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">Struts2的标签库在Struts2的安装文件-&gt;docs-&gt;tag-reference.html文件中查看Struts2的通</div>
+                        <div class="summary block-with-text">
+                            
+                                Struts2的标签库在Struts2的安装文件-&gt;docs-&gt;tag-reference.html文件中查看Struts2的通用标签库
+
+UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML标签更加漂亮.
+&lt;
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -466,7 +484,7 @@ error
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2-zhong-de-lan-jie-qi/">
                         <div class="card-image tag-image">
@@ -477,9 +495,13 @@ error
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">什么是拦截器
+                        <div class="summary block-with-text">
+                            
+                                什么是拦截器
 Interceptor：拦截器，起到拦截Action的作用。
-Interceptor：拦截器，拦截是客户端对Action的访问</div>
+Interceptor：拦截器，拦截是客户端对Action的访问。更细粒度化的拦截。（拦截Action中的具体的方法）。Struts2框架核心的功能都是依赖拦截器实
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -513,7 +535,7 @@ Interceptor：拦截器，拦截是客户端对Action的访问</div>
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2-zhong-de-zhi-zhan/">
                         <div class="card-image tag-image">
@@ -524,9 +546,14 @@ Interceptor：拦截器，拦截是客户端对Action的访问</div>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">Struts2值栈什么是值栈
+                        <div class="summary block-with-text">
+                            
+                                Struts2值栈什么是值栈
 ValueStack类似于一个数据中转站Struts2框架中的数据都保存到了ValueStack中
-Value</div>
+ValueStack是一个接口,OgnlValueStack是一个ValueStack接口的实现类
+Value
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -560,7 +587,7 @@ Value</div>
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/ognl/">
                         <div class="card-image tag-image">
@@ -571,7 +598,11 @@ Value</div>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">OGNL什么是OGNL对象图导航语言（OGNL）是一种用于Java的开源表达式语言（EL），它使用比Java语言支持的全部范围更简单的表达式</div>
+                        <div class="summary block-with-text">
+                            
+                                OGNL什么是OGNL对象图导航语言（OGNL）是一种用于Java的开源表达式语言（EL），它使用比Java语言支持的全部范围更简单的表达式，允许获取和设置属性（通过定义的setProperty和getProperty）方法，在发现的Jav
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -605,7 +636,7 @@ Value</div>
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2servlet-de-fang-wen/">
                         <div class="card-image tag-image">
@@ -616,9 +647,13 @@ Value</div>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">完全解耦合的方式JSP
+                        <div class="summary block-with-text">
+                            
+                                完全解耦合的方式JSP
 &lt;h3 align=&quot;center&quot;&gt;方式一:完全解耦和&lt;/h3&gt;
-  </div>
+    &lt;form action=&quot;requestDemo1.action&quot; 
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -652,7 +687,7 @@ Value</div>
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2-de-jie-guo-ye-mian-de-pei-zhi/">
                         <div class="card-image tag-image">
@@ -663,8 +698,14 @@ Value</div>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">全局结果页面全局结果页面指的是，在包中配置一次，其他的在这个包中的所有的action只要返回了这个值，都可以跳转到这个页面。
-针对这个包下的</div>
+                        <div class="summary block-with-text">
+                            
+                                全局结果页面全局结果页面指的是，在包中配置一次，其他的在这个包中的所有的action只要返回了这个值，都可以跳转到这个页面。
+针对这个包下的所有的action的配置都有效
+&lt;struts&gt;
+    &lt;package nam
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -698,7 +739,7 @@ Value</div>
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2-de-shu-ju-feng-zhuang/">
                         <div class="card-image tag-image">
@@ -709,9 +750,13 @@ Value</div>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">属性驱动:必须提供属性的set方法(不常用)jsp页面
+                        <div class="summary block-with-text">
+                            
+                                属性驱动:必须提供属性的set方法(不常用)jsp页面
 &lt;h3&gt;方式一:属性驱动-提供set方法的方式&lt;/h3&gt;
- </div>
+    &lt;form action=&quot;userAction1.action&quot; 
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -745,7 +790,7 @@ Value</div>
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/22/struts2-chang-jian-pei-zhi/">
                         <div class="card-image tag-image">
@@ -756,8 +801,15 @@ Value</div>
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">配置XML提示Action的配置package标签配置package标签是包,他的作用是为了更好的管理Action.
-package标签的常</div>
+                        <div class="summary block-with-text">
+                            
+                                配置XML提示Action的配置package标签配置package标签是包,他的作用是为了更好的管理Action.
+package标签的常用属性
+
+name:包的名称,在一个Struts2项目中可以随便定义,只要不重名即可
+extends
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
@@ -799,21 +851,47 @@ package标签的常</div>
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            自豪的采用Hexo
-        </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/liu726301387" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:this.liu@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 726301387" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
 
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
 </div>
     </div>
 </footer>
@@ -825,8 +903,8 @@ package标签的常</div>
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -834,7 +912,9 @@ package标签的常</div>
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+$(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
 <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
@@ -844,11 +924,22 @@ package标签的常</div>
 </div>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":130,"height":200},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

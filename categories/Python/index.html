@@ -1,50 +1,52 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
-    
+
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="分类: Python, 程序员小黑">
     <meta name="description" content="分类: Python | 程序员小黑">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>分类: Python | 程序员小黑</title>
-    <link rel="icon" type="image/png" href="/ICO.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-</head>
 
 <body>
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">程序员小黑</span>
-                    </a>
-                </div>
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">程序员小黑</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right">
     
     <li class="hide-on-med-and-down">
@@ -88,19 +90,27 @@
             
             <i class="fa fa-user-circle-o"></i>
             
-            <span>关于我</span>
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
         </a>
     </li>
     
     <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
-
 </ul>
 
-<div class="side-nav" id="mobile-nav">
+<div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
@@ -113,6 +123,8 @@
             
         </div>
     </div>
+
+    
 
     <ul class="menu-list mobile-menu-list">
         
@@ -157,7 +169,16 @@
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
-                关于我
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
             </a>
         </li>
         
@@ -170,28 +191,12 @@
         </li>
         
     </ul>
-
-    <div class="social-link"><a href="https://github.com/liu726301387" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:this.liu@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 726301387" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
-
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
 </div>
 
-            </div>
         </div>
 
         
-        <style>
+            <style>
     .nav-transparent .github-corner {
         display: none !important;
     }
@@ -245,35 +250,34 @@
 </a>
         
     </nav>
+
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+<div class="bg-cover pd-header about-cover">
     <div class="container">
-        <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-                <div class="brand">
-                    <div class="title center-align">
-                    
-                        CodingLife
-                    
-                    </div>
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    CodingLife
+                
+            </div>
 
-                    <div class="description center-align">
-                    
-                        别人了解你有趣灵魂的前提是自己有一个好看的皮囊💪
-                    
-                    </div>
-                </div>
+            <div class="description center-align">
+                
+                    别人了解你有趣灵魂的前提是自己有一个好看的皮囊💪
+                
             </div>
         </div>
-        
     </div>
 </div>
-
 <script>
-// Dynamically switch banner pictures every day.
+// 每天切换 banner 图.  Switch banner image every day.
 $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
+    </div>
+</div>
 
 <main class="content">
 
@@ -282,7 +286,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <div id="category-cloud" class="container chip-container">
     <div class="card">
         <div class="card-content">
-            <div class="tag-title center-align">文章分类</div>
+            <div class="tag-title center-align">
+                <i class="fa fa-bookmark"></i>&nbsp;&nbsp;文章分类
+            </div>
             <div class="tag-chips">
                 
                 
@@ -369,7 +375,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     <article id="articles" class="container articles">
         <div class="row tags-posts">
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2019/03/26/scrapycrawlspider-pa-qu-1-yao-wang/">
                         <div class="card-image tag-image">
@@ -380,9 +386,16 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">数据展示
-##阿瑟东萨达阿瑟东阿三阿迪斯啊
-主要功能利用Scrapy-splash完成JavaScript渲染利用Scrapyd将scrap</div>
+                        <div class="summary block-with-text">
+                            
+                                数据展示
+主要功能利用Scrapy-splash完成JavaScript渲染利用Scrapyd将scrapy项目部署到爬虫服务器
+网站分析
+网站首页中有各种药品分类,打开分类页面我们可以看到各种的药品分类信息,分析它的URL规则,
+
+htt
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-26
@@ -416,7 +429,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2019/03/22/li-yong-scrapyd-jiang-pa-chong-bu-shu-dao-yuan-cheng-fu-wu-qi/">
                         <div class="card-image tag-image">
@@ -427,9 +440,15 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">远程服务器配置安装Scrapyd1. 安装scrapyd
+                        <div class="summary block-with-text">
+                            
+                                远程服务器配置安装Scrapyd1. 安装scrapyd
     pip install scrapyd
-2. 服务器开启6800端口远程访</div>
+2. 服务器开启6800端口远程访问
+3. 修改scrapyd的Ip绑定
+    在default_scrapyd.conf文件中将b
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-22
@@ -463,7 +482,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2019/02/19/scrapy-pa-qu-qi-che-zhi-jia-jing-xuan-gao-qing-da-tu/">
                         <div class="card-image tag-image">
@@ -474,13 +493,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">好久没写爬虫,今天算是复习下Scrapy,正所谓温故而知新.
+                        <div class="summary block-with-text">
+                            
+                                好久没写爬虫,今天算是复习下Scrapy,正所谓温故而知新.
 这次爬取的目标网站是汽车之家的精选高清大图.
 先看看运行结果吧
 
 
 
-页面分析</div>
+页面分析下面我们来分析一下图片精选页面
+
+这个页面中全部都是套图,我们打开某一套图进行查看.
+
+一开始我想从
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-02-19
@@ -514,7 +541,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/">
                         <div class="card-image tag-image">
@@ -525,7 +552,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">什么是UserAgent当我们在访问网页的时候,我们的浏览器在向服务器发送请求的时候会发送一个请求头和一个请求体,请求头中包含了很多重要的字</div>
+                        <div class="summary block-with-text">
+                            
+                                什么是UserAgent当我们在访问网页的时候,我们的浏览器在向服务器发送请求的时候会发送一个请求头和一个请求体,请求头中包含了很多重要的字段常见的字段有User-Agent,Accept等,具体的请求头的内容请参考&lt;图解HTTP&g
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-27
@@ -559,7 +590,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2019/01/25/scrapycrawlspider-la-gou-wang-quan-zhan-zhua-qu/">
                         <div class="card-image tag-image">
@@ -570,11 +601,19 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">数据展示
+                        <div class="summary block-with-text">
+                            
+                                数据展示
 网站分析分析首页
 首页中有职位的分类,抓取所有的职位,点击进去看职位分类的url
 分析职位分类
-在职位分类的页面下有具体的详情页面</div>
+在职位分类的页面下有具体的详情页面
+分析公司页面
+分析职位的详情页面
+进入详情页面获取我们想要的数据
+我们的爬虫访问路径,先进入首页,
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-25
@@ -608,7 +647,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/">
                         <div class="card-image tag-image">
@@ -619,8 +658,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">项目准备新建Scrapy项目scrapy startproject Spider_80s
-新建CrawlSpider爬虫切换到项目目录下执行</div>
+                        <div class="summary block-with-text">
+                            
+                                项目准备新建Scrapy项目scrapy startproject Spider_80s
+新建CrawlSpider爬虫切换到项目目录下执行
+scrapy genspider -t crawl MovieSpider 80s.tw
+分析目标
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-13
@@ -654,7 +699,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/">
                         <div class="card-image tag-image">
@@ -665,10 +710,16 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">数据展示
+                        <div class="summary block-with-text">
+                            
+                                数据展示
 {
     &quot;小区名&quot;:&quot;学府名苑&quot;,
-    &quot;总价&quot;:&quot;</div>
+    &quot;总价&quot;:&quot;75&quot;,
+    &quot;首付&quot;:&quot;22.50万&quot;,
+ 
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31
@@ -702,7 +753,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/">
                         <div class="card-image tag-image">
@@ -713,10 +764,15 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">结果展示
+                        <div class="summary block-with-text">
+                            
+                                结果展示
 {
     &quot;职位名字&quot;:&quot;27553-腾讯音乐测试开发工程师（深圳）&quot;,
-    &qu</div>
+    &quot;要求&quot;:[
+        &quot;计算机相关专业本科及以上学历；&quot;,
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31
@@ -750,7 +806,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/29/scrapycrawlspider/">
                         <div class="card-image tag-image">
@@ -761,7 +817,12 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">CrawlSpiderSpider类的设计原则是只爬取start_url列表中的网页，而CrawlSpider类定义了一些规则(rule)来</div>
+                        <div class="summary block-with-text">
+                            
+                                CrawlSpiderSpider类的设计原则是只爬取start_url列表中的网页，而CrawlSpider类定义了一些规则(rule)来提供跟进link的方便的机制，从爬取的网页中获取link并继续爬取的工作更适合。
+CrawlSpid
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-29
@@ -795,7 +856,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 </div>
             </div>
             
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+            <div class="article tag-post col s12 m6 l4 overflow-policy" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2018/12/27/scrapy-pa-qu-qiu-shi-bai-ke/">
                         <div class="card-image tag-image">
@@ -806,7 +867,11 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         </div>
                     </a>
                     <div class="card-content article-content">
-                        <div class="summary">结果展示{&quot;author&quot;: &quot;毒男·i&quot;, &quot;content&quot;: &quot;</div>
+                        <div class="summary block-with-text">
+                            
+                                结果展示{&quot;author&quot;: &quot;毒男·i&quot;, &quot;content&quot;: &quot;\n\n\n在医院里，我和老婆抱着孩子去看病。老婆说：“你说女人要不要学一点防狼术。”我说：“需要啊
+                            
+                        </div>
                         <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-27
@@ -871,21 +936,47 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            自豪的采用Hexo
-        </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/liu726301387" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:this.liu@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 726301387" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
 
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
 </div>
     </div>
 </footer>
@@ -897,8 +988,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -906,7 +997,9 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+$(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
 <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
@@ -916,11 +1009,22 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </div>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":130,"height":200},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

@@ -1,50 +1,52 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
-<head>
-    
+
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
     <meta name="keywords" content="归档: 2018/11, 程序员小黑">
     <meta name="description" content="归档: 2018/11 | 程序员小黑">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>归档: 2018/11 | 程序员小黑</title>
-    <link rel="icon" type="image/png" href="/ICO.ico">
+    <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
     <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
     <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
-</head>
 
 <body>
 
 <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
-        <div id="navContainer" class="container">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <a href="/" class="waves-effect waves-light">
-                        
-                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
-                        
-                        <span class="logo-span">程序员小黑</span>
-                    </a>
-                </div>
-                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">程序员小黑</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
 <ul class="right">
     
     <li class="hide-on-med-and-down">
@@ -88,19 +90,27 @@
             
             <i class="fa fa-user-circle-o"></i>
             
-            <span>关于我</span>
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
         </a>
     </li>
     
     <li>
-        <a id="toggleSearch" class="waves-effect waves-light">
-            <i id="searchIcon" class="mdi-action-search"></i>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
         </a>
     </li>
-
 </ul>
 
-<div class="side-nav" id="mobile-nav">
+<div id="mobile-nav" class="side-nav sidenav">
 
     <div class="mobile-head bg-color">
         
@@ -113,6 +123,8 @@
             
         </div>
     </div>
+
+    
 
     <ul class="menu-list mobile-menu-list">
         
@@ -157,7 +169,16 @@
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
-                关于我
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
             </a>
         </li>
         
@@ -170,28 +191,12 @@
         </li>
         
     </ul>
-
-    <div class="social-link"><a href="https://github.com/liu726301387" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:this.liu@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 726301387" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
-
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
-</div>
 </div>
 
-            </div>
         </div>
 
         
-        <style>
+            <style>
     .nav-transparent .github-corner {
         display: none !important;
     }
@@ -245,35 +250,34 @@
 </a>
         
     </nav>
+
 </header>
 
-<div class="bg-cover  about-cover" style="background-image: url('/medias/cover.jpg')">
+<div class="bg-cover pd-header about-cover">
     <div class="container">
-        <div class="row">
-            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-                <div class="brand">
-                    <div class="title center-align">
-                    
-                        CodingLife
-                    
-                    </div>
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                    CodingLife
+                
+            </div>
 
-                    <div class="description center-align">
-                    
-                        别人了解你有趣灵魂的前提是自己有一个好看的皮囊💪
-                    
-                    </div>
-                </div>
+            <div class="description center-align">
+                
+                    别人了解你有趣灵魂的前提是自己有一个好看的皮囊💪
+                
             </div>
         </div>
-        
     </div>
 </div>
-
 <script>
-// Dynamically switch banner pictures every day.
+// 每天切换 banner 图.  Switch banner image every day.
 $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
+    </div>
+</div>
 
 <main class="content">
 
@@ -326,7 +330,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
         },
         calendar: [{
             left: 'center',
-            range: ["2018-03-28", "2019-03-28"],
+            range: ["2018-04-03", "2019-04-03"],
             cellSize: [13, 13],
             splitLine: {
                 show: false
@@ -352,7 +356,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             type: 'heatmap',
             coordinateSystem: 'calendar',
             calendarIndex: 0,
-            data: [["2018-03-28", 0], ["2018-03-29", 0], ["2018-03-30", 0], ["2018-03-31", 0], ["2018-04-01", 0], ["2018-04-02", 0], ["2018-04-03", 0], ["2018-04-04", 0], ["2018-04-05", 0], ["2018-04-06", 0], ["2018-04-07", 0], ["2018-04-08", 0], ["2018-04-09", 0], ["2018-04-10", 0], ["2018-04-11", 0], ["2018-04-12", 0], ["2018-04-13", 0], ["2018-04-14", 0], ["2018-04-15", 0], ["2018-04-16", 0], ["2018-04-17", 0], ["2018-04-18", 0], ["2018-04-19", 0], ["2018-04-20", 0], ["2018-04-21", 0], ["2018-04-22", 0], ["2018-04-23", 0], ["2018-04-24", 0], ["2018-04-25", 0], ["2018-04-26", 0], ["2018-04-27", 0], ["2018-04-28", 0], ["2018-04-29", 0], ["2018-04-30", 0], ["2018-05-01", 0], ["2018-05-02", 0], ["2018-05-03", 0], ["2018-05-04", 0], ["2018-05-05", 0], ["2018-05-06", 0], ["2018-05-07", 0], ["2018-05-08", 0], ["2018-05-09", 0], ["2018-05-10", 0], ["2018-05-11", 0], ["2018-05-12", 0], ["2018-05-13", 0], ["2018-05-14", 0], ["2018-05-15", 0], ["2018-05-16", 0], ["2018-05-17", 0], ["2018-05-18", 0], ["2018-05-19", 0], ["2018-05-20", 0], ["2018-05-21", 0], ["2018-05-22", 0], ["2018-05-23", 0], ["2018-05-24", 0], ["2018-05-25", 0], ["2018-05-26", 0], ["2018-05-27", 0], ["2018-05-28", 0], ["2018-05-29", 0], ["2018-05-30", 0], ["2018-05-31", 0], ["2018-06-01", 0], ["2018-06-02", 0], ["2018-06-03", 0], ["2018-06-04", 0], ["2018-06-05", 0], ["2018-06-06", 0], ["2018-06-07", 0], ["2018-06-08", 0], ["2018-06-09", 0], ["2018-06-10", 0], ["2018-06-11", 0], ["2018-06-12", 0], ["2018-06-13", 0], ["2018-06-14", 0], ["2018-06-15", 0], ["2018-06-16", 0], ["2018-06-17", 0], ["2018-06-18", 0], ["2018-06-19", 0], ["2018-06-20", 0], ["2018-06-21", 0], ["2018-06-22", 0], ["2018-06-23", 0], ["2018-06-24", 0], ["2018-06-25", 0], ["2018-06-26", 0], ["2018-06-27", 0], ["2018-06-28", 0], ["2018-06-29", 0], ["2018-06-30", 0], ["2018-07-01", 0], ["2018-07-02", 0], ["2018-07-03", 0], ["2018-07-04", 0], ["2018-07-05", 0], ["2018-07-06", 0], ["2018-07-07", 0], ["2018-07-08", 0], ["2018-07-09", 0], ["2018-07-10", 0], ["2018-07-11", 0], ["2018-07-12", 0], ["2018-07-13", 0], ["2018-07-14", 0], ["2018-07-15", 0], ["2018-07-16", 0], ["2018-07-17", 0], ["2018-07-18", 0], ["2018-07-19", 0], ["2018-07-20", 0], ["2018-07-21", 0], ["2018-07-22", 0], ["2018-07-23", 0], ["2018-07-24", 0], ["2018-07-25", 0], ["2018-07-26", 0], ["2018-07-27", 0], ["2018-07-28", 0], ["2018-07-29", 0], ["2018-07-30", 0], ["2018-07-31", 0], ["2018-08-01", 0], ["2018-08-02", 0], ["2018-08-03", 0], ["2018-08-04", 0], ["2018-08-05", 0], ["2018-08-06", 0], ["2018-08-07", 0], ["2018-08-08", 0], ["2018-08-09", 0], ["2018-08-10", 0], ["2018-08-11", 0], ["2018-08-12", 0], ["2018-08-13", 0], ["2018-08-14", 0], ["2018-08-15", 0], ["2018-08-16", 0], ["2018-08-17", 0], ["2018-08-18", 0], ["2018-08-19", 0], ["2018-08-20", 0], ["2018-08-21", 0], ["2018-08-22", 0], ["2018-08-23", 0], ["2018-08-24", 0], ["2018-08-25", 0], ["2018-08-26", 0], ["2018-08-27", 0], ["2018-08-28", 0], ["2018-08-29", 0], ["2018-08-30", 0], ["2018-08-31", 0], ["2018-09-01", 0], ["2018-09-02", 0], ["2018-09-03", 0], ["2018-09-04", 0], ["2018-09-05", 0], ["2018-09-06", 0], ["2018-09-07", 0], ["2018-09-08", 0], ["2018-09-09", 0], ["2018-09-10", 0], ["2018-09-11", 0], ["2018-09-12", 0], ["2018-09-13", 0], ["2018-09-14", 0], ["2018-09-15", 0], ["2018-09-16", 0], ["2018-09-17", 0], ["2018-09-18", 0], ["2018-09-19", 0], ["2018-09-20", 0], ["2018-09-21", 0], ["2018-09-22", 0], ["2018-09-23", 0], ["2018-09-24", 0], ["2018-09-25", 0], ["2018-09-26", 0], ["2018-09-27", 0], ["2018-09-28", 0], ["2018-09-29", 0], ["2018-09-30", 0], ["2018-10-01", 0], ["2018-10-02", 0], ["2018-10-03", 0], ["2018-10-04", 0], ["2018-10-05", 0], ["2018-10-06", 0], ["2018-10-07", 0], ["2018-10-08", 0], ["2018-10-09", 0], ["2018-10-10", 0], ["2018-10-11", 0], ["2018-10-12", 0], ["2018-10-13", 0], ["2018-10-14", 0], ["2018-10-15", 0], ["2018-10-16", 0], ["2018-10-17", 0], ["2018-10-18", 0], ["2018-10-19", 0], ["2018-10-20", 0], ["2018-10-21", 0], ["2018-10-22", 0], ["2018-10-23", 0], ["2018-10-24", 0], ["2018-10-25", 0], ["2018-10-26", 0], ["2018-10-27", 0], ["2018-10-28", 0], ["2018-10-29", 0], ["2018-10-30", 0], ["2018-10-31", 0], ["2018-11-01", 0], ["2018-11-02", 0], ["2018-11-03", 0], ["2018-11-04", 0], ["2018-11-05", 0], ["2018-11-06", 0], ["2018-11-07", 0], ["2018-11-08", 0], ["2018-11-09", 0], ["2018-11-10", 0], ["2018-11-11", 3], ["2018-11-12", 1], ["2018-11-13", 0], ["2018-11-14", 1], ["2018-11-15", 1], ["2018-11-16", 0], ["2018-11-17", 0], ["2018-11-18", 1], ["2018-11-19", 0], ["2018-11-20", 1], ["2018-11-21", 0], ["2018-11-22", 0], ["2018-11-23", 0], ["2018-11-24", 0], ["2018-11-25", 0], ["2018-11-26", 0], ["2018-11-27", 0], ["2018-11-28", 0], ["2018-11-29", 0], ["2018-11-30", 0], ["2018-12-01", 0], ["2018-12-02", 1], ["2018-12-03", 0], ["2018-12-04", 1], ["2018-12-05", 1], ["2018-12-06", 0], ["2018-12-07", 0], ["2018-12-08", 0], ["2018-12-09", 0], ["2018-12-10", 0], ["2018-12-11", 0], ["2018-12-12", 0], ["2018-12-13", 0], ["2018-12-14", 0], ["2018-12-15", 0], ["2018-12-16", 0], ["2018-12-17", 0], ["2018-12-18", 0], ["2018-12-19", 0], ["2018-12-20", 0], ["2018-12-21", 0], ["2018-12-22", 9], ["2018-12-23", 0], ["2018-12-24", 1], ["2018-12-25", 1], ["2018-12-26", 3], ["2018-12-27", 1], ["2018-12-28", 0], ["2018-12-29", 1], ["2018-12-30", 0], ["2018-12-31", 2], ["2019-01-01", 0], ["2019-01-02", 0], ["2019-01-03", 0], ["2019-01-04", 0], ["2019-01-05", 0], ["2019-01-06", 1], ["2019-01-07", 0], ["2019-01-08", 0], ["2019-01-09", 0], ["2019-01-10", 0], ["2019-01-11", 0], ["2019-01-12", 0], ["2019-01-13", 1], ["2019-01-14", 0], ["2019-01-15", 0], ["2019-01-16", 0], ["2019-01-17", 0], ["2019-01-18", 0], ["2019-01-19", 0], ["2019-01-20", 0], ["2019-01-21", 0], ["2019-01-22", 0], ["2019-01-23", 0], ["2019-01-24", 0], ["2019-01-25", 1], ["2019-01-26", 0], ["2019-01-27", 1], ["2019-01-28", 0], ["2019-01-29", 0], ["2019-01-30", 0], ["2019-01-31", 0], ["2019-02-01", 0], ["2019-02-02", 0], ["2019-02-03", 0], ["2019-02-04", 0], ["2019-02-05", 0], ["2019-02-06", 0], ["2019-02-07", 0], ["2019-02-08", 0], ["2019-02-09", 0], ["2019-02-10", 0], ["2019-02-11", 0], ["2019-02-12", 0], ["2019-02-13", 0], ["2019-02-14", 0], ["2019-02-15", 0], ["2019-02-16", 0], ["2019-02-17", 0], ["2019-02-18", 0], ["2019-02-19", 1], ["2019-02-20", 0], ["2019-02-21", 0], ["2019-02-22", 0], ["2019-02-23", 0], ["2019-02-24", 0], ["2019-02-25", 0], ["2019-02-26", 0], ["2019-02-27", 0], ["2019-02-28", 0], ["2019-03-01", 0], ["2019-03-02", 0], ["2019-03-03", 0], ["2019-03-04", 0], ["2019-03-05", 0], ["2019-03-06", 0], ["2019-03-07", 0], ["2019-03-08", 0], ["2019-03-09", 0], ["2019-03-10", 0], ["2019-03-11", 0], ["2019-03-12", 0], ["2019-03-13", 0], ["2019-03-14", 0], ["2019-03-15", 0], ["2019-03-16", 0], ["2019-03-17", 0], ["2019-03-18", 0], ["2019-03-19", 0], ["2019-03-20", 1], ["2019-03-21", 0], ["2019-03-22", 1], ["2019-03-23", 0], ["2019-03-24", 0], ["2019-03-25", 0], ["2019-03-26", 1], ["2019-03-27", 0], ["2019-03-28", 0]]
+            data: [["2018-04-03", 0], ["2018-04-04", 0], ["2018-04-05", 0], ["2018-04-06", 0], ["2018-04-07", 0], ["2018-04-08", 0], ["2018-04-09", 0], ["2018-04-10", 0], ["2018-04-11", 0], ["2018-04-12", 0], ["2018-04-13", 0], ["2018-04-14", 0], ["2018-04-15", 0], ["2018-04-16", 0], ["2018-04-17", 0], ["2018-04-18", 0], ["2018-04-19", 0], ["2018-04-20", 0], ["2018-04-21", 0], ["2018-04-22", 0], ["2018-04-23", 0], ["2018-04-24", 0], ["2018-04-25", 0], ["2018-04-26", 0], ["2018-04-27", 0], ["2018-04-28", 0], ["2018-04-29", 0], ["2018-04-30", 0], ["2018-05-01", 0], ["2018-05-02", 0], ["2018-05-03", 0], ["2018-05-04", 0], ["2018-05-05", 0], ["2018-05-06", 0], ["2018-05-07", 0], ["2018-05-08", 0], ["2018-05-09", 0], ["2018-05-10", 0], ["2018-05-11", 0], ["2018-05-12", 0], ["2018-05-13", 0], ["2018-05-14", 0], ["2018-05-15", 0], ["2018-05-16", 0], ["2018-05-17", 0], ["2018-05-18", 0], ["2018-05-19", 0], ["2018-05-20", 0], ["2018-05-21", 0], ["2018-05-22", 0], ["2018-05-23", 0], ["2018-05-24", 0], ["2018-05-25", 0], ["2018-05-26", 0], ["2018-05-27", 0], ["2018-05-28", 0], ["2018-05-29", 0], ["2018-05-30", 0], ["2018-05-31", 0], ["2018-06-01", 0], ["2018-06-02", 0], ["2018-06-03", 0], ["2018-06-04", 0], ["2018-06-05", 0], ["2018-06-06", 0], ["2018-06-07", 0], ["2018-06-08", 0], ["2018-06-09", 0], ["2018-06-10", 0], ["2018-06-11", 0], ["2018-06-12", 0], ["2018-06-13", 0], ["2018-06-14", 0], ["2018-06-15", 0], ["2018-06-16", 0], ["2018-06-17", 0], ["2018-06-18", 0], ["2018-06-19", 0], ["2018-06-20", 0], ["2018-06-21", 0], ["2018-06-22", 0], ["2018-06-23", 0], ["2018-06-24", 0], ["2018-06-25", 0], ["2018-06-26", 0], ["2018-06-27", 0], ["2018-06-28", 0], ["2018-06-29", 0], ["2018-06-30", 0], ["2018-07-01", 0], ["2018-07-02", 0], ["2018-07-03", 0], ["2018-07-04", 0], ["2018-07-05", 0], ["2018-07-06", 0], ["2018-07-07", 0], ["2018-07-08", 0], ["2018-07-09", 0], ["2018-07-10", 0], ["2018-07-11", 0], ["2018-07-12", 0], ["2018-07-13", 0], ["2018-07-14", 0], ["2018-07-15", 0], ["2018-07-16", 0], ["2018-07-17", 0], ["2018-07-18", 0], ["2018-07-19", 0], ["2018-07-20", 0], ["2018-07-21", 0], ["2018-07-22", 0], ["2018-07-23", 0], ["2018-07-24", 0], ["2018-07-25", 0], ["2018-07-26", 0], ["2018-07-27", 0], ["2018-07-28", 0], ["2018-07-29", 0], ["2018-07-30", 0], ["2018-07-31", 0], ["2018-08-01", 0], ["2018-08-02", 0], ["2018-08-03", 0], ["2018-08-04", 0], ["2018-08-05", 0], ["2018-08-06", 0], ["2018-08-07", 0], ["2018-08-08", 0], ["2018-08-09", 0], ["2018-08-10", 0], ["2018-08-11", 0], ["2018-08-12", 0], ["2018-08-13", 0], ["2018-08-14", 0], ["2018-08-15", 0], ["2018-08-16", 0], ["2018-08-17", 0], ["2018-08-18", 0], ["2018-08-19", 0], ["2018-08-20", 0], ["2018-08-21", 0], ["2018-08-22", 0], ["2018-08-23", 0], ["2018-08-24", 0], ["2018-08-25", 0], ["2018-08-26", 0], ["2018-08-27", 0], ["2018-08-28", 0], ["2018-08-29", 0], ["2018-08-30", 0], ["2018-08-31", 0], ["2018-09-01", 0], ["2018-09-02", 0], ["2018-09-03", 0], ["2018-09-04", 0], ["2018-09-05", 0], ["2018-09-06", 0], ["2018-09-07", 0], ["2018-09-08", 0], ["2018-09-09", 0], ["2018-09-10", 0], ["2018-09-11", 0], ["2018-09-12", 0], ["2018-09-13", 0], ["2018-09-14", 0], ["2018-09-15", 0], ["2018-09-16", 0], ["2018-09-17", 0], ["2018-09-18", 0], ["2018-09-19", 0], ["2018-09-20", 0], ["2018-09-21", 0], ["2018-09-22", 0], ["2018-09-23", 0], ["2018-09-24", 0], ["2018-09-25", 0], ["2018-09-26", 0], ["2018-09-27", 0], ["2018-09-28", 0], ["2018-09-29", 0], ["2018-09-30", 0], ["2018-10-01", 0], ["2018-10-02", 0], ["2018-10-03", 0], ["2018-10-04", 0], ["2018-10-05", 0], ["2018-10-06", 0], ["2018-10-07", 0], ["2018-10-08", 0], ["2018-10-09", 0], ["2018-10-10", 0], ["2018-10-11", 0], ["2018-10-12", 0], ["2018-10-13", 0], ["2018-10-14", 0], ["2018-10-15", 0], ["2018-10-16", 0], ["2018-10-17", 0], ["2018-10-18", 0], ["2018-10-19", 0], ["2018-10-20", 0], ["2018-10-21", 0], ["2018-10-22", 0], ["2018-10-23", 0], ["2018-10-24", 0], ["2018-10-25", 0], ["2018-10-26", 0], ["2018-10-27", 0], ["2018-10-28", 0], ["2018-10-29", 0], ["2018-10-30", 0], ["2018-10-31", 0], ["2018-11-01", 0], ["2018-11-02", 0], ["2018-11-03", 0], ["2018-11-04", 0], ["2018-11-05", 0], ["2018-11-06", 0], ["2018-11-07", 0], ["2018-11-08", 0], ["2018-11-09", 0], ["2018-11-10", 0], ["2018-11-11", 3], ["2018-11-12", 1], ["2018-11-13", 0], ["2018-11-14", 1], ["2018-11-15", 1], ["2018-11-16", 0], ["2018-11-17", 0], ["2018-11-18", 1], ["2018-11-19", 0], ["2018-11-20", 1], ["2018-11-21", 0], ["2018-11-22", 0], ["2018-11-23", 0], ["2018-11-24", 0], ["2018-11-25", 0], ["2018-11-26", 0], ["2018-11-27", 0], ["2018-11-28", 0], ["2018-11-29", 0], ["2018-11-30", 0], ["2018-12-01", 0], ["2018-12-02", 1], ["2018-12-03", 0], ["2018-12-04", 1], ["2018-12-05", 1], ["2018-12-06", 0], ["2018-12-07", 0], ["2018-12-08", 0], ["2018-12-09", 0], ["2018-12-10", 0], ["2018-12-11", 0], ["2018-12-12", 0], ["2018-12-13", 0], ["2018-12-14", 0], ["2018-12-15", 0], ["2018-12-16", 0], ["2018-12-17", 0], ["2018-12-18", 0], ["2018-12-19", 0], ["2018-12-20", 0], ["2018-12-21", 0], ["2018-12-22", 9], ["2018-12-23", 0], ["2018-12-24", 1], ["2018-12-25", 1], ["2018-12-26", 3], ["2018-12-27", 1], ["2018-12-28", 0], ["2018-12-29", 1], ["2018-12-30", 0], ["2018-12-31", 2], ["2019-01-01", 0], ["2019-01-02", 0], ["2019-01-03", 0], ["2019-01-04", 0], ["2019-01-05", 0], ["2019-01-06", 1], ["2019-01-07", 0], ["2019-01-08", 0], ["2019-01-09", 0], ["2019-01-10", 0], ["2019-01-11", 0], ["2019-01-12", 0], ["2019-01-13", 1], ["2019-01-14", 0], ["2019-01-15", 0], ["2019-01-16", 0], ["2019-01-17", 0], ["2019-01-18", 0], ["2019-01-19", 0], ["2019-01-20", 0], ["2019-01-21", 0], ["2019-01-22", 0], ["2019-01-23", 0], ["2019-01-24", 0], ["2019-01-25", 1], ["2019-01-26", 0], ["2019-01-27", 1], ["2019-01-28", 0], ["2019-01-29", 0], ["2019-01-30", 0], ["2019-01-31", 0], ["2019-02-01", 0], ["2019-02-02", 0], ["2019-02-03", 0], ["2019-02-04", 0], ["2019-02-05", 0], ["2019-02-06", 0], ["2019-02-07", 0], ["2019-02-08", 0], ["2019-02-09", 0], ["2019-02-10", 0], ["2019-02-11", 0], ["2019-02-12", 0], ["2019-02-13", 0], ["2019-02-14", 0], ["2019-02-15", 0], ["2019-02-16", 0], ["2019-02-17", 0], ["2019-02-18", 0], ["2019-02-19", 1], ["2019-02-20", 0], ["2019-02-21", 0], ["2019-02-22", 0], ["2019-02-23", 0], ["2019-02-24", 0], ["2019-02-25", 0], ["2019-02-26", 0], ["2019-02-27", 0], ["2019-02-28", 0], ["2019-03-01", 0], ["2019-03-02", 0], ["2019-03-03", 0], ["2019-03-04", 0], ["2019-03-05", 0], ["2019-03-06", 0], ["2019-03-07", 0], ["2019-03-08", 0], ["2019-03-09", 0], ["2019-03-10", 0], ["2019-03-11", 0], ["2019-03-12", 0], ["2019-03-13", 0], ["2019-03-14", 0], ["2019-03-15", 0], ["2019-03-16", 0], ["2019-03-17", 0], ["2019-03-18", 0], ["2019-03-19", 0], ["2019-03-20", 1], ["2019-03-21", 0], ["2019-03-22", 1], ["2019-03-23", 0], ["2019-03-24", 0], ["2019-03-25", 0], ["2019-03-26", 1], ["2019-03-27", 0], ["2019-03-28", 0], ["2019-03-29", 0], ["2019-03-30", 0], ["2019-03-31", 0], ["2019-04-01", 0], ["2019-04-02", 0], ["2019-04-03", 0]]
         }]
 
     };
@@ -388,7 +392,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <span>20</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/20/mysql-ji-chu/">
                             <div class="card-image">
@@ -399,7 +403,13 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">MySQL 简介MySQL是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，后来被Sun公司收购，Sun公司后来又被Oracle公司收购，目前属于Or</div>
+                            <div class="summary block-with-text">
+                                
+                                    MySQL 简介MySQL是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，后来被Sun公司收购，Sun公司后来又被Oracle公司收购，目前属于Oracle旗下产品
+特点
+使用C和C++编写，并使用了多种编译器进行测试，保证源代
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-20
@@ -442,7 +452,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                 <span>18</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/18/python-si-you-hua/">
                             <div class="card-image">
@@ -453,9 +463,14 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">基本概念
+                            <div class="summary block-with-text">
+                                
+                                    基本概念
 variable: 公有变量
-_variable: 单前置下划线,私有化属性或方法，from somemodule import *禁止导入,类对象和</div>
+_variable: 单前置下划线,私有化属性或方法，from somemodule import *禁止导入,类对象和子类可以访问
+__variable：双前置下划线,避免与子类中的属性命名冲突，无
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-18
@@ -492,7 +507,7 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                 <span>15</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/15/property-shu-xing/">
                             <div class="card-image">
@@ -503,7 +518,11 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">什么是property属性在许多面向对象的编程语言中(Java)使用getter和setter来确保数据封装。它们也被称为mutator方法。这些方法当然是用于</div>
+                            <div class="summary block-with-text">
+                                
+                                    什么是property属性在许多面向对象的编程语言中(Java)使用getter和setter来确保数据封装。它们也被称为mutator方法。这些方法当然是用于获取数据的getter和用于更改数据的setter。根据这个原则，类的属性是私有
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-15
@@ -540,7 +559,7 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                 <span>14</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/14/python-zhong-de-shen-kao-bei-he-qian-kao-bei/">
                             <div class="card-image">
@@ -551,7 +570,11 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">面试题:深拷贝和浅拷贝的区别是什么？深拷贝是将对象本身复制给另一个对象.这意味着如果对对象副本进行修改时不会影响原对象.使用copy.deepcopy()进行深</div>
+                            <div class="summary block-with-text">
+                                
+                                    面试题:深拷贝和浅拷贝的区别是什么？深拷贝是将对象本身复制给另一个对象.这意味着如果对对象副本进行修改时不会影响原对象.使用copy.deepcopy()进行深拷贝.浅拷贝是将对象的引用复制给另一个对象.因此如果在副本中进行更改,则会影响原
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-14
@@ -588,7 +611,7 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                 <span>12</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/12/python-zhong-de-gil-wen-ti/">
                             <div class="card-image">
@@ -599,7 +622,11 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">什么是GIL简单来说，Python全局解释器锁或GIL是一个互斥锁，它只允许一个线程来控制Python解释器这意味着在任何时间点只有一个线程可以处于执行状态。执</div>
+                            <div class="summary block-with-text">
+                                
+                                    什么是GIL简单来说，Python全局解释器锁或GIL是一个互斥锁，它只允许一个线程来控制Python解释器这意味着在任何时间点只有一个线程可以处于执行状态。执行单线程程序的开发人员看不到GIL的影响，但它可能是CPU绑定和多线程代码中的性
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-12
@@ -642,7 +669,7 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                 <span>11</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/11/xian-cheng-zhong-de-hu-chi-suo/">
                             <div class="card-image">
@@ -653,7 +680,14 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">多线程开发可能遇到的问题假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为</div>
+                            <div class="summary block-with-text">
+                                
+                                    多线程开发可能遇到的问题假设两个线程t1和t2都要对全局变量g_num(默认是0)进行加1运算，t1和t2都各对g_num加10次，g_num的最终的结果应该为20。
+但是由于是多线程同时操作，有可能出现下面情况：
+
+在g_num=0时，t
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
@@ -696,7 +730,7 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                 <span>11</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/11/tcpip-xie-yi/">
                             <div class="card-image">
@@ -707,7 +741,12 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定</div>
+                            <div class="summary block-with-text">
+                                
+                                    什么是协议就像说不同语言的人之间沟通一样,只要有一种大家都遵守的协议即可,有的人会说中文,有的人会说法语,有的人会说俄语但是为了解决人们之间的沟通障碍,现在规定国际语言为”英语”,这就是一个规定,这个规定就叫协议.
+计算机之间如何沟通就像说
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
@@ -752,7 +791,7 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                 <span>11</span>
             </div>
             <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
+                <div class="article col s12 m6 overflow-policy">
                     <div class="card">
                         <a href="/2018/11/11/duo-ren-wu-de-gai-nian/">
                             <div class="card-image">
@@ -763,9 +802,13 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
                             </div>
                         </a>
                         <div class="card-content article-content">
-                            <div class="summary">
+                            <div class="summary block-with-text">
+                                
+                                    
 有很多的场景中的事情是同时进行的，比如开车的时候 手和脚共同来驾驶汽车，再比如唱歌跳舞也是同时进行的；
-什么叫“多任务”呢？简单地说，就是操作系统可以同时运行</div>
+什么叫“多任务”呢？简单地说，就是操作系统可以同时运行多个任务。打个比方，你一边在用浏览器上网，一边在听MP3，一边在用Word赶作业
+                                
+                            </div>
                             <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
@@ -805,21 +848,47 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            自豪的采用Hexo
-        </div>
-        <div class="col s12 m4 l4 social-link"><a href="https://github.com/liu726301387" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-    <i class="fa fa-github"></i>
-</a>
-<a href="mailto:this.liu@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-    <i class="fa fa-envelope-open"></i>
-</a>
-<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 726301387" data-position="top" data-delay="50">
-    <i class="fa fa-qq"></i>
-</a>
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 的
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>主题搭建.
 
-<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-    <i class="fa fa-rss"></i>
-</a>
+            
+
+            
+			
+                <br>
+                
+                <span id="busuanzi_container_site_pv">
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+                
+                
+                <span id="busuanzi_container_site_uv">
+                    <i class="fa fa-users"></i>
+                    次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+                
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:xxx@xx.xx" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=123123123" class="tooltipped" data-tooltip="QQ联系我: 123123123" data-position="top" data-delay="50">
+        <i class="fa fa-qq"></i>
+    </a>
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
 </div>
     </div>
 </footer>
@@ -831,8 +900,8 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
-            <span class="title">搜索</span>
-            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input">
         </div>
         <div id="searchResult"></div>
     </div>
@@ -840,7 +909,9 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
 
 <script src="/js/search.js"></script>
 <script type="text/javascript">
+$(function () {
     searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
 </script>
 <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
@@ -850,11 +921,22 @@ _variable: 单前置下划线,私有化属性或方法，from somemodule import 
 </div>
 
 
-<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/materialize/materialize.min.js"></script>
 <script src="/libs/masonry/masonry.pkgd.min.js"></script>
 <script src="/libs/aos/aos.js"></script>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/haruto.model.json"},"display":{"position":"right","width":130,"height":200},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
