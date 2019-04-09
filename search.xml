@@ -246,7 +246,7 @@
       
       <categories>
           
-          <category> WEB安全 </category>
+          <category> Web安全 </category>
           
       </categories>
       
@@ -254,8 +254,6 @@
         <tags>
             
             <tag> SQLMap </tag>
-            
-            <tag> SQL注入 </tag>
             
         </tags>
       
