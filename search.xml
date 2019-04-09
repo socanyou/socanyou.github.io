@@ -3,6 +3,167 @@
   
     
     <entry>
+      <title>请求延迟注入</title>
+      <link href="/2019/04/09/qing-qiu-yan-chi-zhu-ru/"/>
+      <url>/2019/04/09/qing-qiu-yan-chi-zhu-ru/</url>
+      
+        <content type="html"><![CDATA[<h1 id="请求延迟注入"><a href="#请求延迟注入" class="headerlink" title="请求延迟注入"></a>请求延迟注入</h1><p>延时注入主要是针对页面无变化,无法用布尔真假来判断,无法报错的情况下注入.延迟注入是通过页面返回的时间来判断,不同的Mysql数据库版本,延迟语句不同.</p><p>Mysql &gt;= 5.0可以使用sleep()进行查询<br>    sleep(5)<br>Mysql &lt;5.0 使用benchmark()进行查询<br>    select benchmark(1000,select * from admin);</p><h1 id="请求延迟注入相关参数"><a href="#请求延迟注入相关参数" class="headerlink" title="请求延迟注入相关参数"></a>请求延迟注入相关参数</h1><p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/Vf4U1oaMOj2Wcik4bqu9ld.ZeL88dTufcLC2eIFueq0!/b/dD4BAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""></p><p>–technique<br>    B,E,Q,U,S,T直接决定了注入类型的改变</p><pre><code>B:布尔盲注E:报错型注入Q:内联查询U:联合查询S:可多语句进行查询的注入T:基于时间的盲注</code></pre><p>–time-sec 60</p><p>–delay 20<br>    HTTP和HTTPS请求之间的延迟</p><p>–safe-freq 20</p><h1 id="请求延迟注入的步骤分析"><a href="#请求延迟注入的步骤分析" class="headerlink" title="请求延迟注入的步骤分析"></a>请求延迟注入的步骤分析</h1><ol><li>-u 指定URL<br>-p 指定对什么参数进行SQLMap扫描.</li><li>根据第一步得到的结果指定参数–technique当使用基于时间的盲注时,时刻使用–time-sec参数设定延时时间(默认5S)</li><li>爆库,爆表</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>绕过WAF防火墙</title>
+      <link href="/2019/04/09/rao-guo-waf-fang-huo-qiang/"/>
+      <url>/2019/04/09/rao-guo-waf-fang-huo-qiang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="WAF防火墙"><a href="#WAF防火墙" class="headerlink" title="WAF防火墙"></a>WAF防火墙</h1><p>web application firewall(WAF):web应用防护系统</p><h2 id="WAF防火墙的功能"><a href="#WAF防火墙的功能" class="headerlink" title="WAF防火墙的功能"></a>WAF防火墙的功能</h2><ol><li>支持IP白名单和黑名单功能</li><li>支持URL白名单</li><li>支持User-agent过滤</li><li>支持CC攻击防护</li><li>支持Cookie过滤</li><li>支持URL过滤</li><li>支持URL参数过滤</li><li>支持日志记录</li></ol><h2 id="WAF防火墙和网络防火墙"><a href="#WAF防火墙和网络防火墙" class="headerlink" title="WAF防火墙和网络防火墙"></a>WAF防火墙和网络防火墙</h2><p>区别</p><p>网络防火墙作为网络访问控制设备,主要工作在OSI模型的三层四层基于IP报文进行检测.只是对端口做限制对TCP协议进行封堵</p><p>WAF防火墙能在应用层理解分析HTTP会话,因此能有效的防止各类应用层的攻击,同时他向下兼容,具备网络防火墙的功能.</p><h1 id="绕过WAF防火墙的脚本"><a href="#绕过WAF防火墙的脚本" class="headerlink" title="绕过WAF防火墙的脚本"></a>绕过WAF防火墙的脚本</h1><ol><li><p>apostrophemask.py 用UTF-8全角字符替换单引号字符</p></li><li><p>apostrophenullencode.py 用非法双字节unicode字符替换单引号字符</p></li><li><p>appendnullbyte.py 在payload末尾添加空字符编码</p></li><li><p>base64encode.py 对给定的payload全部字符使用Base64编码</p></li><li><p>between.py 分别用“NOT BETWEEN 0 AND #”替换大于号“&gt;”，“BETWEEN # AND #”替换等于号“=”</p></li><li><p>bluecoat.py 在SQL语句之后用有效的随机空白符替换空格符，随后用“LIKE”替换等于号“=”</p></li><li><p>chardoubleencode.py 对给定的payload全部字符使用双重URL编码（不处理已经编码的字符）</p></li><li><p>charencode.py 对给定的payload全部字符使用URL编码（不处理已经编码的字符）</p></li><li><p>charunicodeencode.py 对给定的payload的非编码字符使用Unicode URL编码（不处理已经编码的字符）</p></li><li><p>concat2concatws.py 用“CONCAT_WS(MID(CHAR(0), 0, 0), A, B)”替换像“CONCAT(A, B)”的实例</p></li><li><p>equaltolike.py 用“LIKE”运算符替换全部等于号“=”</p></li><li><p>greatest.py 用“GREATEST”函数替换大于号“&gt;”</p></li><li><p>halfversionedmorekeywords.py 在每个关键字之前添加MySQL注释</p></li><li><p>ifnull2ifisnull.py 用“IF(ISNULL(A), B, A)”替换像“IFNULL(A, B)”的实例</p></li><li><p>lowercase.py 用小写值替换每个关键字字符</p></li><li><p>modsecurityversioned.py 用注释包围完整的查询</p></li><li><p>modsecurityzeroversioned.py 用当中带有数字零的注释包围完整的查询</p></li><li><p>multiplespaces.py 在SQL关键字周围添加多个空格</p></li><li><p>nonrecursivereplacement.py 用representations替换预定义SQL关键字，适用于过滤器</p></li><li><p>overlongutf8.py 转换给定的payload当中的所有字符</p></li><li><p>percentage.py 在每个字符之前添加一个百分号</p></li><li><p>randomcase.py 随机转换每个关键字字符的大小写</p></li><li><p>randomcomments.py 向SQL关键字中插入随机注释</p></li><li><p>securesphere.py 添加经过特殊构造的字符串</p></li><li><p>sp_password.py 向payload末尾添加“sp_password” for automatic obfuscation from DBMS logs</p></li><li><p>space2comment.py 用“/**/”替换空格符</p></li><li><p>space2dash.py 用破折号注释符“–”其次是一个随机字符串和一个换行符替换空格符</p></li><li><p>space2hash.py 用磅注释符“#”其次是一个随机字符串和一个换行符替换空格符</p></li><li><p>space2morehash.py 用磅注释符“#”其次是一个随机字符串和一个换行符替换空格符</p></li><li><p>space2mssqlblank.py 用一组有效的备选字符集当中的随机空白符替换空格符</p></li><li><p>space2mssqlhash.py 用磅注释符“#”其次是一个换行符替换空格符</p></li><li><p>space2mysqlblank.py 用一组有效的备选字符集当中的随机空白符替换空格符</p></li><li><p>space2mysqldash.py 用破折号注释符“–”其次是一个换行符替换空格符</p></li><li><p>space2plus.py 用加号“+”替换空格符</p></li><li><p>space2randomblank.py 用一组有效的备选字符集当中的随机空白符替换空格符</p></li><li><p>unionalltounion.py 用“UNION SELECT”替换“UNION ALL SELECT”</p></li><li><p>unmagicquotes.py 用一个多字节组合%bf%27和末尾通用注释一起替换空格符</p></li><li><p>varnish.py 添加一个HTTP头“X-originating-IP”来绕过WAF</p></li><li><p>versionedkeywords.py 用MySQL注释包围每个非函数关键字</p></li><li><p>versionedmorekeywords.py 用MySQL注释包围每个关键字</p></li><li><p>xforwardedfor.py 添加一个伪造的HTTP头“X-Forwarded-For”来绕过WAF</p></li></ol><h1 id="步骤解析"><a href="#步骤解析" class="headerlink" title="步骤解析"></a>步骤解析</h1><h2 id="确认WAF的三种方式"><a href="#确认WAF的三种方式" class="headerlink" title="确认WAF的三种方式"></a>确认WAF的三种方式</h2><ol><li><p>sqlmap命令:<br> sqlmap -u {目标URL} –threads=10 –identify-waf  # 首选<br> sqlmap -u {目标URL} –threads=10 –check-waf        # 备选</p></li><li><p>使用Burpsuite</p></li><li><p>使用Python脚本进行绕过</p><p> sqlmap -u {目标URL} –dbs –batch –flush -session –tamper=脚本名</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>常规伪静态注入</title>
+      <link href="/2019/04/09/chang-gui-wei-jing-tai-zhu-ru/"/>
+      <url>/2019/04/09/chang-gui-wei-jing-tai-zhu-ru/</url>
+      
+        <content type="html"><![CDATA[<h1 id="伪静态的定义"><a href="#伪静态的定义" class="headerlink" title="伪静态的定义"></a>伪静态的定义</h1><p>伪静态主要是为了隐藏传递的参数名,伪静态只是一种URL重写的手段,既然能接收参数的输入,所以并不能防止SQL注入.</p><p><a href="http://www.xxx.com/xxx/xxx.html" target="_blank" rel="noopener">www.xxx.com/xxx/xxx.html</a></p><p>真静态与伪静态的区别</p><p>真静态的使用会大大减轻数据库频繁读写的压力,缺点是不利于数据更新.</p><p>伪静态实际上是一个动态页面,只是在URL上与静态页面不同,伪静态有利于SEO优化.</p><h2 id="伪静态生成的两种方式"><a href="#伪静态生成的两种方式" class="headerlink" title="伪静态生成的两种方式"></a>伪静态生成的两种方式</h2><p>框架性伪静态</p><pre><code>如果整个网站的URL都是一样的,那么就一定是框架性伪静态</code></pre><p>利用组件把ASP的后缀名改为HTM</p><pre><code>主要利用一个组件强制性的将ASP文件的后缀名显示为HTM.</code></pre><p>在SQL注入的防御中,伪静态虽然起到了一定作用,但是并不能完全防御SQL注入.</p><h2 id="伪静态的优缺点"><a href="#伪静态的优缺点" class="headerlink" title="伪静态的优缺点"></a>伪静态的优缺点</h2><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol><li>方便搜索引擎搜索</li><li>提高用户对网页的信任度</li><li>网站所用的程序语言不易被发现</li></ol><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol><li>CPU占有量上升</li><li>网站承受力低</li><li>王爷打开慢</li><li>打量的重复页面</li><li>需要服务器支持</li><li>造成真静态页面无法访问</li></ol><h2 id="使用sqlmap进行伪静态注入"><a href="#使用sqlmap进行伪静态注入" class="headerlink" title="使用sqlmap进行伪静态注入"></a>使用sqlmap进行伪静态注入</h2><p>使用sqlmap进行伪静态注入的时候需要在伪静态url的.html前加一个*号</p><p><strong>如何判断网站是否为伪静态</strong></p><p>进入网站之后F12打开控制台输入document.lastModified,多次运行命令之后查看时间是否相同.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>交互式写Shell及命令执行</title>
+      <link href="/2019/04/09/jiao-hu-shi-xie-shell-ji-ming-ling-zhi-xing/"/>
+      <url>/2019/04/09/jiao-hu-shi-xie-shell-ji-ming-ling-zhi-xing/</url>
+      
+        <content type="html"><![CDATA[<h1 id="交互式Shell"><a href="#交互式Shell" class="headerlink" title="交互式Shell"></a>交互式Shell</h1><ul><li>–sqlmap-shell      进入Shell环境</li><li>–os-cmd=ipconfig   执行系统命令</li><li>–os-shell          模拟shell输入</li><li>–file-read         读取数据库服务器文件系统文件</li><li>–file-write        向数据库服务器的文件系统上传文件</li><li>–file-dest         向数据库服务器的文件系统上传文件</li><li>–reg-read          读取Windows注册表键值</li><li>–reg-add           写入Windows注册表键值</li><li>–reg-del           删除Windows注册表键值</li><li>–reg-key           注册表辅助选项</li><li>–reg-value         注册表辅助选项</li><li>–reg-data         注册表辅助选项</li><li>–reg-type         注册表辅助选项</li></ul><p>执行任意操作的命令参数<br>    当后端DBMS为Mysql,SQLServer并且当前会话用户拥有对数据库特定功能和相关架构特性的利用权限时,SQLMap能够在数据库所在服务器的操作系统上运行任意的命令<br>    Mysql—&gt;sys_exec()和sys_eval()<br>    SQLServer—&gt;xp_cmdshell</p><p>使用原理</p><pre><code>通过SQLMap以及SQLMap的--os-shell参数扫描-u所对应的网站存在上传页面,上传一句话木马,反弹shell交互式Shell的权限=WEB应用的权限</code></pre><h1 id="如何防范SQLMap交互式写shell及命令执行"><a href="#如何防范SQLMap交互式写shell及命令执行" class="headerlink" title="如何防范SQLMap交互式写shell及命令执行"></a>如何防范SQLMap交互式写shell及命令执行</h1><p>PHP:</p><ol><li>escapeshellarg()</li><li>escapeshellcmd()</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>SQLMap简介</title>
+      <link href="/2019/04/09/sqlmap-jian-jie/"/>
+      <url>/2019/04/09/sqlmap-jian-jie/</url>
+      
+        <content type="html"><![CDATA[<h1 id="SQLMap参数说明"><a href="#SQLMap参数说明" class="headerlink" title="SQLMap参数说明"></a>SQLMap参数说明</h1><p>-v<br>    输出级别</p><pre><code>0:只显示错误信息和关键信息1:同时显示普通信息和警告信息(默认)2:同时显示debug信息3:同时显示注入使用的攻击载荷4:同时显示HTTP请求5:同时显示HTTP请求头6:同时显示HTTP相应体</code></pre><p>-d<br>    直接连接数据库</p><p>-u<br>    指定目标URL</p><pre><code>Demo:    python sqlmap.py -u &quot;http://192.168.1.1:8080/user.php?id=0&quot;</code></pre><p>-method</p><pre><code>指定HTTP请求方法Demo:    -method=post</code></pre><p>-data</p><pre><code>该参数指定的数据会被作为POST数据提交,sqlmap也会检测该参数指定数据是否存在sql注入漏洞Demo:    python sqlmap.py -u &#39;http://192.168.1.1:8080/user.php&#39; --data=&quot;id=0&amp;name=user&quot;</code></pre><p>-para-del</p><pre><code>指定POST请求数据的分隔符默认的分隔符是&quot;&amp;&quot;,可以使用-param-del指定其他的分隔符</code></pre><p>-random-agent</p><pre><code>设置随机请求头</code></pre><p>-Host</p><pre><code>手动指定Http头的HOST值</code></pre><p>-Referer</p><pre><code>手动指定HTTP头重的Referer的值</code></pre><p>-cookie</p><pre><code>某些网站需要cookie才能够访问,这个参数可以用来指定Cookie值Demo:python sqlmap.py -u &quot;http://192.168.1.1:8080/user.php&quot; --cookie &quot;浏览器中的cookie值&quot;</code></pre><p>-drop-set-cookie</p><pre><code>若浏览器响应头中有&quot;set-cookie&quot;,sqlmap会自动设置&quot;set-cookie&quot;,设置的cookie,并对这些cookie进行检测,若不想让sqlmap这样做,添加参数&quot;drop-set-cookie&quot;即可,这样sqlmap就会忽略&quot;set-cookie&quot;</code></pre><p>-o<br>    优化SQLMap的性能<br>    此参数默认会优化三个参数<br>    -keep-alive(HTTP长链接)<br>    -null-connection(HTTP空链接)<br>    -threads=3(HTTP并发)</p><p>-p<br>    注入相关的参数,用于指定要测试的参数,定制攻击载荷和选择篡改脚本</p><pre><code>Demo    只测试id和user-agent    -p &quot;id,user-agent&quot;</code></pre><p>-skip</p><pre><code>不想测试某些参数Demo    不想测试user-agent,referer    --skip=&quot;user-agent,referer&quot;</code></pre><p>-dbms</p><pre><code>指定数据库管理系统搭配fingerprint可以对数据库进行指纹识别Demo    -dbms 数据库名Mysql和MSSQLServer指定的方法    --dbms Mysql </code></pre><p>-os</p><pre><code>指定运行数据库的操作系统,默认情况下SQLMap会自动扫描运行数据库的操作系统,如果不是非常确定的情况下,还是让SQLMap自己扫描会更好些</code></pre><p>– level<br>    Polyload等级</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>POST登陆注入</title>
+      <link href="/2019/04/09/post-deng-lu-zhu-ru/"/>
+      <url>/2019/04/09/post-deng-lu-zhu-ru/</url>
+      
+        <content type="html"><![CDATA[<h1 id="POST注入原理"><a href="#POST注入原理" class="headerlink" title="POST注入原理"></a>POST注入原理</h1><p><img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/gq4moYHgoXfw4kIIRqXSnclRsv1TXH1kuAs3MTbezsI!/b/dFQBAAAAAAAA&amp;bo=gAc4BAAAAAARB4s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/KEKMXu61rgVpMd.J9fIgYegbgCWuiy3TNK54YPy7AEw!/b/dL8AAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""></p><h1 id="POST注入的两个参数"><a href="#POST注入的两个参数" class="headerlink" title="POST注入的两个参数"></a>POST注入的两个参数</h1><p>-r 从文件中加载HTTP请求(BP抓包后保存为文件,使用sqlmap的-r读取文件)</p><p>–forms 自动获取form表单测试(常用)</p><h1 id="POST注入的三种方法"><a href="#POST注入的三种方法" class="headerlink" title="POST注入的三种方法"></a>POST注入的三种方法</h1><ol><li>利用Burpsuite抓包,然后使用sqlmap -r 来进行检测注入,利用Burpsuite抓包之后保存为Txt文件,然后利用sqlmap -r xxx.txt进行注入</li><li>直接使用sqlmap输入命令,sqlmap -u “xxx.com” –forms,sqlmap会自动获取POST包,从而进行注入</li><li>sqlmap -u “xxx.com” –data “标签名=数据1&amp;标签名=数据2&amp;标签名=数据3”</li></ol><h2 id="万能密码"><a href="#万能密码" class="headerlink" title="万能密码"></a>万能密码</h2><p>admin’ or ‘1’=’1 #</p><h1 id="如何防止POST注入"><a href="#如何防止POST注入" class="headerlink" title="如何防止POST注入"></a>如何防止POST注入</h1><p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/qW9o75pW0bq*BDfHll8qURntOL36C2F5Jwrog2zWJ00!/b/dFQBAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/0GXtwtH4.BH9tKNL7bjgM*2qLKIb*PYHOIOVfp7mlw8!/b/dL4AAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/h.UhO*iGO3n0.3diBzfzQcwpC36iF5rUkVfWMsFFhfM!/b/dLYAAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/KTWvIuydXXyxuaNagmucaC7Ywp8eXOOpieoCHPyVWYc!/b/dMAAAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Mysql数据库注入</title>
+      <link href="/2019/04/09/mysql-shu-ju-ku-zhu-ru/"/>
+      <url>/2019/04/09/mysql-shu-ju-ku-zhu-ru/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Mysql数据库背景知识"><a href="#Mysql数据库背景知识" class="headerlink" title="Mysql数据库背景知识"></a>Mysql数据库背景知识</h1><p>Mysql自带4个数据库</p><ol><li>information_schema<br> 访问数据库元数据的方式</li><li>mysql<br> 核心数据库,负责存储Mysql自己需要使用的控制和管理信息</li><li>performance_schema<br> 性能优化引擎</li><li>test<br> 测试数据库</li></ol><h2 id="Infomation-schema"><a href="#Infomation-schema" class="headerlink" title="Infomation_schema"></a>Infomation_schema</h2><p>此数据库中保存着关于Mysql服务器所维护的所有其他数据库的信息.</p><h1 id="防止SQL注入的解决方法"><a href="#防止SQL注入的解决方法" class="headerlink" title="防止SQL注入的解决方法"></a>防止SQL注入的解决方法</h1><ol><li><p>magic_quotes_gpc函数<br> magin_quotes_gpc = On   开启状态会对单引号,双引号,反斜线等字符进行转义<br> magin_quotes_gpc = Off  关闭状态需要调用addslashes()函数进行转义</p></li><li><p>mysql_real_escape_strign()<br> 成功 返回被转义的字符串</p></li><li><p>使用SQL语句预编译</p><p> String sql = “select username,password from user where username = ? and password = ?;”<br> PreparedStatement ps = connection.prepareStatement(sql);<br> ps.setString(1,username);<br> ps.setString(2.password);<br> ps.executeQuery();</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> Web安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Cookie注入</title>
       <link href="/2019/04/09/cookie-zhu-ru/"/>
       <url>/2019/04/09/cookie-zhu-ru/</url>
@@ -12,10 +173,16 @@
       
       <categories>
           
-          <category> SQLMap </category>
+          <category> Web安全 </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> SQLMap </tag>
+            
+        </tags>
       
     </entry>
     
@@ -86,9 +253,9 @@
       
         <tags>
             
-            <tag> SQL注入 </tag>
-            
             <tag> SQLMap </tag>
+            
+            <tag> SQL注入 </tag>
             
         </tags>
       
