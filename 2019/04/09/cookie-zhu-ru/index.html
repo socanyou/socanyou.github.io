@@ -4,11 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Struts2的结果页面的配置, 程序员小黑">
-    <meta name="description" content="全局结果页面全局结果页面指的是，在包中配置一次，其他的在这个包中的所有的action只要返回了这个值，都可以跳转到这个页面。
-针对这个包下的所有的action的配置都有效
-&amp;lt;struts&amp;gt;
-    &amp;lt;package nam">
+    <meta name="keywords" content="Cookie注入, 程序员小黑">
+    <meta name="description" content="什么是CookieCookie是指某些网站为了辨别用户的身份,进行session跟踪而存储在用户本地终端上的数据(通常经过加密)
+Cookie注入是SQL注入的一种方式
+Cookie:接受用户数据,验证用户的凭据,存储在本地电脑上
+Sess">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Struts2的结果页面的配置 | 程序员小黑</title>
+    <title>Cookie注入 | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -273,13 +273,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&bo=gAcABAAAAAARB7M!&rf=viewer_4')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/w8bcDiyLVbIT9L*Quh16F7BlNoEZ80BQya2M7Kw2rLk!/b/dDMBAAAAAAAA&bo=VAY4BAAAAAARB14!&rf=viewer_4')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Struts2的结果页面的配置
+                        Cookie注入
                     </div>
                 </div>
             </div>
@@ -388,17 +388,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
-                            <a href="/tags/Struts2/" target="_blank">
-                                <span class="chip bg-color">Struts2</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -406,8 +398,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Struts2/" class="post-category" target="_blank">
-                                Struts2
+                            <a href="/categories/SQLMap/" class="post-category" target="_blank">
+                                SQLMap
                             </a>
                         
                     </div>
@@ -418,21 +410,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-12-22
+                    2019-04-09
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        326
+                        578
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -448,42 +440,51 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="全局结果页面"><a href="#全局结果页面" class="headerlink" title="全局结果页面"></a>全局结果页面</h1><p>全局结果页面指的是，在包中配置一次，其他的在<strong>这个包中的所有的action只要返回了这个值</strong>，<strong>都可以跳转到这个页面。</strong></p>
-<p><strong>针对这个包下的所有的action的配置都有效</strong></p>
-<pre><code>&lt;struts&gt;
-    &lt;package name=&quot;demo1&quot; namespace=&quot;/&quot; extends=&quot;struts-default&quot;&gt;
-        &lt;!-- 全局结果页面的配置 --&gt;
-        &lt;global-results&gt;
-            &lt;result name=&quot;success&quot;&gt;/demo1/demo2.jsp&lt;/result&gt;
-        &lt;/global-results&gt;
+                <h1 id="什么是Cookie"><a href="#什么是Cookie" class="headerlink" title="什么是Cookie"></a>什么是Cookie</h1><p>Cookie是指某些网站为了辨别用户的身份,进行session跟踪而存储在用户本地终端上的数据(通常经过加密)</p>
+<p>Cookie注入是SQL注入的一种方式</p>
+<p>Cookie:接受用户数据,验证用户的凭据,存储在本地电脑上</p>
+<p>Session: 验证用户数据,存储在服务器端</p>
+<p>利用范围:<br>    cookie</p>
+<pre><code>    cookie主要利用在中小企业网站
 
-        &lt;action name=&quot;requestDemo1&quot; class=&quot;demo1.RequestDemo1&quot;&gt;
-            &lt;!-- 这里配置的result结果页面是局部的 --&gt;
-            &lt;!-- &lt;result name=&quot;success&quot;&gt;/demo1/demo2.jsp&lt;/result&gt; --&gt;
-        &lt;/action&gt;
-        &lt;action name=&quot;requestDemo2&quot; class=&quot;demo1.RequestDemo2&quot;&gt;
-        &lt;/action&gt;
+Session
 
-        &lt;action name=&quot;requestDemo3&quot; class=&quot;demo1.RequestDemo3&quot;&gt;
-        &lt;/action&gt;
-    &lt;/package&gt;
-&lt;/struts&gt;
-</code></pre><h1 id="局部结果页面"><a href="#局部结果页面" class="headerlink" title="局部结果页面"></a>局部结果页面</h1><p>局部结果页面指的是，<strong>只能在当前的action中的配置有效。</strong></p>
-<p><strong>针对当前的action有效。</strong></p>
-<h1 id="Result标签的配置"><a href="#Result标签的配置" class="headerlink" title="Result标签的配置"></a>Result标签的配置</h1><p>result标签的作用:配置页面的跳转</p>
-<p>属性:</p>
-<ul>
-<li>name属性:<strong>逻辑视图的名称。默认值：success</strong></li>
-<li>type属性:页面跳转类型<ul>
-<li><strong>dispatcher：默认值，请求转发。（Action转发JSP）</strong></li>
-<li><strong>redirect：重定向。（Action重定向JSP）</strong></li>
-<li>chain：转发.（Action转发Action）</li>
-<li>redirectAction：重定向.（Action重定向Action</li>
-<li>stream：Struts2中提供文件下载的功能.</li>
-</ul>
-</li>
-</ul>
-
+    主要利用在银行,金融类网站
+</code></pre><p>说法:<br>    盗取Cookie      –&gt; √<br>    盗取Session     –&gt; ×<br>    劫持session     –&gt; √</p>
+<h1 id="Cookie注入的条件"><a href="#Cookie注入的条件" class="headerlink" title="Cookie注入的条件"></a>Cookie注入的条件</h1><ol>
+<li>程序对get和post提交方式进行了过滤,但是未对Cookie提交的数据进行过滤</li>
+<li>在条件1的基础上需要对程序对提交数据获取方式是直接request(“xxx”)的方式,用request这个方法的时候获取的参数是url后面的参数也可以是cookie里面的参数.</li>
+</ol>
+<h1 id="注入过程"><a href="#注入过程" class="headerlink" title="注入过程"></a>注入过程</h1><h2 id="手工注入"><a href="#手工注入" class="headerlink" title="手工注入"></a>手工注入</h2><ol>
+<li>寻找形如”.asp?id=xx”类的带参数URL</li>
+<li>去掉后面的id==”xx”查看页面是否显示正常.</li>
+<li>清空浏览器地址栏,输入”javascript:alert(document.cookie=”id=”+escape(“xx”));”</li>
+<li>重复上面的步骤,将常规SQL注入中的判断语句带入上面的URL中<br> “javascript:alert(document.cookie=”id=”+escape(“xx and 1=1”));”</li>
+<li>使用常规注入语句进行注入即可</li>
+</ol>
+<p><strong>escape(string):对字符串进行编码</strong></p>
+<h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><h3 id="获取浏览器在网站上的Cookie"><a href="#获取浏览器在网站上的Cookie" class="headerlink" title="获取浏览器在网站上的Cookie"></a>获取浏览器在网站上的Cookie</h3><p>从控制台代码看Cookie,浏览器F12打开在控制台输入<strong>document.cookie</strong>来获取当前网站的Cookie</p>
+<p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/RgO5wtlgai4KY6nUilctgWPTasmG4TTfx*r89ERjXs8!/b/dMAAAAAAAAAA&amp;bo=vgaWAQAAAAADFx0!&amp;rf=viewer_4" alt=""></p>
+<h3 id="使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入"><a href="#使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入" class="headerlink" title="使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入"></a>使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入</h3><p><img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/wsK5XilHd1EfPeWSPD4YOFJeEExo0yAMSmjRryoX17U!/b/dL8AAAAAAAAA&amp;bo=eAOVAgAAAAADB84!&amp;rf=viewer_4" alt=""></p>
+<h3 id="使用SQLMap获取数据库信息"><a href="#使用SQLMap获取数据库信息" class="headerlink" title="使用SQLMap获取数据库信息"></a>使用SQLMap获取数据库信息</h3><ol>
+<li>–cookie “Cookie值”      指定网页的cookie   </li>
+<li>–current-db             获取当前网页的库名</li>
+<li>-D “数据库名” –tables       获取数据库的表名</li>
+<li>-D “数据库名” -T “表名” –columns        获取表中的字段</li>
+<li>-D “数据库名” -T “表名” -C “列名” –dump     获取字段的值</li>
+</ol>
+<p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/Ti4XVfvYHPH6dnCsjIRNBTn44ZCAv.IMb*rSFJXIMg0!/b/dFMBAAAAAAAA&amp;bo=PgUmAgAAAAADFy0!&amp;rf=viewer_4" alt=""></p>
+<h1 id="如何防范Cookie注入"><a href="#如何防范Cookie注入" class="headerlink" title="如何防范Cookie注入"></a>如何防范Cookie注入</h1><ol>
+<li>不能在Cookie中保存敏感信息,比如用户名和密码</li>
+<li>对从客户端取得的Cookie信息进行严格的校验.</li>
+<li>记录非法Cookie</li>
+<li>使用SSL/TLS来传递Cookie信息</li>
+<li>在获取客户端提交的数据时指明数据提交的方式</li>
+</ol>
+<h1 id="如何寻找Cookie注入的网站"><a href="#如何寻找Cookie注入的网站" class="headerlink" title="如何寻找Cookie注入的网站"></a>如何寻找Cookie注入的网站</h1><pre><code>inurl: asp?id=
+inurl:login.asp china
+inurl:login.asp Taiwan
+</code></pre>
             </div>
             <hr>
 
@@ -506,7 +507,7 @@
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/22/struts2-de-jie-guo-ye-mian-de-pei-zhi/" class="b-link-green">Struts2的结果页面的配置</a>
+                    <a href="/2019/04/09/cookie-zhu-ru/" class="b-link-green">Cookie注入</a>
                 </p>
             </div>
         </div>
@@ -551,48 +552,39 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2018/12/22/struts2servlet-de-fang-wen/">
+                <a href="/2019/04/09/cookie-zhu-ru/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&amp;bo=gAcABAAAAAARB7M!&amp;rf=viewer_4" class="responsive-img" alt="Struts2Servlet的访问">
+                        <img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/w8bcDiyLVbIT9L*Quh16F7BlNoEZ80BQya2M7Kw2rLk!/b/dDMBAAAAAAAA&amp;bo=VAY4BAAAAAARB14!&amp;rf=viewer_4" class="responsive-img" alt="Cookie注入">
                         
-                        <span class="card-title">Struts2Servlet的访问</span>
+                        <span class="card-title">Cookie注入</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">完全解耦合的方式JSP
-&lt;h3 align=&quot;center&quot;&gt;方式一:完全解耦和&lt;/h3&gt;
-    &lt;form action=&quot;requestDemo1.action&quot; </div>
+                    <div class="summary block-with-text">什么是CookieCookie是指某些网站为了辨别用户的身份,进行session跟踪而存储在用户本地终端上的数据(通常经过加密)
+Cookie注入是SQL注入的一种方式
+Cookie:接受用户数据,验证用户的凭据,存储在本地电脑上
+Sess</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Struts2/" class="post-category" target="_blank">
-                                    Struts2
+                            <a href="/categories/SQLMap/" class="post-category" target="_blank">
+                                    SQLMap
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Struts2/" target="_blank">
-                        <span class="chip bg-color">Struts2</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -603,28 +595,31 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/12/22/struts2-de-shu-ju-feng-zhuang/">
+                <a href="/2019/03/26/scrapycrawlspider-pa-qu-1-yao-wang/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/ghgVpS5WYJlL1iYBpGG0dvGtj.j3nbish*I3IvYcaZs!/b/dFIBAAAAAAAA&amp;bo=gAcABAAAAAARB7M!&amp;rf=viewer_4" class="responsive-img" alt="Struts2的数据封装">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider爬取1药网">
                         
-                        <span class="card-title">Struts2的数据封装</span>
+                        <span class="card-title">ScrapyCrawlSpider爬取1药网</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">属性驱动:必须提供属性的set方法(不常用)jsp页面
-&lt;h3&gt;方式一:属性驱动-提供set方法的方式&lt;/h3&gt;
-    &lt;form action=&quot;userAction1.action&quot; </div>
+                    <div class="summary block-with-text">数据展示
+主要功能利用Scrapy-splash完成JavaScript渲染利用Scrapyd将scrapy项目部署到爬虫服务器
+网站分析
+网站首页中有各种药品分类,打开分类页面我们可以看到各种的药品分类信息,分析它的URL规则,
+
+htt</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Struts2/" class="post-category" target="_blank">
-                                    Struts2
+                            <a href="/categories/Python/" class="post-category" target="_blank">
+                                    Python
                                 </a>
                             
                             
@@ -634,12 +629,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Python爬虫/" target="_blank">
+                        <span class="chip bg-color">Python爬虫</span>
                     </a>
                     
-                    <a href="/tags/Struts2/" target="_blank">
-                        <span class="chip bg-color">Struts2</span>
+                    <a href="/tags/Scrapy/" target="_blank">
+                        <span class="chip bg-color">Scrapy</span>
                     </a>
                     
                 </div>

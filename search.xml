@@ -3,6 +3,23 @@
   
     
     <entry>
+      <title>Cookie注入</title>
+      <link href="/2019/04/09/cookie-zhu-ru/"/>
+      <url>/2019/04/09/cookie-zhu-ru/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是Cookie"><a href="#什么是Cookie" class="headerlink" title="什么是Cookie"></a>什么是Cookie</h1><p>Cookie是指某些网站为了辨别用户的身份,进行session跟踪而存储在用户本地终端上的数据(通常经过加密)</p><p>Cookie注入是SQL注入的一种方式</p><p>Cookie:接受用户数据,验证用户的凭据,存储在本地电脑上</p><p>Session: 验证用户数据,存储在服务器端</p><p>利用范围:<br>    cookie</p><pre><code>    cookie主要利用在中小企业网站Session    主要利用在银行,金融类网站</code></pre><p>说法:<br>    盗取Cookie      –&gt; √<br>    盗取Session     –&gt; ×<br>    劫持session     –&gt; √</p><h1 id="Cookie注入的条件"><a href="#Cookie注入的条件" class="headerlink" title="Cookie注入的条件"></a>Cookie注入的条件</h1><ol><li>程序对get和post提交方式进行了过滤,但是未对Cookie提交的数据进行过滤</li><li>在条件1的基础上需要对程序对提交数据获取方式是直接request(“xxx”)的方式,用request这个方法的时候获取的参数是url后面的参数也可以是cookie里面的参数.</li></ol><h1 id="注入过程"><a href="#注入过程" class="headerlink" title="注入过程"></a>注入过程</h1><h2 id="手工注入"><a href="#手工注入" class="headerlink" title="手工注入"></a>手工注入</h2><ol><li>寻找形如”.asp?id=xx”类的带参数URL</li><li>去掉后面的id==”xx”查看页面是否显示正常.</li><li>清空浏览器地址栏,输入”javascript:alert(document.cookie=”id=”+escape(“xx”));”</li><li>重复上面的步骤,将常规SQL注入中的判断语句带入上面的URL中<br> “javascript:alert(document.cookie=”id=”+escape(“xx and 1=1”));”</li><li>使用常规注入语句进行注入即可</li></ol><p><strong>escape(string):对字符串进行编码</strong></p><h2 id="详解"><a href="#详解" class="headerlink" title="详解"></a>详解</h2><h3 id="获取浏览器在网站上的Cookie"><a href="#获取浏览器在网站上的Cookie" class="headerlink" title="获取浏览器在网站上的Cookie"></a>获取浏览器在网站上的Cookie</h3><p>从控制台代码看Cookie,浏览器F12打开在控制台输入<strong>document.cookie</strong>来获取当前网站的Cookie</p><p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/RgO5wtlgai4KY6nUilctgWPTasmG4TTfx*r89ERjXs8!/b/dMAAAAAAAAAA&amp;bo=vgaWAQAAAAADFx0!&amp;rf=viewer_4" alt=""></p><h3 id="使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入"><a href="#使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入" class="headerlink" title="使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入"></a>使用BurpSuite进行抓包改包获取Cookie然后再用sqlmap进行Cookie注入</h3><p><img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/wsK5XilHd1EfPeWSPD4YOFJeEExo0yAMSmjRryoX17U!/b/dL8AAAAAAAAA&amp;bo=eAOVAgAAAAADB84!&amp;rf=viewer_4" alt=""></p><h3 id="使用SQLMap获取数据库信息"><a href="#使用SQLMap获取数据库信息" class="headerlink" title="使用SQLMap获取数据库信息"></a>使用SQLMap获取数据库信息</h3><ol><li>–cookie “Cookie值”      指定网页的cookie   </li><li>–current-db             获取当前网页的库名</li><li>-D “数据库名” –tables       获取数据库的表名</li><li>-D “数据库名” -T “表名” –columns        获取表中的字段</li><li>-D “数据库名” -T “表名” -C “列名” –dump     获取字段的值</li></ol><p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/Ti4XVfvYHPH6dnCsjIRNBTn44ZCAv.IMb*rSFJXIMg0!/b/dFMBAAAAAAAA&amp;bo=PgUmAgAAAAADFy0!&amp;rf=viewer_4" alt=""></p><h1 id="如何防范Cookie注入"><a href="#如何防范Cookie注入" class="headerlink" title="如何防范Cookie注入"></a>如何防范Cookie注入</h1><ol><li>不能在Cookie中保存敏感信息,比如用户名和密码</li><li>对从客户端取得的Cookie信息进行严格的校验.</li><li>记录非法Cookie</li><li>使用SSL/TLS来传递Cookie信息</li><li>在获取客户端提交的数据时指明数据提交的方式</li></ol><h1 id="如何寻找Cookie注入的网站"><a href="#如何寻找Cookie注入的网站" class="headerlink" title="如何寻找Cookie注入的网站"></a>如何寻找Cookie注入的网站</h1><pre><code>inurl: asp?id=inurl:login.asp chinainurl:login.asp Taiwan</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> SQLMap </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>ScrapyCrawlSpider爬取1药网</title>
       <link href="/2019/03/26/scrapycrawlspider-pa-qu-1-yao-wang/"/>
       <url>/2019/03/26/scrapycrawlspider-pa-qu-1-yao-wang/</url>
