@@ -4,12 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="ScrapyCrawlSpider案例腾讯招聘爬虫, 程序员小黑">
-    <meta name="description" content="结果展示
-{
-    &amp;quot;职位名字&amp;quot;:&amp;quot;27553-腾讯音乐测试开发工程师（深圳）&amp;quot;,
-    &amp;quot;要求&amp;quot;:[
-        &amp;quot;计算机相关专业本科及以上学历；&amp;quot;,">
+    <meta name="keywords" content="常用正则表达式总结, 程序员小黑">
+    <meta name="description" content="非负整数：^\d+$
+正整数：^[0-9][1-9][0-9]$
+非正整数：^((-\d+)|(0+))$
+负整数：^-[0-9][1-9][0-9]$
+整数：^-?\d+$
+非负浮点数：^\d+(.\d+)?$
+正浮点数 : ^((0-9">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>ScrapyCrawlSpider案例腾讯招聘爬虫 | 程序员小黑</title>
+    <title>常用正则表达式总结 | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -274,13 +276,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&bo=CwU4BAAAAAARBwI!&rf=viewer_4')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://m.qpic.cn/psb?/V10Lajvl1FgUNv/vBJHooQKYRtMaQJff5EpPw6mDDEjn5iySxbqzUsRCcw!/b/dDcBAAAAAAAA&bo=BgRDAgAAAAARB3M!&rf=viewer_4')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        ScrapyCrawlSpider案例腾讯招聘爬虫
+                        常用正则表达式总结
                     </div>
                 </div>
             </div>
@@ -389,17 +391,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Python爬虫/" target="_blank">
-                                <span class="chip bg-color">Python爬虫</span>
-                            </a>
-                        
-                            <a href="/tags/Scrapy/" target="_blank">
-                                <span class="chip bg-color">Scrapy</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -407,8 +401,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                Python
+                            <a href="/categories/Regex/" class="post-category" target="_blank">
+                                Regex
                             </a>
                         
                     </div>
@@ -419,21 +413,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-12-31
+                    2019-04-16
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        662
+                        602
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        2 分
                     </div>
                     
                 
@@ -449,103 +443,53 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="结果展示"><a href="#结果展示" class="headerlink" title="结果展示"></a>结果展示</h1><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/pC.BjHS61tcpui4wiUh*nyscELWojfOQhziAA6HNWl8!/b/dMMAAAAAAAAA&amp;bo=gQZFAwAAAAADB.M!&amp;rf=viewer_4" alt="结果展示"></p>
-<pre><code>{
-    &quot;职位名字&quot;:&quot;27553-腾讯音乐测试开发工程师（深圳）&quot;,
-    &quot;要求&quot;:[
-        &quot;计算机相关专业本科及以上学历；&quot;,
-        &quot;3年以上系统测试工作经验，有白盒测试经验，有自动化测试框架开发经验者优先；&quot;,
-        &quot;具有Web、Android和IOS自动化测试经验，熟悉selenium 、Appium框架，熟练使用Jmeter进行性能测试；&quot;,
-        &quot;熟悉Linux系统，MySql数据库, 以及TCP/IP, HTTP等网络协议；&quot;,
-        &quot;熟悉java/C或C++，熟悉shell/python/PHP/perl等一种脚本语言；&quot;,
-        &quot;熟悉测试流程和规范，了解功能测试，性能测试，接口测试和单元测试等测试方法；&quot;,
-        &quot;学习能力和技术钻研能力强，良好的质量意识、沟通和团队合作能力；&quot;,
-        &quot;工作积极主动，执行力强，能够快速解决问题。&quot;
-    ],
-    &quot;工作地点&quot;:&quot;深圳&quot;,
-    &quot;招聘人数&quot;:&quot;1人&quot;
-}
-</code></pre><h1 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h1><pre><code>L:.
-│  scrapy.cfg
-│  start.py
-│  腾讯Python职位招聘信息.json
-│
-└─TecentSpider
-    │  items.py
-    │  middlewares.py
-    │  pipelines.py
-    │  settings.py
-    │  __init__.py
-    │
-    ├─spiders
-    │  │  TecentZhaoPin.py
-    │  │  __init__.py
-    │  │
-</code></pre><h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>TecentZhaoPin.py</p>
-<pre><code>    # -*- coding: utf-8 -*-
-import scrapy
-from scrapy.linkextractors import LinkExtractor
-from scrapy.spiders import CrawlSpider, Rule
-from TecentSpider.items import TecentspiderItem
+                <p>非负整数：^\d+$</p>
+<p>正整数：^[0-9]<em>[1-9][0-9]</em>$</p>
+<p>非正整数：^((-\d+)|(0+))$</p>
+<p>负整数：^-[0-9]<em>[1-9][0-9]</em>$</p>
+<p>整数：^-?\d+$</p>
+<p>非负浮点数：^\d+(.\d+)?$</p>
+<p>正浮点数 : ^((0-9)+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)$</p>
+<p>非正浮点数：^((-\d+.\d+)?)|(0+(.0+)?))$</p>
+<p>负浮点数：^(-((正浮点数正则式)))$</p>
+<p>英文字符串：^[A-Za-z]+$</p>
+<p>英文大写串：^[A-Z]+$</p>
+<p>英文小写串：^[a-z]+$</p>
+<p>英文字符数字串：^[A-Za-z0-9]+$</p>
+<p>英数字加下划线串：^\w+$</p>
+<p>E-mail地址：^[\w-]+(.[\w-]+)*@[\w-]+(.[\w-]+)+$</p>
+<p>URL：^[a-zA-Z]+://(\w+(-\w+)<em>)(.(\w+(-\w+)</em>))<em>(\?\s</em>)?$<br> 或：^http:\/\/[A-Za-z0-9]+.[A-Za-z0-9]+[\/=\?%-&amp;_~`@[]\’:+!]<em>([^&lt;&gt;\”\”])</em>$</p>
+<p>邮政编码：^[1-9]\d{5}$</p>
+<p>中文：^[\u0391-\uFFE5]+$</p>
+<p>电话号码：^(((\d{2,3}))|(\d{3}-))?((0\d{2,3})|0\d{2,3}-)?[1-9]\d{6,7}(-\d{1,4})?$</p>
+<p>手机号码：^(((\d{2,3}))|(\d{3}-))?13\d{9}$</p>
+<p>双字节字符(包括汉字在内)：^\x00-\xff</p>
+<p>匹配首尾空格：(^\s<em>)|(\s</em>$)（像vbscript那样的trim函数）</p>
+<p>匹配HTML标记：&lt;(.<em>)&gt;.</em>&lt;\/\1&gt;|&lt;(.*) \/&gt;</p>
+<p>匹配空行：\n[\s| ]*\r</p>
+<p>提取信息中的网络链接：(h|H)(r|R)(e|E)(f|F)  <em>=  </em>(‘|”)?(\w|\|\/|.)+(‘|”|  *|&gt;)?</p>
+<p>提取信息中的邮件地址：\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)*</p>
+<p>提取信息中的图片链接：(s|S)(r|R)(c|C)  <em>=  </em>(‘|”)?(\w|\|\/|.)+(‘|”|  *|&gt;)?</p>
+<p>提取信息中的IP地址：(\d+).(\d+).(\d+).(\d+)</p>
+<p>提取信息中的中国手机号码：(86)<em>0</em>13\d{9}</p>
+<p>提取信息中的中国固定电话号码：((\d{3,4})|\d{3,4}-|\s)?\d{8}</p>
+<p>提取信息中的中国电话号码（包括移动和固定电话）：((\d{3,4})|\d{3,4}-|\s)?\d{7,14}</p>
+<p>提取信息中的中国邮政编码：[1-9]{1}(\d+){5}</p>
+<p>提取信息中的浮点数（即小数）：(-?\d*).?\d+</p>
+<p>提取信息中的任何数字 ：(-?\d*)(.\d+)? </p>
+<p>IP：(\d+).(\d+).(\d+).(\d+)</p>
+<p>电话区号：/^0\d{2,3}$/</p>
+<p>腾讯QQ号：^[1-9]<em>[1-9][0-9]</em>$</p>
+<p>帐号(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$</p>
+<p>中文、英文、数字及下划线：^[\u4e00-\u9fa5_a-zA-Z0-9]+$</p>
+<p>匹配中文字符的正则表达式： [\u4e00-\u9fa5]</p>
+<p>匹配双字节字符(包括汉字在内)：[^\x00-\xff]</p>
+<p>匹配空行的正则表达式：\n[\s| ]*\r</p>
+<p>匹配HTML标记的正则表达式：/&lt;(.<em>)&gt;.</em>&lt;\/\1&gt;|&lt;(.*) \/&gt;/</p>
+<p>sql语句：^(select|drop|delete|create|update|insert).*$</p>
+<p>匹配首尾空格的正则表达式：(^\s<em>)|(\s</em>$)</p>
+<p>匹配Email地址的正则表达式：\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)*</p>
 
-class TecentzhaopinSpider(CrawlSpider):
-    name = &#39;TecentZhaoPin&#39;
-    allowed_domains = [&#39;hr.tencent.com&#39;]
-    start_urls = [&#39;https://hr.tencent.com/position.php?keywords=python&#39;]
-
-    rules = (
-        Rule(LinkExtractor(allow=r&#39;.+&amp;start=\d&#39;), follow=True),       # 下一页的获取
-        Rule(LinkExtractor(allow=r&#39;.+\d&amp;keywords=python&amp;tid=0&amp;lid=0&#39;),callback=&#39;parse_item&#39;,follow=False), # 详情页面的URL获取
-    )
-
-    def parse_item(self, response):
-        job_title = response.xpath(&quot;//*[@id=&#39;sharetitle&#39;]/text()&quot;).get()     # 职位名
-        require = response.xpath(&quot;/html/body/div[3]/div/table/tr[4]/td/ul//text()&quot;).getall()      # 职位要求\
-        site = response.xpath(&quot;/html/body/div[3]/div/table/tr[@class=&#39;c bottomline&#39;]/td[1]/text()&quot;).get()   # 工作地点
-        people_num = response.xpath(&#39;/html/body/div[3]/div/table/tr[2]/td[3]/text()&#39;).get()     # 招聘人数
-        print(f&quot;职位名:{job_title}\n职位要求{require}\n工作地点{site}\n招聘人数{people_num}&quot;)
-        item = TecentspiderItem(job_title=job_title,require=require,site=site,people_num=people_num)
-        yield item
-</code></pre><p>items.py</p>
-<pre><code>import scrapy
-class TecentspiderItem(scrapy.Item):
-    job_title = scrapy.Field()      # 职位名
-    require = scrapy.Field()        # 职位要求
-    site = scrapy.Field()           # 工作地点
-    people_num = scrapy.Field()     # 招聘人数
-</code></pre><p>middlewares.py</p>
-<p>默认不变</p>
-<p>pipelines.py</p>
-<pre><code>from scrapy.exporters import JsonLinesItemExporter
-
-
-class TecentspiderPipeline(object):
-
-    def __init__(self):
-        self.fileProject = open(&quot;腾讯Python职位招聘信息.json&quot;, &#39;wb&#39;)  # json文件对象
-        self.exporters = JsonLinesItemExporter(self.fileProject, ensure_ascii=False, encoding=&#39;utf-8&#39;)
-
-    def process_item(self, item, spider):
-        self.exporters.export_item(item)
-        return item
-
-    def close_spider(self, spider):
-        self.fileProject.close()
-</code></pre><p>settings.py</p>
-<pre><code>BOT_NAME = &#39;TecentSpider&#39;
-
-SPIDER_MODULES = [&#39;TecentSpider.spiders&#39;]
-NEWSPIDER_MODULE = &#39;TecentSpider.spiders&#39;
-ROBOTSTXT_OBEY = True
-DOWNLOAD_DELAY = 1
-ITEM_PIPELINES = {
-   &#39;TecentSpider.pipelines.TecentspiderPipeline&#39;: 300,
-}
-</code></pre><p>start.py</p>
-<pre><code>from scrapy import cmdline
-
-cmdline.execute(&quot;scrapy crawl TecentZhaoPin&quot;.split())
-</code></pre>
             </div>
             <hr>
 
@@ -568,7 +512,7 @@ cmdline.execute(&quot;scrapy crawl TecentZhaoPin&quot;.split())
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/31/scrapycrawlspider-an-li-teng-xun-zhao-pin-pa-chong/" class="b-link-green">ScrapyCrawlSpider案例腾讯招聘爬虫</a>
+                    <a href="/2019/04/16/chang-yong-zheng-ze-biao-da-shi-zong-jie/" class="b-link-green">常用正则表达式总结</a>
                 </p>
             </div>
         </div>
@@ -613,51 +557,42 @@ cmdline.execute(&quot;scrapy crawl TecentZhaoPin&quot;.split())
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2018/12/31/scrapycrawlspider-an-li-an-ju-ke-er-shou-fang-pa-chong/">
+                <a href="/2019/04/16/chang-yong-zheng-ze-biao-da-shi-zong-jie/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider案例安居客二手房爬虫">
+                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/vBJHooQKYRtMaQJff5EpPw6mDDEjn5iySxbqzUsRCcw!/b/dDcBAAAAAAAA&amp;bo=BgRDAgAAAAARB3M!&amp;rf=viewer_4" class="responsive-img" alt="常用正则表达式总结">
                         
-                        <span class="card-title">ScrapyCrawlSpider案例安居客二手房爬虫</span>
+                        <span class="card-title">常用正则表达式总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">数据展示
-{
-    &quot;小区名&quot;:&quot;学府名苑&quot;,
-    &quot;总价&quot;:&quot;75&quot;,
-    &quot;首付&quot;:&quot;22.50万&quot;,
- </div>
+                    <div class="summary block-with-text">非负整数：^\d+$
+正整数：^[0-9][1-9][0-9]$
+非正整数：^((-\d+)|(0+))$
+负整数：^-[0-9][1-9][0-9]$
+整数：^-?\d+$
+非负浮点数：^\d+(.\d+)?$
+正浮点数 : ^((0-9</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/Regex/" class="post-category" target="_blank">
+                                    Regex
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Python爬虫/" target="_blank">
-                        <span class="chip bg-color">Python爬虫</span>
-                    </a>
-                    
-                    <a href="/tags/Scrapy/" target="_blank">
-                        <span class="chip bg-color">Scrapy</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -668,27 +603,27 @@ cmdline.execute(&quot;scrapy crawl TecentZhaoPin&quot;.split())
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/12/29/scrapycrawlspider/">
+                <a href="/2019/04/09/qing-qiu-yan-chi-zhu-ru/">
                     <div class="card-image">
                         
-                        <img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/PPWwoLRM4bzhkfUzCwJU5MdXYSnbp0s9dmORMQAIUDs!/b/dDQBAAAAAAAA&amp;bo=CwU4BAAAAAARBwI!&amp;rf=viewer_4" class="responsive-img" alt="ScrapyCrawlSpider">
+                        <img src="https://s2.ax1x.com/2019/04/09/AIZM11.jpg" class="responsive-img" alt="请求延迟注入">
                         
-                        <span class="card-title">ScrapyCrawlSpider</span>
+                        <span class="card-title">请求延迟注入</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">CrawlSpiderSpider类的设计原则是只爬取start_url列表中的网页，而CrawlSpider类定义了一些规则(rule)来提供跟进link的方便的机制，从爬取的网页中获取link并继续爬取的工作更适合。
-CrawlSpid</div>
+                    <div class="summary block-with-text">请求延迟注入延时注入主要是针对页面无变化,无法用布尔真假来判断,无法报错的情况下注入.延迟注入是通过页面返回的时间来判断,不同的Mysql数据库版本,延迟语句不同.
+Mysql &gt;= 5.0可以使用sleep()进行查询    sle</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Python/" class="post-category" target="_blank">
-                                    Python
+                            <a href="/categories/Web安全/" class="post-category" target="_blank">
+                                    Web安全
                                 </a>
                             
                             
@@ -698,12 +633,8 @@ CrawlSpid</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Python爬虫/" target="_blank">
-                        <span class="chip bg-color">Python爬虫</span>
-                    </a>
-                    
-                    <a href="/tags/Scrapy/" target="_blank">
-                        <span class="chip bg-color">Scrapy</span>
+                    <a href="/tags/SQLMap/" target="_blank">
+                        <span class="chip bg-color">SQLMap</span>
                     </a>
                     
                 </div>
