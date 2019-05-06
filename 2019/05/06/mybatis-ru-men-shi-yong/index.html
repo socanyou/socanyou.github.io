@@ -428,14 +428,14 @@ username v">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.4k
+                        1.6k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        8 分
                     </div>
                     
                 
@@ -612,7 +612,8 @@ public interface UserDao {
         &lt;mapper resource=&quot;dao/UserDao.xml&quot;/&gt;
     &lt;/mappers&gt;
 &lt;/configuration&gt;
-</code></pre><h2 id="创建映射配置文件"><a href="#创建映射配置文件" class="headerlink" title="创建映射配置文件"></a>创建映射配置文件</h2><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+</code></pre><h2 id="创建映射配置文件"><a href="#创建映射配置文件" class="headerlink" title="创建映射配置文件"></a>创建映射配置文件</h2><p><strong>创建位置：必须和持久层接口在相同的包中。</strong><br><strong>名称：必须以持久层接口名称命名文件名，扩展名是.xml</strong></p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE mapper
         PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;
         &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
@@ -623,6 +624,21 @@ public interface UserDao {
         select * from user
     &lt;/select&gt;
 &lt;/mapper&gt;
+</code></pre><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在idea中创建目录的时候，目录和包是不一样的</p>
+<pre><code>包在创建时：com.chen.dao它是三级结构
+目录在创建时：com.chen.dao是一级目录
+</code></pre><p><strong>mybatis的映射配置文件位置必须和dao接口的包结构相同</strong></p>
+<p><strong>映射配置文件的mapper标签namespace属性的取值必须是dao接口的全限定类名</strong></p>
+<pre><code>&lt;mapper namespace=&quot;dao.UserDao&quot;&gt;
+    &lt;!--配置查询所有--&gt;
+    &lt;select id=&quot;findAll&quot; resultType=&quot;domain.User&quot;&gt;
+        select * from user
+    &lt;/select&gt;
+&lt;/mapper&gt;
+</code></pre><p>映射配置文件的操作配置（select），id属性的取值必须是dao接口的方法名</p>
+<pre><code>&lt;select id=&quot;findAll&quot; resultType=&quot;domain.User&quot;&gt;
+        select * from user
+&lt;/select&gt;
 </code></pre><h1 id="编写测试类"><a href="#编写测试类" class="headerlink" title="编写测试类"></a>编写测试类</h1><pre><code>package test;
 
 import domain.User;
@@ -991,7 +1007,7 @@ DBMS:Mysql8.0.15
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">54.2k</span>
+                <span class="white-color">54.4k</span>
             
 
             
