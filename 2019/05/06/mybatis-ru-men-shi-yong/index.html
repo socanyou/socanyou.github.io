@@ -428,7 +428,7 @@ username v">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.6k
+                        1.7k
                     </div>
                     
 
@@ -710,18 +710,20 @@ public class MyBatisTest {
 │          └─test
 │                  MyBatisTest.java
 </code></pre><h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://s2.ax1x.com/2019/05/06/EDSjQ1.png" alt="EDSjQ1.png"></p>
-<h1 id="基于注解的MyBatis使用"><a href="#基于注解的MyBatis使用" class="headerlink" title="基于注解的MyBatis使用"></a>基于注解的MyBatis使用</h1><h2 id="在持久层接口中添加注解"><a href="#在持久层接口中添加注解" class="headerlink" title="在持久层接口中添加注解"></a>在持久层接口中添加注解</h2><pre><code>public interface UserDao {
+<h1 id="基于注解的MyBatis使用"><a href="#基于注解的MyBatis使用" class="headerlink" title="基于注解的MyBatis使用"></a>基于注解的MyBatis使用</h1><h2 id="在持久层接口中添加注解"><a href="#在持久层接口中添加注解" class="headerlink" title="在持久层接口中添加注解"></a>在持久层接口中添加注解</h2><p>在dao接口的方法上使用@Select注解，并且指定SQL语句</p>
+<pre><code>public interface UserDao {
     /**
     * @Description: 查询所有的接口
     */
     @Select(&quot;select * from user&quot;)
     List&lt;User&gt; findAll();
 }
-</code></pre><h2 id="修改SqlMapConfig-xml"><a href="#修改SqlMapConfig-xml" class="headerlink" title="修改SqlMapConfig.xml"></a>修改SqlMapConfig.xml</h2><pre><code>注解方式
+</code></pre><h2 id="修改SqlMapConfig-xml"><a href="#修改SqlMapConfig-xml" class="headerlink" title="修改SqlMapConfig.xml"></a>修改SqlMapConfig.xml</h2><p>在SqlMapConfig.xml中的mapper配置时，<strong>使用class属性指定dao接口的全限定类名</strong></p>
+<pre><code>注解方式
 &lt;mappers&gt;
         &lt;mapper class=&quot;dao.UserDao&quot;/&gt;
 &lt;/mappers&gt;
-</code></pre><p><strong>注意在使用基于注解的 Mybatis 配置时，请移除 xml的映射配置（UserDao.xml）。</strong></p>
+</code></pre><p><strong>注意在使用基于注解的 Mybatis 配置时，务必要移除 xml的映射配置（UserDao.xml）。</strong></p>
 <p><a href="https://imgchr.com/i/EDCYIU" target="_blank" rel="noopener"><img src="https://s2.ax1x.com/2019/05/06/EDCYIU.th.png" alt="EDCYIU.th.png"></a></p>
 
             </div>
