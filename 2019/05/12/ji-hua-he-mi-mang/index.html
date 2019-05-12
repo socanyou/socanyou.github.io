@@ -4,14 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="常用正则表达式总结, 程序员小黑">
-    <meta name="description" content="非负整数：^\d+$
-正整数：^[0-9][1-9][0-9]$
-非正整数：^((-\d+)|(0+))$
-负整数：^-[0-9][1-9][0-9]$
-整数：^-?\d+$
-非负浮点数：^\d+(.\d+)?$
-正浮点数 : ^((0-9">
+    <meta name="keywords" content="计划和迷茫, 程序员小黑">
+    <meta name="description" content="设定目标目标毕业月薪8000,如何实现?学习Java开发,精通当下主流技术.什么叫做主流技术,招聘网站上的8000工资需要用到的技术.
+制定计划如何实现目标呢?将技术要求进行分类,一步一步的进行实现,迭代再迭代.
+迷茫期近半年我陷入了自我的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>常用正则表达式总结 | 程序员小黑</title>
+    <title>计划和迷茫 | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,7 +259,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'xiaochen0.';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -276,13 +272,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.ax1x.com/2019/05/07/EsVWhq.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.ax1x.com/2019/05/07/EsZCHH.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        常用正则表达式总结
+                        计划和迷茫
                     </div>
                 </div>
             </div>
@@ -401,8 +397,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Regex/" class="post-category" target="_blank">
-                                Regex
+                            <a href="/categories/生活琐碎/" class="post-category" target="_blank">
+                                生活琐碎
                             </a>
                         
                     </div>
@@ -413,21 +409,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-16
+                    2019-05-12
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        602
+                        542
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -443,52 +439,10 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>非负整数：^\d+$</p>
-<p>正整数：^[0-9]<em>[1-9][0-9]</em>$</p>
-<p>非正整数：^((-\d+)|(0+))$</p>
-<p>负整数：^-[0-9]<em>[1-9][0-9]</em>$</p>
-<p>整数：^-?\d+$</p>
-<p>非负浮点数：^\d+(.\d+)?$</p>
-<p>正浮点数 : ^((0-9)+.[0-9]<em>[1-9][0-9]</em>)|([0-9]<em>[1-9][0-9]</em>.[0-9]+)|([0-9]<em>[1-9][0-9]</em>)$</p>
-<p>非正浮点数：^((-\d+.\d+)?)|(0+(.0+)?))$</p>
-<p>负浮点数：^(-((正浮点数正则式)))$</p>
-<p>英文字符串：^[A-Za-z]+$</p>
-<p>英文大写串：^[A-Z]+$</p>
-<p>英文小写串：^[a-z]+$</p>
-<p>英文字符数字串：^[A-Za-z0-9]+$</p>
-<p>英数字加下划线串：^\w+$</p>
-<p>E-mail地址：^[\w-]+(.[\w-]+)*@[\w-]+(.[\w-]+)+$</p>
-<p>URL：^[a-zA-Z]+://(\w+(-\w+)<em>)(.(\w+(-\w+)</em>))<em>(\?\s</em>)?$<br> 或：^http:\/\/[A-Za-z0-9]+.[A-Za-z0-9]+[\/=\?%-&amp;_~`@[]\’:+!]<em>([^&lt;&gt;\”\”])</em>$</p>
-<p>邮政编码：^[1-9]\d{5}$</p>
-<p>中文：^[\u0391-\uFFE5]+$</p>
-<p>电话号码：^(((\d{2,3}))|(\d{3}-))?((0\d{2,3})|0\d{2,3}-)?[1-9]\d{6,7}(-\d{1,4})?$</p>
-<p>手机号码：^(((\d{2,3}))|(\d{3}-))?13\d{9}$</p>
-<p>双字节字符(包括汉字在内)：^\x00-\xff</p>
-<p>匹配首尾空格：(^\s<em>)|(\s</em>$)（像vbscript那样的trim函数）</p>
-<p>匹配HTML标记：&lt;(.<em>)&gt;.</em>&lt;\/\1&gt;|&lt;(.*) \/&gt;</p>
-<p>匹配空行：\n[\s| ]*\r</p>
-<p>提取信息中的网络链接：(h|H)(r|R)(e|E)(f|F)  <em>=  </em>(‘|”)?(\w|\|\/|.)+(‘|”|  *|&gt;)?</p>
-<p>提取信息中的邮件地址：\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)*</p>
-<p>提取信息中的图片链接：(s|S)(r|R)(c|C)  <em>=  </em>(‘|”)?(\w|\|\/|.)+(‘|”|  *|&gt;)?</p>
-<p>提取信息中的IP地址：(\d+).(\d+).(\d+).(\d+)</p>
-<p>提取信息中的中国手机号码：(86)<em>0</em>13\d{9}</p>
-<p>提取信息中的中国固定电话号码：((\d{3,4})|\d{3,4}-|\s)?\d{8}</p>
-<p>提取信息中的中国电话号码（包括移动和固定电话）：((\d{3,4})|\d{3,4}-|\s)?\d{7,14}</p>
-<p>提取信息中的中国邮政编码：[1-9]{1}(\d+){5}</p>
-<p>提取信息中的浮点数（即小数）：(-?\d*).?\d+</p>
-<p>提取信息中的任何数字 ：(-?\d*)(.\d+)? </p>
-<p>IP：(\d+).(\d+).(\d+).(\d+)</p>
-<p>电话区号：/^0\d{2,3}$/</p>
-<p>腾讯QQ号：^[1-9]<em>[1-9][0-9]</em>$</p>
-<p>帐号(字母开头，允许5-16字节，允许字母数字下划线)：^[a-zA-Z][a-zA-Z0-9_]{4,15}$</p>
-<p>中文、英文、数字及下划线：^[\u4e00-\u9fa5_a-zA-Z0-9]+$</p>
-<p>匹配中文字符的正则表达式： [\u4e00-\u9fa5]</p>
-<p>匹配双字节字符(包括汉字在内)：[^\x00-\xff]</p>
-<p>匹配空行的正则表达式：\n[\s| ]*\r</p>
-<p>匹配HTML标记的正则表达式：/&lt;(.<em>)&gt;.</em>&lt;\/\1&gt;|&lt;(.*) \/&gt;/</p>
-<p>sql语句：^(select|drop|delete|create|update|insert).*$</p>
-<p>匹配首尾空格的正则表达式：(^\s<em>)|(\s</em>$)</p>
-<p>匹配Email地址的正则表达式：\w+([-+.]\w+)<em>@\w+([-.]\w+)</em>.\w+([-.]\w+)*</p>
+                <h1 id="设定目标"><a href="#设定目标" class="headerlink" title="设定目标"></a>设定目标</h1><p>目标毕业月薪8000,如何实现?<br>学习Java开发,精通当下主流技术.<br>什么叫做主流技术,招聘网站上的8000工资需要用到的技术.</p>
+<h1 id="制定计划"><a href="#制定计划" class="headerlink" title="制定计划"></a>制定计划</h1><p>如何实现目标呢?<br>将技术要求进行分类,一步一步的进行实现,迭代再迭代.</p>
+<h1 id="迷茫期"><a href="#迷茫期" class="headerlink" title="迷茫期"></a>迷茫期</h1><p>近半年我陷入了自我的迷茫期,突然发现不知道自己将来要干啥,玩儿了近两年的Python,不能算得上是精通,至少收获了一些技能<br>    爬虫,web.<br>今天将自己关到屋子里开始想我为什么迷茫,到底想要什么?<br>发现自己迷茫的原因在于在Java语言和Python语言的选择上,<br>    Python作为当下最火的一门编程语言,简单易学,应用非常广,1运维,2web开发,3当前最火的人工智能,4大数据,5网络安全<br>    但是我所知道的在这些个工作岗位中,Python仅仅是一门语言而已,其核心并不在于Python,就拿在人工智能来说,如果只会Python而不知道统计、运筹、数学、应用数学、信息技术等专业的内容,而且还需要一定的学历门槛(可以去招聘网站验证),是远远达不到任职要求的.<br>虽然日后可能用不到Python,但是我不后悔我学过Python,因为Python代码真的非常优雅.</p>
+<p>虽然我所学专业是Java,但是我太清楚自己对Java的熟悉程度了.<br>当下学校课程体系,和招聘岗位的要求差别太大.<br>课程落后太多.<br>Java基础没有最最重要的几个知识点:<br>    Java多线程<br>    Java8新特性<br>    Java网络编程<br>框架部分:当下最主流的SpringMVC,SpringMVC,Mybatis框架没有,学的还是几年前的老架构S(Struts2)S(Spring)H(Hibernate)<br>包管理工具:Maven<br>版本控制工具:不教Git最起码要了解点儿SVN吧?<br>当下最流行的框架:Lucene,SpringDataJPA,SpringBoot<br>其实大二开始我就觉得我在学校就是浪费时间</p>
 
             </div>
             <hr>
@@ -512,7 +466,7 @@
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/16/chang-yong-zheng-ze-biao-da-shi-zong-jie/" class="b-link-green">常用正则表达式总结</a>
+                    <a href="/2019/05/12/ji-hua-he-mi-mang/" class="b-link-green">计划和迷茫</a>
                 </p>
             </div>
         </div>
@@ -557,50 +511,38 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/24/sshcrm-xiang-mu-shuo-ming/">
+                <a href="/2019/05/12/ji-hua-he-mi-mang/">
                     <div class="card-image">
                         
-                        <img src="https://s2.ax1x.com/2019/04/24/EVUmI1.jpg" class="responsive-img" alt="SSHCRM项目说明">
+                        <img src="https://s2.ax1x.com/2019/05/07/EsZCHH.jpg" class="responsive-img" alt="计划和迷茫">
                         
-                        <span class="card-title">SSHCRM项目说明</span>
+                        <span class="card-title">计划和迷茫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">项目展示
-环境准备JDK:1.8.0_201
-Server:Tomcat8.5
-DBMS:Mysql8.0.15
-架构:SSH
-    Hibernate5.0.7
-    Spring4.2.4
-    Struts2.3.24
-项目所需</div>
+                    <div class="summary block-with-text">设定目标目标毕业月薪8000,如何实现?学习Java开发,精通当下主流技术.什么叫做主流技术,招聘网站上的8000工资需要用到的技术.
+制定计划如何实现目标呢?将技术要求进行分类,一步一步的进行实现,迭代再迭代.
+迷茫期近半年我陷入了自我的</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SSH/" class="post-category" target="_blank">
-                                    SSH
+                            <a href="/categories/生活琐碎/" class="post-category" target="_blank">
+                                    生活琐碎
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java-Struts2-Spring-Hibernate/" target="_blank">
-                        <span class="chip bg-color">Java - Struts2 - Spring - Hibernate</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -611,27 +553,32 @@ DBMS:Mysql8.0.15
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/09/qing-qiu-yan-chi-zhu-ru/">
+                <a href="/2019/05/06/mybatis-ru-men-shi-yong/">
                     <div class="card-image">
                         
-                        <img src="https://s2.ax1x.com/2019/04/09/AIZM11.jpg" class="responsive-img" alt="请求延迟注入">
+                        <img src="https://s2.ax1x.com/2019/05/06/EDPlfe.png" class="responsive-img" alt="MyBatis入门使用">
                         
-                        <span class="card-title">请求延迟注入</span>
+                        <span class="card-title">MyBatis入门使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">请求延迟注入延时注入主要是针对页面无变化,无法用布尔真假来判断,无法报错的情况下注入.延迟注入是通过页面返回的时间来判断,不同的Mysql数据库版本,延迟语句不同.
-Mysql &gt;= 5.0可以使用sleep()进行查询    sle</div>
+                    <div class="summary block-with-text">搭建MyBatis开发环境创建项目
+数据库准备新建数据库并插入测试数据
+use chuanzhijava
+
+CREATE TABLE user (
+id int(11) NOT NULL auto_increment,
+username v</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                    Web安全
+                            <a href="/categories/MyBatis/" class="post-category" target="_blank">
+                                    MyBatis
                                 </a>
                             
                             
@@ -641,8 +588,12 @@ Mysql &gt;= 5.0可以使用sleep()进行查询    sle</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/MyBatis/" target="_blank">
+                        <span class="chip bg-color">MyBatis</span>
                     </a>
                     
                 </div>
