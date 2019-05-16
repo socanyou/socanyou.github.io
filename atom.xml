@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-05-16T06:41:00.416Z</updated>
+  <updated>2019-05-16T07:05:28.854Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MyBatis的输出结果封装</title>
+    <link href="https://codinglife.site/2019/05/16/mybatis-de-shu-chu-jie-guo-feng-zhuang/"/>
+    <id>https://codinglife.site/2019/05/16/mybatis-de-shu-chu-jie-guo-feng-zhuang/</id>
+    <published>2019-05-16T06:42:53.000Z</published>
+    <updated>2019-05-16T07:05:28.854Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;resultType配置结果类型&quot;&gt;&lt;a href=&quot;#resultType配置结果类型&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
+    
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
+    
+      <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MyBatis的参数深入</title>
     <link href="https://codinglife.site/2019/05/16/mybatis-de-can-shu-shen-ru/"/>
     <id>https://codinglife.site/2019/05/16/mybatis-de-can-shu-shen-ru/</id>
     <published>2019-05-16T06:17:21.000Z</published>
-    <updated>2019-05-16T06:41:00.416Z</updated>
+    <updated>2019-05-16T06:41:40.413Z</updated>
     
     <summary type="html">
     
@@ -515,34 +543,6 @@
         
         
           &lt;h1 id=&quot;什么是UserAgent&quot;&gt;&lt;a href=&quot;#什么是UserAgent&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ScrapyCrawlSpider拉勾网全站抓取</title>
-    <link href="https://codinglife.site/2019/01/25/scrapycrawlspider-la-gou-wang-quan-zhan-zhua-qu/"/>
-    <id>https://codinglife.site/2019/01/25/scrapycrawlspider-la-gou-wang-quan-zhan-zhua-qu/</id>
-    <published>2019-01-25T09:47:24.000Z</published>
-    <updated>2019-05-07T07:38:30.153Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;数据展示&quot;&gt;&lt;a href=&quot;#数据展示&quot; class=&quot;headerlink&quot; title=&quot;数据展示&quot;&gt;&lt;/a&gt;数据展示&lt;/h1&gt;&lt;p&gt;&lt;img
         
       
     

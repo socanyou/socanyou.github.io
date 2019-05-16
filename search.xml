@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>MyBatis的输出结果封装</title>
+      <link href="/2019/05/16/mybatis-de-shu-chu-jie-guo-feng-zhuang/"/>
+      <url>/2019/05/16/mybatis-de-shu-chu-jie-guo-feng-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="resultType配置结果类型"><a href="#resultType配置结果类型" class="headerlink" title="resultType配置结果类型"></a>resultType配置结果类型</h1><p>resultType是用来指定结果集的类型,它支持基本类型和实体类类型.和parameterType一样,如果注册了类型的别名,可以直接使用别名,没有注册过别名必须使用类的全限定名.同时当是实体类名称时,实体类中的属性必须和查询语句中的列名保持一致.</p><h2 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h2><h3 id="DAO层接口"><a href="#DAO层接口" class="headerlink" title="DAO层接口"></a>DAO层接口</h3><pre><code>//查询总用户数int findTotal();</code></pre><h3 id="映射文件配置"><a href="#映射文件配置" class="headerlink" title="映射文件配置"></a>映射文件配置</h3><pre><code>&lt;!--查询总用户数--&gt;&lt;select id=&quot;findTotal&quot; resultType=&quot;int&quot;&gt;    select count(id) from user;&lt;/select&gt;</code></pre><h3 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h3><pre><code>// 查询总用户数@Testpublic void testfindTotal() {    Integer count = userDao.findTotal();    System.out.println(count);}</code></pre><h2 id="实体类类型"><a href="#实体类类型" class="headerlink" title="实体类类型"></a>实体类类型</h2><h3 id="DAO层接口-1"><a href="#DAO层接口-1" class="headerlink" title="DAO层接口"></a>DAO层接口</h3><pre><code>/** * @Description: 查询所有用户 * @Param: [] * @return: java.util.List&lt;domain.User&gt; * @Author: Chen */List&lt;User&gt; findAll();</code></pre><h3 id="映射文件的配置"><a href="#映射文件的配置" class="headerlink" title="映射文件的配置"></a>映射文件的配置</h3><pre><code>&lt;!--查询所有--&gt;&lt;select id=&quot;findAll&quot; resultType=&quot;domain.User&quot;&gt;    select * from user;&lt;/select&gt;</code></pre><h3 id="测试方法-1"><a href="#测试方法-1" class="headerlink" title="测试方法"></a>测试方法</h3><pre><code>@Testpublic void testFindAll() {    //使用代理对象执行查询所有方法    List&lt;User&gt; users = userDao.findAll();    for (User user : users    ) {        System.out.println(user);    }}</code></pre><h2 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h2><p>当实体类名称和数据库列名不一样的时候是查不出数据的.如果遇到这种情况有两种解决方法:</p><ol><li>使用sql语句的as关键字给列名起别名.格式:<strong>列名 as 实体类属性名</strong></li><li>使用resultMap</li></ol><h1 id="resultMap结果类型"><a href="#resultMap结果类型" class="headerlink" title="resultMap结果类型"></a>resultMap结果类型</h1><p>resultMap标签可以建立查询的列名和实体类的属性名不一致时建立对应关系.从而实现封装.然后在select标签中使用resultMap属性指定引用即可.同时resultMap可以实现将查询结果映射为复杂类型的pojo,比如在查询结果映射对象中包括POJO和List实现一对一,一对多查询.</p><h2 id="实体类"><a href="#实体类" class="headerlink" title="实体类"></a>实体类</h2><pre><code>package domain;import java.util.Date;/*** @program: day2_1mybatisCRUD* @description: 实体类* @author: Mr.Wang* @create: 2019-05-07 23:02**/public class User {    //字段名字要和数据库中的字段名字一样    private Integer userId;    private String userUsername;    private Date userBirthday;    private String userSex;    private String userAddress;    public Integer getUserId() {        return userId;    }    public void setUserId(Integer userId) {        this.userId = userId;    }    public String getUserUsername() {        return userUsername;    }    public void setUserUsername(String userUsername) {        this.userUsername = userUsername;    }    public Date getUserBirthday() {        return userBirthday;    }    public void setUserBirthday(Date userBirthday) {        this.userBirthday = userBirthday;    }    public String getUserSex() {        return userSex;    }    public void setUserSex(String userSex) {        this.userSex = userSex;    }    public String getUserAddress() {        return userAddress;    }    public void setUserAddress(String userAddress) {        this.userAddress = userAddress;    }    @Override    public String toString() {        return &quot;User{&quot; +                &quot;userId=&quot; + userId +                &quot;, userUsername=&#39;&quot; + userUsername + &#39;\&#39;&#39; +                &quot;, userBirthday=&quot; + userBirthday +                &quot;, userSex=&#39;&quot; + userSex + &#39;\&#39;&#39; +                &quot;, userAddress=&#39;&quot; + userAddress + &#39;\&#39;&#39; +                &#39;}&#39;;    }}</code></pre><h2 id="数据库字段"><a href="#数据库字段" class="headerlink" title="数据库字段"></a>数据库字段</h2><pre><code>id    int(11)    NO    PRI        auto_incrementusername    varchar(32)    NO    &quot;&quot;        &quot;&quot;birthday    datetime    YES    &quot;&quot;        &quot;&quot;sex    char(1)    YES    &quot;&quot;        &quot;&quot;address    varchar(256)    YES    &quot;&quot;        &quot;&quot;</code></pre><h2 id="DAO层接口-2"><a href="#DAO层接口-2" class="headerlink" title="DAO层接口"></a>DAO层接口</h2><pre><code>List&lt;User&gt; findAll();</code></pre><h2 id="映射文件"><a href="#映射文件" class="headerlink" title="映射文件"></a>映射文件</h2><pre><code>&lt;resultMap id=&quot;userMap&quot; type=&quot;domain.User&quot;&gt;    &lt;id column=&quot;id&quot; property=&quot;userId&quot;/&gt;    &lt;result column=&quot;username&quot; property=&quot;userUsername&quot;/&gt;    &lt;result column=&quot;birthday&quot; property=&quot;userBirthday&quot;/&gt;    &lt;result column=&quot;sex&quot; property=&quot;userSex&quot;/&gt;    &lt;result column=&quot;address&quot; property=&quot;userAddress&quot;/&gt;&lt;/resultMap&gt;&lt;select id=&quot;findAll&quot; resultMap=&quot;userMap&quot;&gt;    select * from user;&lt;/select&gt;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> MyBatis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> MyBatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>MyBatis的参数深入</title>
       <link href="/2019/05/16/mybatis-de-can-shu-shen-ru/"/>
       <url>/2019/05/16/mybatis-de-can-shu-shen-ru/</url>
