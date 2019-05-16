@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>MyBatis的参数深入</title>
+      <link href="/2019/05/16/mybatis-de-can-shu-shen-ru/"/>
+      <url>/2019/05/16/mybatis-de-can-shu-shen-ru/</url>
+      
+        <content type="html"><![CDATA[<h1 id="parameterType配置参数"><a href="#parameterType配置参数" class="headerlink" title="parameterType配置参数"></a>parameterType配置参数</h1><p>给Sql语句传参数使用parameterType属性进行设置.该属性可以读取基本数据类型也可以读取引用类型,还可以是POJO类,同时也可以<strong>使用实体类的包装类</strong>.</p><p>注意:</p><p>基本数据类型和String在传参数的时候可以直接写类型名称,也可以使用包名,类名的方式.</p><p>例如:</p><p>  String–&gt;java.lang.String</p><p>为什么在传入参数的时候可以直接写类型的名称呢?因为MyBatis在加载时已经把常用的数据类型<strong>注册了别名</strong>,从而我们可以不用写包名,但是如果传入的参数是实体类的话,必须写实体类的全限定类名,因为我们的实体类名没有注册别名.</p><p><img src="https://s2.ax1x.com/2019/05/16/EHhXQO.png" alt="Mybatis内置别名"></p><h1 id="POJO"><a href="#POJO" class="headerlink" title="POJO"></a>POJO</h1><p>Plain Old Java Object普通旧Java对象（POJO）是一个普通的Java对象，不受任何特殊限制的约束,也不需要任何类路径.</p><p>POJO的含义:</p><p>有private的参数作为对象的属性,然后针对每一个参数定义get和set方法访问的接口。没有从任何类继承、也没有实现任何接口，更没有被其它框架侵入的java对象。</p><pre><code>public class QueryVo implements Serializable {    private User user;    public User getUser() {        return user;    }    public void setUser(User user) {        this.user = user;    }}</code></pre><h1 id="传递POJO包装对象"><a href="#传递POJO包装对象" class="headerlink" title="传递POJO包装对象"></a>传递POJO包装对象</h1><p>使用包装对象传递输入参数.</p><p>根据用户名查询用户信息,查询条件放到 QueryVo的 user属性中.</p><h2 id="POJO类"><a href="#POJO类" class="headerlink" title="POJO类"></a>POJO类</h2><pre><code>public class QueryVo implements Serializable {    private User user;    public User getUser() {        return user;    }    public void setUser(User user) {        this.user = user;    }}</code></pre><h2 id="编写持久层接口"><a href="#编写持久层接口" class="headerlink" title="编写持久层接口"></a>编写持久层接口</h2><pre><code>//根据QueryVO查询中的条件查询用户List&lt;User&gt; findUserByVo(QueryVo vo);</code></pre><h2 id="持久层映射文件的配置"><a href="#持久层映射文件的配置" class="headerlink" title="持久层映射文件的配置"></a>持久层映射文件的配置</h2><pre><code>&lt;!--根据QueryVO的条件查询用户#{user.username}:OGNL表达式    user:QueryVo中的属性,也就是User对象    username:user对象中的属性--&gt;&lt;select id=&quot;findUserByVo&quot; parameterType=&quot;domain.QueryVo&quot; resultType=&quot;domain.User&quot;&gt;    select * from user where username like #{user.username};&lt;/select&gt;</code></pre><h2 id="测试查询"><a href="#测试查询" class="headerlink" title="测试查询"></a>测试查询</h2><pre><code>//根据QueryVO查询中的条件查询用户@Testpublic void testFindByQueryVo() {    QueryVo queryVo = new QueryVo();    User user = new User();    user.setUsername(&quot;小%&quot;);    queryVo.setUser(user);    List&lt;User&gt; users = userDao.findUserByVo(queryVo);    for (User u :            users    ) {        System.out.println(u);    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> MyBatis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> MyBatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>MyBatis基于代理DAO实现CRUD操作</title>
       <link href="/2019/05/16/mybatis-ji-yu-dai-li-dao-shi-xian-crud-cao-zuo/"/>
       <url>/2019/05/16/mybatis-ji-yu-dai-li-dao-shi-xian-crud-cao-zuo/</url>

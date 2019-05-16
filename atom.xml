@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-05-16T04:51:34.333Z</updated>
+  <updated>2019-05-16T06:41:00.416Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MyBatis的参数深入</title>
+    <link href="https://codinglife.site/2019/05/16/mybatis-de-can-shu-shen-ru/"/>
+    <id>https://codinglife.site/2019/05/16/mybatis-de-can-shu-shen-ru/</id>
+    <published>2019-05-16T06:17:21.000Z</published>
+    <updated>2019-05-16T06:41:00.416Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;parameterType配置参数&quot;&gt;&lt;a href=&quot;#parameterType配置参数&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
+    
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
+    
+      <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MyBatis基于代理DAO实现CRUD操作</title>
     <link href="https://codinglife.site/2019/05/16/mybatis-ji-yu-dai-li-dao-shi-xian-crud-cao-zuo/"/>
     <id>https://codinglife.site/2019/05/16/mybatis-ji-yu-dai-li-dao-shi-xian-crud-cao-zuo/</id>
     <published>2019-05-16T03:47:01.000Z</published>
-    <updated>2019-05-16T04:51:34.333Z</updated>
+    <updated>2019-05-16T05:06:34.205Z</updated>
     
     <summary type="html">
     
@@ -515,34 +543,6 @@
         
         
           &lt;h1 id=&quot;数据展示&quot;&gt;&lt;a href=&quot;#数据展示&quot; class=&quot;headerlink&quot; title=&quot;数据展示&quot;&gt;&lt;/a&gt;数据展示&lt;/h1&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ScrapyCrawlSpider案例80S电影链接爬虫</title>
-    <link href="https://codinglife.site/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/"/>
-    <id>https://codinglife.site/2019/01/13/scrapycrawlspider-an-li-80s-dian-ying-lian-jie-pa-chong/</id>
-    <published>2019-01-13T08:05:48.000Z</published>
-    <updated>2019-05-07T07:38:33.458Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;项目准备&quot;&gt;&lt;a href=&quot;#项目准备&quot; class=&quot;headerlink&quot; title=&quot;项目准备&quot;&gt;&lt;/a&gt;项目准备&lt;/h1&gt;&lt;h2 id=&quot;新建Scrapy项目&quot;&gt;&lt;a href=&quot;#新建Scrapy项目&quot; class=&quot;headerlink&quot;
         
       
     
