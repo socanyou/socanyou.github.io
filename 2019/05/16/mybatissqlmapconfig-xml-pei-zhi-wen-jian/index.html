@@ -4,12 +4,22 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="POST登陆注入, 程序员小黑">
-    <meta name="description" content="POST注入原理
-POST注入的两个参数-r 从文件中加载HTTP请求(BP抓包后保存为文件,使用sqlmap的-r读取文件)
-–forms 自动获取form表单测试(常用)
-POST注入的三种方法
-利用Burpsuite抓包,然后使用sq">
+    <meta name="keywords" content="MyBatisSqlMapConfig.xml配置文件, 程序员小黑">
+    <meta name="description" content="SqlMapConfig.xml中配置的内容和顺序
+properties(属性)
+property
+
+
+settings(全局配置参数)
+setting
+
+
+typeAliases(类型别名)
+typeAliases
+package
+
+
+t">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +27,7 @@ POST注入的三种方法
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>POST登陆注入 | 程序员小黑</title>
+    <title>MyBatisSqlMapConfig.xml配置文件 | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,7 +271,7 @@ POST注入的三种方法
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'fbc51ff41767b83121d21327b6278f6c30fbe25b48c1ed029d7c2f1a08845dfe';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -274,13 +284,13 @@ POST注入的三种方法
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        POST登陆注入
+                        MyBatisSqlMapConfig.xml配置文件
                     </div>
                 </div>
             </div>
@@ -391,8 +401,12 @@ POST注入的三种方法
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SQLMap/" target="_blank">
-                                <span class="chip bg-color">SQLMap</span>
+                            <a href="/tags/MyBatis/" target="_blank">
+                                <span class="chip bg-color">MyBatis</span>
+                            </a>
+                        
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
                     </div>
@@ -403,8 +417,8 @@ POST注入的三种方法
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                Web安全
+                            <a href="/categories/MyBatis/" class="post-category" target="_blank">
+                                MyBatis
                             </a>
                         
                     </div>
@@ -415,21 +429,21 @@ POST注入的三种方法
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-09
+                    2019-05-16
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        170
+                        499
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -445,16 +459,80 @@ POST注入的三种方法
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="POST注入原理"><a href="#POST注入原理" class="headerlink" title="POST注入原理"></a>POST注入原理</h1><p><img src="https://m.qpic.cn/psb?/V14KwPpr1dBZ4U/gq4moYHgoXfw4kIIRqXSnclRsv1TXH1kuAs3MTbezsI!/b/dFQBAAAAAAAA&amp;bo=gAc4BAAAAAARB4s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/KEKMXu61rgVpMd.J9fIgYegbgCWuiy3TNK54YPy7AEw!/b/dL8AAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""></p>
-<h1 id="POST注入的两个参数"><a href="#POST注入的两个参数" class="headerlink" title="POST注入的两个参数"></a>POST注入的两个参数</h1><p>-r 从文件中加载HTTP请求(BP抓包后保存为文件,使用sqlmap的-r读取文件)</p>
-<p>–forms 自动获取form表单测试(常用)</p>
-<h1 id="POST注入的三种方法"><a href="#POST注入的三种方法" class="headerlink" title="POST注入的三种方法"></a>POST注入的三种方法</h1><ol>
-<li>利用Burpsuite抓包,然后使用sqlmap -r 来进行检测注入,利用Burpsuite抓包之后保存为Txt文件,然后利用sqlmap -r xxx.txt进行注入</li>
-<li>直接使用sqlmap输入命令,sqlmap -u “xxx.com” –forms,sqlmap会自动获取POST包,从而进行注入</li>
-<li>sqlmap -u “xxx.com” –data “标签名=数据1&amp;标签名=数据2&amp;标签名=数据3”</li>
-</ol>
-<h2 id="万能密码"><a href="#万能密码" class="headerlink" title="万能密码"></a>万能密码</h2><p>admin’ or ‘1’=’1 #</p>
-<h1 id="如何防止POST注入"><a href="#如何防止POST注入" class="headerlink" title="如何防止POST注入"></a>如何防止POST注入</h1><p><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/qW9o75pW0bq*BDfHll8qURntOL36C2F5Jwrog2zWJ00!/b/dFQBAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/0GXtwtH4.BH9tKNL7bjgM*2qLKIb*PYHOIOVfp7mlw8!/b/dL4AAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/h.UhO*iGO3n0.3diBzfzQcwpC36iF5rUkVfWMsFFhfM!/b/dLYAAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""><br><img src="http://m.qpic.cn/psb?/V14KwPpr1dBZ4U/KTWvIuydXXyxuaNagmucaC7Ywp8eXOOpieoCHPyVWYc!/b/dMAAAAAAAAAA&amp;bo=gAc4BAAAAAARF5s!&amp;rf=viewer_4" alt=""></p>
+                <h1 id="SqlMapConfig-xml中配置的内容和顺序"><a href="#SqlMapConfig-xml中配置的内容和顺序" class="headerlink" title="SqlMapConfig.xml中配置的内容和顺序"></a>SqlMapConfig.xml中配置的内容和顺序</h1><ul>
+<li>properties(属性)<ul>
+<li>property</li>
+</ul>
+</li>
+<li>settings(全局配置参数)<ul>
+<li>setting</li>
+</ul>
+</li>
+<li>typeAliases(类型别名)<ul>
+<li>typeAliases</li>
+<li>package</li>
+</ul>
+</li>
+<li>typeHandlers(类型处理器)</li>
+<li>objectFactory(对象工厂)</li>
+<li>plugins(插件)</li>
+<li>enviroments(环境集合属性对象)<ul>
+<li>enviroment(环境子属性对象)<ul>
+<li>transactionManager(事务管理)</li>
+<li>dataSoutce(数据源)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>mappers(映射器)<ul>
+<li>mapper</li>
+<li>package</li>
+</ul>
+</li>
+</ul>
+<h2 id="properties-属性配置"><a href="#properties-属性配置" class="headerlink" title="properties(属性配置)"></a>properties(属性配置)</h2><p>resource属性:用于指定properties配置文件的位置,要求配置文件必须在类路径下.</p>
+<pre><code>resource=&quot;jdbcConfig.properties&quot;
+</code></pre><p>url属性:</p>
+<pre><code>url=file://配置文件的文件路径
+</code></pre><p>uri属性:</p>
+<pre><code>http://example.org/absolute/URI/with/absolute/path/to/resource.txt
+</code></pre><h3 id="第一种使用方法"><a href="#第一种使用方法" class="headerlink" title="第一种使用方法"></a>第一种使用方法</h3><pre><code>&lt;properties&gt;
+&lt;!--配置连接数据库的基本信息--&gt;
+            &lt;property name=&quot;driver&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;/&gt;
+            &lt;property name=&quot;url&quot;
+                      value=&quot;jdbc:mysql://localhost:3306/chuanzhijava?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;useSSL=false&amp;amp;serverTimezone=UTC&quot;/&gt;
+            &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+            &lt;property name=&quot;password&quot; value=&quot;LiuChen0.&quot;/&gt;
+&lt;/properties&gt;
+</code></pre><h3 id="第二种使用方法"><a href="#第二种使用方法" class="headerlink" title="第二种使用方法"></a>第二种使用方法</h3><p>在classPath下定义db.properties文件写入数据库连接用到的参数.</p>
+<pre><code>jdbc.driver=com.mysql.jdbc.Driver 
+jdbc.url=jdbc:mysql://localhost:3306/databasename
+jdbc.username=root 
+jdbc.password=1234
+</code></pre><h2 id="typeAliases-类型别名"><a href="#typeAliases-类型别名" class="headerlink" title="typeAliases(类型别名)"></a>typeAliases(类型别名)</h2><p>单个别名的定义方式</p>
+<pre><code>&lt;typeAliases&gt;
+  &lt;typeAlias alias=&quot;user&quot; type=&quot;domain.User&quot;&gt;
+&lt;/typeAliases&gt;
+</code></pre><p>批量别名的定义方式</p>
+<p>批量别名定义，扫描整个包下的类，别名为类名（首字母大写或小写都可以）</p>
+<pre><code>&lt;typeAliases&gt;
+  &lt;package name=&quot;domain&quot;&gt;
+&lt;/typeAliases&gt;
+</code></pre><h2 id="mapper-映射器"><a href="#mapper-映射器" class="headerlink" title="mapper(映射器)"></a>mapper(映射器)</h2><p>第一种方式</p>
+<pre><code>&lt;!--指定映射配置文件的位置,映射配置文件指的是每个DAO独立的配置文件--&gt;
+&lt;mappers&gt;
+    &lt;mapper resource=&quot;dao/UserDao.xml&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre><p>第二种方式</p>
+<pre><code>&lt;mappers&gt;
+    &lt;mapper class=&quot;dao.UserDao&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre><p>此种方法要求mapper<strong>接口名称</strong>和<strong>mapper映射文件</strong>名称相同</p>
+<p>第三种方式</p>
+<pre><code>&lt;mappers&gt;
+    &lt;package name=&quot;dao&quot;/&gt;
+&lt;/mappers&gt;
+</code></pre><p>此种方法要求mapper<strong>接口名称</strong>和<strong>mapper映射文件</strong>名称相同</p>
 
             </div>
             <hr>
@@ -478,7 +556,7 @@ POST注入的三种方法
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/09/post-deng-lu-zhu-ru/" class="b-link-green">POST登陆注入</a>
+                    <a href="/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/" class="b-link-green">MyBatisSqlMapConfig.xml配置文件</a>
                 </p>
             </div>
         </div>
@@ -523,53 +601,60 @@ POST注入的三种方法
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/09/sqlmap-jian-jie/">
+                <a href="/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.png" class="responsive-img" alt="SQLMap简介">
+                        <img src="/medias/featureimages/14.png" class="responsive-img" alt="MyBatisSqlMapConfig.xml配置文件">
                         
-                        <span class="card-title">SQLMap简介</span>
+                        <span class="card-title">MyBatisSqlMapConfig.xml配置文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">SQLMap参数说明-v    输出级别
-0:只显示错误信息和关键信息
+                    <div class="summary block-with-text">SqlMapConfig.xml中配置的内容和顺序
+properties(属性)
+property
 
-1:同时显示普通信息和警告信息(默认)
 
-2:同时显示debug信息
+settings(全局配置参数)
+setting
 
-3:同时显示注入使用的攻击载荷
 
-4:同时显示HTTP请求
+typeAliases(类型别名)
+typeAliases
+package
 
-5:同时显示HTTP请求头
 
-6</div>
+t</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                    Web安全
+                            <a href="/categories/MyBatis/" class="post-category" target="_blank">
+                                    MyBatis
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
+                    <a href="/tags/MyBatis/" target="_blank">
+                        <span class="chip bg-color">MyBatis</span>
+                    </a>
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>
@@ -583,32 +668,27 @@ POST注入的三种方法
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/09/mysql-shu-ju-ku-zhu-ru/">
+                <a href="/2019/05/16/mybatis-de-shu-chu-jie-guo-feng-zhuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.png" class="responsive-img" alt="Mysql数据库注入">
+                        <img src="/medias/featureimages/58.png" class="responsive-img" alt="MyBatis的输出结果封装">
                         
-                        <span class="card-title">Mysql数据库注入</span>
+                        <span class="card-title">MyBatis的输出结果封装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Mysql数据库背景知识Mysql自带4个数据库
-
-information_schema 访问数据库元数据的方式
-mysql 核心数据库,负责存储Mysql自己需要使用的控制和管理信息
-performance_schema 性能优化引擎
-t</div>
+                    <div class="summary block-with-text">resultType配置结果类型resultType是用来指定结果集的类型,它支持基本类型和实体类类型.和parameterType一样,如果注册了类型的别名,可以直接使用别名,没有注册过别名必须使用类的全限定名.同时当是实体类名称时,实体</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                    Web安全
+                            <a href="/categories/MyBatis/" class="post-category" target="_blank">
+                                    MyBatis
                                 </a>
                             
                             
@@ -618,8 +698,12 @@ t</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
+                    <a href="/tags/MyBatis/" target="_blank">
+                        <span class="chip bg-color">MyBatis</span>
+                    </a>
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-05-16T07:05:28.854Z</updated>
+  <updated>2019-05-16T07:54:34.970Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MyBatisSqlMapConfig.xml配置文件</title>
+    <link href="https://codinglife.site/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/"/>
+    <id>https://codinglife.site/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/</id>
+    <published>2019-05-16T07:27:25.000Z</published>
+    <updated>2019-05-16T07:54:34.970Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;SqlMapConfig-xml中配置的内容和顺序&quot;&gt;&lt;a href=&quot;#SqlMapConfig-xml中配置的内容和顺序&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
+    
+    
+      <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>MyBatis的输出结果封装</title>
@@ -38,9 +66,9 @@
       <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
     
     
-      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
-    
       <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
     
   </entry>
   
@@ -66,9 +94,9 @@
       <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
     
     
-      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
-    
       <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
     
   </entry>
   
@@ -94,9 +122,9 @@
       <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
     
     
-      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
-    
       <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
     
   </entry>
   
@@ -146,9 +174,9 @@
       <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
     
     
-      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
-    
       <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
     
   </entry>
   
@@ -515,34 +543,6 @@
 &lt;p&gt;这次爬取的目标网站是汽车之家的精选高清大图.&lt;/p&gt;
 &lt;p&gt;先看看运行结果吧&lt;/p&gt;
 &lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Scrapy设置随机UserAgent</title>
-    <link href="https://codinglife.site/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/"/>
-    <id>https://codinglife.site/2019/01/27/scrapy-she-zhi-sui-ji-qing-qiu-tou/</id>
-    <published>2019-01-27T06:19:23.000Z</published>
-    <updated>2019-05-16T07:22:19.566Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;什么是UserAgent&quot;&gt;&lt;a href=&quot;#什么是UserAgent&quot; class=&quot;headerlink&quot;
         
       
     

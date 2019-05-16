@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>MyBatisSqlMapConfig.xml配置文件</title>
+      <link href="/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/"/>
+      <url>/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="SqlMapConfig-xml中配置的内容和顺序"><a href="#SqlMapConfig-xml中配置的内容和顺序" class="headerlink" title="SqlMapConfig.xml中配置的内容和顺序"></a>SqlMapConfig.xml中配置的内容和顺序</h1><ul><li>properties(属性)<ul><li>property</li></ul></li><li>settings(全局配置参数)<ul><li>setting</li></ul></li><li>typeAliases(类型别名)<ul><li>typeAliases</li><li>package</li></ul></li><li>typeHandlers(类型处理器)</li><li>objectFactory(对象工厂)</li><li>plugins(插件)</li><li>enviroments(环境集合属性对象)<ul><li>enviroment(环境子属性对象)<ul><li>transactionManager(事务管理)</li><li>dataSoutce(数据源)</li></ul></li></ul></li><li>mappers(映射器)<ul><li>mapper</li><li>package</li></ul></li></ul><h2 id="properties-属性配置"><a href="#properties-属性配置" class="headerlink" title="properties(属性配置)"></a>properties(属性配置)</h2><p>resource属性:用于指定properties配置文件的位置,要求配置文件必须在类路径下.</p><pre><code>resource=&quot;jdbcConfig.properties&quot;</code></pre><p>url属性:</p><pre><code>url=file://配置文件的文件路径</code></pre><p>uri属性:</p><pre><code>http://example.org/absolute/URI/with/absolute/path/to/resource.txt</code></pre><h3 id="第一种使用方法"><a href="#第一种使用方法" class="headerlink" title="第一种使用方法"></a>第一种使用方法</h3><pre><code>&lt;properties&gt;&lt;!--配置连接数据库的基本信息--&gt;            &lt;property name=&quot;driver&quot; value=&quot;com.mysql.cj.jdbc.Driver&quot;/&gt;            &lt;property name=&quot;url&quot;                      value=&quot;jdbc:mysql://localhost:3306/chuanzhijava?useUnicode=true&amp;amp;characterEncoding=utf-8&amp;amp;useSSL=false&amp;amp;serverTimezone=UTC&quot;/&gt;            &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;            &lt;property name=&quot;password&quot; value=&quot;LiuChen0.&quot;/&gt;&lt;/properties&gt;</code></pre><h3 id="第二种使用方法"><a href="#第二种使用方法" class="headerlink" title="第二种使用方法"></a>第二种使用方法</h3><p>在classPath下定义db.properties文件写入数据库连接用到的参数.</p><pre><code>jdbc.driver=com.mysql.jdbc.Driver jdbc.url=jdbc:mysql://localhost:3306/databasenamejdbc.username=root jdbc.password=1234</code></pre><h2 id="typeAliases-类型别名"><a href="#typeAliases-类型别名" class="headerlink" title="typeAliases(类型别名)"></a>typeAliases(类型别名)</h2><p>单个别名的定义方式</p><pre><code>&lt;typeAliases&gt;  &lt;typeAlias alias=&quot;user&quot; type=&quot;domain.User&quot;&gt;&lt;/typeAliases&gt;</code></pre><p>批量别名的定义方式</p><p>批量别名定义，扫描整个包下的类，别名为类名（首字母大写或小写都可以）</p><pre><code>&lt;typeAliases&gt;  &lt;package name=&quot;domain&quot;&gt;&lt;/typeAliases&gt;</code></pre><h2 id="mapper-映射器"><a href="#mapper-映射器" class="headerlink" title="mapper(映射器)"></a>mapper(映射器)</h2><p>第一种方式</p><pre><code>&lt;!--指定映射配置文件的位置,映射配置文件指的是每个DAO独立的配置文件--&gt;&lt;mappers&gt;    &lt;mapper resource=&quot;dao/UserDao.xml&quot;/&gt;&lt;/mappers&gt;</code></pre><p>第二种方式</p><pre><code>&lt;mappers&gt;    &lt;mapper class=&quot;dao.UserDao&quot;/&gt;&lt;/mappers&gt;</code></pre><p>此种方法要求mapper<strong>接口名称</strong>和<strong>mapper映射文件</strong>名称相同</p><p>第三种方式</p><pre><code>&lt;mappers&gt;    &lt;package name=&quot;dao&quot;/&gt;&lt;/mappers&gt;</code></pre><p>此种方法要求mapper<strong>接口名称</strong>和<strong>mapper映射文件</strong>名称相同</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MyBatis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MyBatis </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>MyBatis的输出结果封装</title>
       <link href="/2019/05/16/mybatis-de-shu-chu-jie-guo-feng-zhuang/"/>
       <url>/2019/05/16/mybatis-de-shu-chu-jie-guo-feng-zhuang/</url>
@@ -19,9 +44,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> MyBatis </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -44,9 +69,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> MyBatis </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -69,9 +94,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> MyBatis </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -111,9 +136,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> MyBatis </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
