@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-05-16T03:24:34.503Z</updated>
+  <updated>2019-05-16T04:51:34.333Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MyBatis自定义</title>
-    <link href="https://codinglife.site/2019/05/16/mybatis-zi-ding-yi/"/>
-    <id>https://codinglife.site/2019/05/16/mybatis-zi-ding-yi/</id>
-    <published>2019-05-16T03:22:33.000Z</published>
-    <updated>2019-05-16T03:24:34.503Z</updated>
+    <title>MyBatis基于代理DAO实现CRUD操作</title>
+    <link href="https://codinglife.site/2019/05/16/mybatis-ji-yu-dai-li-dao-shi-xian-crud-cao-zuo/"/>
+    <id>https://codinglife.site/2019/05/16/mybatis-ji-yu-dai-li-dao-shi-xian-crud-cao-zuo/</id>
+    <published>2019-05-16T03:47:01.000Z</published>
+    <updated>2019-05-16T04:51:34.333Z</updated>
     
     <summary type="html">
     
@@ -29,11 +29,13 @@
       
         
         
-          &lt;p&gt;asd asdasdasdasd sad
+          &lt;h1 id=&quot;搭建MyBatis环境&quot;&gt;&lt;a href=&quot;#搭建MyBatis环境&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
+    
+      <category term="MyBatis" scheme="https://codinglife.site/categories/MyBatis/"/>
     
     
       <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
