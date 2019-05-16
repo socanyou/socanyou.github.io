@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-05-13T08:33:53.544Z</updated>
+  <updated>2019-05-16T03:23:08.961Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MyBatis自定义</title>
+    <link href="https://codinglife.site/2019/05/16/mybatis-zi-ding-yi/"/>
+    <id>https://codinglife.site/2019/05/16/mybatis-zi-ding-yi/</id>
+    <published>2019-05-16T03:22:33.000Z</published>
+    <updated>2019-05-16T03:23:08.961Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://codinglife.site/tags/Java/"/>
+    
+      <category term="MyBatis" scheme="https://codinglife.site/tags/MyBatis/"/>
+    
+  </entry>
   
   <entry>
     <title>计划和迷茫</title>
@@ -526,30 +544,6 @@
       <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
     
       <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>罗胖2018年终演讲</title>
-    <link href="https://codinglife.site/2019/01/06/luo-pang-2018-nian-zhong-yan-jiang/"/>
-    <id>https://codinglife.site/2019/01/06/luo-pang-2018-nian-zhong-yan-jiang/</id>
-    <published>2019-01-06T10:03:22.000Z</published>
-    <updated>2019-01-06T10:49:47.885Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;开场&quot;&gt;&lt;a href=&quot;#开场&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="杂七杂八" scheme="https://codinglife.site/categories/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
-    
     
   </entry>
   
