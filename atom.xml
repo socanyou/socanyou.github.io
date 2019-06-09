@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-05-28T07:13:06.662Z</updated>
+  <updated>2019-06-09T12:09:14.520Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>牛客网Java面试题(一)</title>
+    <link href="https://codinglife.site/2019/06/09/niu-ke-wang-java-mian-shi-ti-yi/"/>
+    <id>https://codinglife.site/2019/06/09/niu-ke-wang-java-mian-shi-ti-yi/</id>
+    <published>2019-06-09T10:11:42.000Z</published>
+    <updated>2019-06-09T12:09:14.520Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;对接口的描述正确的是&quot;&gt;&lt;a href=&quot;#对接口的描述正确的是&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://codinglife.site/categories/Java/"/>
+    
+    
+      <category term="Java面试题" scheme="https://codinglife.site/tags/Java%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java最常见的面试题和解答</title>
     <link href="https://codinglife.site/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/"/>
     <id>https://codinglife.site/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/</id>
     <published>2019-05-27T01:32:56.000Z</published>
-    <updated>2019-05-28T07:13:06.662Z</updated>
+    <updated>2019-06-09T06:53:54.276Z</updated>
     
     <summary type="html">
     
@@ -522,32 +548,6 @@
       <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
     
       <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SQL注入SQLMap的基本使用</title>
-    <link href="https://codinglife.site/2019/03/20/sql-zhu-ru-sqlmap-de-ji-ben-shi-yong/"/>
-    <id>https://codinglife.site/2019/03/20/sql-zhu-ru-sqlmap-de-ji-ben-shi-yong/</id>
-    <published>2019-03-20T15:37:22.000Z</published>
-    <updated>2019-05-16T07:22:13.971Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;SQL注入&quot;&gt;&lt;a href=&quot;#SQL注入&quot; class=&quot;headerlink&quot; title=&quot;SQL注入&quot;&gt;&lt;/a&gt;SQL注入&lt;/h1&gt;&lt;h2 id=&quot;SQL注入常用相关函数&quot;&gt;&lt;a href=&quot;#SQL注入常用相关函数&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://codinglife.site/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
     
   </entry>
   
