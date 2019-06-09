@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="交互式写Shell及命令执行, 程序员小黑">
-    <meta name="description" content="交互式Shell
-–sqlmap-shell      进入Shell环境
-–os-cmd=ipconfig   执行系统命令
-–os-shell          模拟shell输入
-–file-read         读取数据库服务器">
+    <meta name="keywords" content="Java最常见的面试题和解答, 程序员小黑">
+    <meta name="description" content="
+什么是JVM(Java虚拟机)
+
+JVM(Java Virtual Machine)是Java虚拟机.它是一个抽象的计算机或虚拟计算机,它运行已编译的java程序。实际上，JVM是一种软件实现，它位于真正的硬件平台和操作系统之上。它提供了">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>交互式写Shell及命令执行 | 程序员小黑</title>
+    <title>Java最常见的面试题和解答 | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,7 +260,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'fbc51ff41767b83121d21327b6278f6c30fbe25b48c1ed029d7c2f1a08845dfe';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -274,13 +273,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/64.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/55.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        交互式写Shell及命令执行
+                        Java最常见的面试题和解答
                     </div>
                 </div>
             </div>
@@ -389,25 +388,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/SQLMap/" target="_blank">
-                                <span class="chip bg-color">SQLMap</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fa fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                Web安全
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -415,14 +401,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-09
+                    2019-05-27
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        294
+                        231
                     </div>
                     
 
@@ -445,30 +431,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="交互式Shell"><a href="#交互式Shell" class="headerlink" title="交互式Shell"></a>交互式Shell</h1><ul>
-<li>–sqlmap-shell      进入Shell环境</li>
-<li>–os-cmd=ipconfig   执行系统命令</li>
-<li>–os-shell          模拟shell输入</li>
-<li>–file-read         读取数据库服务器文件系统文件</li>
-<li>–file-write        向数据库服务器的文件系统上传文件</li>
-<li>–file-dest         向数据库服务器的文件系统上传文件</li>
-<li>–reg-read          读取Windows注册表键值</li>
-<li>–reg-add           写入Windows注册表键值</li>
-<li>–reg-del           删除Windows注册表键值</li>
-<li>–reg-key           注册表辅助选项</li>
-<li>–reg-value         注册表辅助选项</li>
-<li>–reg-data         注册表辅助选项</li>
-<li>–reg-type         注册表辅助选项</li>
-</ul>
-<p>执行任意操作的命令参数<br>    当后端DBMS为Mysql,SQLServer并且当前会话用户拥有对数据库特定功能和相关架构特性的利用权限时,SQLMap能够在数据库所在服务器的操作系统上运行任意的命令<br>    Mysql—&gt;sys_exec()和sys_eval()<br>    SQLServer—&gt;xp_cmdshell</p>
-<p>使用原理</p>
-<pre><code>通过SQLMap以及SQLMap的--os-shell参数扫描-u所对应的网站存在上传页面,上传一句话木马,反弹shell
-
-交互式Shell的权限=WEB应用的权限
-</code></pre><h1 id="如何防范SQLMap交互式写shell及命令执行"><a href="#如何防范SQLMap交互式写shell及命令执行" class="headerlink" title="如何防范SQLMap交互式写shell及命令执行"></a>如何防范SQLMap交互式写shell及命令执行</h1><p>PHP:</p>
-<ol>
-<li>escapeshellarg()</li>
-<li>escapeshellcmd()</li>
+                <ol>
+<li>什么是JVM(Java虚拟机)</li>
+</ol>
+<p>JVM(Java Virtual Machine)是Java虚拟机.它是一个抽象的计算机或虚拟计算机,它运行已编译的java程序。实际上，JVM是一种软件实现，它位于真正的<strong>硬件平台和操作系统</strong>之上。它提供了编译的java程序与硬件和操作系统之间的抽象。因此<strong>编译后的程序不必担心他必须运行的硬件和操作系统，它全部由JVM处理，从而实现可移植性</strong>。所有Java程序都编译为字节码。<strong>JVM只能理解和执行Java字节码</strong>。我们可以将Java字节码理解为JVM的机器语言。Java编译器获取.java文件并将其编译为具有.class文件扩展名的字节码文件。编译器将一个Java源代码文件编译成一个class文件.</p>
+<ol start="2">
+<li>什么是JIT(Just In Time)编译</li>
 </ol>
 
             </div>
@@ -493,7 +461,7 @@
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/09/jiao-hu-shi-xie-shell-ji-ming-ling-zhi-xing/" class="b-link-green">交互式写Shell及命令执行</a>
+                    <a href="/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/" class="b-link-green">Java最常见的面试题和解答</a>
                 </p>
             </div>
         </div>
@@ -538,46 +506,36 @@
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/09/chang-gui-wei-jing-tai-zhu-ru/">
+                <a href="/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/34.png" class="responsive-img" alt="常规伪静态注入">
+                        <img src="/medias/featureimages/55.png" class="responsive-img" alt="Java最常见的面试题和解答">
                         
-                        <span class="card-title">常规伪静态注入</span>
+                        <span class="card-title">Java最常见的面试题和解答</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">伪静态的定义伪静态主要是为了隐藏传递的参数名,伪静态只是一种URL重写的手段,既然能接收参数的输入,所以并不能防止SQL注入.
-www.xxx.com/xxx/xxx.html
-真静态与伪静态的区别
-真静态的使用会大大减轻数据库频繁读写的压</div>
+                    <div class="summary block-with-text">
+什么是JVM(Java虚拟机)
+
+JVM(Java Virtual Machine)是Java虚拟机.它是一个抽象的计算机或虚拟计算机,它运行已编译的java程序。实际上，JVM是一种软件实现，它位于真正的硬件平台和操作系统之上。它提供了</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-27
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                    Web安全
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Chen
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -588,40 +546,41 @@ www.xxx.com/xxx/xxx.html
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/09/sqlmap-jian-jie/">
+                <a href="/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.png" class="responsive-img" alt="SQLMap简介">
+                        <img src="/medias/featureimages/14.png" class="responsive-img" alt="MyBatisSqlMapConfig.xml配置文件">
                         
-                        <span class="card-title">SQLMap简介</span>
+                        <span class="card-title">MyBatisSqlMapConfig.xml配置文件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">SQLMap参数说明-v    输出级别
-0:只显示错误信息和关键信息
+                    <div class="summary block-with-text">SqlMapConfig.xml中配置的内容和顺序
+properties(属性)
+property
 
-1:同时显示普通信息和警告信息(默认)
 
-2:同时显示debug信息
+settings(全局配置参数)
+setting
 
-3:同时显示注入使用的攻击载荷
 
-4:同时显示HTTP请求
+typeAliases(类型别名)
+typeAliases
+package
 
-5:同时显示HTTP请求头
 
-6</div>
+t</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                    Web安全
+                            <a href="/categories/MyBatis/" class="post-category" target="_blank">
+                                    MyBatis
                                 </a>
                             
                             
@@ -631,8 +590,12 @@ www.xxx.com/xxx/xxx.html
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
+                    <a href="/tags/MyBatis/" target="_blank">
+                        <span class="chip bg-color">MyBatis</span>
+                    </a>
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
                 </div>

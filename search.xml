@@ -3,6 +3,17 @@
   
     
     <entry>
+      <title>Java最常见的面试题和解答</title>
+      <link href="/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/"/>
+      <url>/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/</url>
+      
+        <content type="html"><![CDATA[<ol><li>什么是JVM(Java虚拟机)</li></ol><p>JVM(Java Virtual Machine)是Java虚拟机.它是一个抽象的计算机或虚拟计算机,它运行已编译的java程序。实际上，JVM是一种软件实现，它位于真正的<strong>硬件平台和操作系统</strong>之上。它提供了编译的java程序与硬件和操作系统之间的抽象。因此<strong>编译后的程序不必担心他必须运行的硬件和操作系统，它全部由JVM处理，从而实现可移植性</strong>。所有Java程序都编译为字节码。<strong>JVM只能理解和执行Java字节码</strong>。我们可以将Java字节码理解为JVM的机器语言。Java编译器获取.java文件并将其编译为具有.class文件扩展名的字节码文件。编译器将一个Java源代码文件编译成一个class文件.</p><ol start="2"><li>什么是JIT(Just In Time)编译</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    <entry>
       <title>MyBatisSqlMapConfig.xml配置文件</title>
       <link href="/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/"/>
       <url>/2019/05/16/mybatissqlmapconfig-xml-pei-zhi-wen-jian/</url>

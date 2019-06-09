@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-05-16T08:01:44.842Z</updated>
+  <updated>2019-05-28T07:13:06.662Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java最常见的面试题和解答</title>
+    <link href="https://codinglife.site/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/"/>
+    <id>https://codinglife.site/2019/05/27/java-zui-chang-jian-de-mian-shi-ti-he-jie-da/</id>
+    <published>2019-05-27T01:32:56.000Z</published>
+    <updated>2019-05-28T07:13:06.662Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;什么是JVM(Java虚拟机)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;JVM(Java Virtual
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>MyBatisSqlMapConfig.xml配置文件</title>
@@ -523,37 +548,6 @@
     
     
       <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Scrapy爬取汽车之家精选高清大图</title>
-    <link href="https://codinglife.site/2019/02/19/scrapy-pa-qu-qi-che-zhi-jia-jing-xuan-gao-qing-da-tu/"/>
-    <id>https://codinglife.site/2019/02/19/scrapy-pa-qu-qi-che-zhi-jia-jing-xuan-gao-qing-da-tu/</id>
-    <published>2019-02-19T12:24:35.000Z</published>
-    <updated>2019-05-16T07:20:52.269Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;好久没写爬虫,今天算是复习下Scrapy,正所谓温故而知新.&lt;/p&gt;
-&lt;p&gt;这次爬取的目标网站是汽车之家的精选高清大图.&lt;/p&gt;
-&lt;p&gt;先看看运行结果吧&lt;/p&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Python" scheme="https://codinglife.site/categories/Python/"/>
-    
-    
-      <category term="Python爬虫" scheme="https://codinglife.site/tags/Python%E7%88%AC%E8%99%AB/"/>
-    
-      <category term="Scrapy" scheme="https://codinglife.site/tags/Scrapy/"/>
     
   </entry>
   
