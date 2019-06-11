@@ -4,11 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Struts2的标签库, 程序员小黑">
-    <meta name="description" content="Struts2的标签库在Struts2的安装文件-&amp;gt;docs-&amp;gt;tag-reference.html文件中查看Struts2的通用标签库
+    <meta name="keywords" content="牛客网Java面试题(三), 程序员小黑">
+    <meta name="description" content="已知表达式int m[]={0，1，2，3，4，5，6}；下面哪个表达式的值与数组下标量最大值相等？
+m. length()
+m. length - 1
+m. length()+1
+m. length+1
 
-UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML标签更加漂亮.
-&amp;lt;">
+正确答案:B
+解析:因为数组的下">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +20,7 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Struts2的标签库 | 程序员小黑</title>
+    <title>牛客网Java面试题(三) | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -273,13 +277,13 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/64.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/33.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Struts2的标签库
+                        牛客网Java面试题(三)
                     </div>
                 </div>
             </div>
@@ -390,12 +394,8 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
-                            </a>
-                        
-                            <a href="/tags/Struts2/" target="_blank">
-                                <span class="chip bg-color">Struts2</span>
+                            <a href="/tags/Java面试题/" target="_blank">
+                                <span class="chip bg-color">Java面试题</span>
                             </a>
                         
                     </div>
@@ -406,8 +406,8 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Struts2/" class="post-category" target="_blank">
-                                Struts2
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                Java
                             </a>
                         
                     </div>
@@ -418,14 +418,14 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-12-22
+                    2019-06-11
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.1k
+                        1.4k
                     </div>
                     
 
@@ -448,118 +448,164 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Struts2的标签库"><a href="#Struts2的标签库" class="headerlink" title="Struts2的标签库"></a>Struts2的标签库</h1><p>在Struts2的安装文件-&gt;docs-&gt;tag-reference.html文件中查看Struts2的通用标签库</p>
-<p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/CjEgWhu08Q9KjewXPg*v0n3*i9eWleVAhsL*tskPU0E!/b/dLYAAAAAAAAA&amp;bo=nAQ4BAAAAAADJ6Y!&amp;rf=viewer_4" alt="Struts2的通用标签库"></p>
-<h2 id="UI标签库"><a href="#UI标签库" class="headerlink" title="UI标签库"></a>UI标签库</h2><p>UI标签库一大特点是方便数据回显,而且相比传统HTML标签更加漂亮.</p>
-<pre><code>&lt;h2&gt;普通表单&lt;/h2&gt;
-        &lt;form action=&quot;${ pageContext.request.contextPath}/uiAction.action&quot; method=&quot;post&quot;&gt;
-        &lt;!-- 隐藏字段 --&gt;
-            &lt;input type=&quot;hidden&quot; name=&quot;userId&quot;&gt;
-            用户名:&lt;input type=&quot;text&quot; name=&quot;name&quot;&gt;&lt;br&gt;
-            密码:&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;br&gt;
-            年龄:&lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;&lt;br&gt;
-            性别:&lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;男&quot;&gt;男
-            &lt;input type=&quot;radio&quot; name=&quot;sex&quot; value=&quot;女&quot;&gt;女&lt;br&gt; 
-            籍贯&lt;select name=&quot;city&quot;&gt;
-                &lt;option value=&quot;&quot;&gt;---请选择---&lt;/option&gt;
-                &lt;option value=&quot;北京&quot;&gt;北京&lt;/option&gt;
-                &lt;option value=&quot;广州&quot;&gt;广州&lt;/option&gt;
-                &lt;option value=&quot;郑州&quot;&gt;郑州&lt;/option&gt;
-            &lt;/select&gt;&lt;br&gt; 
-
-            爱好:&lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;篮球&quot;&gt;篮球
-            &lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;足球&quot;&gt;足球
-            &lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;电脑&quot;&gt;电脑
-            &lt;input type=&quot;checkbox&quot; name=&quot;bobby&quot; value=&quot;编程&quot;&gt;编程&lt;br&gt;
-            介绍:&lt;textarea rows=&quot;2&quot; cols=&quot;10&quot; name=&quot;info&quot;&gt;I like Java&lt;/textarea&gt;
-            &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
-        &lt;/form&gt;
-        &lt;s:debug&gt;&lt;/s:debug&gt;
-        &lt;h2&gt;UI表单&lt;/h2&gt;
-        &lt;s:form action=&quot;uiAction&quot; namespace=&quot;/&quot; method=&quot;post&quot;&gt;
-            &lt;s:hidden name=&quot;userId&quot;&gt;&lt;/s:hidden&gt;
-            &lt;s:textfield name=&quot;name&quot; label=&quot;用户名&quot;&gt;&lt;/s:textfield&gt;
-            &lt;s:password name=&quot;password&quot; label=&quot;密码&quot; showPassword=&quot;true&quot;&gt;&lt;/s:password&gt;    &lt;!-- 密码默认不回显需要加上 showPassword=&quot;true&quot;--&gt;
-            &lt;s:textfield name=&quot;age&quot; label=&quot;年龄&quot;&gt;&lt;/s:textfield&gt;
-            &lt;s:radio list=&quot;{&#39;男&#39;,&#39;女&#39;}&quot; name=&quot;sex&quot; label=&quot;性别&quot;&gt;&lt;/s:radio&gt;
-            &lt;s:select list=&quot;{&#39;北京&#39;,&#39;广州&#39;,&#39;郑州&#39;}&quot; name=&quot;city&quot; label=&quot;籍贯&quot; headerKey=&quot;&quot; headerValue=&quot;---请选择---&quot;&gt;&lt;/s:select&gt;
-            &lt;s:checkboxlist list=&quot;#{&#39;篮球&#39;:&#39;篮球&#39;,&#39;足球&#39;:&#39;足球&#39;,&#39;电脑&#39;:&#39;电脑&#39;,&#39;编程&#39;:&#39;编程&#39;}&quot; name=&quot;bobby&quot; label=&quot;爱好&quot;&gt;&lt;/s:checkboxlist&gt;
-            &lt;s:textarea name=&quot;info&quot; cols=&quot;10&quot; rows=&quot;2&quot; label=&quot;介绍&quot; value=&quot;IlikeJava&quot;&gt;&lt;/s:textarea&gt;
-            &lt;s:submit value=&quot;提交&quot;&gt;&lt;/s:submit&gt;
-        &lt;/s:form&gt;
-
-    &lt;/center&gt;
-</code></pre><p><img src="http://m.qpic.cn/psb?/V10Lajvl1FgUNv/XsO361zx3Bphd*RZobHoETK8OFFLV*8P9oz4RL2m.6A!/b/dFQBAAAAAAAA&amp;bo=OAQFBQAAAAADBx4!&amp;rf=viewer_4" alt="普通标签和UI标签的对比"></p>
-<p>来看看对比:</p>
+                <h1 id="已知表达式int-m-0，1，2，3，4，5，6-；下面哪个表达式的值与数组下标量最大值相等？"><a href="#已知表达式int-m-0，1，2，3，4，5，6-；下面哪个表达式的值与数组下标量最大值相等？" class="headerlink" title="已知表达式int m[]={0，1，2，3，4，5，6}；下面哪个表达式的值与数组下标量最大值相等？"></a>已知表达式int m[]={0，1，2，3，4，5，6}；下面哪个表达式的值与数组下标量最大值相等？</h1><ol>
+<li>m. length()</li>
+<li>m. length - 1</li>
+<li>m. length()+1</li>
+<li>m. length+1</li>
+</ol>
+<p><strong>正确答案:B</strong></p>
+<p>解析:因为数组的下标从0开始,所以数组下标的最大值应该是数组的总长度减去1,获取数组的长度用length属性而是不是length()方法</p>
+<h1 id="下面不属于HttpServletRequest接口完成功能的是？"><a href="#下面不属于HttpServletRequest接口完成功能的是？" class="headerlink" title="下面不属于HttpServletRequest接口完成功能的是？"></a>下面不属于HttpServletRequest接口完成功能的是？</h1><ol>
+<li>读取cookie</li>
+<li>读取HTTP头</li>
+<li>设定响应的content类型</li>
+<li>读取路径信息</li>
+</ol>
+<p><strong>正确答案:C</strong></p>
+<p>解析: </p>
 <ol>
-<li>普通表单美观度没有<strong>Struts2UI表单美观度好</strong></li>
-<li>普通HTML标签代码量比Struts2要多很多,<strong>Struts2标签写起来简单</strong>.</li>
-<li>普通Html标签没有回显功能,<strong>Struts2的UI标签自带回显功能</strong></li>
+<li>request.getCookies();</li>
+<li>request.getHeader();</li>
+<li><strong>response.setContextType(“text/html;charset=utf-8”);</strong></li>
+<li>request.setContextPath();request.getServletPath();</li>
 </ol>
-<p><strong>Struts2的回显的数据是从ValueStack中获取的.</strong></p>
-<h2 id="通用标签库"><a href="#通用标签库" class="headerlink" title="通用标签库"></a>通用标签库</h2><ul>
-<li>判断标签<ol>
-<li>&lt;s:if&gt;</li>
-<li>&lt;s:elseif&gt;</li>
-<li>&lt;s:else&gt;</li>
+<h1 id="Math-floor-8-5"><a href="#Math-floor-8-5" class="headerlink" title="Math.floor(-8.5)=( )"></a>Math.floor(-8.5)=( )</h1><ol>
+<li>(float)-8.0</li>
+<li>(long)-9</li>
+<li>(long)-8</li>
+<li>(double)-9.0</li>
 </ol>
-</li>
-<li>迭代标签<ol>
-<li>&lt;s:iterator&gt;</li>
+<p><strong>正确答案:D</strong></p>
+<p>解析:</p>
+<p>floor方法:返回最大的（最接近正无穷大）double 值，该值小于等于参数，并等于某个整数。</p>
+<h1 id="代码题"><a href="#代码题" class="headerlink" title="代码题"></a>代码题</h1><pre><code>Integer i = 42;
+Long l = 42l;
+Double d = 42.0;
+</code></pre><p>下面为True的是</p>
+<ol>
+<li>(i == l)</li>
+<li>(i == d)</li>
+<li>(l == d)</li>
+<li>i.equals(d)</li>
+<li>d.equals(l)</li>
+<li>i.equals(l)</li>
+<li>l.equals(42L)</li>
 </ol>
-</li>
-<li>属性标签<ol>
-<li>&lt;s:property&gt;</li>
+<p><strong>正确答案:G</strong></p>
+<p>解析:</p>
+<pre><code>@Test
+public void demo3(){
+    Integer i = 42;
+    Long l = 42l;
+    Double d = 42.0;
+    //不同类型引用的==比较会造成编译错误
+    System.out.println(i == l);
+    System.out.println(i == d);
+    System.out.println(l == d);
+    //包装类的equals()方法不会自动处理数据转型,两个不同的数据类型相比较肯定会返回False
+    System.out.println(i.equals(d));
+    System.out.println(d.equals(l));
+    System.out.println(i.equals(l));
+    System.out.println(l.equals(42L));
+}
+</code></pre><h1 id="对下面Spring声明式事务的配置含义的说明错误的是（）"><a href="#对下面Spring声明式事务的配置含义的说明错误的是（）" class="headerlink" title="对下面Spring声明式事务的配置含义的说明错误的是（）"></a>对下面Spring声明式事务的配置含义的说明错误的是（）</h1><pre><code>&lt;bean id=&quot;txProxyTemplate&quot; abstract=&quot;true&quot;
+class=
+&quot;org.springframework.transaction.interceptor.TransactionProxyFactoryBean&quot;&gt;
+    &lt;property name=&quot;transactionManager&quot; ref=&quot;myTransactionManager&quot; /&gt;
+&lt;property name=&quot;transactionAttributes&quot;&gt;      
+&lt;props&gt;
+        &lt;prop key=&quot;get*&quot;&gt;PROPAGATION_REQUIRED,readOnly&lt;/prop&gt;
+        &lt;prop key=&quot;*&quot;&gt;PROPAGATION_REQUIRED&lt;/prop&gt;
+    &lt;/props&gt;
+&lt;/property&gt; 
+&lt;/bean&gt;
+</code></pre><ol>
+<li>定义了声明式事务的配置模板</li>
+<li>对get方法采用只读事务</li>
+<li>缺少sessionFactory属性的注入</li>
+<li><p>配置需要事务管理的bean的代理时，通过parent引用这个配置模板，代码如下：</p>
+<pre><code> &lt;bean id=&quot;petBiz&quot; parent=&quot;txProxyTemplate&quot;&gt;
+         &lt;property name=&quot;target&quot; ref=&quot;petTarget&quot;/&gt;
+ &lt;/bean&gt;
+</code></pre></li>
 </ol>
-</li>
-<li>调试标签<ol>
-<li>&lt;s:debug&gt;</li>
+<p><strong>正确答案:D</strong></p>
+<p>解析:</p>
+<pre><code>&lt;!--Spring中基于XML的声明式事务控制的配置步骤
+        1:配置事务管理器
+        2:配置事务的通知
+            导入事务的约束,transaction的名称空间和约束同时也需要AOP的名称空间和约束
+            使用tx:advice标签配置事务通知
+                属性:
+                    id-&gt;给事务通知起一个唯一标识
+                    transaction-manager:给事务通知提供一个事务管理器的引用
+        3:配置AOP中的通用切入点表达式
+        4:建立事务通知和切入点表达式的关系
+        5:配置事务的属性
+                事务的通知tx:advice标签的内部配置事务的属性
+                isolation=&quot;&quot;           -&gt;指定事务的隔离级别,默认是default表示使用数据库的默认隔离级别
+                no-rollback-for=&quot;&quot;     -&gt;指定一个异常,当产生该异常时事务不回滚,产生其他异常时,事务回滚,没有默认值,表示任何异常都回滚
+                propagation=&quot;&quot;         -&gt;指定事务的传播行为,默认是REQUIRED表示一定会有事务,增删改选择REQUIRED.查询方法选择SUPPORTS
+                read-only=&quot;&quot;           -&gt;指定事务是否只读,只有查询方法才能设置为True默认值False
+                rollback-for=&quot;&quot;        -&gt;指定一个异常,当产生该异常时,事务回滚,产生其他异常时,事务不回滚.没有默认值,表示任何异常都回滚
+                timeout=&quot;&quot;             -&gt;指定事务的超时时间,默认值-1,表示永不超时,如果指定了数值则以秒为单位
+
+    --&gt;
+    &lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;property name=&quot;dataSource&quot; ref=&quot;dataSource&quot;&gt;&lt;/property&gt;
+    &lt;/bean&gt;
+    &lt;!--配置事务通知--&gt;
+    &lt;tx:advice id=&quot;transactionAdvice&quot; transaction-manager=&quot;transactionManager&quot;&gt;
+        &lt;tx:attributes&gt;
+            &lt;!--业务层接口中的方法--&gt;
+            &lt;tx:method name=&quot;tranSfer&quot; read-only=&quot;false&quot; propagation=&quot;REQUIRED&quot;/&gt;
+        &lt;/tx:attributes&gt;
+    &lt;/tx:advice&gt;
+    &lt;!--配置AOP--&gt;
+    &lt;aop:config&gt;
+        &lt;aop:pointcut id=&quot;point1&quot; expression=&quot;execution(* chen.service.impl.*.*(..))&quot;/&gt;
+        &lt;!--建立事务通知和切入点表达式的关系--&gt;
+        &lt;aop:advisor advice-ref=&quot;transactionAdvice&quot; pointcut-ref=&quot;point1&quot;&gt;&lt;/aop:advisor&gt;
+    &lt;/aop:config&gt;
+</code></pre><h1 id="实现或继承了Collection接口的是（）"><a href="#实现或继承了Collection接口的是（）" class="headerlink" title="实现或继承了Collection接口的是（）"></a>实现或继承了Collection接口的是（）</h1><ol>
+<li>Map</li>
+<li>List</li>
+<li>Vector</li>
+<li>Iterator</li>
+<li>Set</li>
 </ol>
-</li>
-<li>日期标签<ol>
-<li>&lt;s:date&gt;</li>
+<p><strong>正确答案:BCE</strong></p>
+<p>因为List接口继承于Collection接口,Vector类又实现了List接口所以Voctor自然实现了Collection接口.</p>
+<p><img src="https://s2.ax1x.com/2019/06/11/VcBkhq.png" alt="VcBkhq.png"></p>
+<h1 id="在Jdk1-7中，下述说法中抽象类与接口的区别与联系正确的有哪些？"><a href="#在Jdk1-7中，下述说法中抽象类与接口的区别与联系正确的有哪些？" class="headerlink" title="在Jdk1.7中，下述说法中抽象类与接口的区别与联系正确的有哪些？"></a>在Jdk1.7中，下述说法中抽象类与接口的区别与联系正确的有哪些？</h1><ol>
+<li>抽象类中可以有普通成员变量，接口中没有普通成员变量。</li>
+<li>抽象类和接口中都可以包含静态成员常量。</li>
+<li>一个类可以实现多个接口，但只能继承一个抽象类</li>
+<li>抽象类中可以包含非抽象的普通方法，接口中的方法必须是抽象的，不能有非抽象的普通方法。</li>
 </ol>
-</li>
-</ul>
-<p>Iterator标签使用案例</p>
-<pre><code>&lt;center&gt;
-             &lt;s:iterator var=&quot;i&quot; value=&quot;{&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;,&#39;5&#39;}&quot;&gt;
-                 &lt;s:property value=&quot;#i&quot;/&gt;
-             &lt;/s:iterator&gt;
-             &lt;hr&gt;
-             &lt;!-- 遍历map --&gt;
-             &lt;s:iterator var=&quot;m&quot; value=&quot;#{&#39;name&#39;:&#39;张三&#39;,&#39;age&#39;:27,&#39;hobby&#39;:&#39;Programme&#39;}&quot;&gt;
-                 &lt;s:property value=&quot;#m.key&quot;/&gt; -------------&gt;&lt;s:property value=&quot;#m.value&quot;/&gt;&lt;br&gt;
-             &lt;/s:iterator&gt;
-             &lt;hr&gt;
-             &lt;!-- 循环 --&gt;
-             &lt;s:iterator var=&quot;i&quot; begin=&quot;1&quot; end=&quot;20&quot; step=&quot;1&quot;&gt;
-                 &lt;s:property value=&quot;#i&quot; /&gt;&lt;br&gt;
-             &lt;/s:iterator&gt;
-             &lt;hr&gt;
-             &lt;!-- iterator中status的应用,Status用来记录循环的状态 --&gt;
-             &lt;s:iterator var=&quot;i&quot; begin=&quot;1&quot; end=&quot;20&quot; step=&quot;2&quot; status=&quot;status&quot;&gt;
-                 &lt;s:if test=&quot;#status.count % 3 == 0&quot;&gt;
-                     &lt;font color=&quot;blue&quot;&gt;&lt;s:property value=&quot;#i&quot;/&gt;&lt;/font&gt;
-                 &lt;/s:if&gt;
-                 &lt;s:else&gt;
-                     &lt;font color=&quot;green&quot;&gt;&lt;s:property value=&quot;#i&quot;/&gt;&lt;/font&gt;
-                 &lt;/s:else&gt;
-             &lt;/s:iterator&gt;
-&lt;/center&gt;
-</code></pre><p>判断标签的使用案例</p>
-<pre><code>&lt;s:set var=&quot;i&quot; value=&quot;3&quot; scope=&quot;request&quot;&gt;
-&lt;/s:set&gt;
-&lt;s:if test=&quot;#request.i&gt;3&quot;&gt;
-    i大于3
-&lt;/s:if&gt;
-&lt;s:elseif test=&quot;#request.i&lt;3&quot;&gt;
-    i小于3
-&lt;/s:elseif&gt;
-&lt;s:else&gt;
-    i等于3 
-&lt;/s:else&gt;
-</code></pre>
+<p><strong>正确答案:ABCD</strong></p>
+<h1 id="下面哪个语句是创建数组的正确语句？"><a href="#下面哪个语句是创建数组的正确语句？" class="headerlink" title="下面哪个语句是创建数组的正确语句？( )"></a>下面哪个语句是创建数组的正确语句？( )</h1><ol>
+<li>float f[][] = new float[6][6];</li>
+<li>float []f[] = new float[6][6];</li>
+<li>float f[][] = new float[][6];</li>
+<li>float [][]f = new float[6][6];</li>
+<li>float [][]f = new float[6][];</li>
+</ol>
+<p><strong>正确答案:ABDE</strong></p>
+<p>解析:</p>
+<p>Java中数组命名时[]和数组名称可以随意排列,但声明的二维数组中第一个括号中必须要有值,因为他代表一维数组中有多少个二维数组.</p>
+<h1 id="以下哪些类是线程安全的（）"><a href="#以下哪些类是线程安全的（）" class="headerlink" title="以下哪些类是线程安全的（）"></a>以下哪些类是线程安全的（）</h1><ol>
+<li>Vector</li>
+<li>HashMap</li>
+<li>ArrayList</li>
+<li>StringBuffer</li>
+<li>Properties</li>
+</ol>
+<p><strong>正确答案:ABDE</strong></p>
+<p>解析:</p>
+<p>Java中线程安全的类Vector,HashTable,StringBuffer,Properties</p>
+
             </div>
             <hr>
 
@@ -582,7 +628,7 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2018/12/22/struts2-de-biao-qian-ku/" class="b-link-green">Struts2的标签库</a>
+                    <a href="/2019/06/11/niu-ke-wang-java-mian-shi-ti-san/" class="b-link-green">牛客网Java面试题(三)</a>
                 </p>
             </div>
         </div>
@@ -627,52 +673,49 @@ UI标签库UI标签库一大特点是方便数据回显,而且相比传统HTML�
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2018/12/22/struts2input-luo-ji-shi-tu/">
+                <a href="/2019/06/11/niu-ke-wang-java-mian-shi-ti-san/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/39.png" class="responsive-img" alt="Struts2Input逻辑视图">
+                        <img src="/medias/featureimages/33.png" class="responsive-img" alt="牛客网Java面试题(三)">
                         
-                        <span class="card-title">Struts2Input逻辑视图</span>
+                        <span class="card-title">牛客网Java面试题(三)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">Action接口中提供了五个逻辑视图的名称：
+                    <div class="summary block-with-text">已知表达式int m[]={0，1，2，3，4，5，6}；下面哪个表达式的值与数组下标量最大值相等？
+m. length()
+m. length - 1
+m. length()+1
+m. length+1
 
-success
-input
-none
-login
-error
- public static final String SUCCESS = &quot;success&quot;;
- publi</div>
+正确答案:B
+解析:因为数组的下</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Struts2/" class="post-category" target="_blank">
-                                    Struts2
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Struts2/" target="_blank">
-                        <span class="chip bg-color">Struts2</span>
+                    <a href="/tags/Java面试题/" target="_blank">
+                        <span class="chip bg-color">Java面试题</span>
                     </a>
                     
                 </div>
@@ -686,29 +729,33 @@ error
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/12/22/struts2-zhong-de-lan-jie-qi/">
+                <a href="/2019/06/10/niu-ke-wang-java-mian-shi-ti-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/63.png" class="responsive-img" alt="Struts2中的拦截器">
+                        <img src="/medias/featureimages/64.png" class="responsive-img" alt="牛客网Java面试题(二)">
                         
-                        <span class="card-title">Struts2中的拦截器</span>
+                        <span class="card-title">牛客网Java面试题(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">什么是拦截器
-Interceptor：拦截器，起到拦截Action的作用。
-Interceptor：拦截器，拦截是客户端对Action的访问。更细粒度化的拦截。（拦截Action中的具体的方法）。Struts2框架核心的功能都是依赖拦截器实</div>
+                    <div class="summary block-with-text">将以下哪种方法插入行3是不合法的。类Test1定义如下:
+public class Test1{//1
+    public float aMethod(float a,float b){}//2 
+    //3
+}//4
+
+public</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-22
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Struts2/" class="post-category" target="_blank">
-                                    Struts2
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
@@ -718,12 +765,8 @@ Interceptor：拦截器，拦截是客户端对Action的访问。更细粒度化
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Struts2/" target="_blank">
-                        <span class="chip bg-color">Struts2</span>
+                    <a href="/tags/Java面试题/" target="_blank">
+                        <span class="chip bg-color">Java面试题</span>
                     </a>
                     
                 </div>
