@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-06-11T03:50:58.436Z</updated>
+  <updated>2019-06-12T02:58:30.793Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>牛客网Java面试题(四)</title>
+    <link href="https://codinglife.site/2019/06/12/niu-ke-wang-java-mian-shi-ti-si/"/>
+    <id>https://codinglife.site/2019/06/12/niu-ke-wang-java-mian-shi-ti-si/</id>
+    <published>2019-06-12T02:27:04.000Z</published>
+    <updated>2019-06-12T02:58:30.793Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（-）&quot;&gt;&lt;a href=&quot;#下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（-）&quot; class=&quot;headerlink&quot; title=&quot;下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://codinglife.site/categories/Java/"/>
+    
+    
+      <category term="Java面试题" scheme="https://codinglife.site/tags/Java%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>牛客网Java面试题(三)</title>
     <link href="https://codinglife.site/2019/06/11/niu-ke-wang-java-mian-shi-ti-san/"/>
     <id>https://codinglife.site/2019/06/11/niu-ke-wang-java-mian-shi-ti-san/</id>
     <published>2019-06-11T02:37:12.000Z</published>
-    <updated>2019-06-11T03:50:58.436Z</updated>
+    <updated>2019-06-11T04:16:10.566Z</updated>
     
     <summary type="html">
     
@@ -509,32 +535,6 @@
         
         
           &lt;h1 id=&quot;Mysql数据库背景知识&quot;&gt;&lt;a href=&quot;#Mysql数据库背景知识&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://codinglife.site/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Cookie注入</title>
-    <link href="https://codinglife.site/2019/04/09/cookie-zhu-ru/"/>
-    <id>https://codinglife.site/2019/04/09/cookie-zhu-ru/</id>
-    <published>2019-04-09T05:11:31.000Z</published>
-    <updated>2019-05-16T07:19:39.325Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;什么是Cookie&quot;&gt;&lt;a href=&quot;#什么是Cookie&quot; class=&quot;headerlink&quot;
         
       
     

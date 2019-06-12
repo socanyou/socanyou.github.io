@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>牛客网Java面试题(四)</title>
+      <link href="/2019/06/12/niu-ke-wang-java-mian-shi-ti-si/"/>
+      <url>/2019/06/12/niu-ke-wang-java-mian-shi-ti-si/</url>
+      
+        <content type="html"><![CDATA[<h1 id="下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（-）"><a href="#下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（-）" class="headerlink" title="下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（ ）"></a>下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（ ）</h1><ol><li>public</li><li>private</li><li>static</li><li>final</li></ol><p><strong>正确答案:C</strong></p><p>解析:static修饰的变量表示静态变量,归类所有,该类的所有对象公用.</p><h1 id="以下选项中，合法的赋值语句是（）"><a href="#以下选项中，合法的赋值语句是（）" class="headerlink" title="以下选项中，合法的赋值语句是（）"></a>以下选项中，合法的赋值语句是（）</h1><ol><li>a&gt;1;</li><li>i++;</li><li>a= a+1=5;</li><li>y = int ( i );</li></ol><p><strong>正确答案:B</strong></p><p>解析: B选项为中间变量缓存机制,</p><pre><code>temp = i;i = i + 1;i = temp;</code></pre><p>一开始选择D但是D选项如果y为short,byte,char类型时会发生向下转型,不可赋值.</p><h1 id="关于访问权限说法正确-的是-？"><a href="#关于访问权限说法正确-的是-？" class="headerlink" title="关于访问权限说法正确 的是 ？ ( )"></a>关于访问权限说法正确 的是 ？ ( )</h1><ol><li>外部类前面可以修饰public,protected和private</li><li>成员内部类前面可以修饰public,protected和private</li><li>局部内部类前面可以修饰public,protected和private</li><li>以上说法都不正确</li></ol><p><strong>正确答案:B</strong></p><p>解析:</p><p>成员内部类的上一级程序单元是外部类,它具有四个作用域同一类(private),同一包(protected),和任何地方(public)以及默认.</p><h1 id="关于java编译和运行命令叙述不正确的是？"><a href="#关于java编译和运行命令叙述不正确的是？" class="headerlink" title="关于java编译和运行命令叙述不正确的是？( )"></a>关于java编译和运行命令叙述不正确的是？( )</h1><ol><li>运行“java Scut.class”</li><li>运行“java Scut”</li><li>运行“javac Scut.java”的输出文件是Scut.class</li><li>java这个命令的运行对象是Scut.class</li></ol><p><strong>正确答案:A</strong></p><p>解析: A选项错在<strong>java</strong>这个命令后面跟的是类的名字,也就是程序的名字,但是这里不应该加后缀.</p><h1 id="对于JVM内存配置参数："><a href="#对于JVM内存配置参数：" class="headerlink" title="对于JVM内存配置参数："></a>对于JVM内存配置参数：</h1><blockquote><p>-Xmx10240m -Xms10240m -Xmn5120m -XXSurvivorRatio=3</p></blockquote><p>其最小内存值和Survivor区总大小分别是（）</p><ol><li>5120m，1024m</li><li>5120m，2048m</li><li>10240m，1024m</li><li>10240m，2048m</li></ol><p><strong>正确答案:D</strong></p><p>解析:</p><blockquote><p>-Xmx：最大堆大小</p></blockquote><blockquote><p>-Xms：初始堆大小</p></blockquote><blockquote><p>-Xmn:年轻代大小</p></blockquote><blockquote><p>-XXSurvivorRatio：年轻代中Eden区与Survivor区的大小比值</p></blockquote><blockquote><p>年轻代5120m， Eden：Survivor=3，Survivor区大小=1024m（Survivor区有两个，即将年轻代分为5份，每个Survivor区占一份），总大小为2048m。</p></blockquote><blockquote><p>-Xms初始堆大小即最小内存值为10240m</p></blockquote><h1 id="以下哪些继承自-Collection-接口（）"><a href="#以下哪些继承自-Collection-接口（）" class="headerlink" title="以下哪些继承自 Collection 接口（）"></a>以下哪些继承自 Collection 接口（）</h1><ol><li>List</li><li>Set</li><li>Map</li><li>Array</li></ol><p><strong>正确答案:AB</strong></p><p>解析:</p><p>[<img src="https://s2.ax1x.com/2019/06/12/V2Oq54.md.png" alt="V2Oq54.md.png">]</p><h1 id="关于HashMap和Hashtable正确的说法有（）"><a href="#关于HashMap和Hashtable正确的说法有（）" class="headerlink" title="关于HashMap和Hashtable正确的说法有（）"></a>关于HashMap和Hashtable正确的说法有（）</h1><ol><li>都实现了Map接口</li><li>Hashtable类不是同步的，而HashMap类是同步的</li><li>Hashtable不允许null键或值</li><li>HashMap不允许null或值</li></ol><p><strong>正确答案:AC</strong></p><p>解析:</p><p>HashTable中键和值都不允许出现Null值.</p><h1 id="下面有关java类加载器，说法正确的是？"><a href="#下面有关java类加载器，说法正确的是？" class="headerlink" title="下面有关java类加载器，说法正确的是？"></a>下面有关java类加载器，说法正确的是？</h1><ol><li>引导类加载器（bootstrap class loader）：它用来加载 Java 的核心库，是用原生代码来实现的</li><li>扩展类加载器（extensions class loader）：它用来加载 Java 的扩展库。</li><li>系统类加载器（system class loader）：它根据 Java 应用的类路径（CLASSPATH）来加载 Java 类</li><li>tomcat为每个App创建一个Loader，里面保存着此WebApp的ClassLoader。需要加载WebApp下的类时，就取出ClassLoader来使用</li></ol><p><strong>正确答案:ABCD</strong></p><p>解析:</p><p>A. Bootstrap ClassLoader/启动类加载器<br>主要负责jdk_home/lib目录下的核心 api 或 -Xbootclasspath 选项指定的jar包装入工作.</p><p>B、Extension ClassLoader/扩展类加载器<br>主要负责jdk_home/lib/ext目录下的jar包或 -Djava.ext.dirs 指定目录下的jar包装入工作</p><p>C、System ClassLoader/系统类加载器<br>主要负责java -classpath/-Djava.class.path所指的目录下的类与jar包装入工作.</p><p>D、 User Custom ClassLoader/用户自定义类加载器(java.lang.ClassLoader的子类)<br>在程序运行期间, 通过java.lang.ClassLoader的子类动态加载class文件, 体现java动态实时类装入特性.</p><h1 id="下面哪几个语句正确的声明一个整型的二维数组（）"><a href="#下面哪几个语句正确的声明一个整型的二维数组（）" class="headerlink" title="下面哪几个语句正确的声明一个整型的二维数组（）"></a>下面哪几个语句正确的声明一个整型的二维数组（）</h1><ol><li>int a[][]=new int[][]</li><li>int b[10][10]=new int[][]</li><li>int c[][]=new int[10][10]</li><li>int []d[]=new int[10][10]</li></ol><p><strong>正确答案:CD</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>牛客网Java面试题(三)</title>
       <link href="/2019/06/11/niu-ke-wang-java-mian-shi-ti-san/"/>
       <url>/2019/06/11/niu-ke-wang-java-mian-shi-ti-san/</url>
