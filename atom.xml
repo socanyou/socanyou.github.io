@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-06-12T02:58:30.793Z</updated>
+  <updated>2019-06-13T07:04:26.130Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>牛客网Java面试题(五)</title>
+    <link href="https://codinglife.site/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/"/>
+    <id>https://codinglife.site/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/</id>
+    <published>2019-06-13T06:38:21.000Z</published>
+    <updated>2019-06-13T07:04:26.130Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;一个以“-java”为后缀的源文件&quot;&gt;&lt;a href=&quot;#一个以“-java”为后缀的源文件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://codinglife.site/categories/Java/"/>
+    
+    
+      <category term="Java面试题" scheme="https://codinglife.site/tags/Java%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客网Java面试题(四)</title>
@@ -509,32 +535,6 @@
         
         
           &lt;h1 id=&quot;POST注入原理&quot;&gt;&lt;a href=&quot;#POST注入原理&quot; class=&quot;headerlink&quot; title=&quot;POST注入原理&quot;&gt;&lt;/a&gt;POST注入原理&lt;/h1&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://codinglife.site/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mysql数据库注入</title>
-    <link href="https://codinglife.site/2019/04/09/mysql-shu-ju-ku-zhu-ru/"/>
-    <id>https://codinglife.site/2019/04/09/mysql-shu-ju-ku-zhu-ru/</id>
-    <published>2019-04-09T05:21:42.000Z</published>
-    <updated>2019-05-16T07:19:56.882Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Mysql数据库背景知识&quot;&gt;&lt;a href=&quot;#Mysql数据库背景知识&quot; class=&quot;headerlink&quot;
         
       
     

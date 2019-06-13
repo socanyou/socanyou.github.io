@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>牛客网Java面试题(五)</title>
+      <link href="/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/"/>
+      <url>/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一个以“-java”为后缀的源文件"><a href="#一个以“-java”为后缀的源文件" class="headerlink" title="一个以“.java”为后缀的源文件"></a>一个以“.java”为后缀的源文件</h1><ol><li>只能包含一个public类，类名必须与文件名相同</li><li>只能包含与文件名相同的public类以及其中的内部类</li><li>只能有一个与文件名相同的public类，可以包含其他非public类（不考虑内部类）</li><li>可以包含任意public类</li></ol><p><strong>正确答案:C</strong></p><p>解析:</p><blockquote><p>.java文件可以包含多个类,唯一的限制就是:一个文件中只能有一个public类,并且此public类的名字必须要与文件名相同.</p></blockquote><h1 id="设int-x-1-float-y-2-则表达式x-y的值是：（）"><a href="#设int-x-1-float-y-2-则表达式x-y的值是：（）" class="headerlink" title="设int x=1,float y=2,则表达式x/y的值是：（）"></a>设int x=1,float y=2,则表达式x/y的值是：（）</h1><ol><li>0</li><li>1</li><li>2</li><li>都不是</li></ol><p><strong>正确答案:D</strong></p><p>解析:</p><blockquote><p>x/y的值为0.5</p></blockquote><h1 id="下面哪一项不是加载驱动程序的方法？"><a href="#下面哪一项不是加载驱动程序的方法？" class="headerlink" title="下面哪一项不是加载驱动程序的方法？"></a>下面哪一项不是加载驱动程序的方法？</h1><ol><li>通过DriverManager.getConnection方法加载</li><li>调用方法Class.forName</li><li>通过添加系统的jdbc.drivers属性</li><li>通过registerDriver方法注册</li></ol><p><strong>正确答案:A</strong></p><p>解析:</p><blockquote><p>DriverManager.getConnection方法是加载完驱动用来获取连接的方法.</p></blockquote><h1 id="下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）"><a href="#下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）" class="headerlink" title="下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）"></a>下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）</h1><ol><li>参数的类型不同</li><li>参数的顺序不同</li><li>函数的返回值类型不同</li><li>参数的个数不同</li></ol><p><strong>正确答案:ABD</strong></p><p>java中的方法重载:</p><p><strong>方法重载指在同一个类中,允许存在一个以上的同名方法,只要他们方法的参数列表不同即可,与修饰符和方法的返回值类型无关.</strong></p><p><strong>参数列表:个数不同,顺序不同,数据类型不同.</strong></p><p><strong>重载方法的调用:JVM通过方法的参数列表,调用不同的方法.</strong></p><h1 id="下面哪些情况可以引发异常："><a href="#下面哪些情况可以引发异常：" class="headerlink" title="下面哪些情况可以引发异常："></a>下面哪些情况可以引发异常：</h1><ol><li>数组越界</li><li>制定URL不存在</li><li>使用throw语句抛出</li><li>使用throws语句</li></ol><p><strong>正确答案:ABC</strong></p><p>解析:</p><p>throw是主动抛出异常,throws是声名异常</p><p>声明异常:</p><blockquote><p>将问题标识出来,报告给调用者.如果方法内通过throw抛出了编译时异常,而没有捕获处理,那么必须通过throws进行声明,让调用者进行处理.</p></blockquote><p>关键字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常</p><p>throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。</p><h1 id="下面有关java-classloader说法正确的是（）？"><a href="#下面有关java-classloader说法正确的是（）？" class="headerlink" title="下面有关java classloader说法正确的是（）？"></a>下面有关java classloader说法正确的是（）？</h1><ol><li>ClassLoader就是用来动态加载class文件到内存当中用的</li><li>JVM在判定两个class是否相同时，只用判断类名相同即可，和类加载器无关</li><li>ClassLoader使用的是双亲委托模型来搜索类的</li><li>Java默认提供的三个ClassLoader是Boostrap ClassLoader，Extension ClassLoader，App ClassLoader</li><li>以上都不正确</li></ol><p><strong>正确答案:ACD</strong></p><h1 id="模型-视图-控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？"><a href="#模型-视图-控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？" class="headerlink" title="模型 - 视图 - 控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？"></a>模型 - 视图 - 控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？</h1><ol><li>模型通常表示操作应用程序中的数据所需的数据和业务逻辑</li><li>视图是其模型的（可视）表示。它将模型呈现为适合交互的形式，通常是用户界面元素</li><li>控制器是用户和系统之间的链接。它接受来自用户的输入并指示模型和视图基于该输入执行操作</li><li>MVC在Web应用程序中的常见做法是，模型接收来自用户的GET或POST输入，并决定如何处理它，切换到控制器以及哪个手控制到视图（HTML生成组件）</li><li>以上都不是</li></ol><p><strong>正确答案:ABC</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>牛客网Java面试题(四)</title>
       <link href="/2019/06/12/niu-ke-wang-java-mian-shi-ti-si/"/>
       <url>/2019/06/12/niu-ke-wang-java-mian-shi-ti-si/</url>

@@ -4,11 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="常规伪静态注入, 程序员小黑">
-    <meta name="description" content="伪静态的定义伪静态主要是为了隐藏传递的参数名,伪静态只是一种URL重写的手段,既然能接收参数的输入,所以并不能防止SQL注入.
-www.xxx.com/xxx/xxx.html
-真静态与伪静态的区别
-真静态的使用会大大减轻数据库频繁读写的压">
+    <meta name="keywords" content="牛客网Java面试题(五), 程序员小黑">
+    <meta name="description" content="一个以“.java”为后缀的源文件
+只能包含一个public类，类名必须与文件名相同
+只能包含与文件名相同的public类以及其中的内部类
+只能有一个与文件名相同的public类，可以包含其他非public类（不考虑内部类）
+可以包含任意p">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +17,7 @@ www.xxx.com/xxx/xxx.html
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>常规伪静态注入 | 程序员小黑</title>
+    <title>牛客网Java面试题(五) | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -260,7 +261,7 @@ www.xxx.com/xxx/xxx.html
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'fbc51ff41767b83121d21327b6278f6c30fbe25b48c1ed029d7c2f1a08845dfe';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -273,13 +274,13 @@ www.xxx.com/xxx/xxx.html
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/34.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        常规伪静态注入
+                        牛客网Java面试题(五)
                     </div>
                 </div>
             </div>
@@ -390,8 +391,8 @@ www.xxx.com/xxx/xxx.html
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/SQLMap/" target="_blank">
-                                <span class="chip bg-color">SQLMap</span>
+                            <a href="/tags/Java面试题/" target="_blank">
+                                <span class="chip bg-color">Java面试题</span>
                             </a>
                         
                     </div>
@@ -402,8 +403,8 @@ www.xxx.com/xxx/xxx.html
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                Web安全
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                Java
                             </a>
                         
                     </div>
@@ -414,21 +415,21 @@ www.xxx.com/xxx/xxx.html
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-09
+                    2019-06-13
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        408
+                        913
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -444,32 +445,81 @@ www.xxx.com/xxx/xxx.html
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="伪静态的定义"><a href="#伪静态的定义" class="headerlink" title="伪静态的定义"></a>伪静态的定义</h1><p>伪静态主要是为了隐藏传递的参数名,伪静态只是一种URL重写的手段,既然能接收参数的输入,所以并不能防止SQL注入.</p>
-<p><a href="http://www.xxx.com/xxx/xxx.html" target="_blank" rel="noopener">www.xxx.com/xxx/xxx.html</a></p>
-<p>真静态与伪静态的区别</p>
-<p>真静态的使用会大大减轻数据库频繁读写的压力,缺点是不利于数据更新.</p>
-<p>伪静态实际上是一个动态页面,只是在URL上与静态页面不同,伪静态有利于SEO优化.</p>
-<h2 id="伪静态生成的两种方式"><a href="#伪静态生成的两种方式" class="headerlink" title="伪静态生成的两种方式"></a>伪静态生成的两种方式</h2><p>框架性伪静态</p>
-<pre><code>如果整个网站的URL都是一样的,那么就一定是框架性伪静态
-</code></pre><p>利用组件把ASP的后缀名改为HTM</p>
-<pre><code>主要利用一个组件强制性的将ASP文件的后缀名显示为HTM.
-</code></pre><p>在SQL注入的防御中,伪静态虽然起到了一定作用,但是并不能完全防御SQL注入.</p>
-<h2 id="伪静态的优缺点"><a href="#伪静态的优缺点" class="headerlink" title="伪静态的优缺点"></a>伪静态的优缺点</h2><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ol>
-<li>方便搜索引擎搜索</li>
-<li>提高用户对网页的信任度</li>
-<li>网站所用的程序语言不易被发现</li>
+                <h1 id="一个以“-java”为后缀的源文件"><a href="#一个以“-java”为后缀的源文件" class="headerlink" title="一个以“.java”为后缀的源文件"></a>一个以“.java”为后缀的源文件</h1><ol>
+<li>只能包含一个public类，类名必须与文件名相同</li>
+<li>只能包含与文件名相同的public类以及其中的内部类</li>
+<li>只能有一个与文件名相同的public类，可以包含其他非public类（不考虑内部类）</li>
+<li>可以包含任意public类</li>
 </ol>
-<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ol>
-<li>CPU占有量上升</li>
-<li>网站承受力低</li>
-<li>王爷打开慢</li>
-<li>打量的重复页面</li>
-<li>需要服务器支持</li>
-<li>造成真静态页面无法访问</li>
+<p><strong>正确答案:C</strong></p>
+<p>解析:</p>
+<blockquote>
+<p>.java文件可以包含多个类,唯一的限制就是:一个文件中只能有一个public类,并且此public类的名字必须要与文件名相同.</p>
+</blockquote>
+<h1 id="设int-x-1-float-y-2-则表达式x-y的值是：（）"><a href="#设int-x-1-float-y-2-则表达式x-y的值是：（）" class="headerlink" title="设int x=1,float y=2,则表达式x/y的值是：（）"></a>设int x=1,float y=2,则表达式x/y的值是：（）</h1><ol>
+<li>0</li>
+<li>1</li>
+<li>2</li>
+<li>都不是</li>
 </ol>
-<h2 id="使用sqlmap进行伪静态注入"><a href="#使用sqlmap进行伪静态注入" class="headerlink" title="使用sqlmap进行伪静态注入"></a>使用sqlmap进行伪静态注入</h2><p>使用sqlmap进行伪静态注入的时候需要在伪静态url的.html前加一个*号</p>
-<p><strong>如何判断网站是否为伪静态</strong></p>
-<p>进入网站之后F12打开控制台输入document.lastModified,多次运行命令之后查看时间是否相同.</p>
+<p><strong>正确答案:D</strong></p>
+<p>解析:</p>
+<blockquote>
+<p>x/y的值为0.5</p>
+</blockquote>
+<h1 id="下面哪一项不是加载驱动程序的方法？"><a href="#下面哪一项不是加载驱动程序的方法？" class="headerlink" title="下面哪一项不是加载驱动程序的方法？"></a>下面哪一项不是加载驱动程序的方法？</h1><ol>
+<li>通过DriverManager.getConnection方法加载</li>
+<li>调用方法Class.forName</li>
+<li>通过添加系统的jdbc.drivers属性</li>
+<li>通过registerDriver方法注册</li>
+</ol>
+<p><strong>正确答案:A</strong></p>
+<p>解析:</p>
+<blockquote>
+<p>DriverManager.getConnection方法是加载完驱动用来获取连接的方法.</p>
+</blockquote>
+<h1 id="下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）"><a href="#下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）" class="headerlink" title="下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）"></a>下面哪些可能是重载的基本条件（）（注意：是可能为重载的基本条件）</h1><ol>
+<li>参数的类型不同</li>
+<li>参数的顺序不同</li>
+<li>函数的返回值类型不同</li>
+<li>参数的个数不同</li>
+</ol>
+<p><strong>正确答案:ABD</strong></p>
+<p>java中的方法重载:</p>
+<p><strong>方法重载指在同一个类中,允许存在一个以上的同名方法,只要他们方法的参数列表不同即可,与修饰符和方法的返回值类型无关.</strong></p>
+<p><strong>参数列表:个数不同,顺序不同,数据类型不同.</strong></p>
+<p><strong>重载方法的调用:JVM通过方法的参数列表,调用不同的方法.</strong></p>
+<h1 id="下面哪些情况可以引发异常："><a href="#下面哪些情况可以引发异常：" class="headerlink" title="下面哪些情况可以引发异常："></a>下面哪些情况可以引发异常：</h1><ol>
+<li>数组越界</li>
+<li>制定URL不存在</li>
+<li>使用throw语句抛出</li>
+<li>使用throws语句</li>
+</ol>
+<p><strong>正确答案:ABC</strong></p>
+<p>解析:</p>
+<p>throw是主动抛出异常,throws是声名异常</p>
+<p>声明异常:</p>
+<blockquote>
+<p>将问题标识出来,报告给调用者.如果方法内通过throw抛出了编译时异常,而没有捕获处理,那么必须通过throws进行声明,让调用者进行处理.</p>
+</blockquote>
+<p>关键字throws运用于方法声明之上,用于表示当前方法不处理异常,而是提醒该方法的调用者来处理异常</p>
+<p>throw用在方法内，用来抛出一个异常对象，将这个异常对象传递到调用者处，并结束当前方法的执行。</p>
+<h1 id="下面有关java-classloader说法正确的是（）？"><a href="#下面有关java-classloader说法正确的是（）？" class="headerlink" title="下面有关java classloader说法正确的是（）？"></a>下面有关java classloader说法正确的是（）？</h1><ol>
+<li>ClassLoader就是用来动态加载class文件到内存当中用的</li>
+<li>JVM在判定两个class是否相同时，只用判断类名相同即可，和类加载器无关</li>
+<li>ClassLoader使用的是双亲委托模型来搜索类的</li>
+<li>Java默认提供的三个ClassLoader是Boostrap ClassLoader，Extension ClassLoader，App ClassLoader</li>
+<li>以上都不正确</li>
+</ol>
+<p><strong>正确答案:ACD</strong></p>
+<h1 id="模型-视图-控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？"><a href="#模型-视图-控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？" class="headerlink" title="模型 - 视图 - 控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？"></a>模型 - 视图 - 控制器（MVC）是一种在Web应用程序中经常使用的架构模式。以下哪个陈述是正确的？</h1><ol>
+<li>模型通常表示操作应用程序中的数据所需的数据和业务逻辑</li>
+<li>视图是其模型的（可视）表示。它将模型呈现为适合交互的形式，通常是用户界面元素</li>
+<li>控制器是用户和系统之间的链接。它接受来自用户的输入并指示模型和视图基于该输入执行操作</li>
+<li>MVC在Web应用程序中的常见做法是，模型接收来自用户的GET或POST输入，并决定如何处理它，切换到控制器以及哪个手控制到视图（HTML生成组件）</li>
+<li>以上都不是</li>
+</ol>
+<p><strong>正确答案:ABC</strong></p>
 
             </div>
             <hr>
@@ -493,7 +543,7 @@ www.xxx.com/xxx/xxx.html
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/04/09/chang-gui-wei-jing-tai-zhu-ru/" class="b-link-green">常规伪静态注入</a>
+                    <a href="/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/" class="b-link-green">牛客网Java面试题(五)</a>
                 </p>
             </div>
         </div>
@@ -538,47 +588,46 @@ www.xxx.com/xxx/xxx.html
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/04/09/rao-guo-waf-fang-huo-qiang/">
+                <a href="/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/31.png" class="responsive-img" alt="绕过WAF防火墙">
+                        <img src="/medias/featureimages/16.png" class="responsive-img" alt="牛客网Java面试题(五)">
                         
-                        <span class="card-title">绕过WAF防火墙</span>
+                        <span class="card-title">牛客网Java面试题(五)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">WAF防火墙web application firewall(WAF):web应用防护系统
-WAF防火墙的功能
-支持IP白名单和黑名单功能
-支持URL白名单
-支持User-agent过滤
-支持CC攻击防护
-支持Cookie过滤
-支持URL过</div>
+                    <div class="summary block-with-text">一个以“.java”为后缀的源文件
+只能包含一个public类，类名必须与文件名相同
+只能包含与文件名相同的public类以及其中的内部类
+只能有一个与文件名相同的public类，可以包含其他非public类（不考虑内部类）
+可以包含任意p</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                    Web安全
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
+                    <a href="/tags/Java面试题/" target="_blank">
+                        <span class="chip bg-color">Java面试题</span>
                     </a>
                     
                 </div>
@@ -592,31 +641,35 @@ WAF防火墙的功能
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/09/jiao-hu-shi-xie-shell-ji-ming-ling-zhi-xing/">
+                <a href="/2019/06/12/niu-ke-wang-java-mian-shi-ti-si/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/64.png" class="responsive-img" alt="交互式写Shell及命令执行">
+                        <img src="/medias/featureimages/4.png" class="responsive-img" alt="牛客网Java面试题(四)">
                         
-                        <span class="card-title">交互式写Shell及命令执行</span>
+                        <span class="card-title">牛客网Java面试题(四)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">交互式Shell
-–sqlmap-shell      进入Shell环境
-–os-cmd=ipconfig   执行系统命令
-–os-shell          模拟shell输入
-–file-read         读取数据库服务器</div>
+                    <div class="summary block-with-text">下面哪个修饰符修饰的变量是所有同一个类生成的对象共享的（ ）
+public
+private
+static
+final
+
+正确答案:C
+解析:static修饰的变量表示静态变量,归类所有,该类的所有对象公用.
+以下选项中，合法的赋值语句是（）</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Web安全/" class="post-category" target="_blank">
-                                    Web安全
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
@@ -626,8 +679,8 @@ WAF防火墙的功能
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SQLMap/" target="_blank">
-                        <span class="chip bg-color">SQLMap</span>
+                    <a href="/tags/Java面试题/" target="_blank">
+                        <span class="chip bg-color">Java面试题</span>
                     </a>
                     
                 </div>
