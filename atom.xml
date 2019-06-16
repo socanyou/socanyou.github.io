@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-06-13T07:08:57.117Z</updated>
+  <updated>2019-06-15T07:45:44.331Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>牛客网Java面试题(六)</title>
+    <link href="https://codinglife.site/2019/06/15/niu-ke-wang-java-mian-shi-ti-liu/"/>
+    <id>https://codinglife.site/2019/06/15/niu-ke-wang-java-mian-shi-ti-liu/</id>
+    <published>2019-06-15T06:23:38.000Z</published>
+    <updated>2019-06-15T07:45:44.331Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Java程序中的类名称必须与存放该类的文件名称相同&quot;&gt;&lt;a href=&quot;#Java程序中的类名称必须与存放该类的文件名称相同&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://codinglife.site/categories/Java/"/>
+    
+    
+      <category term="Java面试题" scheme="https://codinglife.site/tags/Java%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>牛客网Java面试题(五)</title>
@@ -509,32 +535,6 @@
         
         
           &lt;h1 id=&quot;SQLMap参数说明&quot;&gt;&lt;a href=&quot;#SQLMap参数说明&quot; class=&quot;headerlink&quot; title=&quot;SQLMap参数说明&quot;&gt;&lt;/a&gt;SQLMap参数说明&lt;/h1&gt;&lt;p&gt;-v&lt;br&gt;   
-        
-      
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://codinglife.site/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>POST登陆注入</title>
-    <link href="https://codinglife.site/2019/04/09/post-deng-lu-zhu-ru/"/>
-    <id>https://codinglife.site/2019/04/09/post-deng-lu-zhu-ru/</id>
-    <published>2019-04-09T05:23:23.000Z</published>
-    <updated>2019-05-16T07:20:06.742Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;POST注入原理&quot;&gt;&lt;a href=&quot;#POST注入原理&quot; class=&quot;headerlink&quot; title=&quot;POST注入原理&quot;&gt;&lt;/a&gt;POST注入原理&lt;/h1&gt;&lt;p&gt;&lt;img
         
       
     

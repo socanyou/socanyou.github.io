@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>牛客网Java面试题(六)</title>
+      <link href="/2019/06/15/niu-ke-wang-java-mian-shi-ti-liu/"/>
+      <url>/2019/06/15/niu-ke-wang-java-mian-shi-ti-liu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Java程序中的类名称必须与存放该类的文件名称相同"><a href="#Java程序中的类名称必须与存放该类的文件名称相同" class="headerlink" title="Java程序中的类名称必须与存放该类的文件名称相同"></a>Java程序中的类名称必须与存放该类的文件名称相同</h1><ol><li>对</li><li>错</li></ol><p><strong>正确答案:B</strong></p><p>解析:如果类名的修饰符为public那么文件名必须和类名相同,内部类的类名一般与文件名不同.</p><h1 id="关于Socket通信编程-以下描述错误的是"><a href="#关于Socket通信编程-以下描述错误的是" class="headerlink" title="关于Socket通信编程,以下描述错误的是."></a>关于Socket通信编程,以下描述错误的是.</h1><ol><li><p>服务器端通过new ServerSocket()创建TCP连接对象</p></li><li><p>服务器端通过TCP连接对象调用accept()方法创建通信的Socket对象</p></li><li><p>客户端通过new Socket()方法创建通信的Socket对象</p></li><li><p>客户端通过new ServerSocket()创建TCP连接对象</p></li></ol><p><strong>正确答案:D</strong></p><p>解析:Socket编程中藏客户端通过new Socket()创建对象.</p><h1 id="假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）"><a href="#假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）" class="headerlink" title="假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）"></a>假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）</h1><pre><code>public static void main(String[]args)throws Exception {    final Object obj = new Object();    Thread t1 = new Thread() {        public void run() {            synchronized (obj) {                try {                    obj.wait();                    System.out.println(&quot;Thread 1 wake up.&quot;);                } catch (InterruptedException e) {                }            }        }    };    t1.start();    Thread.sleep(1000);//We assume thread 1 must start up within 1 sec.    Thread t2 = new Thread() {        public void run() {            synchronized (obj) {                obj.notifyAll();                System.out.println(&quot;Thread 2 sent notify.&quot;);            }        }    };    t2.start();}</code></pre><ol><li><p>Thread 1 wake up<br>Thread 2 sent notify.</p></li><li><p>Thread 2 sent notify.<br>Thread 1 wake up</p></li><li><p>A、B皆有可能</p></li><li><p>程序无输出卡死</p></li></ol><p><strong>正确答案:B</strong></p><h1 id="在Java线程状态转换时，下列转换不可能发生的有（）？"><a href="#在Java线程状态转换时，下列转换不可能发生的有（）？" class="headerlink" title="在Java线程状态转换时，下列转换不可能发生的有（）？"></a>在Java线程状态转换时，下列转换不可能发生的有（）？</h1><ol><li>初始态-&gt;运行态</li><li>就绪态-&gt;运行态</li><li>阻塞态-&gt;运行态</li><li>运行态-&gt;就绪态</li></ol><p><strong>正确答案:AC</strong></p><p>解析:</p><p><img src="https://s2.ax1x.com/2019/06/15/VIOgcF.jpg" alt="VIOgcF.jpg"></p><h1 id="局部内部类可以用哪些修饰符修饰？"><a href="#局部内部类可以用哪些修饰符修饰？" class="headerlink" title="局部内部类可以用哪些修饰符修饰？"></a>局部内部类可以用哪些修饰符修饰？</h1><ol><li>public</li><li>private</li><li>abstract</li><li>final</li></ol><p><strong>正确答案:CD</strong></p><p>解析: Java中局部内部类就像是方法里面的一个局部变量一样,不能有public,protected,private,以及static这样的修饰符的.</p><h1 id="哪四个陈述是真的？"><a href="#哪四个陈述是真的？" class="headerlink" title="哪四个陈述是真的？"></a>哪四个陈述是真的？</h1><pre><code>class A {}class B extends A {}class C extends A {}class D extends B {}A. The type List&lt;A&gt;is assignable to List.B. The type List&lt;B&gt;is assignable to List&lt;A&gt;.C. The type List&lt;Object&gt;is assignable to List&lt;?&gt;.D. The type List&lt;D&gt;is assignable to List&lt;?extends B&gt;.E. The type List&lt;?extends A&gt;is assignable to List&lt;A&gt;.F The type List&lt;Object&gt;is assignable to any List reference.G. The type List&lt;?extends B&gt;is assignable to List&lt;?extends A&gt;.</code></pre><p><strong>正确答案:ACDG</strong></p><p>关于泛型的尖括号</p><pre><code>1. 如果尖括号中是一个类,那么尖括号里就是一个点.2. 如果尖括号里面带有问号,那么表示一个范围,&lt;? extends A&gt;表示小于等于A的范围,&lt;? super A&gt;表示大于等于A的范围,&lt;?&gt;代表全部范围.3. List&lt;?&gt;和List是相等的4. List&lt;.&gt;表示范围的时候表示的是最大范围</code></pre><h1 id="下列关于JAVA多线程的叙述正确的是（）"><a href="#下列关于JAVA多线程的叙述正确的是（）" class="headerlink" title="下列关于JAVA多线程的叙述正确的是（）"></a>下列关于JAVA多线程的叙述正确的是（）</h1><ol><li>调用start()方法和run()都可以启动一个线程</li><li>CyclicBarrier和CountDownLatch都可以让一组线程等待其他线程</li><li>Callable类的call()方法可以返回值和抛出异常</li><li>新建的线程调用start()方法就能立即进行运行状态</li></ol><p><strong>正确答案:BC</strong></p><h1 id="下面哪些属于JSP内置对象及方法？"><a href="#下面哪些属于JSP内置对象及方法？" class="headerlink" title="下面哪些属于JSP内置对象及方法？"></a>下面哪些属于JSP内置对象及方法？</h1><ol><li>request</li><li>out</li><li>application</li><li>config</li></ol><p><strong>正确答案:ABCD</strong></p><p>解析:</p><p>JSP内置对象</p><ol><li>out-&gt;request.getWriter</li><li>request-&gt;Service方法中的request参数</li><li>response-&gt;Service方法中的response参数</li><li>session-&gt;request.getSession方法</li><li>application-&gt;getServletContext</li><li>exception-&gt;Throable</li><li>pageContext-&gt;PageContext</li><li>page-&gt;this</li><li>Config-&gt;getServletConfig</li></ol><h1 id="Java-Thread的方法resume-负责重新开始被以下哪个方法中断的线程的执行（）。"><a href="#Java-Thread的方法resume-负责重新开始被以下哪个方法中断的线程的执行（）。" class="headerlink" title="Java.Thread的方法resume()负责重新开始被以下哪个方法中断的线程的执行（）。"></a>Java.Thread的方法resume()负责重新开始被以下哪个方法中断的线程的执行（）。</h1><ol><li>stop</li><li>sleep</li><li>wait</li><li>suspend</li></ol><p><strong>正确答案:D</strong></p><p>suspend方法和resume方法配合使用,suspend将线程进入阻塞状态,并且不会自动恢复,必须使用resume方法被调用才能使线程进入可执行状态.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java面试题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>牛客网Java面试题(五)</title>
       <link href="/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/"/>
       <url>/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/</url>
