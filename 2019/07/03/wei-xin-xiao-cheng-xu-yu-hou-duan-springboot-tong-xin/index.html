@@ -427,14 +427,14 @@ https://ngrok.com/download
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        744
+                        799
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        4 分
                     </div>
                     
                 
@@ -656,7 +656,7 @@ Page({
   },
   clickMe: function() {
     wx.request({
-      url: &#39;https://e541c69a.ngrok.io/info&#39;,
+      url: &#39;ngrok公网接口&#39;,
       data: {
         personName: &quot;张三他爹&quot;,
         name: &quot;张三&quot;,
@@ -673,6 +673,10 @@ Page({
 
 })
 </code></pre><h1 id="完整的流程"><a href="#完整的流程" class="headerlink" title="完整的流程"></a>完整的流程</h1><p><img src="https://s2.ax1x.com/2019/07/03/ZtUbrt.png" alt="ZtUbrt.png"></p>
+<h1 id="特别提醒"><a href="#特别提醒" class="headerlink" title="特别提醒"></a>特别提醒</h1><p>因为我们使用的是Ngrok做的内网穿透,微信小程序默认识别出Ngrok的接口时非法的.</p>
+<p><img src="https://s2.ax1x.com/2019/07/03/Zta3dK.png" alt="Zta3dK.png"></p>
+<p>这时候我们就必须要<strong>设置不校验合法域名</strong></p>
+<p><img src="https://s2.ax1x.com/2019/07/03/Zta8IO.png" alt="Zta8IO.png"></p>
 
             </div>
             <hr>
@@ -996,7 +1000,7 @@ Win10
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">67.6k</span>
+                <span class="white-color">67.7k</span>
             
 
             
