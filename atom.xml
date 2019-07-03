@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-06-27T13:41:33.842Z</updated>
+  <updated>2019-07-03T08:14:16.872Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序与后端SpringBoot通信</title>
+    <link href="https://codinglife.site/2019/07/03/wei-xin-xiao-cheng-xu-yu-hou-duan-springboot-tong-xin/"/>
+    <id>https://codinglife.site/2019/07/03/wei-xin-xiao-cheng-xu-yu-hou-duan-springboot-tong-xin/</id>
+    <published>2019-07-03T07:06:03.000Z</published>
+    <updated>2019-07-03T08:14:16.872Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;案例概述&quot;&gt;&lt;a href=&quot;#案例概述&quot; class=&quot;headerlink&quot; title=&quot;案例概述&quot;&gt;&lt;/a&gt;案例概述&lt;/h1&gt;&lt;p&gt;微信小程序请求后端SpirngBoot,中间使用Ngrok做内网穿透.&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://codinglife.site/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://codinglife.site/tags/SpringBoot/"/>
+    
+      <category term="微信小程序" scheme="https://codinglife.site/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot整合MyBatis详解</title>
@@ -510,33 +539,6 @@
         
         
           &lt;h1 id=&quot;伪静态的定义&quot;&gt;&lt;a href=&quot;#伪静态的定义&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://codinglife.site/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>交互式写Shell及命令执行</title>
-    <link href="https://codinglife.site/2019/04/09/jiao-hu-shi-xie-shell-ji-ming-ling-zhi-xing/"/>
-    <id>https://codinglife.site/2019/04/09/jiao-hu-shi-xie-shell-ji-ming-ling-zhi-xing/</id>
-    <published>2019-04-09T05:25:06.000Z</published>
-    <updated>2019-05-16T07:21:41.098Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;交互式Shell&quot;&gt;&lt;a href=&quot;#交互式Shell&quot; class=&quot;headerlink&quot; title=&quot;交互式Shell&quot;&gt;&lt;/a&gt;交互式Shell&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;–sqlmap-shell     
         
       
     
