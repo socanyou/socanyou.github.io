@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-07-03T08:19:59.634Z</updated>
+  <updated>2019-07-05T10:43:33.398Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Ngrok绕过防火墙访问内网树莓派</title>
+    <link href="https://codinglife.site/2019/07/05/shi-yong-ngrok-rao-guo-fang-huo-qiang-fang-wen-nei-wang-shu-mei-pai/"/>
+    <id>https://codinglife.site/2019/07/05/shi-yong-ngrok-rao-guo-fang-huo-qiang-fang-wen-nei-wang-shu-mei-pai/</id>
+    <published>2019-07-05T10:32:05.000Z</published>
+    <updated>2019-07-05T10:43:33.398Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;下载Ngrok&quot;&gt;&lt;a href=&quot;#下载Ngrok&quot; class=&quot;headerlink&quot; title=&quot;下载Ngrok&quot;&gt;&lt;/a&gt;下载Ngrok&lt;/h1&gt;&lt;p&gt;去官方网站下载即可&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="Ngrok" scheme="https://codinglife.site/categories/Ngrok/"/>
+    
+    
+      <category term="树莓派" scheme="https://codinglife.site/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="Ngrok" scheme="https://codinglife.site/tags/Ngrok/"/>
+    
+      <category term="内网穿透" scheme="https://codinglife.site/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序与后端SpringBoot通信</title>
@@ -513,32 +545,6 @@
         
           &lt;h1 id=&quot;WAF防火墙&quot;&gt;&lt;a href=&quot;#WAF防火墙&quot; class=&quot;headerlink&quot; title=&quot;WAF防火墙&quot;&gt;&lt;/a&gt;WAF防火墙&lt;/h1&gt;&lt;p&gt;web application firewall(WAF):web应用防护系统&lt;/p&gt;
 &lt;h2
-        
-      
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://codinglife.site/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>常规伪静态注入</title>
-    <link href="https://codinglife.site/2019/04/09/chang-gui-wei-jing-tai-zhu-ru/"/>
-    <id>https://codinglife.site/2019/04/09/chang-gui-wei-jing-tai-zhu-ru/</id>
-    <published>2019-04-09T05:25:21.000Z</published>
-    <updated>2019-05-16T07:21:22.316Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;伪静态的定义&quot;&gt;&lt;a href=&quot;#伪静态的定义&quot; class=&quot;headerlink&quot;
         
       
     
