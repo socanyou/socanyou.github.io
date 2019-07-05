@@ -431,14 +431,14 @@ ubuntu@ubuntu:~$ sudo wget https://bin">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        678
+                        785
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        4 分
                     </div>
                     
                 
@@ -473,9 +473,9 @@ ngrok-stable-linux-arm.z 100%[=================================&gt;]  15.72M  46
 </code></pre><h2 id="解压到指定目录"><a href="#解压到指定目录" class="headerlink" title="解压到指定目录"></a>解压到指定目录</h2><pre><code>ubuntu@ubuntu:~$ unzip ngrok-stable-linux-arm.zip -d ./ngrok
 Archive:  ngrok-stable-linux-arm.zip
   inflating: ./ngrok/ngrok
-</code></pre><h1 id="注册Ngrok账户并连接"><a href="#注册Ngrok账户并连接" class="headerlink" title="注册Ngrok账户并连接"></a>注册Ngrok账户并连接</h1><p>解压完之后cd到目录中运行authtoken 命令进行账户验证</p>
+</code></pre><h2 id="注册Ngrok账户并连接"><a href="#注册Ngrok账户并连接" class="headerlink" title="注册Ngrok账户并连接"></a>注册Ngrok账户并连接</h2><p>解压完之后cd到目录中运行authtoken 命令进行账户验证</p>
 <pre><code>$ ./ngrok authtoken 验证码
-</code></pre><h1 id="运行Ngrok"><a href="#运行Ngrok" class="headerlink" title="运行Ngrok"></a>运行Ngrok</h1><p>将22端口转发出去,走的是TCP协议.这时候会得到一个公网的IP地址和端口号,接下来拿着这个公网IP地址和端口号就可以在任何有网络的地方访问我们家里的树莓派了.</p>
+</code></pre><h2 id="运行Ngrok"><a href="#运行Ngrok" class="headerlink" title="运行Ngrok"></a>运行Ngrok</h2><p>将22端口转发出去,走的是TCP协议.这时候会得到一个公网的IP地址和端口号,接下来拿着这个公网IP地址和端口号就可以在任何有网络的地方访问我们家里的树莓派了.</p>
 <pre><code>ubuntu@ubuntu:~/ngrok$ ./ngrok TCP 22
 NAME:
   ngrok - tunnel local ports to public URLs and inspect traffic
@@ -493,7 +493,7 @@ Forwarding                    tcp://公网IP和端口号 -&gt; localhost:22
 
 Connections                   ttl     opn     rt1     rt5     p50     p90     
                               1       1       0.00    0.00    36.43   36.43 
-</code></pre><h1 id="使用Powershell进行连接"><a href="#使用Powershell进行连接" class="headerlink" title="使用Powershell进行连接"></a>使用Powershell进行连接</h1><pre><code>PS C:\Users\xxx&gt; ssh ubuntu@ngrok提供的公网IP -p 端口号
+</code></pre><h2 id="使用Powershell进行连接"><a href="#使用Powershell进行连接" class="headerlink" title="使用Powershell进行连接"></a>使用Powershell进行连接</h2><pre><code>PS C:\Users\xxx&gt; ssh ubuntu@ngrok提供的公网IP -p 端口号
 ubuntu@0.tcp.ngrok.io&#39;s password:
 Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-1031-raspi2 aarch64)
 
@@ -548,7 +548,16 @@ Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.15.0-1031-raspi2 aarch64)
 
 Last login: Fri Jul  5 10:29:52 2019 from 127.0.0.1
 ubuntu@ubuntu:~$
-</code></pre>
+</code></pre><h2 id="保持Ngrok后台运行"><a href="#保持Ngrok后台运行" class="headerlink" title="保持Ngrok后台运行"></a>保持Ngrok后台运行</h2><p>下载Screen</p>
+<pre><code>sudo apt-get install screen
+</code></pre><p>screen的作用就是<strong>管理远程会话的</strong>.</p>
+<p>使用Screen</p>
+<pre><code>Screen -S ngrokSSH
+</code></pre><p>-S(大写) 创建Screen会话,并给这个会话指定一个名字</p>
+<p>接着输入Ngrok的运行命令</p>
+<p>  ./ngrok tcp 22</p>
+<p>完事儿,不信你试试关闭窗口之后再使用Ngrok给我们提供的公网IP和端口进行连接看看能不能连的上.</p>
+
             </div>
             <hr>
 
@@ -875,7 +884,7 @@ https://ngrok.com/download
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">68.3k</span>
+                <span class="white-color">68.4k</span>
             
 
             
