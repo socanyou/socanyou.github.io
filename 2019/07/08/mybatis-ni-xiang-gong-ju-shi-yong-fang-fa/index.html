@@ -4,15 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="牛客网Java面试题(六), 程序员小黑">
-    <meta name="description" content="Java程序中的类名称必须与存放该类的文件名称相同
-对
-错
-
-正确答案:B
-解析:如果类名的修饰符为public那么文件名必须和类名相同,内部类的类名一般与文件名不同.
-关于Socket通信编程,以下描述错误的是.
-服务器端通过new Se">
+    <meta name="keywords" content="MyBatis逆向工具使用方法, 程序员小黑">
+    <meta name="description" content="POM文件导入相关Jar包
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+&amp;lt;project xmlns=&amp;quot;http://maven.apac">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>牛客网Java面试题(六) | 程序员小黑</title>
+    <title>MyBatis逆向工具使用方法 | 程序员小黑</title>
     <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/medias/ICO.ico">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -277,13 +272,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/35.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/57.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        牛客网Java面试题(六)
+                        MyBatis逆向工具使用方法
                     </div>
                 </div>
             </div>
@@ -394,8 +389,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java面试题/" target="_blank">
-                                <span class="chip bg-color">Java面试题</span>
+                            <a href="/tags/MyBatis/" target="_blank">
+                                <span class="chip bg-color">MyBatis</span>
                             </a>
                         
                     </div>
@@ -406,8 +401,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Java/" class="post-category" target="_blank">
-                                Java
+                            <a href="/categories/MyBatis/" class="post-category" target="_blank">
+                                MyBatis
                             </a>
                         
                     </div>
@@ -418,21 +413,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-15
+                    2019-07-08
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        914
+                        814
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        4 分
                     </div>
                     
                 
@@ -448,137 +443,145 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Java程序中的类名称必须与存放该类的文件名称相同"><a href="#Java程序中的类名称必须与存放该类的文件名称相同" class="headerlink" title="Java程序中的类名称必须与存放该类的文件名称相同"></a>Java程序中的类名称必须与存放该类的文件名称相同</h1><ol>
-<li>对</li>
-<li>错</li>
-</ol>
-<p><strong>正确答案:B</strong></p>
-<p>解析:如果类名的修饰符为public那么文件名必须和类名相同,内部类的类名一般与文件名不同.</p>
-<h1 id="关于Socket通信编程-以下描述错误的是"><a href="#关于Socket通信编程-以下描述错误的是" class="headerlink" title="关于Socket通信编程,以下描述错误的是."></a>关于Socket通信编程,以下描述错误的是.</h1><ol>
-<li><p>服务器端通过new ServerSocket()创建TCP连接对象</p>
-</li>
-<li><p>服务器端通过TCP连接对象调用accept()方法创建通信的Socket对象</p>
-</li>
-<li><p>客户端通过new Socket()方法创建通信的Socket对象</p>
-</li>
-<li><p>客户端通过new ServerSocket()创建TCP连接对象</p>
-</li>
-</ol>
-<p><strong>正确答案:D</strong></p>
-<p>解析:Socket编程中藏客户端通过new Socket()创建对象.</p>
-<h1 id="假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）"><a href="#假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）" class="headerlink" title="假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）"></a>假设如下代码中，若t1线程在t2线程启动之前已经完成启动。代码的输出是（）</h1><pre><code>public static void main(String[]args)throws Exception {
-    final Object obj = new Object();
-    Thread t1 = new Thread() {
-        public void run() {
-            synchronized (obj) {
-                try {
-                    obj.wait();
-                    System.out.println(&quot;Thread 1 wake up.&quot;);
-                } catch (InterruptedException e) {
-                }
-            }
+                <h1 id="POM文件"><a href="#POM文件" class="headerlink" title="POM文件"></a>POM文件</h1><p>导入相关Jar包</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+        xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+        xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.chen&lt;/groupId&gt;
+    &lt;artifactId&gt;mybatis-generatorConfig&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;dependencies&gt;
+
+        &lt;!-- 引入log4j日志依赖 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-log4j&lt;/artifactId&gt;
+            &lt;version&gt;1.3.8.RELEASE&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- 阿里开源数据源 --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;druid&lt;/artifactId&gt;
+            &lt;version&gt;1.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+            &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;1.1.0&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;dependency&gt;
+            &lt;groupId&gt;mysql&lt;/groupId&gt;
+            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+            &lt;version&gt;8.0.15&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;!--mybatis--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;1.3.1&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!--mapper--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;tk.mybatis&lt;/groupId&gt;
+            &lt;artifactId&gt;mapper-spring-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;1.2.4&lt;/version&gt;
+        &lt;/dependency&gt;
+        &lt;!--pagehelper--&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;
+            &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;
+            &lt;version&gt;1.2.3&lt;/version&gt;
+        &lt;/dependency&gt;
+
+        &lt;!-- mybatis 逆向生成工具  --&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;
+            &lt;artifactId&gt;mybatis-generator-core&lt;/artifactId&gt;
+            &lt;version&gt;1.3.2&lt;/version&gt;
+            &lt;scope&gt;compile&lt;/scope&gt;
+            &lt;optional&gt;true&lt;/optional&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+    &lt;properties&gt;
+        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+        &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+        &lt;java.version&gt;1.8&lt;/java.version&gt;
+    &lt;/properties&gt;
+&lt;/project&gt;
+</code></pre><h1 id="Generater启动类"><a href="#Generater启动类" class="headerlink" title="Generater启动类"></a>Generater启动类</h1><pre><code>package chen.mybatis.utils;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mybatis.generator.api.MyBatisGenerator;
+import org.mybatis.generator.config.Configuration;
+import org.mybatis.generator.config.xml.ConfigurationParser;
+import org.mybatis.generator.internal.DefaultShellCallback;
+
+/*
+    该类的作用是启动类,
+    MyBatis逆向工具能够根据数据库表生成对应的POJO类
+*/
+
+public class GeneratorDisplay {
+
+    public void generator() throws Exception {
+
+        List&lt;String&gt; warnings = new ArrayList&lt;String&gt;();
+        boolean overwrite = true;
+        //指定 逆向工程配置文件
+        File configFile = new File(&quot;H:\\DongYinVideo\\mybatis-generatorConfig\\generatorConfig.xml&quot;);
+        ConfigurationParser cp = new ConfigurationParser(warnings);
+        Configuration config = cp.parseConfiguration(configFile);
+        DefaultShellCallback callback = new DefaultShellCallback(overwrite);
+        MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,
+                callback, warnings);
+        myBatisGenerator.generate(null);
+
+    }
+
+    public static void main(String[] args) throws Exception {
+        try {
+            GeneratorDisplay generatorSqlmap = new GeneratorDisplay();
+            generatorSqlmap.generator();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    };
-    t1.start();
-    Thread.sleep(1000);//We assume thread 1 must start up within 1 sec.
-    Thread t2 = new Thread() {
-        public void run() {
-            synchronized (obj) {
-                obj.notifyAll();
-                System.out.println(&quot;Thread 2 sent notify.&quot;);
-            }
-        }
-    };
-    t2.start();
+
+    }
 }
-</code></pre><ol>
-<li><p>Thread 1 wake up<br>Thread 2 sent notify.</p>
-</li>
-<li><p>Thread 2 sent notify.<br>Thread 1 wake up</p>
-</li>
-<li><p>A、B皆有可能</p>
-</li>
-<li><p>程序无输出卡死</p>
-</li>
-</ol>
-<p><strong>正确答案:B</strong></p>
-<h1 id="在Java线程状态转换时，下列转换不可能发生的有（）？"><a href="#在Java线程状态转换时，下列转换不可能发生的有（）？" class="headerlink" title="在Java线程状态转换时，下列转换不可能发生的有（）？"></a>在Java线程状态转换时，下列转换不可能发生的有（）？</h1><ol>
-<li>初始态-&gt;运行态</li>
-<li>就绪态-&gt;运行态</li>
-<li>阻塞态-&gt;运行态</li>
-<li>运行态-&gt;就绪态</li>
-</ol>
-<p><strong>正确答案:AC</strong></p>
-<p>解析:</p>
-<p><img src="https://s2.ax1x.com/2019/06/15/VIOgcF.jpg" alt="VIOgcF.jpg"></p>
-<h1 id="局部内部类可以用哪些修饰符修饰？"><a href="#局部内部类可以用哪些修饰符修饰？" class="headerlink" title="局部内部类可以用哪些修饰符修饰？"></a>局部内部类可以用哪些修饰符修饰？</h1><ol>
-<li>public</li>
-<li>private</li>
-<li>abstract</li>
-<li>final</li>
-</ol>
-<p><strong>正确答案:CD</strong></p>
-<p>解析: Java中局部内部类就像是方法里面的一个局部变量一样,不能有public,protected,private,以及static这样的修饰符的.</p>
-<h1 id="哪四个陈述是真的？"><a href="#哪四个陈述是真的？" class="headerlink" title="哪四个陈述是真的？"></a>哪四个陈述是真的？</h1><pre><code>class A {}
-class B extends A {}
-class C extends A {}
-class D extends B {}
+</code></pre><h1 id="Logfj配置文件"><a href="#Logfj配置文件" class="headerlink" title="Logfj配置文件"></a>Logfj配置文件</h1><pre><code>log4j.rootLogger=INFO,console
+log4j.logger.chen.mapper=INFO
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.encoding=UTF-8
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%-d{yyyy-MM-dd HH:mm:ss,SSS} [%t] [%l] - [%p] %m%n
+</code></pre><h1 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h1><p><img src="https://s2.ax1x.com/2019/07/08/Zs1RfK.png" alt="Zs1RfK.png"></p>
+<h1 id="未生成POJO文件和Mapbatis映射文件模块结构图"><a href="#未生成POJO文件和Mapbatis映射文件模块结构图" class="headerlink" title="未生成POJO文件和Mapbatis映射文件模块结构图"></a>未生成POJO文件和Mapbatis映射文件模块结构图</h1><p><img src="https://s2.ax1x.com/2019/07/08/Zs12Y6.png" alt="Zs12Y6.png"></p>
+<h1 id="Utils类"><a href="#Utils类" class="headerlink" title="Utils类"></a>Utils类</h1><pre><code>package chen.utils;
 
-A. The type List&lt;A&gt;is assignable to List.
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
 
-B. The type List&lt;B&gt;is assignable to List&lt;A&gt;.
+public interface MyMapper&lt;T&gt; extends Mapper&lt;T&gt;, MySqlMapper&lt;T&gt; {
+    //TODO
+    //FIXME 特别注意，该接口不能被扫描到，否则会出错
+}
+</code></pre><h1 id="generatorConfig-xml文件"><a href="#generatorConfig-xml文件" class="headerlink" title="generatorConfig.xml文件"></a>generatorConfig.xml文件</h1><p>&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;<br>&lt;!DOCTYPE generatorConfiguration<br>        PUBLIC “-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN”<br>        “<a href="http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;" target="_blank" rel="noopener">http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd&quot;&gt;</a></p>
+<generatorconfiguration><br>    <context id="MysqlContext" targetruntime="MyBatis3Simple" defaultmodeltype="flat"><br>        <property name="beginningDelimiter" value="`"><br>        <property name="endingDelimiter" value="`"><br><br>        <plugin type="tk.mybatis.mapper.generator.MapperPlugin"><br>            <property name="mappers" value="chen.chen.utils.MyMapper"><br>        </property></plugin><br><br>        <jdbcconnection driverclass="com.mysql.cj.jdbc.Driver" connectionurl="jdbc:mysql://localhost:3306/dongyin?serverTimezone=UTC" userid="root" password="LiuChen0."><br>        </jdbcconnection><br><br>        <!-- 对应生成的pojo所在包 --><br>        <javamodelgenerator targetpackage="pojo" targetproject="H://DongYinVideo//mybatis-generatorConfig/src/main/java"><br><br>        <!-- 对应生成的mapper所在目录 --><br>        <sqlmapgenerator targetpackage="mapper" targetproject="H:/DongYinVideo/mybatis-generatorConfig/src/main/resources"><br><br>        <!-- 配置mapper对应的java映射 --><br>        <javaclientgenerator targetpackage="chen.AAmapper" targetproject="H://DongYinVideo//mybatis-generatorConfig/src/main/java" type="XMLMAPPER"><br><br>        <!--根据数据库表生成对应的POJO--><br>        <table tablename="bgm"><br>        <table tablename="comments"></table><br>        <table tablename="search_records"></table><br>        <table tablename="users"></table><br>        <table tablename="users_fans"></table><br>        <table tablename="users_like_videos"></table><br>        <table tablename="users_report"></table><br>        <table tablename="videos"></table><br><br>    </table></javaclientgenerator></sqlmapgenerator></javamodelgenerator></property></property></context><br></generatorconfiguration>
 
-C. The type List&lt;Object&gt;is assignable to List&lt;?&gt;.
 
-D. The type List&lt;D&gt;is assignable to List&lt;?extends B&gt;.
-
-E. The type List&lt;?extends A&gt;is assignable to List&lt;A&gt;.
-
-F The type List&lt;Object&gt;is assignable to any List reference.
-
-G. The type List&lt;?extends B&gt;is assignable to List&lt;?extends A&gt;.
-</code></pre><p><strong>正确答案:ACDG</strong></p>
-<p>关于泛型的尖括号</p>
-<pre><code>1. 如果尖括号中是一个类,那么尖括号里就是一个点.
-2. 如果尖括号里面带有问号,那么表示一个范围,&lt;? extends A&gt;表示小于等于A的范围,&lt;? super A&gt;表示大于等于A的范围,&lt;?&gt;代表全部范围.
-3. List&lt;?&gt;和List是相等的
-4. List&lt;.&gt;表示范围的时候表示的是最大范围
-</code></pre><h1 id="下列关于JAVA多线程的叙述正确的是（）"><a href="#下列关于JAVA多线程的叙述正确的是（）" class="headerlink" title="下列关于JAVA多线程的叙述正确的是（）"></a>下列关于JAVA多线程的叙述正确的是（）</h1><ol>
-<li>调用start()方法和run()都可以启动一个线程</li>
-<li>CyclicBarrier和CountDownLatch都可以让一组线程等待其他线程</li>
-<li>Callable类的call()方法可以返回值和抛出异常</li>
-<li>新建的线程调用start()方法就能立即进行运行状态</li>
-</ol>
-<p><strong>正确答案:BC</strong></p>
-<h1 id="下面哪些属于JSP内置对象及方法？"><a href="#下面哪些属于JSP内置对象及方法？" class="headerlink" title="下面哪些属于JSP内置对象及方法？"></a>下面哪些属于JSP内置对象及方法？</h1><ol>
-<li>request</li>
-<li>out</li>
-<li>application</li>
-<li>config</li>
-</ol>
-<p><strong>正确答案:ABCD</strong></p>
-<p>解析:</p>
-<p>JSP内置对象</p>
-<ol>
-<li>out-&gt;request.getWriter</li>
-<li>request-&gt;Service方法中的request参数</li>
-<li>response-&gt;Service方法中的response参数</li>
-<li>session-&gt;request.getSession方法</li>
-<li>application-&gt;getServletContext</li>
-<li>exception-&gt;Throable</li>
-<li>pageContext-&gt;PageContext</li>
-<li>page-&gt;this</li>
-<li>Config-&gt;getServletConfig</li>
-</ol>
-<h1 id="Java-Thread的方法resume-负责重新开始被以下哪个方法中断的线程的执行（）。"><a href="#Java-Thread的方法resume-负责重新开始被以下哪个方法中断的线程的执行（）。" class="headerlink" title="Java.Thread的方法resume()负责重新开始被以下哪个方法中断的线程的执行（）。"></a>Java.Thread的方法resume()负责重新开始被以下哪个方法中断的线程的执行（）。</h1><ol>
-<li>stop</li>
-<li>sleep</li>
-<li>wait</li>
-<li>suspend</li>
-</ol>
-<p><strong>正确答案:D</strong></p>
-<p>suspend方法和resume方法配合使用,suspend将线程进入阻塞状态,并且不会自动恢复,必须使用resume方法被调用才能使线程进入可执行状态.</p>
-
+<h1 id="生成后的对应的文件目录"><a href="#生成后的对应的文件目录" class="headerlink" title="生成后的对应的文件目录"></a>生成后的对应的文件目录</h1><p>运行<strong>GeneratorDisplay</strong>类</p>
+<p><img src="https://s2.ax1x.com/2019/07/08/Zs1gFx.png" alt="Zs1gFx.png"></p>
+<h2 id="已经生成对应的实体类和映射文件"><a href="#已经生成对应的实体类和映射文件" class="headerlink" title="已经生成对应的实体类和映射文件"></a>已经生成对应的实体类和映射文件</h2>
             </div>
             <hr>
 
@@ -601,7 +604,7 @@ G. The type List&lt;?extends B&gt;is assignable to List&lt;?extends A&gt;.
                     </span>
                     <a href="https://codinglife.site" class="b-link-green">程序员小黑</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/06/15/niu-ke-wang-java-mian-shi-ti-liu/" class="b-link-green">牛客网Java面试题(六)</a>
+                    <a href="/2019/07/08/mybatis-ni-xiang-gong-ju-shi-yong-fang-fa/" class="b-link-green">MyBatis逆向工具使用方法</a>
                 </p>
             </div>
         </div>
@@ -646,49 +649,44 @@ G. The type List&lt;?extends B&gt;is assignable to List&lt;?extends A&gt;.
         
         <div class="article col s12 m6 overflow-policy" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/06/27/springboot-zheng-he-mybatis-xiang-jie/">
+                <a href="/2019/07/08/mybatis-ni-xiang-gong-ju-shi-yong-fang-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.png" class="responsive-img" alt="SpringBoot整合MyBatis详解">
+                        <img src="/medias/featureimages/57.png" class="responsive-img" alt="MyBatis逆向工具使用方法">
                         
-                        <span class="card-title">SpringBoot整合MyBatis详解</span>
+                        <span class="card-title">MyBatis逆向工具使用方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">SpringBoot整合MyBatis环境信息:
-Mysql 8.0.15
-Win10
-1.创建项目使用IDEA快速创建一个SpringBootWEB项目
-
-2.添加Mybatis起步依赖        &lt;!--mybatis起步依赖</div>
+                    <div class="summary block-with-text">POM文件导入相关Jar包
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apac</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/SpringBoot/" class="post-category" target="_blank">
-                                    SpringBoot
+                            <a href="/categories/MyBatis/" class="post-category" target="_blank">
+                                    MyBatis
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/MyBatis/" target="_blank">
                         <span class="chip bg-color">MyBatis</span>
-                    </a>
-                    
-                    <a href="/tags/SpringBoot/" target="_blank">
-                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
                 </div>
@@ -702,31 +700,32 @@ Win10
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/06/13/niu-ke-wang-java-mian-shi-ti-wu/">
+                <a href="/2019/07/05/shi-yong-ngrok-rao-guo-fang-huo-qiang-fang-wen-nei-wang-shu-mei-pai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.png" class="responsive-img" alt="牛客网Java面试题(五)">
+                        <img src="/medias/featureimages/29.png" class="responsive-img" alt="使用Ngrok绕过防火墙访问内网树莓派">
                         
-                        <span class="card-title">牛客网Java面试题(五)</span>
+                        <span class="card-title">使用Ngrok绕过防火墙访问内网树莓派</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary block-with-text">一个以“.java”为后缀的源文件
-只能包含一个public类，类名必须与文件名相同
-只能包含与文件名相同的public类以及其中的内部类
-只能有一个与文件名相同的public类，可以包含其他非public类（不考虑内部类）
-可以包含任意p</div>
+                    <div class="summary block-with-text">下载Ngrok去官方网站下载即可
+
+https://dashboard.ngrok.com/get-started
+
+注意在下载的时候选择LinuxARM版本的.
+ubuntu@ubuntu:~$ sudo wget https://bin</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-13
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category" target="_blank">
-                                    Java
+                            <a href="/categories/Ngrok/" class="post-category" target="_blank">
+                                    Ngrok
                                 </a>
                             
                             
@@ -736,8 +735,16 @@ Win10
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java面试题/" target="_blank">
-                        <span class="chip bg-color">Java面试题</span>
+                    <a href="/tags/树莓派/" target="_blank">
+                        <span class="chip bg-color">树莓派</span>
+                    </a>
+                    
+                    <a href="/tags/Ngrok/" target="_blank">
+                        <span class="chip bg-color">Ngrok</span>
+                    </a>
+                    
+                    <a href="/tags/内网穿透/" target="_blank">
+                        <span class="chip bg-color">内网穿透</span>
                     </a>
                     
                 </div>
