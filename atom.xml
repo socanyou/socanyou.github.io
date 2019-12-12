@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://codinglife.site/"/>
-  <updated>2019-07-08T14:34:59.870Z</updated>
+  <updated>2019-12-12T05:05:32.144Z</updated>
   <id>https://codinglife.site/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>两数之和</title>
+    <link href="https://codinglife.site/2019/12/12/liang-shu-zhi-he/"/>
+    <id>https://codinglife.site/2019/12/12/liang-shu-zhi-he/</id>
+    <published>2019-12-12T02:53:53.000Z</published>
+    <updated>2019-12-12T05:05:32.144Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h1&gt;&lt;p&gt;给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个
+        
+      
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://codinglife.site/categories/LeetCode/"/>
+    
+    
+      <category term="每日算法" scheme="https://codinglife.site/tags/%E6%AF%8F%E6%97%A5%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>MyBatis逆向工具使用方法</title>
@@ -521,33 +547,6 @@
         
         
           &lt;h1 id=&quot;请求延迟注入&quot;&gt;&lt;a href=&quot;#请求延迟注入&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="Web安全" scheme="https://codinglife.site/categories/Web%E5%AE%89%E5%85%A8/"/>
-    
-    
-      <category term="SQLMap" scheme="https://codinglife.site/tags/SQLMap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>绕过WAF防火墙</title>
-    <link href="https://codinglife.site/2019/04/09/rao-guo-waf-fang-huo-qiang/"/>
-    <id>https://codinglife.site/2019/04/09/rao-guo-waf-fang-huo-qiang/</id>
-    <published>2019-04-09T05:25:37.000Z</published>
-    <updated>2019-05-16T07:21:16.284Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;WAF防火墙&quot;&gt;&lt;a href=&quot;#WAF防火墙&quot; class=&quot;headerlink&quot; title=&quot;WAF防火墙&quot;&gt;&lt;/a&gt;WAF防火墙&lt;/h1&gt;&lt;p&gt;web application firewall(WAF):web应用防护系统&lt;/p&gt;
-&lt;h2
         
       
     
